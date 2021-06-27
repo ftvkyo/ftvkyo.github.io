@@ -1,0 +1,5 @@
+# Generated files
+/resources/_gen/
+
+# Build files
+/public/

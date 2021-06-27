@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<ul>
+    {{ $pages := .Pages }}
+    {{ range $pages.ByPublishDate.Reverse }}
+    <li>
+        <a href="{{ .Permalink }}">
+            {{ .Title }}
+        </a>
+        ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

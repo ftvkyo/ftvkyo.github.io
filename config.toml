@@ -1,0 +1,47 @@
+baseURL = "https://www.ftvkyo.me/"
+languageCode = "en-us"
+title = "ftvkyo.me"
+theme = "cayman-hugo-theme"
+
+# Syntax highlighting
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+
+
+[params]
+  project_name = "ftvkyo.me"
+  project_tagline = "Hello there"
+
+  dateFormat = "2006-01-02"
+
+  footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)."
+
+  body_link_color = "#1e6bff"
+
+
+# Enable raw HTML in the pages.
+[markup.goldmark.renderer]
+  unsafe = true
+
+
+[taxonomies]
+  tag = "tags"
+
+
+[menu]
+  [[menu.nav]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.nav]]
+    name = "Posts"
+    url = "/post/"
+    weight = 20
+  [[menu.nav]]
+    name = "Links"
+    url = "/links/"
+    weight = 30
+  [[menu.nav]]
+    name = "About me"
+    url = "/about/"
+    weight = 40
