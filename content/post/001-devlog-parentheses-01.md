@@ -1,5 +1,5 @@
 ---
-title: "Devlog of Parentheses #1: getting to LLVM IR emission"
+title: "Parentheses devlog #1: getting to LLVM IR emission"
 date: 2021-06-27T21:00:00+08:00
 tags: [Devlog, Parentheses, C++]
 ---
@@ -11,10 +11,13 @@ tags: [Devlog, Parentheses, C++]
 
 ## Pre-intro
 
-This devlog is also an excercise for me, tell me if I can improve it.
-If I ever start making a serious game, I'd like it to have a devlog.
+I start these series hoping to continue them along with the development of
+the project this devlog is related to.
+Not only the project is an excercise for me, but the devlog itself is as well.
+I think about making some games in the future, and how could I make a good
+game without having a devlog about it?
 
-Also, thanks to all advices from different people who suggested some better
+Also, thanks to all the advice from different people who suggested some better
 techniques of dealing with challenges I face in this project.
 
 
@@ -61,15 +64,17 @@ a challenge.
 From the start, I wrote code in classes to avoid polluting my code with global
 variables. The classes I wrote are not entirely perfect, but are good enough.
 
-I also made classes for Tokens, adding some inheritance here and there.
-I started doing polymorphism with `std::dynamic_cast<SomeTokenType*>(token)`
-and I hated it. And tokens were stored in `std::unique_ptr`. I think
-my brain got polluted by Rust and I wanted to shove `std::move` here and there.
+I also made classes for Tokens, adding some fancy inheritance.
+I started using polymorphism with `std::dynamic_cast<SomeTokenType*>(token)`
+and I hated it. Tokens were stored in `std::unique_ptr`and I was trying to shove
+`std::move` here and there. Unfortunately, that made code less readable,
+so it was a premature optimization that was caused by my love for
+Rust's move-by-default paradigm.
 
 After struggling with these things for a while, I replaced `std::unique_ptr`
-with `std::shared_ptr`, reference counting can't make this code's performance
-worse, and made generic methods on the parent of Tokens to retrieve
-internal values. Yes, they throw when there is no such value. But it is still
+with `std::shared_ptr` (reference counting can't really make things worse here),
+and made generic methods on the parent of Tokens to retrieve
+internal values. Yes, they throw when there is no such value, but it is still
 better than having to convert stuff through ugly dynamic cast in this case.
 
 Ah, if only I could use Rust's enum. And don't tell me about `std::variant`,
@@ -79,7 +84,7 @@ of such things to use them in a comfortable way.
 Anyway, after Lexer I got to Parser that makes an [abstract syntax tree][3] from
 a stream of tokens. There are many types of parsers, I didn't bother
 finding out what I'm doing and just wrote it intuitively. It works, it has
-acceptable code, it has some tests, so it's good enough.
+acceptable code, it has some tests, it's good enough.
 
 In general, I've decided to separate the build process into 5+ stages:
 1. Lexing
@@ -99,7 +104,6 @@ pipeline:
 ```scheme
 (+ 1 2)
 ```
-
 
 ### Tokenized 👉
 ```
@@ -165,7 +169,7 @@ entry:
 }
 ```
 
-In the generated IR, function `f_add` is a builtin function "+",
+In the generated IR, function `f_add` is a builtin function `+`,
 `__anon_expr` comes from `@block` and `main` is main. The code, surprisingly,
 works -- I was able to build it and check that the return value of the
 program is three.
@@ -176,16 +180,18 @@ division and printing. And I should do it in such a way that avoids boilerplate
 code. This is the current challenge, as I need to figure out what abstractions
 to add. For example, there is `llvm::Value*`, but I can't just pass it around
 everywhere, because sometimes I need extra data related to it. If there is
-a function stored in the `Value`, to call it I should also
-know its arguments. This can be achieved if I pass `llvm::FunctionCallee`
-around, but then there are functons that could return both `Value` and
-`FuncitonCallee` if I try to do that, so I will have to separate them.
+a function stored in the `Value`, I should also know its arguments
+to be able to call it. This can be achieved if I pass `llvm::FunctionCallee`
+around, but in this case there would be functons that return both `Value` and
+`FuncitonCallee`, so I will have to separate them. I'm pretty sure I'll find
+what is the idiomatic way to use LLVM's API eventually, I guess there are even
+some helper types somewhere in the code.
 
 
 ## Future updates
 
 Within the current PR (#4) I want to reach some minimal language that works
-correctly on all correct and limited inputs. Maybe I will even skip `@define`
+correctly on all correct and limited inputs. I might even skip `@define`
 for now, it can be implemented later.
 
 There will be plenty of content for future posts:
