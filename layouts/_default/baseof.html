@@ -7,6 +7,8 @@
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
   </section>
-  {{ template "_internal/google_analytics.html" . }}
+  {{ if not $.Site.IsServer }}
+    <script defer data-domain="ftvkyo.me" src="https://plausible.io/js/plausible.js"></script>
+  {{ end }}
 </body>
 </html>

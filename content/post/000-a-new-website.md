@@ -31,9 +31,9 @@ implementing auto-deployment and stuff, I was too tired to continue.
 Well, and now, I have finally... just launched that existing template on
 Github Pages. Probably, I sould learn to build MVP first, haha.
 
-There's Google Analytics enabled, but feel free to block it if you want.
-Meanwhile, I'll look into other analytics providers. I only need it to see how
-well my posts are doing to improve them.
+There was Google Analytics enabled, but I've replaced it with
+[Plausible.io][pio]. I only need it to see how well my posts
+are doing to improve them.
 
 
 I have some projects in mind, and I'd like to share them with people.
@@ -42,3 +42,6 @@ geeky stuff, so I'll probably leave some more or less technical posts for
 this place.
 
 Thanks for reading, Bye!
+
+
+[pio]: https://plausible.io

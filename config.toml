@@ -56,8 +56,7 @@ googleAnalytics = "G-WPD5WV6B97"
   [privacy.disqus]
     disable = true
   [privacy.googleAnalytics]
-    anonymizeIP = true
-    respectDoNotTrack = true
+    disable = true
   [privacy.instagram]
     disable = true
   [privacy.twitter]
