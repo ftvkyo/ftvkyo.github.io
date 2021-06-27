@@ -3,9 +3,14 @@ languageCode = "en-us"
 title = "ftvkyo.me"
 theme = "cayman-hugo-theme"
 
+
 # Syntax highlighting
 pygmentsCodefences = true
 pygmentsStyle = "pygments"
+
+
+# Google Analytics
+googleAnalytics = "G-WPD5WV6B97"
 
 
 [params]
