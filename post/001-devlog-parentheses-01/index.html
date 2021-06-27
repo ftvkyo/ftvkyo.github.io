@@ -1,0 +1,101 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Hugo 0.84.1"><meta name=description content="Table of contents  Table of contents Pre-intro Intro The language What has been done already Current state  Input 👉 Tokenized 👉 Parsed 👉 Verified 👉 Transformed 👉 IR Emitted 👉   Future updates   Pre-intro This devlog is also an excercise for me, tell me if I can improve it. If I ever start making a serious game, I’d like it to have a devlog.
+Also, thanks to all advices from different people who suggested some better techniques of dealing with challenges I face in this project."><link rel=stylesheet href=https://www.ftvkyo.me/css/normalize.css><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel=stylesheet type=text/css><link rel=stylesheet href=https://www.ftvkyo.me/css/cayman.b5ca1d40a20be445a4776e155a940c82e2a507f9106bfc8737c25a3858acbcf5.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><title>Devlog of Parentheses #1: getting to LLVM IR emission | ftvkyo.me</title></head><body><section class=page-header><h1 class=project-name>ftvkyo.me</h1><h2 class=project-tagline>pretty much Andrei</h2><nav><a href=/ class=btn>Home</a>
+<a href=/post/ class=btn>Posts</a>
+<a href=/links/ class=btn>Links</a>
+<a href=/about/ class=btn>About me</a></nav></section><section class=main-content><h1>Devlog of Parentheses #1: getting to LLVM IR emission</h1><div><strong>Publish date: </strong>2021-06-27</div><div><strong>Tags:</strong>
+<a href=https://www.ftvkyo.me/tags/devlog/>Devlog</a>, <a href=https://www.ftvkyo.me/tags/parentheses/>Parentheses</a>, <a href=https://www.ftvkyo.me/tags/c++/>C++</a></div><h2 id=table-of-contents>Table of contents</h2><nav id=TableOfContents><ul><li><a href=#table-of-contents>Table of contents</a></li><li><a href=#pre-intro>Pre-intro</a></li><li><a href=#intro>Intro</a></li><li><a href=#the-language>The language</a></li><li><a href=#what-has-been-done-already>What has been done already</a></li><li><a href=#current-state>Current state</a><ul><li><a href=#input->Input 👉</a></li><li><a href=#tokenized->Tokenized 👉</a></li><li><a href=#parsed->Parsed 👉</a></li><li><a href=#verified->Verified 👉</a></li><li><a href=#transformed->Transformed 👉</a></li><li><a href=#ir-emitted->IR Emitted 👉</a></li></ul></li><li><a href=#future-updates>Future updates</a></li></ul></nav><h2 id=pre-intro>Pre-intro</h2><p>This devlog is also an excercise for me, tell me if I can improve it.
+If I ever start making a serious game, I&rsquo;d like it to have a devlog.</p><p>Also, thanks to all advices from different people who suggested some better
+techniques of dealing with challenges I face in this project.</p><h2 id=intro>Intro</h2><p>I&rsquo;ve recently got an idea to create a little programming language using
+<a href=https://en.wikipedia.org/wiki/LLVM>LLVM</a>. Knowing how to do it would also be very useful for my future career,
+so this idea went through the stupid-ideas-filter easily and
+I started writing code for it.</p><p>Fortunately, there is a good introduction into language creation for begginers
+<a href=https://releases.llvm.org/12.0.0/docs/tutorial/MyFirstLanguageFrontend/index.html>here</a>. It doesn&rsquo;t bother defining abstractions, aiming at providing
+very quick overview of things one would need to make a simple language.</p><p>However, this also means that when you try to implement something more
+complex than the most basic language, you&rsquo;d have to come up with these
+abstractions by yourself.</p><h2 id=the-language>The language</h2><p>For now, I left the language in a repository named <code>a</code> on <a href=https://github.com/ftvkyo>my github</a>.
+Finding a name for something is always difficult for me, so I might just end up
+using that &ldquo;Parentheses&rdquo; name I chose for this post.</p><p>The language is a Scheme-inspired C-like language. It has Scheme-like syntax
+while having C-like internals. Just imagine that you took C, replaced all
+its keywords with Scheme&rsquo;s special forms, used <a href=https://en.wikipedia.org/wiki/Polish_notation>prefix notation</a> in it
+and added some parentheses. Here, that&rsquo;s almost what I&rsquo;m doing.</p><p>The language does not have a runtime. It is expression-oriented, and
+I&rsquo;m yet to decide how to return big values from functions without leaking
+them. But this is one of the smallest problems.</p><h2 id=what-has-been-done-already>What has been done already</h2><p>As the tutorial says, I started with creation of a Lexer &ndash; a thing that
+converts a stream of characters into a stream of tokens. It was relatively easy.
+I&rsquo;m using C++, it&rsquo;s fun but also relatively painful. I think I&rsquo;d do things
+faster if I used Rust, but for now I&rsquo;ll stick to C++ and accept it as
+a challenge.</p><p>From the start, I wrote code in classes to avoid polluting my code with global
+variables. The classes I wrote are not entirely perfect, but are good enough.</p><p>I also made classes for Tokens, adding some inheritance here and there.
+I started doing polymorphism with <code>std::dynamic_cast&lt;SomeTokenType*>(token)</code>
+and I hated it. And tokens were stored in <code>std::unique_ptr</code>. I think
+my brain got polluted by Rust and I wanted to shove <code>std::move</code> here and there.</p><p>After struggling with these things for a while, I replaced <code>std::unique_ptr</code>
+with <code>std::shared_ptr</code>, reference counting can&rsquo;t make this code&rsquo;s performance
+worse, and made generic methods on the parent of Tokens to retrieve
+internal values. Yes, they throw when there is no such value. But it is still
+better than having to convert stuff through ugly dynamic cast in this case.</p><p>Ah, if only I could use Rust&rsquo;s enum. And don&rsquo;t tell me about <code>std::variant</code>,
+I&rsquo;ve tried it. You have to build your own abstractions on top
+of such things to use them in a comfortable way.</p><p>Anyway, after Lexer I got to Parser that makes an <a href=https://en.wikipedia.org/wiki/Abstract_syntax_tree>abstract syntax tree</a> from
+a stream of tokens. There are many types of parsers, I didn&rsquo;t bother
+finding out what I&rsquo;m doing and just wrote it intuitively. It works, it has
+acceptable code, it has some tests, so it&rsquo;s good enough.</p><p>In general, I&rsquo;ve decided to separate the build process into 5+ stages:</p><ol><li>Lexing</li><li>Parsing</li><li>Verification of the AST</li><li>Transformation of the AST (like macros)</li><li>Emission of LLVM IR</li><li>Whatever I need to do here to make an executable</li></ol><h2 id=current-state>Current state</h2><p>I&rsquo;ve got to some correct IR being generated! Let me illustrate current
+pipeline:</p><h3 id=input->Input 👉</h3><div class=highlight><pre style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:green>+ </span><span style=color:#666>1</span> <span style=color:#666>2</span>)
+</code></pre></div><h3 id=tokenized->Tokenized 👉</h3><pre><code>LB IDEN:+ INT:1 INT:2 RB
+
+where
+    LB: Left bracket
+    RB: Right bracket
+    IDEN: identifier
+    INT: integer
+</code></pre><h3 id=parsed->Parsed 👉</h3><pre><code>SpecialForm
+    |
+    +- Keyword:@block
+    |
+    +- FunctionCall
+        |
+        +- Identifier:+
+        |
+        +- Integer:1
+        |
+        +- Integer:2
+</code></pre><p><code>@block</code> keyword is added right before parsing. It allows for multiple top-level
+expressions in the input file. Basically, it&rsquo;s a special form similar to
+Rust&rsquo;s <code>{}</code>, it&rsquo;s value is equal to the value of the last expression in it.</p><h3 id=verified->Verified 👉</h3><pre><code>Checks that top level AST node is a special form and its
+first element is a keyword &quot;@block&quot;
+</code></pre><h3 id=transformed->Transformed 👉</h3><pre><code>No transformations applied yet
+</code></pre><h3 id=ir-emitted->IR Emitted 👉</h3><div class=highlight><pre style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-llvm data-lang=llvm><span style=color:#408080;font-style:italic>; ModuleID = &#39;a&#39;
+</span><span style=color:#408080;font-style:italic></span><span style=color:green;font-weight:700>source_filename</span> = <span style=color:#ba2121>&#34;a&#34;</span>
+
+<span style=color:green;font-weight:700>define</span> <span style=color:green;font-weight:700>i64</span> @f_add(<span style=color:green;font-weight:700>i64</span> <span style=color:#19177c>%arg0</span>, <span style=color:green;font-weight:700>i64</span> <span style=color:#19177c>%arg1</span>) {
+<span style=color:#a0a000>entry:</span>
+    %0 = <span style=color:green;font-weight:700>add</span> <span style=color:green;font-weight:700>i64</span> <span style=color:#19177c>%arg0</span>, <span style=color:#19177c>%arg1</span>
+    <span style=color:green;font-weight:700>ret</span> <span style=color:green;font-weight:700>i64</span> %0
+}
+
+<span style=color:green;font-weight:700>define</span> <span style=color:green;font-weight:700>i64</span> @__anon_expr() {
+<span style=color:#a0a000>entry:</span>
+    <span style=color:#19177c>%calltmp</span> = <span style=color:green;font-weight:700>call</span> <span style=color:green;font-weight:700>i64</span> @f_add(<span style=color:green;font-weight:700>i64</span> <span style=color:#666>1</span>, <span style=color:green;font-weight:700>i64</span> <span style=color:#666>2</span>)
+    <span style=color:green;font-weight:700>ret</span> <span style=color:green;font-weight:700>i64</span> <span style=color:#19177c>%calltmp</span>
+}
+
+<span style=color:green;font-weight:700>define</span> <span style=color:green;font-weight:700>i64</span> @main() {
+<span style=color:#a0a000>entry:</span>
+    %0 = <span style=color:green;font-weight:700>call</span> <span style=color:green;font-weight:700>i64</span> @__anon_expr()
+    <span style=color:green;font-weight:700>ret</span> <span style=color:green;font-weight:700>i64</span> %0
+}
+</code></pre></div><p>In the generated IR, function <code>f_add</code> is a builtin function &ldquo;+&rdquo;,
+<code>__anon_expr</code> comes from <code>@block</code> and <code>main</code> is main. The code, surprisingly,
+works &ndash; I was able to build it and check that the return value of the
+program is three.</p><p>I will make a short pause on this step. For the current PR (#4),
+I need to implement at least 4 extra functions &ndash; subtraction, multiplication,
+division and printing. And I should do it in such a way that avoids boilerplate
+code. This is the current challenge, as I need to figure out what abstractions
+to add. For example, there is <code>llvm::Value*</code>, but I can&rsquo;t just pass it around
+everywhere, because sometimes I need extra data related to it. If there is
+a function stored in the <code>Value</code>, to call it I should also
+know its arguments. This can be achieved if I pass <code>llvm::FunctionCallee</code>
+around, but then there are functons that could return both <code>Value</code> and
+<code>FuncitonCallee</code> if I try to do that, so I will have to separate them.</p><h2 id=future-updates>Future updates</h2><p>Within the current PR (#4) I want to reach some minimal language that works
+correctly on all correct and limited inputs. Maybe I will even skip <code>@define</code>
+for now, it can be implemented later.</p><p>There will be plenty of content for future posts:</p><ol><li>Making exceptions show what place in the code made them appear</li><li>Adding a type system</li><li>Adding anonymous functions</li><li>Adding closures</li><li>Restructuring the code in a way that is open for extension &ndash; recent code
+just doesn&rsquo;t scale well</li><li>Just sharing some interesting experience</li></ol><p>Please tell me if there is some particular thing you are interested in. It can
+be both something I&rsquo;ve already briefly mentioned or something that I&rsquo;ll
+get to working on only in the future. I also accept typo and style corrections.</p><p>Thanks for reading, Bye!</p><footer class=site-footer><span class=site-footer-credits><small>Made with <a href=https://gohugo.io/>Hugo</a>. Themed by <a href=https://github.com/zwbetz-gh/cayman-hugo-theme>Cayman</a>.</small></span></footer></section><script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD5WV6B97"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-WPD5WV6B97',{anonymize_ip:!1})}</script></body></html>
