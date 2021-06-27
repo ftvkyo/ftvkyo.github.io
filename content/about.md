@@ -77,8 +77,7 @@ for content consumption and Linux for anything IT-related.
 - Photos? `Lightroom Classic`
 - Music? `Spotify` and `Youtube`
 - Video and movies? Online or `VLC`
-- Image viewer? That's a weird question, but
-  [ImageGlass](https://github.com/d2phap/ImageGlass)
+- Image viewer? That's a weird question, but [ImageGlass][ig]
 - Distro? `ArchLinux`
 - DE? `sway` seems to be my equilibrium. Tried `xfce4`, `cinnamon`, `openbox`,
   also used `AwesomeWM` for a long time.
@@ -105,7 +104,7 @@ Japanese is on my Todo because it's fun.
 I've also spent some time learning Mandarin.
 Well, I've enjoyed drawing the characters.
 
-My hometown is [Chernogolovka](https://en.wikipedia.org/wiki/Chernogolovka).
+My hometown is [Chernogolovka][chg].
 
 I love both dogs (if they are not too small and not too big) and cats.
 They are cooler if they are shorthaired though.
@@ -116,7 +115,7 @@ to analyze past records. Many people self-reflect,
 I also do, and I try to do it in a systematic way,
 improving my analyzing skills along with a better understanding of the life.
 
-I don't know how much [nerdview](https://en.wikipedia.org/wiki/D%C3%A9formation_professionnelle)
+I don't know how much [nerdview][nw]
 I have, but I find it interesting to look at some things
 from _that_ point of view even in the daily life.
 I'd describe it as some kind of neutral 6th sense.
@@ -131,3 +130,8 @@ Another example is internal aversion towards "bloated" software,
 while the term itself is loosely defined, is also one of them.
 
 Go check out the [posts](/post/) :)
+
+
+[ig]: https://github.com/d2phap/ImageGlass
+[chg]: https://en.wikipedia.org/wiki/Chernogolovka
+[nw]: https://en.wikipedia.org/wiki/D%C3%A9formation_professionnelle
