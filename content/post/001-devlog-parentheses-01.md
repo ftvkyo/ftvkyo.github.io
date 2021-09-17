@@ -28,8 +28,8 @@ I've recently got an idea to create a little programming language using
 so this idea went through the stupid-ideas-filter easily and
 I started writing code for it.
 
-Fortunately, there is a good introduction into language creation for begginers
-[here][1]. It doesn't bother defining abstractions, aiming at providing
+Fortunately, there is a good introduction into language creation
+[for begginers][1]. It doesn't bother defining abstractions, aiming at providing
 very quick overview of things one would need to make a simple language.
 
 However, this also means that when you try to implement something more
@@ -207,7 +207,7 @@ Please tell me if there is some particular thing you are interested in. It can
 be both something I've already briefly mentioned or something that I'll
 get to working on only in the future. I also accept typo and style corrections.
 
-Thanks for reading, Bye!
+Thanks for reading, bye!
 
 
 [0]: https://en.wikipedia.org/wiki/LLVM
