@@ -1,0 +1,96 @@
+baseURL = "https://www.ftvkyo.me/"
+languageCode = "en-us"
+title = "ftvkyo.me"
+theme = "cayman-hugo-theme"
+
+
+# Syntax highlighting
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+
+
+[params]
+  project_name = "ftvkyo.me"
+  project_tagline = "pretty much Andrei"
+
+  dateFormat = "2006-01-02"
+
+  footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)."
+
+  body_link_color = "#1e6bff"
+
+
+# Enable raw HTML in the pages.
+[markup.goldmark.renderer]
+  unsafe = true
+
+
+[taxonomies]
+  tag = "tags"
+
+
+[menu]
+  [[menu.nav]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.nav]]
+    name = "Posts"
+    url = "/post/"
+    weight = 20
+  [[menu.nav]]
+    name = "Links"
+    url = "/links/"
+    weight = 30
+  [[menu.nav]]
+    name = "About me"
+    url = "/about/"
+    weight = 40
+
+
+# Setting up a russian translation
+
+[languages]
+  [languages.en]
+    weight = 1
+  [languages.ru]
+    weight = 2
+
+    [languages.ru.params]
+    project_tagline = "почти Андрей"
+    footer = "Сделано с использованием [Hugo](https://gohugo.io/). Тема [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)."
+
+    [languages.ru.menu]
+      [[languages.ru.menu.nav]]
+        name = "Главная"
+        url = "/ru/"
+        weight = 10
+      [[languages.ru.menu.nav]]
+        name = "Посты"
+        url = "/ru/post/"
+        weight = 20
+      [[languages.ru.menu.nav]]
+        name = "Ссылки"
+        url = "/ru/links/"
+        weight = 30
+      [[languages.ru.menu.nav]]
+        name = "Обо мне"
+        url = "/ru/about/"
+        weight = 40
+
+
+# Disabling all the unneeded stuff
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
