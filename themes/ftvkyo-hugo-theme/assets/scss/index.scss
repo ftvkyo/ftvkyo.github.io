@@ -1,0 +1,57 @@
+// * {
+//     outline: 0.1px dashed black;
+// }
+
+@import "colors";
+@import "header";
+@import "main";
+@import "footer";
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: calc(min(50em, 100%));
+
+    margin: 0 auto;
+    padding: 1em;
+
+    & > * {
+        box-sizing: border-box;
+        padding: 1em;
+    }
+
+    & > header {
+        padding: 2em 1em;
+    }
+
+    & main {
+        flex: 1;
+    }
+
+    & > footer {
+        border-top: 1px solid grey;
+    }
+
+    $shadow-blur: 10px;
+    box-shadow: 0 0 $shadow-blur grey;
+}
+
+a {
+    color: $c-link;
+
+    &:visited {
+        color: $c-link-visited;
+    }
+
+    &:hover {
+        color: $c-link-hover;
+    }
+}

@@ -1,7 +1,7 @@
 baseURL = "https://www.ftvkyo.me/"
 languageCode = "en-us"
 title = "ftvkyo.me"
-theme = "cayman-hugo-theme"
+theme = "ftvkyo-hugo-theme"
 
 
 # Syntax highlighting
@@ -15,9 +15,9 @@ pygmentsStyle = "pygments"
 
   dateFormat = "2006-01-02"
 
-  footer = "Made with [Hugo](https://gohugo.io/). Themed by [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)."
+  footer = "Made with [Hugo](https://gohugo.io/)."
 
-  body_link_color = "#1e6bff"
+  #body_link_color = "#1e6bff"
 
 
 # Enable raw HTML in the pages.
@@ -30,19 +30,19 @@ pygmentsStyle = "pygments"
 
 
 [menu]
-  [[menu.nav]]
+  [[menu.main]]
     name = "Home"
     url = "/"
     weight = 10
-  [[menu.nav]]
+  [[menu.main]]
     name = "Posts"
     url = "/post/"
     weight = 20
-  [[menu.nav]]
+  [[menu.main]]
     name = "Links"
     url = "/links/"
     weight = 30
-  [[menu.nav]]
+  [[menu.main]]
     name = "About me"
     url = "/about/"
     weight = 40
@@ -58,39 +58,22 @@ pygmentsStyle = "pygments"
 
     [languages.ru.params]
     project_tagline = "почти Андрей"
-    footer = "Сделано с использованием [Hugo](https://gohugo.io/). Тема [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)."
+    footer = "Сделано с использованием [Hugo](https://gohugo.io/)."
 
     [languages.ru.menu]
-      [[languages.ru.menu.nav]]
+      [[languages.ru.menu.main]]
         name = "Главная"
         url = "/ru/"
         weight = 10
-      [[languages.ru.menu.nav]]
+      [[languages.ru.menu.main]]
         name = "Посты"
         url = "/ru/post/"
         weight = 20
-      [[languages.ru.menu.nav]]
+      [[languages.ru.menu.main]]
         name = "Ссылки"
         url = "/ru/links/"
         weight = 30
-      [[languages.ru.menu.nav]]
+      [[languages.ru.menu.main]]
         name = "Обо мне"
         url = "/ru/about/"
         weight = 40
-
-
-# Disabling all the unneeded stuff
-
-[privacy]
-  [privacy.disqus]
-    disable = true
-  [privacy.googleAnalytics]
-    disable = true
-  [privacy.instagram]
-    disable = true
-  [privacy.twitter]
-    disable = true
-  [privacy.vimeo]
-    disable = true
-  [privacy.youtube]
-    disable = true
