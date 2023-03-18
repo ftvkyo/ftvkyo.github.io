@@ -9,6 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # Used by hugo for better sass (e.g. @use)
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+
       - uses: actions/checkout@v2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
