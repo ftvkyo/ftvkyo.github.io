@@ -7,8 +7,8 @@
 @use "main";
 @use "footer";
 
-body {
-    font-family: system-ui, sans-serif;
+html {
+    background-color: c.$bg-bg;
 }
 
 body {
@@ -17,31 +17,30 @@ body {
     align-items: stretch;
 
     box-sizing: border-box;
-    min-height: 100vh;
-    width: calc(min(50em, 100%));
+    min-height: 100vh; // Don't be shorter than the viewport
+    max-width: 50em; // Max out the width at 50em
 
-    margin: 0 auto;
-    padding: 1em;
+    margin: 0 auto; // Center the body
+    padding: 1em; // Leave some space as if the body is a sheet of paper
 
     & > * {
-        box-sizing: border-box;
-        padding: 1em;
-    }
-
-    & > header {
-        padding: 2em 1em;
+        padding: 1em; // Section contents should be padded even further
     }
 
     & main {
-        flex: 1;
+        flex: 1; // Grow the main section to fill the remaining space
     }
 
-    & > footer {
-        border-top: 1px solid grey;
-    }
+    // Fonts
 
-    $shadow-blur: 10px;
-    box-shadow: 0 0 $shadow-blur grey;
+    font-family: system-ui, sans-serif;
+
+    // Colors
+
+    color: c.$text;
+    background-color: c.$bg;
+
+    box-shadow: 0 0 10px c.$shadow;
 }
 
 a {
