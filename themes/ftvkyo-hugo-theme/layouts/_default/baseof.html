@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        {{ $scssOptions := (dict "transpiler" "dartsass") }}
         {{ $scss := resources.Get "scss/index.scss" }}
-        {{ $style := $scss | resources.ToCSS }}
+        {{ $style := $scss | resources.ToCSS $scssOptions }}
         <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 
         {{ $title := print .Site.Title " | " .Title }}

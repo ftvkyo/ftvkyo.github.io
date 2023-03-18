@@ -1,4 +1,4 @@
-@import "colors";
+@use "colors" as c;
 
 header {
     display: flex;
@@ -8,14 +8,14 @@ header {
 
     background-image: linear-gradient(45deg, #e66465, #9198e5);
 
+    color: c.$h-text;
+
     & h1 {
         margin: 0;
 
         padding: 0.25em 0.5em;
         border-radius: 0.3em;
         backdrop-filter: brightness(1.25);
-
-        color: $c-header-title;
     }
 
     & nav {
@@ -29,6 +29,13 @@ header {
         }
 
         & a {
+            @include c.link(
+                c.$h-link,
+                c.$h-link-visited,
+                c.$h-link-hover,
+                c.$h-link-active,
+            );
+
             padding: 0.5em 1em;
 
             border-radius: 0.3em;
@@ -36,15 +43,12 @@ header {
 
             text-decoration: none;
 
-            color: $c-navlink;
-
-            &:visited {
-                color: $c-navlink-visited;
+            &:hover {
+                backdrop-filter: brightness(0.5);
             }
 
-            &:hover {
-                color: $c-navlink-hover;
-                backdrop-filter: brightness(0.5);
+            &:active {
+                backdrop-filter: brightness(0.25);
             }
         }
     }

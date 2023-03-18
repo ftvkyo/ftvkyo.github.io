@@ -1,0 +1,26 @@
+// Colors used in the theme
+
+@forward "colors-header" as h-*;
+@forward "colors-footer" as f-*;
+
+$text: black;
+$link: blue;
+$link-visited: blue;
+$link-hover: darkblue;
+$link-active: darkblue;
+
+@mixin link($link, $visited, $hover, $active) {
+    color: $link;
+
+    &:visited {
+        color: $visited;
+    }
+
+    &:hover {
+        color: $hover;
+    }
+
+    &:active {
+        color: $active;
+    }
+}

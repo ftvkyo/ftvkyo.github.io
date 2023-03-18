@@ -2,10 +2,10 @@
 //     outline: 0.1px dashed black;
 // }
 
-@import "colors";
-@import "header";
-@import "main";
-@import "footer";
+@use "colors" as c;
+@use "header";
+@use "main";
+@use "footer";
 
 body {
     font-family: system-ui, sans-serif;
@@ -45,13 +45,10 @@ body {
 }
 
 a {
-    color: $c-link;
-
-    &:visited {
-        color: $c-link-visited;
-    }
-
-    &:hover {
-        color: $c-link-hover;
-    }
+    @include c.link(
+        c.$link,
+        c.$link-visited,
+        c.$link-hover,
+        c.$link-active,
+    );
 }
