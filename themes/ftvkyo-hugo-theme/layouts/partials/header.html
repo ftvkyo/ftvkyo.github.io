@@ -1,5 +1,8 @@
 <header>
-    <h1 class="title">{{ .Site.Title }}</h1>
+    <div class="branding">
+        <div class="title">{{ .Site.Title }}</div>
+        <div class="tagline">{{ .Site.Params.tagline }}</div>
+    </div>
     <nav>
         {{ range .Site.Menus.main }}
             <a href="{{ .URL }}">

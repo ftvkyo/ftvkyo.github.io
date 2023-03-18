@@ -1,6 +1,6 @@
 baseURL = "https://www.ftvkyo.me/"
 languageCode = "en-us"
-title = "ftvkyo.me"
+title = "ftvkyo"
 theme = "ftvkyo-hugo-theme"
 
 
@@ -10,12 +10,10 @@ pygmentsStyle = "pygments"
 
 
 [params]
-  project_name = "ftvkyo.me"
-  project_tagline = "pretty much Andrei"
+  tagline = "pretty much Andrei"
+  footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/about/)."
 
   dateFormat = "2006-01-02"
-
-  footer = "Made with [Hugo](https://gohugo.io/)."
 
   #body_link_color = "#1e6bff"
 
@@ -57,8 +55,8 @@ pygmentsStyle = "pygments"
     weight = 2
 
     [languages.ru.params]
-    project_tagline = "почти Андрей"
-    footer = "Сделано с использованием [Hugo](https://gohugo.io/)."
+      tagline = "почти Андрей"
+      footer = "Сделано с использованием [Hugo](https://gohugo.io/)."
 
     [languages.ru.menu]
       [[languages.ru.menu.main]]
