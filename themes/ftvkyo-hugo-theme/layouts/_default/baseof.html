@@ -14,6 +14,7 @@
         <title>{{ $title }}</title>
     </head>
     <body>
+        {{- partial "options.html" . -}}
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}
