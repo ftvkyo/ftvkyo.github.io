@@ -1,6 +1,5 @@
 ---
 title: "Links"
-date: 2021-01-16T22:13:44+08:00
 ---
 
 - Github: [ftvkyo](https://github.com/ftvkyo).

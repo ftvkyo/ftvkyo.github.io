@@ -1,0 +1,38 @@
+@use "colors" as c;
+
+$rounding: 5px;
+$padding: 0.25em;
+
+.options {
+    position: fixed;
+    top: -$rounding;
+    left: -$rounding;
+
+    z-index: 1;
+
+    padding: calc($padding + $rounding) $padding $padding calc($padding + $rounding);
+    border-radius: $rounding;
+
+    background-color: c.$bg;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+
+    box-shadow: 0 0 5px c.$shadow;
+
+    & > button {
+        padding: 0em;
+        width: 2em;
+        height: 2em;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

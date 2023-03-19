@@ -1,0 +1,17 @@
+{{ if .Date }}
+    {{ $dateSystem := .Date.Format "2006-01-02" }}
+    {{ $dateReadable := .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}
+    <p class="metadata date">
+        Date: <time datetime="{{ $dateSystem }}">{{ $dateReadable }}</time>
+    </p>
+{{ end }}
+
+{{ with .Params.tags }}
+    <p class="metadata tags">
+        Tags:
+        {{ range . }}
+            {{ $href := print (absURL "tags/") (urlize .) }}
+            <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+    </p>
+{{ end }}

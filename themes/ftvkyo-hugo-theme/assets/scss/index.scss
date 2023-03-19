@@ -1,0 +1,68 @@
+// * {
+//     outline: 0.1px dashed black;
+// }
+
+@use "colors" as c;
+@use "header";
+@use "main";
+@use "footer";
+@use "options";
+
+html {
+    background-color: c.$bg-bg;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    box-sizing: border-box;
+    min-height: 100vh; // Don't be shorter than the viewport
+    max-width: 50em; // Max out the width at 50em
+
+    margin: 0 auto; // Center the body
+    padding: 1em; // Leave some space as if the body is a sheet of paper
+
+    & > * {
+        padding: 1em; // Section contents should be padded even further
+    }
+
+    & main {
+        flex: 1; // Grow the main section to fill the remaining space
+    }
+
+    // Fonts
+
+    font-family: system-ui, sans-serif;
+
+    // Colors
+
+    color: c.$text;
+    background-color: c.$bg;
+
+    box-shadow: 0 0 10px c.$shadow;
+}
+
+a {
+    @include c.link(
+        c.$link,
+        c.$link-visited,
+        c.$link-hover,
+        c.$link-active,
+    );
+}
+
+pre {
+    // Scroll the codeblocks
+    overflow-x: auto;
+
+    // Indicate that there's more code by adding a padding and an inset shadow
+    padding: 1em;
+    box-shadow: inset 0 0 5px c.$shadow;
+}
+
+.center-self {
+    width: min-content;
+    margin: 0 auto;
+}
