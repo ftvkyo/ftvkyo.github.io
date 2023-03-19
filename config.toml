@@ -56,7 +56,7 @@ pygmentsStyle = "pygments"
 
     [languages.ru.params]
       tagline = "почти Андрей"
-      footer = "Сделано с использованием [Hugo](https://gohugo.io/)."
+      footer = "Сделано с использованием [Hugo](https://gohugo.io/). Содержание и стили от [меня](/ru/about/)."
 
     [languages.ru.menu]
       [[languages.ru.menu.main]]
