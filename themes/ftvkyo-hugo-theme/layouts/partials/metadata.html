@@ -1,9 +1,17 @@
-{{ $dateTime := .PublishDate.Format "2006-01-02" }}
-{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-<time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+{{ if .Date }}
+    {{ $dateSystem := .Date.Format "2006-01-02" }}
+    {{ $dateReadable := .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}
+    <p class="metadata date">
+        Date: <time datetime="{{ $dateSystem }}">{{ $dateReadable }}</time>
+    </p>
+{{ end }}
+
 {{ with .Params.tags }}
-    {{ range . }}
-        {{ $href := print (absURL "tags/") (urlize .) }}
-        <a href="{{ $href }}">{{ . }}</a>
-    {{ end }}
+    <p class="metadata tags">
+        Tags:
+        {{ range . }}
+            {{ $href := print (absURL "tags/") (urlize .) }}
+            <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+    </p>
 {{ end }}

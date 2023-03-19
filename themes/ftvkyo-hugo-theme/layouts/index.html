@@ -1,4 +1,6 @@
 {{ define "main" }}
-    <h2>{{ .Title }}</h2>
+    {{ if .Title }}
+        <h1>{{ .Title }}</h1>
+    {{ end }}
     {{ .Content }}
 {{ end }}

@@ -1,6 +1,5 @@
 ---
 title: "Ссылки"
-date: 2022-10-21T11:00:00+01:00
 ---
 
 - Github: [ftvkyo](https://github.com/ftvkyo).

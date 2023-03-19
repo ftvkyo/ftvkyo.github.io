@@ -1,6 +1,5 @@
 ---
 title: "About me"
-date: 2021-01-16T22:14:11+08:00
 ---
 
 My name is Andrei (nickname `ftvkyo` or `ftvkyo2011`) and this is my personal website.

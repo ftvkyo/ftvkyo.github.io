@@ -1,5 +1,4 @@
 ---
-title: Главная страница
 ---
 
 <div class="center-self">
