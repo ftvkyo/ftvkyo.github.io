@@ -1,26 +1,28 @@
 <div class="options">
     <script async src="/js/options.js"></script>
 
-    <button onclick="toggleOptions();">
-        <img src="/img/options.svg" alt="Options">
-    </button>
+    <details>
+        <summary>
+            <img src="/img/options.svg" alt="Options">
+        </summary>
 
-    <label id="language" hidden>
-        Language:
-        <select name="language" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="ru">Русский</option>
-        </select>
-    </label>
+        <label>
+            Language:
+            <select name="language" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+            </select>
+        </label>
 
-    <!-- To be implemented -->
-    <label hidden>
-        Theme:
-        <select onchange="">
-            <option value="system">System</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="light-hc">Light (High Contrast)</option>
-        </select>
-    </label>
+        <!-- To be implemented -->
+        <label hidden>
+            Theme:
+            <select onchange="">
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="light-hc">Light (High Contrast)</option>
+            </select>
+        </label>
+    </details>
 </div>

@@ -1,11 +1,5 @@
 "use strict";
 
-// Toggle the options menu
-function toggleOptions() {
-    let languageMenu = document.querySelector(".options label#language");
-    languageMenu.hidden = !languageMenu.hidden;
-}
-
 // Change the language
 function changeLanguage(language) {
     if (language === "en") {
