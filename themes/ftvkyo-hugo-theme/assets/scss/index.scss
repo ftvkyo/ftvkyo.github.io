@@ -53,13 +53,29 @@ a {
     );
 }
 
+// Codeblocks
 pre {
-    // Scroll the codeblocks
+    // Scroll the codeblocks to the right
     overflow-x: auto;
 
-    // Indicate that there's more code by adding a padding and an inset shadow
+    // Help the user see where to scroll and that there might be more code to the right
     padding: 1em;
     box-shadow: inset 0 0 5px c.$shadow;
+}
+
+// Inline code
+p code {
+    // Make the codeblocks actually the size of surrounding text
+    font-size: 1.1em;
+
+    color: c.$code;
+    background-color: c.$code-bg;
+
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+
+    // Allow breaking words because it's better than overflowing.
+    word-wrap: break-word;
 }
 
 .center-self {
