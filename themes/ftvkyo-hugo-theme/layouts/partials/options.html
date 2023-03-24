@@ -1,4 +1,4 @@
-<div class="options">
+<div id="options">
     <script async src="/js/options.js"></script>
 
     <details>
@@ -6,13 +6,18 @@
             <img src="/img/options.svg" alt="Options">
         </summary>
 
-        <label>
+        <div id="options-language">
             Language:
-            <select name="language" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="ru">Русский</option>
-            </select>
-        </label>
+
+            {{ $currentLanguage := .Site.Language }}
+            {{ range .Site.Languages }}
+                {{ $class := "" }}
+                {{ if eq . $currentLanguage }}
+                    {{ $class = "active" }}
+                {{ end }}
+                <a href="/{{ . }}" class="{{ $class }}">[{{ . }}]</a>
+            {{ end }}
+        </div>
 
         <!-- To be implemented -->
         <label hidden>
