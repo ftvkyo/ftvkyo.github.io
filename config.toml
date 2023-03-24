@@ -37,8 +37,8 @@ pygmentsStyle = "pygments"
     url = "/post/"
     weight = 20
   [[menu.main]]
-    name = "Links"
-    url = "/links/"
+    name = "Projects"
+    url = "/projects/"
     weight = 30
   [[menu.main]]
     name = "About me"
@@ -68,8 +68,8 @@ pygmentsStyle = "pygments"
         url = "/ru/post/"
         weight = 20
       [[languages.ru.menu.main]]
-        name = "Ссылки"
-        url = "/ru/links/"
+        name = "Проекты"
+        url = "/ru/projects/"
         weight = 30
       [[languages.ru.menu.main]]
         name = "Обо мне"
