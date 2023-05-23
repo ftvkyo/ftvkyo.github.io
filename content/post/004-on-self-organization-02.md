@@ -2,6 +2,7 @@
 title: "On self-organization, part 2: But how?"
 date: 2022-12-23T17:00:00+00:00
 tags: [Psychological, Productivity, Self-organization]
+archived: true
 ---
 
 ![An arrow with a loop in the middle, representing "reintroduction".](/img/004/reintroduction.svg)

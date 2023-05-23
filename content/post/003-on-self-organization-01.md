@@ -2,6 +2,7 @@
 title: "On self-organization, part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
 tags: [Psychological, Productivity, Self-organization]
+archived: true
 ---
 
 ![Checkbox "Fix all problems"](/img/003/fix-all-problems.svg)

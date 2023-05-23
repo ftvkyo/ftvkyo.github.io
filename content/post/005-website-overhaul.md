@@ -2,6 +2,7 @@
 title: "Website overhaul"
 date: 2023-03-19T14:00:00Z
 tags: [Meta]
+archived: true
 ---
 
 I have done a major overhaul of the website.

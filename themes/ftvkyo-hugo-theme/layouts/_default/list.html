@@ -3,12 +3,28 @@
     {{ .Content }}
     <ul>
         {{ range .Pages.ByPublishDate.Reverse }}
-        <li>
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-            ({{ .PublishDate.Format $.Site.Params.dateFormat }})
-        </li>
+        {{ if not (isset .Params "archived") }}
+            <li>
+                <a href="{{ .Permalink }}">
+                    {{ .Title }}
+                </a>
+                ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+            </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+
+    <h2>{{ .Params.textArchived }}</h2>
+    <ul>
+        {{ range .Pages.ByPublishDate }}
+            {{ if isset .Params "archived" }}
+                <li>
+                    <a href="{{ .Permalink }}">
+                        {{ .Title }}
+                    </a>
+                    ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+                </li>
+            {{ end }}
         {{ end }}
     </ul>
 {{ end }}

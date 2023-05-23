@@ -2,6 +2,7 @@
 title: "Parentheses devlog #1: getting to LLVM IR emission"
 date: 2021-06-27T21:00:00+08:00
 tags: [Devlog, Parentheses, C++]
+archived: true
 ---
 
 

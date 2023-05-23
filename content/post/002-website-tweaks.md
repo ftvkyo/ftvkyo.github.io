@@ -2,6 +2,7 @@
 title: "Website tweaks"
 date: 2021-09-17T13:00:00+01:00
 tags: [Meta]
+archived: true
 ---
 
 I have done some minor optimization of the website in order to improve its
