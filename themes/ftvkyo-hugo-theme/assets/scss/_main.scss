@@ -1,6 +1,10 @@
 @use "colors" as c;
 
 main {
+    svg, img[src$=".svg"] {
+        filter: drop-shadow(0 0 1em black);
+    }
+
     .metadata {
         display: grid;
         grid-template-columns: min-content 1fr;
