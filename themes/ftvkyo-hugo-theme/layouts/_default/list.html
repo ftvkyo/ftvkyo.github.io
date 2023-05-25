@@ -16,7 +16,7 @@
 
     <h2>{{ .Params.textArchived }}</h2>
     <ul>
-        {{ range .Pages.ByPublishDate }}
+        {{ range .Pages.ByPublishDate.Reverse }}
             {{ if isset .Params "archived" }}
                 <li>
                     <a href="{{ .Permalink }}">
