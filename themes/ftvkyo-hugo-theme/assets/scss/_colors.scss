@@ -20,6 +20,8 @@ $link-muted: grey;
 
 $shadow: grey;
 
+$tag-gradient: linear-gradient(45deg, #e5a5a5, #b5b9e2);
+
 @mixin link($link, $visited, $hover, $active) {
     color: $link;
 
