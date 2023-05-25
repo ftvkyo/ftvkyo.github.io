@@ -5,7 +5,7 @@
         {{ range .Pages.ByPublishDate.Reverse }}
         {{ if not (isset .Params "archived") }}
             <li>
-                <a href="{{ .Permalink }}">
+                <a href="{{ .RelPermalink }}">
                     {{ .Title }}
                 </a>
                 ({{ .PublishDate.Format $.Site.Params.dateFormat }})
@@ -19,7 +19,7 @@
         {{ range .Pages.ByPublishDate.Reverse }}
             {{ if isset .Params "archived" }}
                 <li>
-                    <a href="{{ .Permalink }}">
+                    <a href="{{ .RelPermalink }}">
                         {{ .Title }}
                     </a>
                     ({{ .PublishDate.Format $.Site.Params.dateFormat }})
