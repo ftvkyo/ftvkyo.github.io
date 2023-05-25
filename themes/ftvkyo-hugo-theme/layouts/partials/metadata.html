@@ -18,7 +18,7 @@
         <div class="value">
             <div class="tags">
                 {{ range . }}
-                    {{ $href := print (absURL "tags/") (urlize .) }}
+                    {{ $href := print (relLangURL "tags/") (urlize .) }}
                     <a href="{{ $href }}">{{ . }}</a>
                 {{ end }}
             </div>
