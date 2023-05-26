@@ -2,7 +2,9 @@
     <a href="{{ .RelPermalink }}">
         {{ .Title }}
     </a>
-    ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+    {{ if .PublishDate }}
+        ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+    {{ end }}
     {{ if .Params.description }}
         <div class="description compact">
             {{ .Params.description }}

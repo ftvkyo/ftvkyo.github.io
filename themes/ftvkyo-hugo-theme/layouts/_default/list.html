@@ -1,7 +1,7 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    <ul class="posts">
+    <ul class="links">
         {{ range .Pages.ByPublishDate.Reverse }}
             {{ if not .Params.archived }}
                 {{ partial "list-item.html" . }}
@@ -10,7 +10,7 @@
     </ul>
 
     <h2>{{ .Params.textArchived }}</h2>
-    <ul class="posts">
+    <ul class="links">
         {{ range .Pages.ByPublishDate.Reverse }}
             {{ if .Params.archived }}
                 {{ partial "list-item.html" . }}

@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <h1>Posts with tag "{{ .Title }}"</h1>
+    {{ .Content }}
+    <ul class="links">
+        {{ range .Pages.ByPublishDate.Reverse }}
+            {{ partial "list-item.html" . }}
+        {{ end }}
+    </ul>
+{{ end }}
