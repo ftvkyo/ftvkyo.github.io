@@ -3,6 +3,9 @@ title: "Parentheses devlog #1: getting to LLVM IR emission"
 date: 2021-06-27T21:00:00+08:00
 tags: [Devlog, Parentheses, C++]
 archived: true
+description: >
+  Trying to make a simple programming language using LLVM.
+  I want it to have Scheme-like syntax and C-like internals.
 ---
 
 

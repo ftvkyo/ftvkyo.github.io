@@ -3,6 +3,8 @@ title: "On self-organization, part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
 tags: [Psychological, Productivity, Self-organization]
 archived: true
+description: >
+  Exploring methods of personal organization and why I would want to do that.
 ---
 
 ![Checkbox "Fix all problems"](/img/003/fix-all-problems.svg)
@@ -40,11 +42,11 @@ I am already quite far from where I started, I have passed a few milestones alon
 I'll reiterate on the problem in a more granular way, specifying it in terms of **circumstances** and what **changes** I want to see, so we can analyze how the strategies I employ can help with that.
 
 1. I do not like how my **attention** can be **dispersed**.
-   Instead, I want to feel like I am not wasting my time.
-   This doesn't just apply to activities, but also life in general.
-   I don't want to feel like *time is slipping through my fingers*.
+  Instead, I want to feel like I am not wasting my time.
+  This doesn't just apply to activities, but also life in general.
+  I don't want to feel like *time is slipping through my fingers*.
 2. I do not like my **approach to learning things** because of how **random and disorganized** it is.
-   I want to improve my *focus* on the process, improve *knowledge retention* and make the activity more *systemized*.
+  I want to improve my *focus* on the process, improve *knowledge retention* and make the activity more *systemized*.
 
 ![Kind of a changes finite state machine](/img/003/changes.svg)
 
@@ -193,7 +195,7 @@ Because of this, there are three main parameters I am trying to optimize my note
 
 1. How easy it is to track events happening around me, progress in my activities and personal growth and well-being;
 2. How efficient is taking (and using) notes when learning various things.
-   This is something to do with knowledge retention and other benefits of having a personal knowledge base;
+  This is something to do with knowledge retention and other benefits of having a personal knowledge base;
 3. How simple it is to draw conclusions from my notes and possibly make whole "essays" out of them.
 
 ![Cloud moving away and unveiling the sun at a constant speed](/img/003/consistent-progress.svg)
@@ -228,10 +230,10 @@ However, that doesn't mean that these boundaries can't be redefined.
 I am willing to adjust the "rules" if that makes the situation better, I just want them to be clear.
 
 1. Independently of the synchronization medium used and the ability of said medium to provide access to older versions of information, accessing these old revisions should not be a part of the work process[^vc].
-   Why?
-   Because it will make things too complicated otherwise.
+  Why?
+  Because it will make things too complicated otherwise.
 2. There should be separate sections for notes, each conforming to one of the parameters mentioned earlier.
-   This way, I can optimize the sections separately.
+  This way, I can optimize the sections separately.
 3. There should be a way to link information together within and outside of said sections.
 
 [^vc]: Here I'm talking about things like Git and Obsidian Sync.
