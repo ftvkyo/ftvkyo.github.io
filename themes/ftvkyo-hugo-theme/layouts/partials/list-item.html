@@ -1,0 +1,11 @@
+<li>
+    <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+    </a>
+    ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+    {{ if .Params.description }}
+        <div class="description compact">
+            {{ .Params.description }}
+        </div>
+    {{ end }}
+</li>

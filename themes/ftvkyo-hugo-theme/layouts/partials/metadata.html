@@ -25,3 +25,9 @@
         </div>
     {{ end }}
 </div>
+
+{{ if .Params.description }}
+    <p class="description full">
+        {{ .Params.description }}
+    </p>
+{{ end }}

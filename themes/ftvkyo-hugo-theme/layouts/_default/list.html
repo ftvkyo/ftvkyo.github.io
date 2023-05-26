@@ -1,29 +1,19 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    <ul>
+    <ul class="posts">
         {{ range .Pages.ByPublishDate.Reverse }}
-        {{ if not (isset .Params "archived") }}
-            <li>
-                <a href="{{ .RelPermalink }}">
-                    {{ .Title }}
-                </a>
-                ({{ .PublishDate.Format $.Site.Params.dateFormat }})
-            </li>
-        {{ end }}
+            {{ if not .Params.archived }}
+                {{ partial "list-item.html" . }}
+            {{ end }}
         {{ end }}
     </ul>
 
     <h2>{{ .Params.textArchived }}</h2>
-    <ul>
+    <ul class="posts">
         {{ range .Pages.ByPublishDate.Reverse }}
-            {{ if isset .Params "archived" }}
-                <li>
-                    <a href="{{ .RelPermalink }}">
-                        {{ .Title }}
-                    </a>
-                    ({{ .PublishDate.Format $.Site.Params.dateFormat }})
-                </li>
+            {{ if .Params.archived }}
+                {{ partial "list-item.html" . }}
             {{ end }}
         {{ end }}
     </ul>

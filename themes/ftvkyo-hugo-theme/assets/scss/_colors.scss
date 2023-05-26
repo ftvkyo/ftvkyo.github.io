@@ -7,6 +7,7 @@
 $bg-bg: lightgrey;
 
 $text: black;
+$text-muted: grey;
 $bg: white;
 
 $code: black;
@@ -22,7 +23,7 @@ $warning: red;
 
 $shadow: grey;
 
-$tag-gradient: linear-gradient(45deg, #e5a5a5, #b5b9e2);
+$tag-gradient: linear-gradient(to bottom, #eeeeee, #eddada);
 
 @mixin link($link, $visited, $hover, $active) {
     color: $link;
