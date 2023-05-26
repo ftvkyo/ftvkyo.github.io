@@ -2,6 +2,8 @@
 title: "Keikakuban devlog #1: pain and suffering from recent tech"
 date: 2023-05-25T19:48:00+01:00
 tags: [Devlog, Keikakuban, TS]
+description: >
+  Adventures with Yarn, TypeORM, Typia, Next.js, tRPC and associated pain.
 ---
 
 This is a recollection of an interesting experience that I got myself into.
