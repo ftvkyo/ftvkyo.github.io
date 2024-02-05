@@ -1,16 +1,4 @@
 <header>
-    <div class="options">
-        <div class="language">
-            {{ $currentLanguage := .Site.Language }}
-            {{ range .Site.Languages }}
-                {{ $class := "" }}
-                {{ if eq . $currentLanguage }}
-                    {{ $class = "active" }}
-                {{ end }}
-                <a href="/{{ . }}" class="{{ $class }}">[{{ . }}]</a>
-            {{ end }}
-        </div>
-    </div>
     <div class="branding">
         <div class="title">{{ .Site.Title }}</div>
         <div class="tagline">{{ .Site.Params.tagline }}</div>

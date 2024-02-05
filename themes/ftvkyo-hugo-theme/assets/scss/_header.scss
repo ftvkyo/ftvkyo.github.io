@@ -23,13 +23,6 @@ header {
         border-radius: 2px;
 
         background: c.$bg-bg;
-
-        .language {
-            & a.active {
-                color: c.$link-muted;
-                pointer-events: none;
-            }
-        }
     }
 
     & .branding {
