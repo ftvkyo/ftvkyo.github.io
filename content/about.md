@@ -2,55 +2,60 @@
 title: "About me"
 ---
 
-Hi, it's `ftvkyo` (originally `ftvkyo2011`).
-This is my personal website.
+- My name is Andrei Stepanenko
+- I speak English and Russian
+- I am a Software Engineer
+- I have some personal [projects](/project/)
 
-I am a software developer.
-I like it enough to keep it both as a job and as one of my hobbies.
+## Work experience
 
-In terms of approach, I like to focus on system design, reliability and user experience.
-At the same time, I am not afraid to make a choice and overcome perfectionism when it's appropriate.
+### Spectral Compute, United Kingdom
 
-As for the fields of interest in software development, there's actually a lot of them.
-I don't mind frontend development (it's so cool to see things come alive), I like backend for how well structured it can be, I am inspired by gamedev and AI, and I am also interested in cloud and embedded systems.
+- *Software Engineer, August 2021 - present*
+- C++, CUDA, CMake, TypeScript (React, Angular), Less, Node.js, PostgreSQL
+- Focused on GPGPU and Full-stack projects
+- Highly autonomous role — responsible for establishing the requirements for the tasks, carefully planning and structuring my work
+- Supporting newcomers, sharing and organizing knowledge
 
-I would be happy to create a game one day that would evoke the same feelings and emotions as the games I love so much (Outer Wilds, Elden Ring, Factorio, Minecraft, etc.).
-I spend a lot of time learning something new and practicing my skills to achieve things I want to achieve.
+### Dreams AI, Hong Kong
 
-Find my project hub here: [projects][projects].
+- *Software Engineer, October 2019 - July 2021*
+- TypeScript, PostgreSQL, Redis, GraphQL, k8s, Rust, ELK stack, Python, Selenium
+- Focused on Frontend and on high-efficiency data processing
+- Being a liaison between the developers and the clients, greatly improving communication
+- Designing systems on a high level, and working on them on the low level
 
-[projects]: /projects/
+### 1C Juniors Developer Centre, Moscow
 
+- *C++ Software Engineer, June 2019 - September 2019*
+- C++, Java, JNI, CMake, WinAPI, syscalls
+- Focused on establishing a steady development pace and high maintainability of the resulting project
+- Collecting and organizing research on project-related topics for them to be available to the rest of the company
 
-## Other hobbies
+### Innovations Laboratory, Moscow Institute of Physics and Technology
 
-The second place for the biggest hobby is shared between photography and reading fiction.
-I like taking photos because they are a great way to capture the moment and remember it later.
-I like reading because it's a great way to live through somebody's experiences and get inspired.
-Also, I am working on my own writing, and reading is a great way to become a better word weaver.
+- *Technician, December 2018 - August 2019*
+- VMWare ESXi, pfSense, Samba, Clonezilla
+- Maintaining multiple servers and 100+ PCs
 
-I also like origami and rock climbing, but I don't do them as often as I would like to.
-Same applies to drawing.
+## Primary interests
 
-Find a selection of my photos here: [ポテト camera][photos].
-
-[photos]: https://photos.app.goo.gl/H7bp4sdnDGMxJViMA
-
-
-## Me
-
-Ha ha.
-I'll list only a few neutral things -- because your opinion about me should not
-be formed based on all the cool positive things I could tell you here :D
-
-My native language is Russian, I also have a good level of English;
-nevertheless, I still miss lots of articles and often use Russian grammar.
-I am also learning Japanese because it's fun.
-
-I often take photos of some things and write down some other things
-because I want to remember them when I grow old. I also like
-to analyze past records. Many people self-reflect,
-I also do, and I try to do it in a systematic way,
-improving my analyzing skills along with a better understanding of the life.
-
-Go check out the [posts](/post/) or my [telegram channel](https://t.me/s/ftvkyo2011) :)
+- Tech stuff
+    - Software architecture & system design
+    - Frontend & UI/UX
+    - Programming language design
+    - Game development
+    - Embedded systems
+- Organizational stuff
+    - Planning and task management approaches
+    - Knowledge management
+    - Psychology
+- Hobbies
+    - Photography
+    - Reading & Writing
+    - Camping & Hiking
+    - Origami & Drawing
+- Games
+    - Factorio
+    - Souls-likes
+    - Outer Wilds

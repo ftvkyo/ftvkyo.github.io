@@ -28,6 +28,6 @@
 
 {{ if .Params.description }}
     <p class="description full">
-        {{ .Params.description }}
+        {{ .Params.description | markdownify }}
     </p>
 {{ end }}
