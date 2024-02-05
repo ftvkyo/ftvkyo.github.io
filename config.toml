@@ -33,12 +33,12 @@ pygmentsStyle = "pygments"
     url = "/"
     weight = 10
   [[menu.main]]
-    name = "Posts"
-    url = "/post/"
+    name = "Projects"
+    url = "/project/"
     weight = 20
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "Posts"
+    url = "/post/"
     weight = 30
   [[menu.main]]
     name = "About me"

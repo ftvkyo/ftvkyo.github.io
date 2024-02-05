@@ -7,7 +7,7 @@
     {{ end }}
     {{ if .Params.description }}
         <div class="description compact">
-            {{ .Params.description }}
+            {{ .Params.description | markdownify }}
         </div>
     {{ end }}
 </li>
