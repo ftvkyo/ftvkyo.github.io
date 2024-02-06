@@ -8,25 +8,8 @@
 @use "footer";
 
 
-// Colors
-
-$shadow: c.$muted;
-
-$link: c.$accent-2-dark;
-$link-visited: c.$accent-2-dark;
-$link-hover: c.$accent-1-dark;
-$link-active: c.$accent-1-dark;
-
-$link-unsafe: c.$warning;
-
-$code: c.$primary;
-$code-bg: c.$muted-bg;
-
-
-// Selectors
-
 html {
-    background-color: c.$muted-bg;
+    background-color: c.$void;
 }
 
 body {
@@ -56,33 +39,41 @@ body {
     // Colors
 
     color: c.$primary;
-    background-color: c.$primary-bg;
+    background-color: c.$bg;
 
-    box-shadow: 0 0 10px $shadow;
+    box-shadow: 0 0 10px c.$shadow;
 }
 
 a {
     @include c.link(
-        $link,
-        $link-visited,
-        $link-hover,
-        $link-active,
+        c.$accent-2-dull,
+        c.$accent-2-dull,
+        c.$accent-1-dull,
+        c.$accent-1-dull,
     );
 }
 
+// "Unsafe" links
 a[href^="http:"] {
     &::after {
         // \202F is a narrow NBSP
         content: "\202F(HTTP)";
-        color: $link-unsafe;
+        color: c.$warning;
         margin-right: 0.25em;
+    }
+}
+
+:root {
+    --external-link-icon: url("/img/external-black.svg");
+
+    @media (prefers-color-scheme: dark) {
+        --external-link-icon: url("/img/external-white.svg");
     }
 }
 
 a[href^="https:"] {
     &::after {
-        // \202F is a narrow NBSP
-        content: url("/img/external-black.svg");
+        content: var(--external-link-icon);
         opacity: 50%;
     }
 }
@@ -94,16 +85,26 @@ pre {
 
     // Help the user see where to scroll and that there might be more code to the right
     padding: 1em;
-    box-shadow: inset 0 0 5px $shadow;
+    box-shadow: inset 0 0 5px c.$shadow;
 }
+
+/*
+// Codeblocks with syntax highlighting
+div.highlight pre {
+    // They may have things that would interact poorly with the dark theme,
+    // so let's enforce the black on white colors
+    color: c.$dark;
+    background-color: c.$bright;
+}
+*/
 
 // Inline code
 p code {
     // Make the codeblocks actually the size of surrounding text
     font-size: 1.1em;
 
-    color: $code;
-    background-color: $code-bg;
+    color: c.$primary;
+    background-color: c.$void;
 
     padding: 0 0.2em;
     border-radius: 0.2em;

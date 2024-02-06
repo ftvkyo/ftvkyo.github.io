@@ -1,31 +1,24 @@
 @use "colors" as c;
 
 
-// Colors
-
-$text: c.$primary;
-$text-muted: c.$muted;
-
-$bg: c.$primary-bg;
-
-$shadow: c.$muted-bg;
-
-$hr-gradient: linear-gradient(to right, c.$accent-1, c.$accent-2);
-
-
-// Sizes
-
 $metadata-gap: 1em;
 $border-padding: 0.75em;
+$hr-gradient: linear-gradient(to right, c.$accent-1, c.$accent-2);
 
-
-// Selectors
 
 main {
     line-height: 1.5;
 
     svg, img[src$=".svg"] {
-        filter: drop-shadow(0 0 1em $shadow);
+        filter: drop-shadow(0 0 1em c.$shadow);
+
+        border-radius: 0.5em;
+
+        @media (prefers-color-scheme: dark) {
+            filter: unset;
+            background-color: c.$shadow;
+            padding: 1em 0.5em;
+        }
     }
 
     .metadata {
@@ -41,13 +34,13 @@ main {
 
         &.full {
             padding: 0.5em $border-padding;
-            border-left: solid 1px $text;
+            border-left: solid 1px c.$primary;
         }
 
         &.compact {
             margin: 0;
             padding-left: 0.5em;
-            color: $text-muted;
+            color: c.$muted;
         }
     }
 

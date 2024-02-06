@@ -1,23 +1,68 @@
 @use 'sass:color';
 
 
-/* ============ *
- * Theme colors *
- * ============ */
+/* =============== *
+ * Color accessors *
+ * =============== */
 
-$accent-1: #e66465;
-$accent-2: #9198e5;
+$accent-1: var(--accent-1);
+$accent-2: var(--accent-2);
+$accent-1-dull: var(--accent-1-dull);
+$accent-2-dull: var(--accent-2-dull);
 
-$accent-1-dark: color.scale($accent-1, $lightness: -50%);
-$accent-2-dark: color.scale($accent-2, $lightness: -50%);
+$primary: var(--primary);
+$muted: var(--muted);
+$warning: var(--warning);
 
-$primary: black;
-$primary-bg: white;
+$bg: var(--bg);
+$void: var(--void);
+$shadow: var(--shadow);
 
-$muted: grey;
-$muted-bg: lightgrey;
 
-$warning: red;
+/* ============= *
+ * Static colors *
+ * ============= */
+
+$pink: #e66465;
+$purple: #9198e5;
+
+$dark: black;
+$bright: white;
+
+
+/* ====================== *
+ * Light/dark theme setup *
+ * ====================== */
+
+:root {
+    --accent-1: #{$pink};
+    --accent-2: #{$purple};
+    --accent-1-dull: #{color.scale($pink, $lightness: -50%)};
+    --accent-2-dull: #{color.scale($purple, $lightness: -50%)};
+
+    --primary: black;
+    --muted: grey;
+    --warning: red;
+
+    --bg: white;
+    --void: lightgrey;
+    --shadow: grey;
+
+    @media (prefers-color-scheme: dark) {
+        --accent-1: #{$pink};
+        --accent-2: #{$purple};
+        --accent-1-dull: #{color.scale($pink, $lightness: +20%)};
+        --accent-2-dull: #{color.scale($purple, $lightness: +20%)};
+
+        --primary: white;
+        --muted: lightgrey;
+        --warning: red;
+
+        --bg: black;
+        --void: #111;
+        --shadow: #222;
+    }
+}
 
 
 /* ======= *

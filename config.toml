@@ -4,19 +4,16 @@ title = "ftvkyo"
 theme = "ftvkyo-hugo-theme"
 
 
-# Syntax highlighting
-pygmentsCodefences = true
-pygmentsStyle = "pygments"
-
-
 [params]
   tagline = "pretty much Andrei"
   footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/about/)."
 
   dateFormat = "Jan 2, 2006"
 
-  #body_link_color = "#1e6bff"
 
+[markup.highlight]
+  style = 'base16-snazzy'
+  guessSyntax = true
 
 # Enable raw HTML in the pages.
 [markup.goldmark.renderer]
