@@ -1,52 +1,24 @@
+@use 'sass:color';
+
+
 /* ============ *
  * Theme colors *
  * ============ */
 
-$color-accent-1: #e66465;
-$color-accent-2: #9198e5;
+$accent-1: #e66465;
+$accent-2: #9198e5;
 
-/* ============== *
- * General colors *
- * ============== */
+$accent-1-dark: color.scale($accent-1, $lightness: -50%);
+$accent-2-dark: color.scale($accent-2, $lightness: -50%);
 
-// Background of background
-$bg-bg: lightgrey;
+$primary: black;
+$primary-bg: white;
 
-$text: black;
-$text-muted: grey;
-$bg: white;
-
-$code: black;
-$code-bg: lightgrey;
-
-$link: blue;
-$link-visited: blue;
-$link-hover: darkblue;
-$link-active: darkblue;
-$link-muted: grey;
+$muted: grey;
+$muted-bg: lightgrey;
 
 $warning: red;
 
-$shadow: grey;
-
-/* ============= *
- * Header colors *
- * ============= */
-
-$h-text: black;
-
-$h-link: white;
-$h-link-visited: white;
-$h-link-hover: lightgray;
-$h-link-active: lightgray;
-
-$h-gradient: linear-gradient(45deg, $color-accent-1, $color-accent-2);
-
-/* ============= *
- * Footer colors *
- * ============= */
-
-$f-text: grey;
 
 /* ======= *
  * Utility *

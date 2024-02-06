@@ -7,8 +7,26 @@
 @use "main";
 @use "footer";
 
+
+// Colors
+
+$shadow: c.$muted;
+
+$link: c.$accent-2-dark;
+$link-visited: c.$accent-2-dark;
+$link-hover: c.$accent-1-dark;
+$link-active: c.$accent-1-dark;
+
+$link-unsafe: c.$warning;
+
+$code: c.$primary;
+$code-bg: c.$muted-bg;
+
+
+// Selectors
+
 html {
-    background-color: c.$bg-bg;
+    background-color: c.$muted-bg;
 }
 
 body {
@@ -37,18 +55,18 @@ body {
 
     // Colors
 
-    color: c.$text;
-    background-color: c.$bg;
+    color: c.$primary;
+    background-color: c.$primary-bg;
 
-    box-shadow: 0 0 10px c.$shadow;
+    box-shadow: 0 0 10px $shadow;
 }
 
 a {
     @include c.link(
-        c.$link,
-        c.$link-visited,
-        c.$link-hover,
-        c.$link-active,
+        $link,
+        $link-visited,
+        $link-hover,
+        $link-active,
     );
 }
 
@@ -56,7 +74,7 @@ a[href^="http:"] {
     &::after {
         // \202F is a narrow NBSP
         content: "\202F(HTTP)";
-        color: c.$warning;
+        color: $link-unsafe;
         margin-right: 0.25em;
     }
 }
@@ -76,7 +94,7 @@ pre {
 
     // Help the user see where to scroll and that there might be more code to the right
     padding: 1em;
-    box-shadow: inset 0 0 5px c.$shadow;
+    box-shadow: inset 0 0 5px $shadow;
 }
 
 // Inline code
@@ -84,8 +102,8 @@ p code {
     // Make the codeblocks actually the size of surrounding text
     font-size: 1.1em;
 
-    color: c.$code;
-    background-color: c.$code-bg;
+    color: $code;
+    background-color: $code-bg;
 
     padding: 0 0.2em;
     border-radius: 0.2em;
