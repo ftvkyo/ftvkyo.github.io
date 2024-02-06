@@ -13,7 +13,7 @@ pygmentsStyle = "pygments"
   tagline = "pretty much Andrei"
   footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/about/)."
 
-  dateFormat = "2006-01-02"
+  dateFormat = "Jan 2, 2006"
 
   #body_link_color = "#1e6bff"
 

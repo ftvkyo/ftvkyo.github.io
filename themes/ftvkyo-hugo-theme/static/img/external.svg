@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="0.6em" height="0.6em" version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke="#000">
-    <rect x="4.2332" y="4.2332" width="39.534" height="39.534" stroke-width="3.7795"/>
-    <path d="m12.477 12.477h23.046v23.046" stroke-width="3.7795"/>
-    <path d="m12.477 35.523 23.046-23.046" stroke-width="3.7795"/>
-  </g>
-</svg>

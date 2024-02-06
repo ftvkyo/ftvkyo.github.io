@@ -50,8 +50,6 @@ a {
         c.$link-hover,
         c.$link-active,
     );
-
-    text-decoration: none;
 }
 
 a[href^="http:"] {
@@ -66,8 +64,8 @@ a[href^="http:"] {
 a[href^="https:"] {
     &::after {
         // \202F is a narrow NBSP
-        content: "\202F" url("/img/external.svg");
-        margin-right: 0.25em;
+        content: url("/img/external-black.svg");
+        opacity: 50%;
     }
 }
 

@@ -6,8 +6,8 @@
         ({{ .PublishDate.Format $.Site.Params.dateFormat }})
     {{ end }}
     {{ if .Params.description }}
-        <div class="description compact">
+        <p class="description compact">
             {{ .Params.description | markdownify }}
-        </div>
+        </p>
     {{ end }}
 </li>

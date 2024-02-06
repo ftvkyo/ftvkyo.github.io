@@ -3,26 +3,14 @@
         {{ $dateSystem := .Date.Format "2006-01-02" }}
         {{ $dateReadable := .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}
 
-        <p class="label">
-            Date:
-        </p>
-        <time class="value" datetime="{{ $dateSystem }}">
+        <time datetime="{{ $dateSystem }}">
             {{ $dateReadable }}
         </time>
     {{ end }}
 
-    {{ with .Params.tags }}
-        <p class="label">
-            Tags:
-        </p>
-        <div class="value">
-            <div class="tags">
-                {{ range . }}
-                    {{ $href := print (relLangURL "tags/") (urlize .) }}
-                    <a href="{{ $href }}">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
+    {{ range .Params.tags }}
+        {{ $href := print (relLangURL "tags/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
     {{ end }}
 </div>
 

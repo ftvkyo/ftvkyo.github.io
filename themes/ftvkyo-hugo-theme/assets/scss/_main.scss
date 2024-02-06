@@ -1,6 +1,6 @@
 @use "colors" as c;
 
-$metadata-gap: 0.75em;
+$metadata-gap: 1em;
 $border-padding: 0.75em;
 
 main {
@@ -11,37 +11,11 @@ main {
     }
 
     .metadata {
-        display: grid;
-        grid-template-columns: min-content 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         align-items: baseline;
         gap: $metadata-gap;
-
-        .label {
-            margin: 0;
-            font-weight: normal;
-        }
-
-        .value {
-            font-weight: 500;
-
-            padding: 0.25em 0 0.25em $border-padding;
-            border-left: solid 2px c.$text;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            gap: 0.5em;
-
-            a {
-                padding: 0.25em;
-                border: 1.5px solid black;
-                border-radius: 0.25em;
-
-                font-weight: 500;
-            }
-        }
     }
 
     .description {
@@ -53,8 +27,9 @@ main {
         }
 
         &.compact {
-            color: c.$text-muted;
+            margin: 0;
             padding-left: 0.5em;
+            color: c.$text-muted;
         }
     }
 
@@ -68,17 +43,17 @@ main {
         align-items: center;
 
         height: 2em;
-    }
 
-    hr:after {
-        content: "";
-        flex: 1;
+        &::after {
+            content: "";
+            flex: 1;
 
-        height: 0.5em;
-        margin: 0 0.5em;
+            height: 0.5em;
+            margin: 0 0.5em;
 
-        background: linear-gradient(to right, c.$color-accent-1, c.$color-accent-2);
+            background: linear-gradient(to right, c.$color-accent-1, c.$color-accent-2);
 
-        filter: blur(0.2em);
+            filter: blur(0.2em);
+        }
     }
 }
