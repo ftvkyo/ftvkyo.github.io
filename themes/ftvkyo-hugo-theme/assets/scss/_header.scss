@@ -53,8 +53,8 @@ header {
             @include c.link(
                 c.$bright,
                 c.$bright,
-                c.$muted,
-                c.$muted,
+                c.$mid,
+                c.$mid,
             );
 
             padding: 0.5em 1em;
