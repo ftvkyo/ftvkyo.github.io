@@ -35,9 +35,9 @@ main {
             gap: 0.5em;
 
             a {
-                background: c.$tag-gradient;
-                padding: 0.5em 0.75em;
-                border-radius: 1em;
+                padding: 0.25em;
+                border: 1.5px solid black;
+                border-radius: 0.25em;
 
                 font-weight: 500;
             }
@@ -60,5 +60,25 @@ main {
 
     ul.links li:not(:last-child) {
         margin-bottom: 0.5em;
+    }
+
+    hr {
+        border: none;
+        display: flex;
+        align-items: center;
+
+        height: 2em;
+    }
+
+    hr:after {
+        content: "";
+        flex: 1;
+
+        height: 0.5em;
+        margin: 0 0.5em;
+
+        background: linear-gradient(to right, c.$color-accent-1, c.$color-accent-2);
+
+        filter: blur(0.2em);
     }
 }

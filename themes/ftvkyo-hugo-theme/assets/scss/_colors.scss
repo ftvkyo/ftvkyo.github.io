@@ -1,7 +1,13 @@
-// Colors used in the theme
+/* ============ *
+ * Theme colors *
+ * ============ */
 
-@forward "colors-header" as h-*;
-@forward "colors-footer" as f-*;
+$color-accent-1: #e66465;
+$color-accent-2: #9198e5;
+
+/* ============== *
+ * General colors *
+ * ============== */
 
 // Background of background
 $bg-bg: lightgrey;
@@ -23,7 +29,28 @@ $warning: red;
 
 $shadow: grey;
 
-$tag-gradient: linear-gradient(to bottom, #eeeeee, #eddada);
+/* ============= *
+ * Header colors *
+ * ============= */
+
+$h-text: black;
+
+$h-link: white;
+$h-link-visited: white;
+$h-link-hover: lightgray;
+$h-link-active: lightgray;
+
+$h-gradient: linear-gradient(45deg, $color-accent-1, $color-accent-2);
+
+/* ============= *
+ * Footer colors *
+ * ============= */
+
+$f-text: grey;
+
+/* ======= *
+ * Utility *
+ * ======= */
 
 @mixin link($link, $visited, $hover, $active) {
     color: $link;
