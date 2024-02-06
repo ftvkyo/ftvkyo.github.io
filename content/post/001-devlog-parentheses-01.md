@@ -104,12 +104,12 @@ In general, I've decided to separate the build process into 5+ stages:
 I've got to some correct IR being generated! Let me illustrate current
 pipeline:
 
-### Input 👉
+### Input
 ```scheme
 (+ 1 2)
 ```
 
-### Tokenized 👉
+### Tokenized
 ```
 LB IDEN:+ INT:1 INT:2 RB
 
@@ -120,7 +120,7 @@ where
     INT: integer
 ```
 
-### Parsed 👉
+### Parsed
 ```
 SpecialForm
     |
@@ -139,16 +139,16 @@ SpecialForm
 expressions in the input file. Basically, it's a special form similar to
 Rust's `{}`, it's value is equal to the value of the last expression in it.
 
-### Verified 👉
+### Verified
 
     Checks that top level AST node is a special form and its
     first element is a keyword "@block"
 
-### Transformed 👉
+### Transformed
 
     No transformations applied yet
 
-### IR Emitted 👉
+### IR Emitted
 
 ```llvm
 ; ModuleID = 'a'
