@@ -55,12 +55,12 @@ $bright: white;
         --accent-1-dull: #{color.scale($pink, $lightness: +20%)};
         --accent-2-dull: #{color.scale($purple, $lightness: +20%)};
 
-        --primary: white;
+        --primary: #e8e8e8;
         --muted: lightgrey;
         --warning: red;
 
-        --bg: black;
-        --void: #111;
+        --bg: #080808;
+        --void: #222;
         --shadow: #444;
     }
 }
