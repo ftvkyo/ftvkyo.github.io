@@ -25,6 +25,7 @@ $shadow: var(--shadow);
 
 $pink: #e66465;
 $purple: #9198e5;
+$red: #f76c6c;
 
 $dark: black;
 $mid: lightgrey;
@@ -43,7 +44,7 @@ $bright: white;
 
     --primary: black;
     --muted: grey;
-    --warning: red;
+    --warning: #{$red};
 
     --bg: white;
     --void: lightgrey;
@@ -57,7 +58,7 @@ $bright: white;
 
         --primary: #e8e8e8;
         --muted: lightgrey;
-        --warning: red;
+        --warning: #{$red};
 
         --bg: #080808;
         --void: #222;
