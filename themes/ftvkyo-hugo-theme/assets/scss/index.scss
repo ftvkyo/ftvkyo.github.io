@@ -8,6 +8,10 @@
 @use "footer";
 
 
+$font: "Montserrat", sans-serif;
+$font-monospace: "JetBrains Mono", monospace;
+
+
 html {
     background-color: c.$void;
 }
@@ -34,7 +38,7 @@ body {
 
     // Fonts
 
-    font-family: system-ui, sans-serif;
+    font-family: $font;
 
     // Colors
 
@@ -78,6 +82,10 @@ a[href^="https:"] {
     }
 }
 
+code {
+    font-family: $font-monospace;
+}
+
 // Codeblocks
 pre {
     // Scroll the codeblocks to the right
@@ -88,21 +96,8 @@ pre {
     box-shadow: inset 0 0 5px c.$shadow;
 }
 
-/*
-// Codeblocks with syntax highlighting
-div.highlight pre {
-    // They may have things that would interact poorly with the dark theme,
-    // so let's enforce the black on white colors
-    color: c.$dark;
-    background-color: c.$bright;
-}
-*/
-
 // Inline code
 p code {
-    // Make the codeblocks actually the size of surrounding text
-    font-size: 1.1em;
-
     color: c.$primary;
     background-color: c.$void;
 
