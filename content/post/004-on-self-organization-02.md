@@ -33,7 +33,7 @@ It is also just fun to write about it and make illustrations :)
 
 ![An image of a folder and of a file joining together like puzzle pieces.](/img/004/vault.svg)
 
-I want my notes to be accessible (for me 😜) and I don't want to be afraid to lose them in a fire or some other kind of accident.
+I want my notes to be somewhat accessible and I don't want to be afraid to lose them in a fire or some other kind of accident.
 Because of this, I store my notes in [Git](https://git-scm.com) and access them through [Obsidian](https://obsidian.md).
 These things are just tools and not a requirement.
 For example, the original [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) (check it out) was designed for stacks of paper cards in cardboard boxes.
@@ -59,7 +59,7 @@ In the picture, you can see the aforementioned *journal*, *wiki* and *writing* s
 In the journal section, you can see that notes can be grouped by date, by topics, and by what reading has made me write them.
 There is more to it and I will tell you the details further in the post.
 
-The words that I think describe the sections best are alphabetically ordered in a logical way, which is nice 😄.
+The words that I think describe the sections best are alphabetically ordered in a logical way, which is neat.
 
 > Note:
 > Previously, the names were *journal*, *knowledge base* and *essays*, but I changed them to be more fitting.
@@ -173,7 +173,7 @@ The [graph-like](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) str
 I do encourage note **interlinking**, but I do not feel like Zettelkasten's recommendations fit my usage patterns.
 For now, I kept this simple, and I will add or reformat things as I need.
 Of course, the cost of editing lots of notes can be a big burden, but I feel like I need to learn my preference first and design **my** system by myself, possibly taking inspiration from other sources.
-I will probably make an update on this matter if I get more good ideas 😉.
+I will probably make an update on this matter if I get more good ideas.
 
 ![Structure of the wiki, showing hierachical relations between notes and additional links between related notes from different parts of the wiki.](/img/004/wiki-structure.svg)
 
@@ -196,7 +196,7 @@ There is no "time" heading, and this one has a list of references.
 They equally serve as a list of sources, but also as a list of *interesting related links* I would want to read again and possibly use to expand the notes further.
 
 Most of the links lead to [Wikipedia](https://en.wikipedia.org).
-Probably my favourite website at the moment 🤓.
+Probably my favourite website at the moment.
 
 ### Writing
 
@@ -217,7 +217,7 @@ I've prepared an **awesome picture** describing the roles of the components of t
 
 ![Full picture of the parts of the current system, showing the roles of the components. Includes: Brain (agent, source of data, memory); Journal (written down experience, tracker, short-term memory); Wiki (associative and systematic storage, long-term memory); Writing (personal research).](/img/004/everything.svg)
 
-Ask me questions if you have any, and tell me if you want me to cover something else, or something I've mentioned but in greater detail 👁️‍🗨️.
+Ask me questions if you have any, and tell me if you want me to cover something else, or something I've mentioned but in greater detail.
 Let's move to some extras:
 
 ## Extras
@@ -256,7 +256,7 @@ And when some kind of [critical mass](https://en.wikipedia.org/wiki/Critical_mas
 
 Because of this, I started trying to dedicate some time every week to taking notes, but also to other things related to it like personal research.
 It doesn't work perfectly, because *life*-thigs don't go anywhere.
-But it helps, and I will keep trying 🫣.
+But it helps, and I will keep trying.
 Maybe that could help you as well.
 
 ### To-do lists, choices and priorities
