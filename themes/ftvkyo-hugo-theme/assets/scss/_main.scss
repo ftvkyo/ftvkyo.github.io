@@ -10,15 +10,9 @@ main {
     line-height: 1.5;
 
     svg, img[src$=".svg"] {
-        filter: drop-shadow(0 0 1em c.$shadow);
-
         border-radius: 0.5em;
-
-        @media (prefers-color-scheme: dark) {
-            filter: unset;
-            background-color: c.$shadow;
-            padding: 1em 0.5em;
-        }
+        background-color: c.$bg-img;
+        padding: 1em 0.5em;
     }
 
     .metadata {

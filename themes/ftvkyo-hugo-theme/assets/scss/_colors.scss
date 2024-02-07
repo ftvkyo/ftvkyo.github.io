@@ -15,6 +15,7 @@ $muted: var(--muted);
 $warning: var(--warning);
 
 $bg: var(--bg);
+$bg-img: var(--img-bg);
 $void: var(--void);
 $shadow: var(--shadow);
 
@@ -47,6 +48,7 @@ $bright: white;
     --warning: #{$red};
 
     --bg: white;
+    --img-bg: lightgrey;
     --void: lightgrey;
     --shadow: grey;
 
@@ -61,6 +63,7 @@ $bright: white;
         --warning: #{$red};
 
         --bg: #080808;
+        --img-bg: lightgrey;
         --void: #222;
         --shadow: #444;
     }
