@@ -44,8 +44,15 @@ main {
         }
     }
 
-    ul.links li:not(:last-child) {
-        margin-bottom: 0.5em;
+    ul.links {
+        li:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            // Prevent the underline extending past the link
+            display: inline-block;
+        }
     }
 
     hr {

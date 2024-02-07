@@ -2,9 +2,14 @@
     <a href="{{ .RelPermalink }}">
         {{ .Title }}
     </a>
+
     {{ if .PublishDate }}
-        ({{ .PublishDate.Format $.Site.Params.dateFormat }})
+        {{ $dateSystem := .PublishDate.Format "2006-01-02" }}
+        {{ $dateReadable := .PublishDate.Format .Site.Params.dateFormat }}
+
+        <time datetime="{{ $dateSystem }}">({{ $dateReadable }})</time>
     {{ end }}
+
     {{ if .Params.description }}
         <p class="description compact">
             {{ .Params.description | markdownify }}

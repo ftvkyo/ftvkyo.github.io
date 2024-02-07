@@ -1,7 +1,7 @@
 <div class="metadata">
     {{ if .Date }}
         {{ $dateSystem := .Date.Format "2006-01-02" }}
-        {{ $dateReadable := .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}
+        {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
 
         <time datetime="{{ $dateSystem }}">
             {{ $dateReadable }}
