@@ -6,7 +6,7 @@
     {{ if .PublishDate }}
         {{ $dateSystem := .PublishDate.Format "2006-01-02" }}
         {{ $dateReadable := .PublishDate.Format .Site.Params.dateFormat }}
-
+        &#x20;
         <time datetime="{{ $dateSystem }}">({{ $dateReadable }})</time>
     {{ end }}
 
