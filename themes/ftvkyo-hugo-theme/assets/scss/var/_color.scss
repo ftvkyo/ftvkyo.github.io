@@ -70,6 +70,14 @@ $bright: white;
 }
 
 
+/* ========= *
+ * Gradients *
+ * ========= */
+
+$header-gradient: linear-gradient(45deg, $accent-1, $accent-2);
+$hr-gradient: linear-gradient(to right, $accent-1, $accent-2);
+
+
 /* ======= *
  * Utility *
  * ======= */

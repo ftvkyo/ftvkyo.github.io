@@ -5,7 +5,7 @@ theme = "ftvkyo-hugo-theme"
 
 
 [params]
-  tagline = "pretty much Andrei"
+  fullName = "Andrei Stepanenko"
   footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/about/)."
 
   dateFormat = "Jan 2, 2006"

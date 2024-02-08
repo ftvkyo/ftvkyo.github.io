@@ -1,11 +1,7 @@
 ---
 title: "About me"
+hideTitleForPrint: true
 ---
-
-- My name is Andrei Stepanenko
-- I speak English and Russian
-- I am a Software Engineer
-- I have some personal [projects](/project/)
 
 ## Work experience
 

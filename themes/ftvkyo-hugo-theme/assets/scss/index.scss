@@ -1,114 +1,126 @@
-// * {
-//     outline: 0.1px dashed black;
-// }
+@use "var/color" as c;
+@use "var/font" as f;
+@use "var/size" as s;
 
-@use "colors" as c;
-@use "header";
-@use "main";
-@use "footer";
+@use "shared";
 
-
-$font: "Montserrat", sans-serif;
-$font-monospace: "JetBrains Mono", monospace;
+@use "part/header";
+@use "part/main";
+@use "part/footer";
 
 
-html {
-    background-color: c.$void;
-}
+/* ====== *
+ * Screen *
+ * ====== */
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+@media screen {
 
-    box-sizing: border-box;
-    min-height: 100vh; // Don't be shorter than the viewport
-    max-width: 46em; // Max out the width at 50em
-
-    margin: 0 auto; // Center the body
-    padding: 1em; // Leave some space as if the body is a sheet of paper
-
-    & > * {
-        padding: 1em; // Section contents should be padded even further
+    html {
+        background-color: c.$void;
     }
 
-    & main {
-        flex: 1; // Grow the main section to fill the remaining space
+    body {
+        max-width: s.$w-readable;
+
+        color: c.$primary;
+        background-color: c.$bg;
+
+        box-shadow: 0 0 10px c.$shadow;
     }
 
-    // Fonts
+    /* ====== *
+     * Colors *
+     * ====== */
 
-    font-family: $font;
+    header {
+        background-image: c.$header-gradient;
 
-    // Colors
+        .title {
+            font-size: 2em;
+            font-weight: bold;
 
-    color: c.$primary;
-    background-color: c.$bg;
+            padding: 0.25em 0.5em;
+            border-radius: 0.3em;
 
-    box-shadow: 0 0 10px c.$shadow;
-}
-
-a {
-    @include c.link(
-        c.$accent-2-dull,
-        c.$accent-2-dull,
-        c.$accent-1-dull,
-        c.$accent-1-dull,
-    );
-}
-
-// "Unsafe" links
-a[href^="http:"] {
-    &::after {
-        // \202F is a narrow NBSP
-        content: "\202F(HTTP)";
-        color: c.$warning;
+            background-color: rgb(255 255 255 / 0.25);
+        }
     }
-}
 
-:root {
-    --external-link-icon: url("/img/external-black.svg");
+    main hr {
+        border: none;
+        display: flex;
+        align-items: center;
 
-    @media (prefers-color-scheme: dark) {
-        --external-link-icon: url("/img/external-white.svg");
+        height: 2em;
+
+        &::after {
+            content: "";
+            flex: 1;
+
+            height: 0.5em;
+            margin: 0 0.5em;
+
+            background: c.$hr-gradient;
+
+            filter: blur(0.2em);
+        }
     }
-}
 
-a[href^="https:"] {
-    &::after {
-        content: var(--external-link-icon);
-        white-space: nowrap;
-        opacity: 50%;
+    /* ===== *
+     * Links *
+     * ===== */
+
+    // "Unsafe" links
+    a[href^="http:"] {
+        &::after {
+            // \202F is a narrow NBSP
+            content: "\202F(HTTP)";
+            color: c.$warning;
+        }
     }
+
+    :root {
+        --external-link-icon: url("/img/external-black.svg");
+
+        @media (prefers-color-scheme: dark) {
+            --external-link-icon: url("/img/external-white.svg");
+        }
+    }
+
+    a[href^="https:"] {
+        &::after {
+            content: var(--external-link-icon);
+            white-space: nowrap;
+            opacity: 50%;
+        }
+    }
+
 }
 
-code {
-    font-family: $font-monospace;
-}
 
-// Codeblocks
-pre {
-    // Scroll the codeblocks to the right
-    overflow-x: auto;
+/* ===== *
+ * Print *
+ * ===== */
 
-    // Help the user see where to scroll and that there might be more code to the right
-    padding: 1em;
-    box-shadow: inset 0 0 5px c.$shadow;
-}
+@media print {
 
-// Inline code
-p code {
-    color: c.$primary;
-    background-color: c.$void;
+    header {
+        .title, nav {
+            display: none;
+        }
 
-    padding: 0 0.2em;
-    border-radius: 0.2em;
+        .name {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
 
-    // Allow breaking words because it's better than overflowing.
-    word-wrap: break-word;
-}
+    footer {
+        display: none;
+    }
 
-.center-self {
-    width: min-content;
-    margin: 0 auto;
+    .no-print {
+        display: none;
+    }
+
 }

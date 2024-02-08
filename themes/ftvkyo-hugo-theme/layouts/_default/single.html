@@ -1,5 +1,10 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
+    {{ if .Params.hideTitleForPrint }}
+        <h1 class="no-print">{{ .Title }}</h1>
+    {{ else  }}
+        <h1>{{ .Title }}</h1>
+    {{ end }}
+
     {{ partial "metadata.html" . }}
     {{ .Content }}
 {{ end }}
