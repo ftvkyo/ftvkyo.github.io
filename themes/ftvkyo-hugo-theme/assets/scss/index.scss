@@ -70,9 +70,18 @@
      * Links *
      * ===== */
 
+    :root {
+        --external-link-icon: url("/img/external-black.svg");
+
+        @media (prefers-color-scheme: dark) {
+            --external-link-icon: url("/img/external-white.svg");
+        }
+    }
+
     :not(.embed) {
+
         // "Unsafe" links
-        a[href^="http:"] {
+        > a[href^="http:"] {
             &::after {
                 // \202F is a narrow NBSP
                 content: "\202F(HTTP)";
@@ -80,15 +89,7 @@
             }
         }
 
-        :root {
-            --external-link-icon: url("/img/external-black.svg");
-
-            @media (prefers-color-scheme: dark) {
-                --external-link-icon: url("/img/external-white.svg");
-            }
-        }
-
-        a[href^="https:"] {
+        > a[href^="https:"] {
             &::after {
                 content: var(--external-link-icon);
                 white-space: nowrap;
@@ -96,6 +97,10 @@
             }
         }
     }
+
+    /* ======= *
+     * Utility *
+     * ======= */
 
     .print {
         display: none;
