@@ -19,6 +19,8 @@ $bg-img: var(--img-bg);
 $void: var(--void);
 $shadow: var(--shadow);
 
+$invert: var(--invert);
+
 
 /* ============= *
  * Static colors *
@@ -52,6 +54,8 @@ $bright: white;
     --void: lightgrey;
     --shadow: grey;
 
+    --invert: none;
+
     @media (prefers-color-scheme: dark) {
         --accent-1: #{$pink};
         --accent-2: #{$purple};
@@ -66,6 +70,8 @@ $bright: white;
         --img-bg: lightgrey;
         --void: #222;
         --shadow: #444;
+
+        --invert: invert(1);
     }
 }
 

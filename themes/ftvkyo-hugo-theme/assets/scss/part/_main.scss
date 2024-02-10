@@ -14,31 +14,6 @@ main {
         padding: s.$pad s.$pad * 0.5;
     }
 
-    .socials {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: s.$gap;
-
-        a {
-            display: flex;
-            flex-direction: row;
-            gap: s.$gap * 0.5;
-            align-items: center;
-
-            text-decoration: none;
-        }
-
-        svg {
-            background-color: c.$bg-img;
-            padding: s.$pad * 0.25;
-            border-radius: s.$pad * 0.25;
-
-            height: 1.5em;
-            width: 1.5em;
-        }
-    }
-
     .metadata {
         display: flex;
         flex-wrap: wrap;
@@ -70,6 +45,55 @@ main {
         a {
             // Prevent the underline extending past the link
             display: inline-block;
+        }
+    }
+
+    // "socials" shortcode
+    .socials {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: s.$gap;
+
+        a {
+            display: flex;
+            flex-direction: row;
+            gap: s.$gap * 0.5;
+            align-items: center;
+
+            text-decoration: none;
+        }
+
+        svg {
+            background-color: c.$bg-img;
+            padding: s.$pad * 0.25;
+            border-radius: s.$pad * 0.25;
+
+            height: 1.5em;
+            width: 1.5em;
+        }
+    }
+
+    // "job-info" shortcode
+    .job-info {
+        display: flex;
+        flex-direction: column;
+        gap: s.$gap * 0.5;
+
+        opacity: 75%;
+
+        > * {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: s.$gap * 0.5;
+        }
+
+        svg {
+            height: 1em;
+            width: 1em;
+
+            filter: c.$invert;
         }
     }
 }

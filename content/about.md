@@ -7,33 +7,49 @@ titleClass: "screen"
 
 ## Work experience
 
-### Spectral Compute, United Kingdom
+### Software Engineer at Spectral Compute
 
-- *Software Engineer, August 2021 - present*
-- C++, CUDA, CMake, TypeScript (React, Angular), Less, Node.js, PostgreSQL
-- Focused on GPGPU and Full-stack projects
+{{< job-info
+    "August 2021 - present"
+    "Edinburgh, United Kingdom"
+    "C++, CUDA, CMake, TypeScript (React, Angular), Less, Node.js, PostgreSQL"
+>}}
+
+- GPGPU and Full-stack projects
 - Highly autonomous role — responsible for establishing the requirements for the tasks, carefully planning and structuring my work
-- Supporting newcomers, sharing and organizing knowledge
+- Providing support for newcomers, sharing and organizing knowledge
 
-### Dreams AI, Hong Kong
+### Software Engineer at Dreams AI
 
-- *Software Engineer, October 2019 - July 2021*
-- TypeScript, PostgreSQL, Redis, GraphQL, k8s, Rust, ELK stack, Python, Selenium
-- Focused on Frontend and on high-efficiency data processing
+{{< job-info
+    "October 2019 - July 2021"
+    "Hong Kong"
+    "TypeScript, Rust, Python, PostgreSQL, Redis, GraphQL, k8s, ELK stack"
+>}}
+
+- High-efficiency data processing applications and some Front-end
 - Being a liaison between the developers and the clients, greatly improving communication
-- Designing systems on a high level, and working on them on the low level
+- Efficiently combining "Big picture" and "Attention to detail" working modes
 
-### 1C Juniors Developer Centre, Moscow
+### C++ Software Engineer at 1C Juniors Developer Centre
 
-- *C++ Software Engineer, June 2019 - September 2019*
-- C++, Java, JNI, CMake, WinAPI, syscalls
-- Focused on establishing a steady development pace and high maintainability of the resulting project
+{{< job-info
+    "June 2019 - September 2019"
+    "Moscow, Russia"
+    "C++, Java, JNI, CMake, WinAPI, syscalls"
+>}}
+
+- Establishing a steady development pace and high maintainability of the resulting project
 - Collecting and organizing research on project-related topics for them to be available to the rest of the company
 
-### Innovations Laboratory, Moscow Institute of Physics and Technology
+### Technician at Innovations Laboratory, Moscow Institute of Physics and Technology
 
-- *Technician, December 2018 - August 2019*
-- VMWare ESXi, pfSense, Samba, Clonezilla
+{{< job-info
+    "December 2018 - August 2019"
+    "Moscow, Russia"
+    "VMWare ESXi, pfSense, Samba, Clonezilla"
+>}}
+
 - Maintaining multiple servers and 100+ PCs
 
 ## Primary interests

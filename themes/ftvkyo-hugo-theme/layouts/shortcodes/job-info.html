@@ -1,0 +1,16 @@
+<div class="job-info">
+    <div class="timespan">
+        {{ partial "icons/calendar.svg" . }}
+        {{ .Get 0 }}
+    </div>
+
+    <div class="location">
+        {{ partial "icons/location.svg" . }}
+        {{ .Get 1 }}
+    </div>
+
+    <div class="skills">
+        {{ partial "icons/skill.svg" . }}
+        {{ .Get 2 }}
+    </div>
+</div>
