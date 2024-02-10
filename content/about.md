@@ -1,7 +1,9 @@
 ---
 title: "About me"
-hideTitleForPrint: true
+titleClass: "screen"
 ---
+
+{{< socials >}}
 
 ## Work experience
 

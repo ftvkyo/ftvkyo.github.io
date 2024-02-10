@@ -8,10 +8,35 @@ $hr-gradient: linear-gradient(to right, c.$accent-1, c.$accent-2);
 main {
     line-height: 1.5;
 
-    svg, img[src$=".svg"] {
+    img[src$=".svg"] {
         border-radius: s.$pad * 0.5;
         background-color: c.$bg-img;
         padding: s.$pad s.$pad * 0.5;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: s.$gap;
+
+        a {
+            display: flex;
+            flex-direction: row;
+            gap: s.$gap * 0.5;
+            align-items: center;
+
+            text-decoration: none;
+        }
+
+        svg {
+            background-color: c.$bg-img;
+            padding: s.$pad * 0.25;
+            border-radius: s.$pad * 0.25;
+
+            height: 1.5em;
+            width: 1.5em;
+        }
     }
 
     .metadata {

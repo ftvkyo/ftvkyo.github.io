@@ -70,31 +70,36 @@
      * Links *
      * ===== */
 
-    // "Unsafe" links
-    a[href^="http:"] {
-        &::after {
-            // \202F is a narrow NBSP
-            content: "\202F(HTTP)";
-            color: c.$warning;
+    :not(.embed) {
+        // "Unsafe" links
+        a[href^="http:"] {
+            &::after {
+                // \202F is a narrow NBSP
+                content: "\202F(HTTP)";
+                color: c.$warning;
+            }
+        }
+
+        :root {
+            --external-link-icon: url("/img/external-black.svg");
+
+            @media (prefers-color-scheme: dark) {
+                --external-link-icon: url("/img/external-white.svg");
+            }
+        }
+
+        a[href^="https:"] {
+            &::after {
+                content: var(--external-link-icon);
+                white-space: nowrap;
+                opacity: 50%;
+            }
         }
     }
 
-    :root {
-        --external-link-icon: url("/img/external-black.svg");
-
-        @media (prefers-color-scheme: dark) {
-            --external-link-icon: url("/img/external-white.svg");
-        }
+    .print {
+        display: none;
     }
-
-    a[href^="https:"] {
-        &::after {
-            content: var(--external-link-icon);
-            white-space: nowrap;
-            opacity: 50%;
-        }
-    }
-
 }
 
 
@@ -119,7 +124,7 @@
         display: none;
     }
 
-    .no-print {
+    .screen {
         display: none;
     }
 
