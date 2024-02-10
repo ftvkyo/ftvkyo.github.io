@@ -62,7 +62,7 @@ I have multiple personal projects, and here are the most interesting ones:
 
 - [Obsidian ftvkyo](/project/obsidian-ftvkyo/), an Obsidian plugin that accommodates my workflow
 - [Tekutonu](/project/tekutonu/), a voxel engine in Rust aimed at learning Vulkan
-- [Keymap-gen](/project/keymap-gen/), a generator of keyboard layouts and reference cards for them
+- [Keymap-gen](/project/keymap-gen/), a generator of keyboard layouts and their reference cards
 
 I also have hobbies outside of tech, they include:
 
