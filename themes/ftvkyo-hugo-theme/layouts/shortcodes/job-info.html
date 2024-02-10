@@ -1,17 +1,19 @@
-<div class="job-info">
-    <div class="timespan">
-        {{ partial "icons/calendar.svg" . }}
-        {{ .Get 0 }}
-    </div>
+<div class="job-info embed">
+    <div class="basics">
+        <div class="info timespan">
+            <img src="/img/calendar.svg"/>
+            {{ .Get 0 }}
+        </div>
 
-    <div class="location">
-        {{ partial "icons/location.svg" . }}
-        {{ .Get 1 }}
+        <div class="info location">
+            <img src="/img/location.svg"/>
+            {{ .Get 1 }}
+        </div>
     </div>
 
     {{ if .Get 2 }}
-        <div class="skills">
-            {{ partial "icons/skill.svg" . }}
+        <div class="info skills">
+            <img src="/img/skill.svg"/>
             {{ .Get 2 }}
         </div>
     {{ end }}

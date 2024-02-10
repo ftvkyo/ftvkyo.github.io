@@ -12,7 +12,7 @@ titleClass: "screen"
 {{< job-info
     "August 2021 - present"
     "Edinburgh, United Kingdom"
-    "C++, CUDA, CMake, TypeScript (React, Angular), Less, Node.js, PostgreSQL"
+    "C++, CUDA, CMake, TypeScript (React, Angular), Node.js, PostgreSQL"
 >}}
 
 - GPGPU and Full-stack projects

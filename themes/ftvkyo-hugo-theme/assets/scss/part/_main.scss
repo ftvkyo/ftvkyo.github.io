@@ -55,6 +55,10 @@ main {
         flex-wrap: wrap;
         gap: s.$gap;
 
+        @media print {
+            justify-content: space-around;
+        }
+
         a {
             display: flex;
             flex-direction: row;
@@ -80,22 +84,34 @@ main {
         flex-direction: column;
         gap: s.$gap * 0.25;
 
+        margin: 0 1em;
+
         opacity: 75%;
 
-        > * {
-            margin-left: 1em;
-
+        .info {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: s.$gap * 0.5;
         }
 
-        svg {
+        img {
             height: 1em;
             width: 1em;
 
+            background-color: unset;
+            padding: unset;
+            border-radius: unset;
+
             filter: c.$invert;
+        }
+
+        .basics {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: s.$gap * 0.25;
         }
     }
 }
