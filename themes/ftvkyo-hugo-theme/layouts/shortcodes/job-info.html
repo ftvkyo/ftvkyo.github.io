@@ -9,8 +9,10 @@
         {{ .Get 1 }}
     </div>
 
-    <div class="skills">
-        {{ partial "icons/skill.svg" . }}
-        {{ .Get 2 }}
-    </div>
+    {{ if .Get 2 }}
+        <div class="skills">
+            {{ partial "icons/skill.svg" . }}
+            {{ .Get 2 }}
+        </div>
+    {{ end }}
 </div>

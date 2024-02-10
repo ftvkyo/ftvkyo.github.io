@@ -73,6 +73,10 @@ $bright: white;
 
         --invert: invert(1);
     }
+
+    @media print {
+        --img-bg: none;
+    }
 }
 
 

@@ -78,11 +78,13 @@ main {
     .job-info {
         display: flex;
         flex-direction: column;
-        gap: s.$gap * 0.5;
+        gap: s.$gap * 0.25;
 
         opacity: 75%;
 
         > * {
+            margin-left: 1em;
+
             display: flex;
             flex-direction: row;
             align-items: center;

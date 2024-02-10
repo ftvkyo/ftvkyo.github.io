@@ -52,24 +52,32 @@ titleClass: "screen"
 
 - Maintaining multiple servers and 100+ PCs
 
-## Primary interests
+## Other activities
 
-- Tech stuff
-    - Software architecture & system design
-    - Frontend & UI/UX
-    - Programming language design
-    - Game development
-    - Embedded systems
-- Organizational stuff
-    - Planning and task management approaches
-    - Knowledge management
-    - Psychology
-- Hobbies
-    - Photography
-    - Reading & Writing
-    - Camping & Hiking
-    - Origami & Drawing
-- Games
-    - Factorio
-    - Souls-likes
-    - Outer Wilds
+I am interested in multiple areas of technology.
+I would highlight software architecture, UI/UX, programming language design, game development and embedded systems.
+I also pay attention to various approaches to planning and task management, to knowledge management, and even a bit of psychology.
+
+I have multiple personal projects, and here are the most interesting ones:
+
+- [Obsidian ftvkyo](/project/obsidian-ftvkyo/), an Obsidian plugin that accommodates my workflow
+- [Tekutonu](/project/tekutonu/), a voxel engine in Rust aimed at learning Vulkan
+- [Keymap-gen](/project/keymap-gen/), a generator of keyboard layouts and reference cards for them
+
+I also have hobbies outside of tech, they include:
+
+- Photography, Camping & Hiking
+- Reading & Writing
+- Board games
+- Video games such as Factorio, Outer Wilds and Souls-likes
+
+### Leading Student Council's IT department at DIHT, MIPT
+
+{{< job-info
+    "March 2018 - May 2019"
+    "Moscow, Russia"
+>}}
+
+This was my first big step in the profession.
+I got some experience in Project management, Full-stack development and supporting legacy systems.
+I also learned soldering and modified and assembled multiple custom door Access Control Systems that used campus cards and integrated with our website.
