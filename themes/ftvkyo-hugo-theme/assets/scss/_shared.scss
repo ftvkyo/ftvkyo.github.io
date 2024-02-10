@@ -3,12 +3,15 @@
 @use "var/size" as s;
 
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 
-    box-sizing: border-box;
     min-height: 100vh; // Don't be shorter than the viewport
 
     margin: 0 auto; // Center the body
