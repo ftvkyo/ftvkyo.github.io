@@ -2,7 +2,6 @@
 title: "On self-organization, part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
 tags: [Psychological, Productivity, Self-organization]
-archived: true
 description: >
   Exploring methods of personal organization and why I would want to do that.
 ---

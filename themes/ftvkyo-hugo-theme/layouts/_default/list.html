@@ -2,8 +2,6 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
-    <hr/>
-
     <ul class="links">
         {{ range .Pages.ByPublishDate.Reverse }}
             {{ if not .Params.archived }}
