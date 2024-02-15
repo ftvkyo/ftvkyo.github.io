@@ -8,7 +8,8 @@ description: >
 - Work started: *Oct 14, 2022*
 - Work stopped: *Nov 20, 2022*
 - Timespan: 38 days, *17* of them have commits
-- See [screenshots](#screenshots)
+
+{{< toc >}}
 
 It is not the first time I tried to build a voxel engine.
 This time, the primary objective of the project was to learn the basics of Vulkan.
@@ -21,7 +22,7 @@ However, my task tracking and planning was rudimentary.
 I would say that the experience I got working on this was one of the important drivers for improving my skills of getting things done and ultimately building [Obsidian ftvkyo](/project/obsidian-ftvkyo/).
 Not that I am stopping there, though.
 
-## What has been achieved
+## Achievements
 
 In terms of features, Tekutonu has:
 - Camera movement
@@ -69,7 +70,7 @@ The light level decreases "by 1" for each of the blocks it travels from the edge
 
 ![](/img/tekutonu/lighting.webp)
 
-## What I have learned
+## Lessons learned
 
 - It's not good to try to abstract too early, but it's also not good to build everything "in place".
   I think I got a decent balance of that when working on this project, though.

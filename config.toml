@@ -12,7 +12,7 @@ theme = "ftvkyo-hugo-theme"
 
 
 [markup.highlight]
-  style = 'base16-snazzy'
+  style = "onedark"
   guessSyntax = true
 
 # Enable raw HTML in the pages.

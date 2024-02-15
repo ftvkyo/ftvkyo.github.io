@@ -1,7 +1,7 @@
 ---
 title: "On self-organization, part 2: But how?"
 date: 2022-12-23T17:00:00+00:00
-tags: [Psychological, Productivity, Self-organization]
+tags: [Reflection, Organization]
 description: >
   Personal organization through note-taking and some extra thoughts on the topic.
 ---

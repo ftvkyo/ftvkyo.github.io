@@ -1,7 +1,7 @@
 ---
 title: "Website overhaul"
 date: 2023-03-19T14:00:00Z
-tags: [Meta]
+tags: [Website]
 archived: true
 description: >
   New theme that I made by myself and that is easier to tweak.

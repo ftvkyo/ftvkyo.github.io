@@ -41,6 +41,44 @@ main {
         }
     }
 
+    table {
+        width: 100%;
+
+        table-layout: fixed;
+
+        border-collapse: collapse;
+        border: 1px solid c.$muted;
+
+        th, td {
+            padding: 0.25em;
+            text-align: start;
+        }
+
+        th {
+            background-color: c.$shadow;
+            border-bottom: 1px solid c.$primary;
+        }
+
+        tbody {
+            tr:nth-child(even) {
+                background-color: c.$void;
+            }
+        }
+    }
+
+    details {
+        border: 1px solid c.$muted;
+        border-radius: 5px;
+
+        summary {
+            padding: s.$pad * 0.25 s.$pad * 0.5;
+        }
+
+        > :not(summary) {
+            padding: 0 s.$pad * 0.5;
+        }
+    }
+
     ul.links {
         li:not(:last-child) {
             margin-bottom: s.$pad * 0.5;
@@ -50,6 +88,10 @@ main {
             // Prevent the underline extending past the link
             display: inline-block;
         }
+    }
+
+    #TableOfContents {
+        border-left: 1px dashed c.$primary;
     }
 
     // "socials" shortcode

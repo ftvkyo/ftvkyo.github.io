@@ -1,7 +1,7 @@
 ---
 title: "A New Website"
 date: 2021-06-27T20:20:00+08:00
-tags: [Meta]
+tags: [Website]
 archived: true
 ---
 
