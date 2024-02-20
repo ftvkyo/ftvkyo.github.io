@@ -16,23 +16,35 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 ### Software Engineer at Spectral Compute
 
-{{< job-info
+{{< geo
     "August 2021 - present"
     "Edinburgh, United Kingdom"
-    "C++, CUDA, CMake, TypeScript (React, Angular), Node.js, PostgreSQL"
 >}}
 
-- GPGPU and Full-stack projects
-- Highly autonomous role — responsible for establishing the requirements for the tasks, carefully planning and structuring my work
-- Providing support for newcomers, sharing and organizing knowledge
+#### General purpose GPU software solutions
+
+{{< skills "C++, CUDA, LLVM, CMake" >}}
+
+- Implementing library features ranging from high-level APIs to low-level intrinsic functionality involving close communication between CPU and GPU
+- Ensuring compatibility of the solutions with open-source projects, extensively testing them and contributing improvements for correctness and reliability
+- Feeding into the company discussions, staying up to date with the big picture of the projects and highlighting non-trivial connections between their parts
+
+#### Developing a web interface for custom hardware
+
+{{< skills "TypeScript (Angular, Jasmine & Karma), Node.js, Electron, C++" >}}
+
+- Building a high quality dynamic UI/UX, collaborating with stakeholders to develop a unique design language and achieve the desired look and feel of the product
+- Implementing additional ways to process data on the backend which pushed the limits of what's possible and made it easier to use the hardware to its true potential
+- Unifying and optimizing the frontend implementation, targeting responsiveness, accessibility and presentation clarity, introcucing tests for the critical UI components
 
 ### Software Engineer at Dreams AI
 
-{{< job-info
+{{< geo
     "October 2019 - July 2021"
     "Hong Kong"
-    "TypeScript, Rust, Python, PostgreSQL, Redis, GraphQL, k8s, ELK stack"
 >}}
+
+{{< skills "TypeScript, Rust, Python, PostgreSQL, Redis, GraphQL, k8s, ELK stack" >}}
 
 - High-efficiency data processing applications and some Front-end
 - Being a liaison between the developers and the clients, greatly improving communication
@@ -40,22 +52,24 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 ### C++ Software Engineer at 1C Juniors Developer Centre
 
-{{< job-info
+{{< geo
     "June 2019 - September 2019"
     "Moscow, Russia"
-    "C++, Java, JNI, CMake, WinAPI, syscalls"
 >}}
+
+{{< skills "C++, Java, JNI, CMake, WinAPI, syscalls" >}}
 
 - Establishing a steady development pace and high maintainability of the resulting project
 - Collecting and organizing research on project-related topics for them to be available to the rest of the company
 
 ### Technician at Innovations Laboratory, Moscow Institute of Physics and Technology
 
-{{< job-info
+{{< geo
     "December 2018 - August 2019"
     "Moscow, Russia"
-    "VMWare ESXi, pfSense, Samba, Clonezilla"
 >}}
+
+{{< skills "VMWare ESXi, pfSense, Samba, Clonezilla" >}}
 
 - Maintaining multiple servers and 100+ PCs
 
@@ -80,7 +94,7 @@ I also have hobbies outside of tech, they include:
 
 ### Leading Student Council's IT department at DIHT, MIPT
 
-{{< job-info
+{{< geo
     "March 2018 - May 2019"
     "Moscow, Russia"
 >}}
