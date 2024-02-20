@@ -5,6 +5,13 @@ titleClass: "screen"
 
 {{< socials >}}
 
+I am a Software Engineer with a diverse skill set and a passion for innovation.
+My interests include software architecture, UI/UX design, game development and embedded systems.
+My journey in software development has been shaped by a relentless pursuit of knowledge and a drive to push the boundaries of what's possible.
+
+My curiosity extends beyond conventional boundaries, as I delve into the intricacies of low-level programming with languages like Rust and C++, while also exploring the nuances of high-level languages like TypeScript and Python.
+Through personal projects and professional endeavors, I continually seek to refine my skills in problem-solving, collaboration and organization.
+
 ## Work experience
 
 ### Software Engineer at Spectral Compute
