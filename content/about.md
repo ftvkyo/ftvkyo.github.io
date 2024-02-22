@@ -44,11 +44,20 @@ Through personal projects and professional endeavors, I continually seek to refi
     "Hong Kong"
 >}}
 
-{{< skills "TypeScript, Rust, Python, PostgreSQL, Redis, GraphQL, k8s, ELK stack" >}}
+#### Distributed online gaming platform
 
-- High-efficiency data processing applications and some Front-end
-- Being a liaison between the developers and the clients, greatly improving communication
-- Efficiently combining "Big picture" and "Attention to detail" working modes
+{{< skills "TypeScript, Node.js, ZeroMQ, GraphQL, PostgreSQL, Redis, Kubernetes & Terraform" >}}
+
+- Worked in a team of 10 developing the system from scratch, which included establishment of requirements, designing the platform's architecture and a custom message passing protocol, followed by iterative implementation of the project's parts
+- Used advanced correctness and security techniques which included separation of responsibility between components, automatic message validation and exhaustive testing using generated data, as well as fine-tuned collection and presentation of various metrics
+- Was a liaison between the developers and the clients, significantly simplifying the project architecture, finding more optimal solutions, and effectively reducing the cost and length of development
+
+#### Extensible fraud detection system for a legacy online gaming platform
+
+{{< skills "Rust, Elasticsearch, Logstash & Kibana, Python" >}}
+
+- Developed an external isolated validator for high-frequency event streams coming from the online gaming platform, which audited the system, verified the integrity of game results, and provided both computational and financial metrics and alerts
+- Helped the client maximize revenue by detecting anomalies, eliminating security breaches and foul play
 
 ### C++ Software Engineer at 1C Juniors Developer Centre
 
@@ -57,10 +66,12 @@ Through personal projects and professional endeavors, I continually seek to refi
     "Moscow, Russia"
 >}}
 
-{{< skills "C++, Java, JNI, CMake, WinAPI, syscalls" >}}
+#### Customizable Java application launcher
 
-- Establishing a steady development pace and high maintainability of the resulting project
-- Collecting and organizing research on project-related topics for them to be available to the rest of the company
+{{< skills "C++, Java, Java Native Interface, CMake, WinAPI, Linux system calls" >}}
+
+- Created a cross-platform launcher for a Java application, which served as a wrapper and would set up the environment, handle errors in a predictable and user-friendly way, and support Unicode on the majority of possible system configurations
+- Documented the project extensively for it to pave the way for better support of Unicode and unusual environments in other applications, the results of the internationalization research included modern C++ solutions and techniques for it, and were added to the company's knowledge base
 
 ### Technician at Innovations Laboratory, Moscow Institute of Physics and Technology
 
@@ -71,7 +82,9 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 {{< skills "VMWare ESXi, pfSense, Samba, Clonezilla" >}}
 
-- Maintaining multiple servers and 100+ PCs
+- Set up services to help staff with the education process, such as shared Windows and Linux servers, a network file storage
+- Maintained physical and wireless networks in the department, including a virtualized firewall, physical network switches and cables
+- Configured the servers, 100+ PCs and associated hardware for optimal running conditions
 
 ## Other activities
 
