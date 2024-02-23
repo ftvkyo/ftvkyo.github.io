@@ -135,6 +135,11 @@
     .screen {
         display: none !important;
     }
+
+    // Ligatures can break the text layer of the PDF
+    * {
+        font-variant-ligatures: none;
+    }
 }
 
 @page {
