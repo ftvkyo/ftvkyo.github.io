@@ -208,10 +208,18 @@ Another example, this is my monthly note template:
 
 ### Screenshots
 
+<details>
+
+<summary>
+Calendar
+</summary>
+
 This is the calendar.
 Glowing text represents existing notes.
 
 ![](/img/obsidian-ftvkyo/calendar.webp)
+
+</details>
 
 <details>
 
@@ -226,9 +234,19 @@ Here, "How to learn", "Wiki" and "Index" notes have `index: true` set in their f
 
 </details>
 
-This is the Plan Callout, a render of the previous example.
+
+<details>
+
+<summary>
+Plan Callout
+</summary>
+
+This is the Plan Callout, a render of an earlier example.
 
 ![](/img/obsidian-ftvkyo/plan-callout.webp)
+
+</details>
+
 
 ## Lessons learned
 

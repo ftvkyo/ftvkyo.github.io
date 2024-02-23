@@ -23,7 +23,7 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 #### General purpose GPU software solutions
 
-{{< skills "C++, CUDA, LLVM, CMake" >}}
+{{< skills "C++, CUDA, LLVM, CMake, CI/CD" >}}
 
 - Implementing library features ranging from high-level APIs to low-level intrinsic functionality involving close communication between CPU and GPU
 - Ensuring compatibility of the solutions with open-source projects, extensively testing them and contributing improvements for correctness and reliability
@@ -31,7 +31,7 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 #### Developing a web interface for custom hardware
 
-{{< skills "TypeScript (Angular, Jasmine & Karma), Node.js, Electron, C++" >}}
+{{< skills "TypeScript (Angular, Jasmine & Karma), Node.js, Electron, C++, CI/CD" >}}
 
 - Building a high quality dynamic UI/UX, collaborating with stakeholders to develop a unique design language and achieve the desired look and feel of the product
 - Implementing additional ways to process data on the backend which pushed the limits of what's possible and made it easier to use the hardware to its true potential
@@ -46,7 +46,7 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 #### Distributed online gaming platform
 
-{{< skills "TypeScript, Node.js, ZeroMQ, GraphQL, PostgreSQL, Redis, Kubernetes & Terraform" >}}
+{{< skills "TypeScript, Node.js, ZeroMQ, GraphQL, PostgreSQL, Redis, Kubernetes & Terraform, CI/CD" >}}
 
 - Worked in a team of 10 developing the system from scratch, which included establishment of requirements, designing the platform's architecture and a custom message passing protocol, followed by iterative implementation of the project's parts
 - Used advanced correctness and security techniques which included separation of responsibility between components, automatic message validation and exhaustive testing using generated data, as well as fine-tuned collection and presentation of various metrics
@@ -54,7 +54,7 @@ Through personal projects and professional endeavors, I continually seek to refi
 
 #### Extensible fraud detection system for a legacy online gaming platform
 
-{{< skills "Rust, Elasticsearch, Logstash & Kibana, Python" >}}
+{{< skills "Rust, Elasticsearch, Logstash & Kibana, Python, CI/CD" >}}
 
 - Developed an external isolated validator for high-frequency event streams coming from the online gaming platform, which audited the system, verified the integrity of game results, and provided both computational and financial metrics and alerts
 - Helped the client maximize revenue by detecting anomalies, eliminating security breaches and foul play
@@ -86,17 +86,41 @@ Through personal projects and professional endeavors, I continually seek to refi
 - Maintained physical and wireless networks in the department, including a virtualized firewall, physical network switches and cables
 - Configured the servers, 100+ PCs and associated hardware for optimal running conditions
 
-## Other activities
+## Personal projects
 
-I am interested in multiple areas of technology.
-I would highlight software architecture, UI/UX, programming language design, game development and embedded systems.
-I also pay attention to various approaches to planning and task management, to knowledge management, and even a bit of psychology.
+### Obsidian ftvkyo
 
-I have multiple personal projects, and here are the most interesting ones:
+{{< skills "TypeScript (React), Electron, CSS (SASS)" >}}
 
-- [Obsidian ftvkyo](/project/obsidian-ftvkyo/), an Obsidian plugin that accommodates my workflow
-- [Tekutonu](/project/tekutonu/), a voxel engine in Rust aimed at learning Vulkan
-- [Keymap-gen](/project/keymap-gen/), a generator of keyboard layouts and their reference cards
+[Obsidian ftvkyo](/project/obsidian-ftvkyo/) is an Obsidian plugin that accommodates my workflow.
+The development process allowed me reflect on the workflow and improve it greatly, and this project helps me achieve a huge productivity boost on a day-to-day basis.
+
+### Tekutonu
+
+{{< skills "Rust, Vulkan (vulkano.rs)" >}}
+
+[Tekutonu](/project/tekutonu/) is a simple voxel engine written in Rust and aimed at learning Vulkan.
+It's not the first time I experiment with voxels, and this project in particular is interesting because of the lessons in engine architecture and in development process I learned.
+
+### Keymap-gen
+
+{{< skills "Rust, C, QMK, X Keyboard Config, SVG, Python" >}}
+
+[Keymap-gen](/project/keymap-gen/) is a generator of keyboard layouts and their reference cards.
+My keyboard has an irregular shape and a custom firmware, and the OS keyboard layouts are also non-trivial.
+This project reduces the burden of configuring that all by hand by providing a unified configuration format that expands into the firmware sources, OS configuration and a nice reference card.
+
+### Other personal projects
+
+I have many more personal projects, they include:
+- Full-stack applications
+  - *TypeScript (React), Node.js, Electron, Next.js, TailwindCSS, Rust (tokio, async-std), PostgreSQL, Docker*
+- Experiments with programming languages
+  - *C++ & LLVM, Rust, Scheme and other LISP-likes, TypeScript*
+- Small 2D and 3D games
+  - *Java & OpenGL, Lua & LÖVE, Godot*
+
+## Activities
 
 I also have hobbies outside of tech, they include:
 
@@ -111,6 +135,8 @@ I also have hobbies outside of tech, they include:
     "March 2018 - May 2019"
     "Moscow, Russia"
 >}}
+
+{{< skills "Python, Django, FFmpeg" >}}
 
 This was my first big step in the profession.
 I got some experience in Project management, Full-stack development and supporting legacy systems.
