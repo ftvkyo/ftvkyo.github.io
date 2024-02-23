@@ -123,6 +123,9 @@
             font-size: 2em;
             font-weight: bold;
         }
+
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     footer {
@@ -132,5 +135,9 @@
     .screen {
         display: none !important;
     }
+}
 
+@page {
+    size: A4;
+    margin: 1cm 0.5cm;
 }
