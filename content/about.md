@@ -127,7 +127,7 @@ I also have hobbies outside of tech:
 - **Camping & Hiking**: I have a goal of walking the [Pennine Way](https://www.nationaltrail.co.uk/en_GB/trails/pennine-way/) with my friends, and we have walked 90 kilometres of it already (by Feb 2024)
 - **Photography**: I love to take photos to preserve memories about places and events, I publish roughly 10% of the photos I take, and my [album](https://photos.app.goo.gl/H7bp4sdnDGMxJViMA) has been going since November 2020
 - **Reading & Writing**: I think good publications are very inspiring, and I want to write things that would inspire others in the same way
-- **Board games** are a good way to meet other people, while also being interesting purely from the game design perspective
+- **Board games** are a good way to meet other people, while also being interesting purely from the game design perspective, and I even led some TTRPG games (like D&D) for my friends
 - **Video games** such as Factorio, Outer Wilds and Souls-likes can tell interesting stories and even teach things like patience and strategic thinking
 
 ### Leading Student Council's IT department at DIHT, MIPT
