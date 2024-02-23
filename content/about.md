@@ -6,7 +6,7 @@ titleClass: "screen"
 {{< socials >}}
 
 I am a Software Engineer with a diverse skill set and a passion for innovation.
-My interests include software architecture, UI/UX design, game development and embedded systems.
+My technical interests include software architecture, UI/UX design, game development and embedded systems.
 My journey in software development has been shaped by a relentless pursuit of knowledge and a drive to push the boundaries of what's possible.
 
 My curiosity extends beyond conventional boundaries, as I delve into the intricacies of low-level programming with languages like Rust and C++, while also exploring the nuances of high-level languages like TypeScript and Python.
@@ -122,12 +122,13 @@ I have many more personal projects, they include:
 
 ## Activities
 
-I also have hobbies outside of tech, they include:
+I also have hobbies outside of tech:
 
-- Photography, Camping & Hiking
-- Reading & Writing
-- Board games
-- Video games such as Factorio, Outer Wilds and Souls-likes
+- **Camping & Hiking**: I have a goal of walking the [Pennine Way](https://www.nationaltrail.co.uk/en_GB/trails/pennine-way/) with my friends, and we have walked 90 kilometers of it already (by Feb 2024)
+- **Photography**: I love to take photos to preserve memories about places and events, I publish roughly 10% of the photos I take, and my [album](https://photos.app.goo.gl/H7bp4sdnDGMxJViMA) has been going since November 2020
+- **Reading & Writing**: I think good publications are very inspiring, and I want to write things that would inspire others in the same way
+- **Board games** are a good way to meet other people, while also being interesting purely from the game design perspective
+- **Video games** such as Factorio, Outer Wilds and Souls-likes can tell interesting stories and even teach things like patience and strategic thinking
 
 ### Leading Student Council's IT department at DIHT, MIPT
 
