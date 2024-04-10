@@ -41,6 +41,13 @@ main {
         }
     }
 
+    blockquote {
+        border: 1px dotted c.$muted;
+        margin: s.$pad s.$pad * 2;
+        padding: 0 s.$pad;
+        border-radius: s.$pad * 0.5;
+    }
+
     table {
         width: 100%;
 
