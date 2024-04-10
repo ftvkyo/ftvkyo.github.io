@@ -72,12 +72,12 @@ main {
         border: 1px solid c.$muted;
         border-radius: 5px;
 
-        summary {
-            padding: s.$pad * 0.25 s.$pad * 0.5;
-        }
+        padding: 0 s.$pad;
 
-        > :not(summary) {
-            padding: 0 s.$pad * 0.5;
+        summary {
+            padding: s.$pad * 0.25 0;
+
+            user-select: none;
         }
     }
 

@@ -62,7 +62,7 @@ pre {
 }
 
 // Inline code
-p code {
+:not(pre) > code {
     color: c.$primary;
     background-color: c.$void;
 
