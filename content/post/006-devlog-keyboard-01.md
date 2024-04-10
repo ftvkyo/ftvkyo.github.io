@@ -1,5 +1,5 @@
 ---
-title: "Keyboard devlog #1: Design"
+title: "Keyboard devlog #1: Init"
 date: 2024-04-10T22:00:00Z
 tags: [Devlog, Keyboard]
 description: >
@@ -80,7 +80,7 @@ I plan to write more about this as a part of my [Keymap-gen][keymap-gen] project
 [keymap-gen]: /project/keymap-gen/
 
 So, considering my experience of using "ergonomic" keyboards and `ru(unipunct)` layout, I felt like I can improve something.
-This, along with the aforementioned Keymap-gen, is what this post is about.
+This, along with the aforementioned Keymap-gen, is what this devlog is about.
 
 
 ## Idea
@@ -265,6 +265,7 @@ This brings additional benefits:
 Ah, also a few sheets of acrylic for "debug" runs of the CNC router.
 
 
-## Designing
+## What follows
 
-... To be written ...
+This sums up the preparation.
+I will document the design process in the next post.
