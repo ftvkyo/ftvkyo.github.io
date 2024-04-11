@@ -1,10 +1,10 @@
 ---
-title: "Keyboard devlog #1: Init"
+title: "Hovert60 keyboard devlog #1: Init"
 date: 2024-04-10T22:00:00Z
-tags: [Devlog, Keyboard]
+tags: [Devlog, Hovert60 keyboard, IRL]
 description: >
   Making a low-profile wireless split keyboard from scratch.
-  Did I mention I intend to handwire it?
+  I also intend to handwire it rather than use a PCB.
 ---
 
 {{< toc >}}
@@ -99,14 +99,24 @@ This is the idea I started with:
 The "tailored for me" part implies a few additional requirements.
 They basically boil down to what keys and key combinations I want to have the quickest access to.
 
-- A dedicated number row
-- `Shift + things` for typing BIG LETTERS & `sy|\/|b()ls`
-- `Ctrl [+ Shift] + things` for "regular" application shortcuts
-- <code>Super[^super-key] [+ Shift] + things</code> for controlling the window manager
-- `Right Alt [+ Shift] + things` for typing in Russian
-- `Caps Lock` to change language
+<details>
+
+<summary>
+Some accessibility criteria for keys & key combinations
+</summary>
+
+| Feature | What it makes easier |
+| ------- | -------------------- |
+| Dedicated number row | Typing numbers & symbols, using Fn-keys & number shortcuts |
+| `Caps Lock` | Changing language |
+| `Shift` combos | Big letters and symbols |
+| `Ctrl [+ Shift]` combos | Regular application shortcuts |
+| <code>Super[^super-key] [+ Shift]</code> combos | Window manager shortcuts |
+| `Right Alt [+ Shift]` combos | Typing in Russian |
 
 [^super-key]: "Super" is an alternative name of the "Windowns" or "Command" key, also known as "Meta". Read more about [Super key](https://en.wikipedia.org/wiki/Super_key_(keyboard_button)) on Wikipedia.
+
+</details>
 
 With this in mind, there are only two things left to do before I can start:
 1. Find inspiration
@@ -186,7 +196,7 @@ Another important thing is that Kailh Choc keycaps are usually spaced differentl
 You can read more on Deskthority Wiki: [Kailh PG1350 #Keycaps][choc-keycaps].
 There is also a [datasheet][choc-datasheet] for them.
 
-Key (ha-ha) takeaways:
+Key (ha!) takeaways:
 - The cutout for the switch is `14×14mm`
 - One unit (area taken up by a key) is `18×17mm` (compared to the more common `19.05×19.05mm`)
 - For the switches to click in place, the plate should ideally be `1.3mm` thick (compared to the more common `1.5mm`)
@@ -245,7 +255,7 @@ This brings additional benefits:
 | -----------------------------------------------------| ----: |
 | [Seeed Xiao nRF52840 (BLE)][seeed-studio-xiao-ble]   | 2     |
 | [Kailh Choc Pink switches][splitkb-switches]         | 60    |
-| [Blank White Keycaps][splitkb-switches]              | 58    |
+| [Blank White Keycaps][splitkb-keycaps]              | 58    |
 | [Blank White Homing Keycaps][splitkb-keycaps-homing] | 2     |
 | Brass plate `150x150x1.5mm`                          | 2     |
 | `1N4148` Diodes                                      | 60    |
@@ -265,7 +275,19 @@ This brings additional benefits:
 Ah, also a few sheets of acrylic for "debug" runs of the CNC router.
 
 
-## What follows
+## Naming
 
-This sums up the preparation.
-I will document the design process in the next post.
+The name of the project, `Hovert60`, highlights several project features:
+- `Hover`: the keys are held by the front plate, there is no additional support from a PCB
+- `Hover`: the switches have very low resistance, so typing experience will be very light
+- `Overt`: the keyboard enclosure is open from the sides
+- `Overt`: the development process is documented here
+- `60`: There are 60 keys
+
+
+## What's next
+
+I plan the following posts after this one:
+- Design process
+- Manufacture
+- Configuration
