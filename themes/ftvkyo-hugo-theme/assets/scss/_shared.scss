@@ -63,8 +63,8 @@ pre {
 
 // Inline code
 :not(pre) > code {
-    color: c.$primary;
-    background-color: c.$void;
+    color: c.$code;
+    background-color: c.$code-bg;
 
     padding: 0 0.2em;
     border-radius: 0.2em;

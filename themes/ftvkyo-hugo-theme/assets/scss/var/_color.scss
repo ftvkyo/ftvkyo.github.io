@@ -19,6 +19,9 @@ $bg-img: var(--img-bg);
 $void: var(--void);
 $shadow: var(--shadow);
 
+$code: var(--code);
+$code-bg: var(--code-bg);
+
 $invert: var(--invert);
 
 
@@ -54,6 +57,9 @@ $bright: white;
     --void: lightgrey;
     --shadow: grey;
 
+    --code: #111;
+    --code-bg: #eee;
+
     --invert: none;
 
     @media (prefers-color-scheme: dark) {
@@ -70,6 +76,9 @@ $bright: white;
         --img-bg: lightgrey;
         --void: #222;
         --shadow: #444;
+
+        --code: #eee;
+        --code-bg: #111;
 
         --invert: invert(1);
     }

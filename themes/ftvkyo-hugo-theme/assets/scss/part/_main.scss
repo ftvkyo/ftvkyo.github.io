@@ -8,6 +8,10 @@ $hr-gradient: linear-gradient(to right, c.$accent-1, c.$accent-2);
 main {
     line-height: 1.5;
 
+    h1, h2, h3, h4, h5, h6 {
+        color: c.$accent-1;
+    }
+
     img {
         width: 100%;
     }
@@ -51,6 +55,8 @@ main {
     table {
         width: 100%;
 
+        margin: s.$pad 0;
+
         table-layout: fixed;
 
         border-collapse: collapse;
@@ -62,7 +68,7 @@ main {
         }
 
         th {
-            background-color: c.$shadow;
+            background-color: c.$void;
             border-bottom: 1px solid c.$primary;
         }
 
@@ -85,6 +91,8 @@ main {
             padding: s.$pad * 0.25 0;
 
             user-select: none;
+
+            color: c.$accent-2-dull;
         }
     }
 
