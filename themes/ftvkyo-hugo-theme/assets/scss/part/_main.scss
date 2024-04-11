@@ -12,12 +12,22 @@ main {
         color: c.$accent-1;
     }
 
+    figure {
+        margin: auto 0;
+        width: 100%;
+
+        figcaption {
+            font-size: smaller;
+            font-style: italic;
+        }
+    }
+
     img {
         width: 100%;
+        border-radius: s.$pad * 0.5;
     }
 
     img[src$=".svg"] {
-        border-radius: s.$pad * 0.5;
         background-color: c.$bg-img;
         padding: s.$pad s.$pad * 0.5;
     }
@@ -74,7 +84,7 @@ main {
 
         tbody {
             tr:nth-child(even) {
-                background-color: c.$void;
+                background-color: c.$shadow;
             }
         }
     }
@@ -90,10 +100,15 @@ main {
         summary {
             padding: s.$pad * 0.25 0;
 
-            user-select: none;
-
             color: c.$accent-2-dull;
+
+            user-select: none;
+            cursor: pointer;
         }
+    }
+
+    details:not([open]) summary::after {
+        content: " (click to expand)";
     }
 
     ul.links {
