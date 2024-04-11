@@ -22,6 +22,8 @@ Additionally, my XKB configuration is somewhat interesting.
 
 [^planck-ez]: Planck EZ was [retired in 2023](https://blog.zsa.io/2307-goodbye-planck-ez/), but just Plank still exists
 
+{{< figure "/img/006/preonic.jpg" "OLKB Planck with \"ergonomic\" wristrests" >}}
+
 You see, Russian alphabet has 33 letters, while English only has 26.
 This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.
 
@@ -206,6 +208,10 @@ Key (ha!) takeaways:
 
 I purchased Kailh Choc V1 Pink switches along with keycaps for them.
 
+{{< figure "/img/006/keyswitches.jpg" "Kailh Choc V1 switches next to Cherry MX style switches" >}}
+
+{{< figure "/img/006/keycaps.jpg" "Kailh Choc V1 keycaps" >}}
+
 
 #### Choice of front plate material
 
@@ -215,6 +221,8 @@ As I mentioned previously, wood and acrylic are pretty much out of the question.
 2. Brass? Yes. Totally not inspired by [DIY Perks](https://www.youtube.com/@DIYPerks).
 
 I purchased 2 brass sheets with the dimensions `150×150×1.5mm`.
+
+{{< figure "/img/006/brass.jpg" "Brass sheets" >}}
 
 
 #### Choice of microcontroller and firmware
@@ -234,16 +242,20 @@ Note that the controller is quite small.
 It actually barely has enough pins for all the keys I want to have!
 Looking ahead, there are going to be 30 keys soldered in a 5x6 matrix, which means I need 11 <abbr title="Input/Output">I/O</abbr> pins.
 
+{{< figure "/img/006/microcontroller.jpg" "Seeed XIAO BLE microcontroller" >}}
+
 
 #### Determining how to attach the microcontrollers to the boards
 
 Originally I was thinking about glueing the microcontroller to the bottom board, or maybe leaving it hanging, as it doesn't have any mounting holes.
-But I realized I can use a breadboard (not the jumper wire kind, but rather the soldering kind) to mount the microcontroller and connect the wires to it.
+But I realized I can use a soldering breadboard to mount the microcontroller and connect the wires to it.
 
 This brings additional benefits:
 - If I use header pins for the microcontroller, it becomes swappable (in case it fails)
 - I can hide the battery under the breadboard
 - It's easier to fix issues during assembly
+
+{{< figure "/img/006/breadboards.jpg" "Breadboards" >}}
 
 
 </details>
@@ -273,6 +285,8 @@ This brings additional benefits:
 [splitkb-keycaps-homing]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811519709261
 
 Ah, also a few sheets of acrylic for "debug" runs of the CNC router.
+
+{{< figure "/img/006/power.jpg" "Battery, diodes, battery cable" >}}
 
 
 ## Naming
