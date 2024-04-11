@@ -291,7 +291,7 @@ Ah, also a few sheets of acrylic for "debug" runs of the CNC router.
 
 ## Naming
 
-The name of the project, `Hovert60`, highlights several project features:
+The name of the project, `Hovert60` or `h/t60`, highlights several project features:
 - `Hover`: the keys are held by the front plate, there is no additional support from a PCB
 - `Hover`: the switches have very low resistance, so typing experience will be very light
 - `Overt`: the keyboard enclosure is open from the sides
