@@ -267,9 +267,9 @@ This brings additional benefits:
 | -----------------------------------------------------| ----: |
 | [Seeed Xiao nRF52840 (BLE)][seeed-studio-xiao-ble]   | 2     |
 | [Kailh Choc Pink switches][splitkb-switches]         | 60    |
-| [Blank White Keycaps][splitkb-keycaps]              | 58    |
+| [Blank White Keycaps][splitkb-keycaps]               | 58    |
 | [Blank White Homing Keycaps][splitkb-keycaps-homing] | 2     |
-| Brass plate `150x150x1.5mm`                          | 2     |
+| Brass plate `150×150×1.5mm`                          | 2     |
 | `1N4148` Diodes                                      | 60    |
 | `250mAh` Battery                                     | 2     |
 | Battery cables                                       | 2     |
