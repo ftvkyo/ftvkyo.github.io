@@ -38,11 +38,8 @@ For example, letter `ё` *[jɵ]* is kind of an extension of letter `о` *[o]*.
 As `ё` is used relatively rarely (and some people even consider it *optional*), it is placed on the Layer 3 of the `о` key.
 My Layer 3 modifier is Right Alt, so I can type `ё` by pressing `RAlt+о` and `Ё` by pressing `RAlt+Shift+о`.
 
-<details>
+{{% details "Example XKB configuration that uses the layout" %}}
 
-<summary>
-Example XKB configuration that uses the layout
-</summary>
 
 ```
 /etc/X11/xorg.conf.d/10-user-keyboard.conf
@@ -72,7 +69,8 @@ I might look into this at some point.
 Note: the settings can also be hand-clicked in something like KDE keyboard configuration.
 And they can also be used in input configuration of something like `sway` if you use Wayland.
 
-</details>
+{{% /details %}}
+
 
 I should mention that keyboard layout configuration does not end with XKB config.
 It can also be configured by modifying keyboard firmware, and some use cases really benefit from configuring **both**.
@@ -101,11 +99,7 @@ This is the idea I started with:
 The "tailored for me" part implies a few additional requirements.
 They basically boil down to what keys and key combinations I want to have the quickest access to.
 
-<details>
-
-<summary>
-Some accessibility criteria for keys & key combinations
-</summary>
+{{% details "Some accessibility criteria for keys & key combinations" %}}
 
 | Feature | What it makes easier |
 | ------- | -------------------- |
@@ -118,7 +112,8 @@ Some accessibility criteria for keys & key combinations
 
 [^super-key]: "Super" is an alternative name of the "Windowns" or "Command" key, also known as "Meta". Read more about [Super key](https://en.wikipedia.org/wiki/Super_key_(keyboard_button)) on Wikipedia.
 
-</details>
+{{% /details %}}
+
 
 With this in mind, there are only two things left to do before I can start:
 1. Find inspiration
@@ -179,14 +174,9 @@ There was a number of decisions to make:
 4. How to attach the microcontroller to the board?
 
 
-<details>
-
-<summary>
-Decision process
-</summary>
-
-
 #### Choice of key switches
+
+{{% details "Decision process -- keyswitches" %}}
 
 As the goal is to make the keyboard low-profile, the "default" option seems to be [Kailh Choc][choc] switches.
 It's important to note that there are 2 main versions of Kailh Choc switches -- V1 and V2.
@@ -206,6 +196,9 @@ Key (ha!) takeaways:
 [choc-keycaps]: https://deskthority.net/wiki/Kailh_PG1350_series#Keycaps
 [choc-datasheet]: https://cdn-shop.adafruit.com/product-files/5113/CHOC+keyswitch_Kailh-CPG135001D01_C400229.pdf
 
+{{% /details %}}
+
+
 I purchased Kailh Choc V1 Pink switches along with keycaps for them.
 
 {{< figure "/img/006/keyswitches.jpg" "Kailh Choc V1 switches next to Cherry MX style switches" >}}
@@ -215,10 +208,15 @@ I purchased Kailh Choc V1 Pink switches along with keycaps for them.
 
 #### Choice of front plate material
 
+{{% details "Decision process -- plate material" %}}
+
 As I mentioned previously, wood and acrylic are pretty much out of the question.
 
 1. Aluminium? I don't like how it feels in my imagination, so no.
 2. Brass? Yes. Totally not inspired by [DIY Perks](https://www.youtube.com/@DIYPerks).
+
+{{% /details %}}
+
 
 I purchased 2 brass sheets with the dimensions `150×150×1.5mm`.
 
@@ -227,6 +225,8 @@ I purchased 2 brass sheets with the dimensions `150×150×1.5mm`.
 
 #### Choice of microcontroller and firmware
 
+{{% details "Decision process -- microcontroller" %}}
+
 As I want to build a wireless keyboard, using [ZMK][zmk] for the firmware seems to be a good idea.
 Looking through the list of [hardware supported by ZMK][zmk-supported], I was choosing between Pro Micro and Seeed XIAO microcontroller "footprints".
 An important detail is that not all microcontrollers support <abbr title="Bluetooth Low Energy">BLE</abbr>, and I wanted one that does support it (so I don't have to charge the keyboard as often).
@@ -234,18 +234,23 @@ An important detail is that not all microcontrollers support <abbr title="Blueto
 [zmk]: https://zmk.dev/
 [zmk-supported]: https://zmk.dev/docs/hardware
 
-In the end I selected [Seeed XIAO BLE][seeed-xiao-ble] that uses nRF52840 chip with BLE support.
-
-[seeed-xiao-ble]: https://wiki.seeedstudio.com/XIAO_BLE/
-
 Note that the controller is quite small.
 It actually barely has enough pins for all the keys I want to have!
 Looking ahead, there are going to be 30 keys soldered in a 5x6 matrix, which means I need 11 <abbr title="Input/Output">I/O</abbr> pins.
+
+{{% /details %}}
+
+
+In the end I selected [Seeed XIAO BLE][seeed-xiao-ble] that uses an `nRF52840` chip.
+
+[seeed-xiao-ble]: https://wiki.seeedstudio.com/XIAO_BLE/
 
 {{< figure "/img/006/microcontroller.jpg" "Seeed XIAO BLE microcontroller" >}}
 
 
 #### Determining how to attach the microcontrollers to the boards
+
+{{% details "Decision process -- microcontroller attachment" %}}
 
 Originally I was thinking about glueing the microcontroller to the bottom board, or maybe leaving it hanging, as it doesn't have any mounting holes.
 But I realized I can use a soldering breadboard to mount the microcontroller and connect the wires to it.
@@ -255,10 +260,10 @@ This brings additional benefits:
 - I can hide the battery under the breadboard
 - It's easier to fix issues during assembly
 
+{{% /details %}}
+
+
 {{< figure "/img/006/breadboards.jpg" "Breadboards" >}}
-
-
-</details>
 
 
 ### Final list of parts
@@ -278,13 +283,12 @@ This brings additional benefits:
 | Heat Shrink tube                                     | long  |
 | `M2` Standoffs & Screws                              | many  |
 | Header pins and sockets                              | many  |
+| Sheets of acrylic (for prototyping)                  | few   |
 
 [seeed-studio-xiao-ble]: https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html
 [splitkb-switches]: https://splitkb.com/collections/switches-and-keycaps/products/kailh-low-profile-choc-switches?variant=42309434835203
 [splitkb-keycaps]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811487039565
 [splitkb-keycaps-homing]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811519709261
-
-Ah, also a few sheets of acrylic for "debug" runs of the CNC router.
 
 {{< figure "/img/006/power.jpg" "Battery, diodes, battery cable" >}}
 
