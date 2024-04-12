@@ -20,7 +20,7 @@ Additionally, my XKB configuration is somewhat interesting.
 [ergodox-ez]: https://ergodox-ez.com/
 [preonic-olkb]: https://drop.com/buy/preonic-mechanical-keyboard
 
-[^planck-ez]: Planck EZ was [retired in 2023](https://blog.zsa.io/2307-goodbye-planck-ez/), but just Plank still exists
+[^planck-ez]: Planck EZ was [retired in 2023](https://blog.zsa.io/2307-goodbye-planck-ez/), but just Planck still exists
 
 {{< figure "/img/006/preonic.jpg" "OLKB Planck with \"ergonomic\" wristrests" >}}
 
