@@ -20,12 +20,12 @@ draft: true
 
 ### What's the shape of my hand?
 
-...
+{{< figure "/img/007/hand-adjusted.svg" "Tracing a hand in various positions" >}}
 
 
 ### Can I use a laser cutter?
 
-...
+{{< figure "/img/007/test-holes.svg" "Holes to check laser cutter tolerance" >}}
 
 
 ## Going with metal
