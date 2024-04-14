@@ -10,7 +10,10 @@
 
     {{ range .Params.tags }}
         {{ $href := print (relLangURL "tags/") (urlize .) }}
-        <a href="{{ $href }}">{{ . }}</a>
+        <a class="tag" href="{{ $href }}">
+            <img src="/icon/tag.svg"/>
+            {{ . }}
+        </a>
     {{ end }}
 </div>
 

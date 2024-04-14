@@ -1,7 +1,6 @@
 baseURL = "https://www.ftvkyo.me/"
 languageCode = "en-us"
 title = "ftvkyo"
-theme = "ftvkyo-hugo-theme"
 
 
 [params]

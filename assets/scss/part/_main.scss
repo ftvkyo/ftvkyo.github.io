@@ -55,6 +55,25 @@ main {
         }
     }
 
+    .tag {
+        display: flex;
+        gap: s.$gap * 0.33;
+        align-items: baseline;
+
+        img {
+            position: relative;
+            top: 0.25em;
+
+            // Override img styles
+            width: 1em;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+
+            filter: c.$invert;
+        }
+    }
+
     blockquote {
         border: 1px dotted c.$muted;
         margin: s.$pad s.$pad * 2;
