@@ -32,6 +32,21 @@ main {
         padding: s.$pad s.$pad * 0.5;
     }
 
+    input {
+        padding: 0 s.$pad * 0.5;
+
+        border: none;
+        border-radius: s.$pad * 0.25;
+        outline: 1px solid c.$primary;
+
+        background-color: c.$bg;
+        color: c.$primary;
+
+        &:invalid {
+            outline: 2px dashed red;
+        }
+    }
+
     .metadata {
         display: flex;
         flex-wrap: wrap;
