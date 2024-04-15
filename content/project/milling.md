@@ -1,0 +1,134 @@
+---
+title: "Milling calculator"
+description: >
+    Calculate speeds and feeds for milling bits.
+---
+
+<style>
+    #calculator {
+        display: grid;
+        grid-template-columns: auto 1fr min-content;
+
+        gap: 0.5em;
+    }
+
+    #calculator hr {
+        grid-column: 1 / 4;
+        width: 100%;
+    }
+
+    #calculator input:invalid {
+        outline: 2px solid red;
+    }
+
+    #calculator span {
+        white-space: nowrap;
+    }
+</style>
+
+
+<noscript>
+<strong>JavaScript is required.</strong>
+</noscript>
+
+
+<script>
+
+function el(key) {
+    return document.querySelector("input#" + key);
+}
+
+function clearOutputs() {
+    el("speed").value = "";
+    el("feedXY").value = "";
+    el("feedZ").value = "";
+    el("stepover").value = "";
+    el("stepdown").value = "";
+}
+
+function clearEverything() {
+    el("diameter").value = "";
+    el("flutes").value = "";
+    el("feed").value = "";
+    el("chipLoad").value = "";
+
+    clearOutputs();
+}
+
+function getInput(key) {
+    const e = el(key);
+
+    if (e && e.checkValidity()) {
+        const n = Number(e.value);
+        if (typeof n === "number" && !Number.isNaN(n) && n !== 0) {
+            return n;
+        }
+    }
+    return undefined;
+}
+
+function update() {
+    const diameter = getInput("diameter");
+    const flutes = getInput("flutes");
+    const feed = getInput("feed");
+    const chipLoad = getInput("chipLoad");
+
+    switch (undefined) {
+        case diameter:
+        case flutes:
+        case feed:
+        case chipLoad:
+            clearOutputs();
+            return;
+    }
+
+    const speed = feed / (Math.PI / 12 * diameter);
+    const feedXY = speed * flutes * chipLoad;
+    const feedZ = feedXY / 2;
+    const stepover = diameter * 0.45;
+    const stepdown = diameter * 0.45;
+
+    el("speed").value = speed.toFixed(0);
+    el("feedXY").value = feedXY.toFixed(0);
+    el("feedZ").value = feedZ.toFixed(0);
+    el("stepover").value = stepover.toFixed(3);
+    el("stepdown").value = stepdown.toFixed(3);
+}
+</script>
+
+
+<div id="calculator">
+<!-- Inputs -->
+<label for="diameter">Tool diameter</label>
+<input id="diameter" type="text" inputmode="numeric" pattern="\d*(\.\d*)?"/>
+<span>mm</span>
+<label for="flutes">Number of flutes</label>
+<input id="flutes" type="text" inputmode="numeric" pattern="\d*"/>
+<span>integer</span>
+<label for="feed">Surface speed</label>
+<input id="feed" type="text" inputmode="numeric" pattern="\d*(\.\d*)?"/>
+<span>mm/min</span>
+<label for="chipLoad">Chip load</label>
+<input id="chipLoad" type="text" inputmode="numeric" pattern="\d*(\.\d*)?"/>
+<span>mm</span>
+<hr/>
+<!-- Results -->
+<label for="speed">Spindle speed</label>
+<input id="speed" type="text" readonly/>
+<span>rpm</span>
+<label for="feedXY">Feed XY</label>
+<input id="feedXY" type="text" readonly/>
+<span>mm/min</span>
+<label for="feedZ">Feed Z (plunge)</label>
+<input id="feedZ" type="text" readonly/>
+<span>mm/min</span>
+<label for="stepover">Stepover</label>
+<input id="stepover" type="text" readonly/>
+<span>mm</span>
+<label for="stepdown">Stepdown</label>
+<input id="stepdown" type="text" readonly/>
+<span>mm</span>
+<hr/>
+<button onclick="clearEverything()">Clear</button>
+<button onclick="update()">Update</button>
+</div>
