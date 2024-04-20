@@ -13,12 +13,16 @@ main {
     }
 
     figure {
-        margin: s.$pad 0;
+        margin: s.$pad * 2 0;
         width: 100%;
 
         figcaption {
             font-size: smaller;
             font-style: italic;
+        }
+
+        p {
+            margin: 0;
         }
     }
 
