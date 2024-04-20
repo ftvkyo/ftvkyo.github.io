@@ -2,13 +2,12 @@
 title: "Hovert60 keyboard devlog #2: Design"
 date: 2024-04-12T22:00:00Z
 tags: [Devlog, Hovert60 keyboard, IRL]
+toc: true
 description: >
   What shape should my keyboard have?
   How do I avoid making expensive mistakes?
 draft: true
 ---
-
-{{< toc >}}
 
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: "Obsidian ftvkyo"
+toc: true
 description: >
     Plugin for [Obsidian.md](https://obsidian.md).
     Accomodates my workflow, has its own calendar with periodic notes, templates, and a file browser.
@@ -8,8 +9,6 @@ description: >
 - Github repository: [ftvkyo/obsidian-ftvkyo](https://github.com/ftvkyo/obsidian-ftvkyo)
 - Work started: *Jul 23, 2023*
     - Code was migrated from "Inline plugins" I made earlier
-
-{{< toc >}}
 
 I have been using Obsidian for a while (since March 2021).
 Finding a good workflow, a good approach to work and study is important for me, and it is an interesting challenge.

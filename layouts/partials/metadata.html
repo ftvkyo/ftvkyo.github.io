@@ -1,26 +1,31 @@
-{{ if or .Date .Params.tags }}
-    <div class="metadata">
-        {{ if .Date }}
-            {{ $dateSystem := .Date.Format "2006-01-02" }}
-            {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
 
-            <time datetime="{{ $dateSystem }}">
-                {{ $dateReadable }}
-            </time>
-        {{ end }}
+<div class="metadata">
+    {{ if .Params.description }}
+        <div class="description">
+            {{ .Params.description | markdownify }}
+        </div>
+    {{ end }}
 
-        {{ range .Params.tags }}
-            {{ $href := print (relLangURL "tags/") (urlize .) }}
-            <a class="tag" href="{{ $href }}">
-                <img src="/icon/tag.svg"/>
-                {{ . }}
-            </a>
-        {{ end }}
-    </div>
-{{ end }}
+    {{ if or .Date .Params.tags }}
+        <div class="fields">
+            {{ if .Date }}
+                {{ $dateSystem := .Date.Format "2006-01-02" }}
+                {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
+                <div>
+                    <img src="/icon/calendar.svg"/>
+                    <time datetime="{{ $dateSystem }}">
+                        {{ $dateReadable }}
+                    </time>
+                </div>
+            {{ end }}
 
-{{ if .Params.description }}
-    <p class="description">
-        {{ .Params.description | markdownify }}
-    </p>
-{{ end }}
+            {{ range .Params.tags }}
+                {{ $href := print (relLangURL "tags/") (urlize .) }}
+                <a href="{{ $href }}">
+                    <img src="/icon/tag.svg"/>
+                    {{ . }}
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+</div>

@@ -2,13 +2,12 @@
 title: "On self-organization, part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
 tags: [Reflection, Organization]
+toc: true
 description: >
   Exploring methods of personal organization and why I would want to do that.
 ---
 
 {{< figure src=`/img/003/fix-all-problems.svg` alt=`Checkbox "Fix all problems"` >}}
-
-{{<toc>}}
 
 
 ## Introduction

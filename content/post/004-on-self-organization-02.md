@@ -2,13 +2,12 @@
 title: "On self-organization, part 2: But how?"
 date: 2022-12-23T17:00:00+00:00
 tags: [Reflection, Organization]
+toc: true
 description: >
   Personal organization through note-taking and some extra thoughts on the topic.
 ---
 
 {{< figure src=`/img/004/reintroduction.svg` alt=`An arrow with a loop in the middle, representing "reintroduction".` >}}
-
-{{<toc>}}
 
 
 ## Reintroduction

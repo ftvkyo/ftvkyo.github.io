@@ -1,5 +1,6 @@
 ---
 title: "Tekutonu"
+toc: true
 description: >
     Voxel engine. Uses Rust and the `vulkano` library.
 ---
@@ -8,8 +9,6 @@ description: >
 - Work started: *Oct 14, 2022*
 - Work stopped: *Nov 20, 2022*
 - Timespan: 38 days, *17* of them have commits
-
-{{< toc >}}
 
 It is not the first time I tried to build a voxel engine.
 This time, the primary objective of the project was to learn the basics of Vulkan.

@@ -2,5 +2,14 @@
     <h1 class="{{ .Params.titleClass }}">{{ .Title }}</h1>
 
     {{ partial "metadata.html" . }}
+
+    {{ if .Params.toc }}
+        <details>
+            <summary>Table of Contents</summary>
+
+            {{ .Page.TableOfContents }}
+        </details>
+    {{ end }}
+
     {{ .Content }}
 {{ end }}

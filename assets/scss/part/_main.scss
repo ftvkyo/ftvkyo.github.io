@@ -5,6 +5,7 @@
 $hr-gradient: linear-gradient(to right, c.$accent-1, c.$accent-2);
 
 
+// General content
 main {
     line-height: 1.5;
 
@@ -24,16 +25,16 @@ main {
         p {
             margin: 0;
         }
-    }
 
-    img {
-        width: 100%;
-        border-radius: s.$pad * 0.5;
-    }
+        img {
+            width: 100%;
+            border-radius: s.$pad * 0.5;
+        }
 
-    img[src$=".svg"] {
-        background-color: c.$bg-img;
-        padding: s.$pad s.$pad * 0.5;
+        img[src$=".svg"] {
+            background-color: c.$bg-img;
+            padding: s.$pad s.$pad * 0.5;
+        }
     }
 
     input {
@@ -51,37 +52,6 @@ main {
         }
     }
 
-    .metadata {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: baseline;
-        gap: s.$gap;
-    }
-
-    .description {
-        font-style: italic;
-        margin: 0.5em 0;
-    }
-
-    .tag {
-        display: flex;
-        gap: s.$gap * 0.33;
-        align-items: baseline;
-
-        img {
-            position: relative;
-            top: 0.25em;
-
-            // Override img styles
-            width: 1em;
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-
-            filter: c.$invert;
-        }
-    }
 
     blockquote {
         border: 1px dotted c.$muted;
@@ -138,77 +108,135 @@ main {
     details:not([open]) summary::after {
         content: " (click to expand)";
     }
+}
 
-    ul.links {
-        li:not(:last-child) {
-            margin-bottom: s.$pad * 0.5;
-        }
 
-        a {
-            // Prevent the underline extending past the link
-            display: inline-block;
-        }
+// Project & post lists
+main .cards {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: s.$gap;
+
+    li {
+        padding: 0 s.$pad;
+        border: 1px solid c.$shadow;
+        border-radius: s.$pad * 0.5;
     }
 
-    #TableOfContents {
-        border-left: 1px dashed c.$primary;
+    .title {
+        display: block;
+        font-size: 1.3em;
+        font-weight: bold;
+        text-decoration: none;
+        margin: s.$pad * 0.67 0;
+    }
+}
+
+
+// Metadata block
+main .metadata {
+    margin: s.$pad * 0.67 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: s.$gap * 0.67;
+
+    opacity: 75%;
+
+    .description {
+        font-style: italic;
     }
 
-    // "socials" shortcode
-    .socials {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: s.$gap;
+    .fields > * {
+        display: inline;
 
-        @media print {
-            justify-content: space-around;
-        }
-
-        a {
-            display: flex;
-            flex-direction: row;
-            gap: s.$gap * 0.5;
-            align-items: center;
-
-            text-decoration: none;
-        }
-
-        svg {
-            background-color: c.$bg-img;
-            padding: s.$pad * 0.25;
-            border-radius: s.$pad * 0.25;
-
-            height: 2em;
-            width: 2em;
-        }
-    }
-
-    // Skills & Geo shortcodes
-    .info {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: s.$gap * 0.5;
-
-        margin: 0.5em 0.75em;
-
-        opacity: 75%;
+        margin-left: 0.5ch;
+        margin-right: 1ch;
+        text-decoration: none;
 
         img {
             position: relative;
-            top: 3px;
-
-            height: 1em;
-            width: 1em;
-
-            background-color: unset;
-            padding: unset;
-            border-radius: unset;
-
+            width: 0.8em;
+            margin-right: 0.25ch;
             filter: c.$invert;
-
-            margin: 0 0.25em;
         }
+    }
+}
+
+
+// Table of contents
+main #TableOfContents {
+    ul {
+        list-style-position: inside;
+        padding-left: 1ch;
+        ul {
+            padding-left: 3ch;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+// Socials shortcode
+main .socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: s.$gap;
+
+    @media print {
+        justify-content: space-around;
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        gap: s.$gap * 0.5;
+        align-items: center;
+
+        text-decoration: none;
+    }
+
+    svg {
+        background-color: c.$bg-img;
+        padding: s.$pad * 0.25;
+        border-radius: s.$pad * 0.25;
+
+        height: 2em;
+        width: 2em;
+    }
+}
+
+// Skills & Geo shortcodes
+main .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: s.$gap * 0.5;
+
+    margin: 0.5em 0.75em;
+
+    opacity: 75%;
+
+    img {
+        position: relative;
+        top: 3px;
+
+        height: 1em;
+        width: 1em;
+
+        background-color: unset;
+        padding: unset;
+        border-radius: unset;
+
+        filter: c.$invert;
+
+        margin: 0 0.25em;
     }
 }
