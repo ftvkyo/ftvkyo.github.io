@@ -1,24 +1,26 @@
-<div class="metadata">
-    {{ if .Date }}
-        {{ $dateSystem := .Date.Format "2006-01-02" }}
-        {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
+{{ if or .Date .Params.tags }}
+    <div class="metadata">
+        {{ if .Date }}
+            {{ $dateSystem := .Date.Format "2006-01-02" }}
+            {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
 
-        <time datetime="{{ $dateSystem }}">
-            {{ $dateReadable }}
-        </time>
-    {{ end }}
+            <time datetime="{{ $dateSystem }}">
+                {{ $dateReadable }}
+            </time>
+        {{ end }}
 
-    {{ range .Params.tags }}
-        {{ $href := print (relLangURL "tags/") (urlize .) }}
-        <a class="tag" href="{{ $href }}">
-            <img src="/icon/tag.svg"/>
-            {{ . }}
-        </a>
-    {{ end }}
-</div>
+        {{ range .Params.tags }}
+            {{ $href := print (relLangURL "tags/") (urlize .) }}
+            <a class="tag" href="{{ $href }}">
+                <img src="/icon/tag.svg"/>
+                {{ . }}
+            </a>
+        {{ end }}
+    </div>
+{{ end }}
 
 {{ if .Params.description }}
-    <p class="description full">
+    <p class="description">
         {{ .Params.description | markdownify }}
     </p>
 {{ end }}

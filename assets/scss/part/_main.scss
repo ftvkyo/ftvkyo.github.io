@@ -61,17 +61,7 @@ main {
 
     .description {
         font-style: italic;
-
-        &.full {
-            padding: s.$pad * 0.5 s.$pad * 0.75;
-            border-left: solid 1px c.$primary;
-        }
-
-        &.compact {
-            margin: 0;
-            padding-left: s.$pad * 0.5;
-            color: c.$muted;
-        }
+        margin: 0.5em 0;
     }
 
     .tag {
