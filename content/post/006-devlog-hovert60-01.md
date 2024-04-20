@@ -22,7 +22,7 @@ Additionally, my XKB configuration is somewhat interesting.
 
 [^planck-ez]: Planck EZ was [retired in 2023](https://blog.zsa.io/2307-goodbye-planck-ez/), but just Planck still exists
 
-{{< figure "/img/006/preonic.jpg" "OLKB Planck with \"ergonomic\" wristrests" >}}
+{{< figure src=`/img/006/preonic.jpg` caption=`OLKB Planck with "ergonomic" wristrests` >}}
 
 You see, Russian alphabet has 33 letters, while English only has 26.
 This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.
@@ -38,7 +38,7 @@ For example, letter `ё` *[jɵ]* is kind of an extension of letter `о` *[o]*.
 As `ё` is used relatively rarely (and some people even consider it *optional*), it is placed on the Layer 3 of the `о` key.
 My Layer 3 modifier is Right Alt, so I can type `ё` by pressing `RAlt+о` and `Ё` by pressing `RAlt+Shift+о`.
 
-{{% details "Example XKB configuration that uses the layout" %}}
+{{% details `Example XKB configuration that uses the layout` %}}
 
 
 ```
@@ -99,7 +99,7 @@ This is the idea I started with:
 The "tailored for me" part implies a few additional requirements.
 They basically boil down to what keys and key combinations I want to have the quickest access to.
 
-{{% details "Some accessibility criteria for keys & key combinations" %}}
+{{% details `Some accessibility criteria for keys & key combinations` %}}
 
 | Feature | What it makes easier |
 | ------- | -------------------- |
@@ -176,7 +176,7 @@ There was a number of decisions to make:
 
 #### Choice of key switches
 
-{{% details "Decision process -- keyswitches" %}}
+{{% details `Decision process -- keyswitches` %}}
 
 As the goal is to make the keyboard low-profile, the "default" option seems to be [Kailh Choc][choc] switches.
 It's important to note that there are 2 main versions of Kailh Choc switches -- V1 and V2.
@@ -201,14 +201,14 @@ Key (ha!) takeaways:
 
 I purchased Kailh Choc V1 Pink switches along with keycaps for them.
 
-{{< figure "/img/006/keyswitches.jpg" "Kailh Choc V1 switches next to Cherry MX style switches" >}}
+{{< figure src=`/img/006/keyswitches.jpg` caption=`Kailh Choc V1 switches next to Cherry MX style switches` >}}
 
-{{< figure "/img/006/keycaps.jpg" "Kailh Choc V1 keycaps" >}}
+{{< figure src=`/img/006/keycaps.jpg` caption=`Kailh Choc V1 keycaps` >}}
 
 
 #### Choice of front plate material
 
-{{% details "Decision process -- plate material" %}}
+{{% details `Decision process -- plate material` %}}
 
 As I mentioned previously, wood and acrylic are pretty much out of the question.
 
@@ -220,12 +220,12 @@ As I mentioned previously, wood and acrylic are pretty much out of the question.
 
 I purchased 2 brass sheets with the dimensions `150×150×1.5mm`.
 
-{{< figure "/img/006/brass.jpg" "Brass sheets" >}}
+{{< figure src=`/img/006/brass.jpg` caption=`Brass sheets` >}}
 
 
 #### Choice of microcontroller and firmware
 
-{{% details "Decision process -- microcontroller" %}}
+{{% details `Decision process -- microcontroller` %}}
 
 As I want to build a wireless keyboard, using [ZMK][zmk] for the firmware seems to be a good idea.
 Looking through the list of [hardware supported by ZMK][zmk-supported], I was choosing between Pro Micro and Seeed XIAO microcontroller "footprints".
@@ -245,12 +245,12 @@ In the end I selected [Seeed XIAO BLE][seeed-xiao-ble] that uses an `nRF52840` c
 
 [seeed-xiao-ble]: https://wiki.seeedstudio.com/XIAO_BLE/
 
-{{< figure "/img/006/microcontroller.jpg" "Seeed XIAO BLE microcontroller" >}}
+{{< figure src=`/img/006/microcontroller.jpg` caption=`Seeed XIAO BLE microcontroller` >}}
 
 
 #### Determining how to attach the microcontrollers to the boards
 
-{{% details "Decision process -- microcontroller attachment" %}}
+{{% details `Decision process -- microcontroller attachment` %}}
 
 Originally I was thinking about glueing the microcontroller to the bottom board, or maybe leaving it hanging, as it doesn't have any mounting holes.
 But I realized I can use a soldering breadboard to mount the microcontroller and connect the wires to it.
@@ -263,7 +263,7 @@ This brings additional benefits:
 {{% /details %}}
 
 
-{{< figure "/img/006/breadboards.jpg" "Breadboards" >}}
+{{< figure src=`/img/006/breadboards.jpg` caption=`Breadboards` >}}
 
 
 ### Final list of parts
@@ -290,7 +290,7 @@ This brings additional benefits:
 [splitkb-keycaps]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811487039565
 [splitkb-keycaps-homing]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811519709261
 
-{{< figure "/img/006/power.jpg" "Battery, diodes, battery cable" >}}
+{{< figure src=`/img/006/power.jpg` caption=`Battery, diodes, battery cable` >}}
 
 
 ## Naming
