@@ -95,18 +95,56 @@ main {
 
         padding: 0 s.$pad;
 
-        summary {
-            padding: s.$pad * 0.25 0;
+        $w: 1em;
+        $h: 0.1em;
 
-            color: c.$accent-2-dull;
+        summary {
+            position: relative;
 
             user-select: none;
             cursor: pointer;
-        }
-    }
 
-    details:not([open]) summary::after {
-        content: " (click to expand)";
+            padding: s.$pad * 0.25 0;
+            padding-right: $w * 2;
+
+            color: c.$accent-2-dull;
+
+            &::marker {
+                content: none;
+            }
+        }
+
+        summary::before, summary::after {
+            content: "";
+            position: absolute;
+
+            background-color: currentColor;
+
+            width: $w;
+            height: $h;
+
+            top: calc(50% - $h);
+            right: $w * 0.5;
+
+            transition: transform 300ms, width 300ms;
+        }
+
+        summary::before {
+            transform: translateX(50%);
+        }
+
+        summary::after {
+            transform: translateX(50%) rotate(90deg);
+        }
+
+        &[open] summary::before {
+            transform: translateX(50%) rotate(90deg);
+            width: 0;
+        }
+
+        &[open] summary::after {
+            transform: translateX(50%) rotate(180deg);
+        }
     }
 }
 
