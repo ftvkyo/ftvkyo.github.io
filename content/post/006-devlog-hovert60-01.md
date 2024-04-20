@@ -110,7 +110,7 @@ They basically boil down to what keys and key combinations I want to have the qu
 | <code>Super[^super-key] [+ Shift]</code> combos | Window manager shortcuts |
 | `Right Alt [+ Shift]` combos | Typing in Russian |
 
-[^super-key]: "Super" is an alternative name of the "Windowns" or "Command" key, also known as "Meta". Read more about [Super key](https://en.wikipedia.org/wiki/Super_key_(keyboard_button)) on Wikipedia.
+[^super-key]: "Super" is an alternative name of the "Windows" or "Command" key, also known as "Meta". Read more about [Super key](https://en.wikipedia.org/wiki/Super_key_(keyboard_button)) on Wikipedia.
 
 {{% /details %}}
 
