@@ -15,6 +15,7 @@ I have been using Obsidian for a while (since March 2021).
 Finding a good workflow, a good approach to work and study is important for me, and it is an interesting challenge.
 This project is the culmination of my efforts.
 
+
 ## Project goals & background
 
 Some people who use note-taking applications these days say that their notes become their so-called "second brain".
@@ -64,10 +65,12 @@ I have previously explored some of this under the [Organization](/tags/organizat
 
 [^self-org]: On self-organization: [part 1](/post/003-on-self-organization-01/), [part 2](/post/004-on-self-organization-02/). More may follow (or already be there).
 
+
 ## Challenges
 
 There is a number of challenges that make this project difficult and interesting.
 Some of them are in the domain or the project, and others are in the project work itself.
+
 
 ### Domain challenges
 
@@ -86,6 +89,7 @@ In such situations, "answering" becomes a process of trial and error which requi
 The general advice in such situations is to start with *something*, improve it iteratively, and stop when it gets *good enough*.
 But this won't always make things easier.
 The project takes me out of a methaphorical low-energy pit, but it still has a cost, requires consistent effort, and has limits on how much it can help due to external factors.
+
 
 ### Project work challenges
 
@@ -110,6 +114,7 @@ Mitigating other factors that could stop the work on the project requires attent
 - Separating development into iterations, preventing feature creep
 - Being mindful of the current focus and stopping work when things get "good enough"
 
+
 ## Achievements
 
 Thoroughout the development process I made a lot of iterative adjustments to my workflow, and in turn, adjustments to the plugin.
@@ -133,6 +138,7 @@ There are Obsidian plugins like [Periodic Notes](https://github.com/liamcain/obs
 For me, however, high control over the plugin has been crucial for establishing a system that works, even if the result is similar to existing solutions.
 That's because the process of trial and error improved my understanding of what things work, what things don't, and what things work but can't be justified.
 
+
 ### Features
 
 Due to the experimental nature of the plugin, features can come and go.
@@ -145,6 +151,7 @@ At the same time, the logic got much simpler and future adjustments got easier.
 
 The main features of the plugin are "Explore View" and "Plan Callout".
 
+
 #### Explore View
 
 Explore view combines a calendar and a file tree in one sidebar.
@@ -152,8 +159,17 @@ The calendar is centered around the week rather than being centered around the m
 It supports opening existing notes and creating new notes from templates if they don't exist.
 The calendar allows easy yearly, quarterly, monthly, weekly and daily planning.
 
+{{< figure src=`/img/obsidian-ftvkyo/calendar.webp` caption=`Week-centric calendar with glowing text showing existing notes` >}}
+
 The file tree is quite simple in `0.2.0`, but already has some interesting quirks.
 For instance, if a note has `index: true` in its frontmatter, it will have a different icon in the file tree, and it will be sorted above the other notes in the same folder.
+
+{{< details "File tree screenshot" >}}
+
+{{< figure src=`/img/obsidian-ftvkyo/file-tree.webp` caption="File tree that highlights notes with `index: true` in their frontmatter and brings them up" >}}
+
+{{< /details >}}
+
 
 #### Plan Callout
 
@@ -175,6 +191,8 @@ This is an example of such a callout:
 > - [x] `2h30m` website
 > - [x] `20m` chats, planning
 ```
+
+{{< figure src=`/img/obsidian-ftvkyo/plan-callout.webp` caption=`How the previous example of Plan Callout gets rendered` >}}
 
 Another example, this is my monthly note template:
 
@@ -205,48 +223,6 @@ Another example, this is my monthly note template:
 
 - [ ] …
 ```
-
-### Screenshots
-
-<details>
-
-<summary>
-Calendar
-</summary>
-
-This is the calendar.
-Glowing text represents existing notes.
-
-![](/img/obsidian-ftvkyo/calendar.webp)
-
-</details>
-
-<details>
-
-<summary>
-File tree
-</summary>
-
-This is the file tree.
-Here, "How to learn", "Wiki" and "Index" notes have `index: true` set in their frontmatter.
-
-![](/img/obsidian-ftvkyo/file-tree.webp)
-
-</details>
-
-
-<details>
-
-<summary>
-Plan Callout
-</summary>
-
-This is the Plan Callout, a render of an earlier example.
-
-![](/img/obsidian-ftvkyo/plan-callout.webp)
-
-</details>
-
 
 ## Lessons learned
 

@@ -6,9 +6,10 @@ description: >
   Personal organization through note-taking and some extra thoughts on the topic.
 ---
 
-![An arrow with a loop in the middle, representing "reintroduction".](/img/004/reintroduction.svg)
+{{< figure src=`/img/004/reintroduction.svg` alt=`An arrow with a loop in the middle, representing "reintroduction".` >}}
 
 {{<toc>}}
+
 
 ## Reintroduction
 
@@ -17,9 +18,10 @@ The main focus was on note-taking, and now it is finally time to highlight some 
 
 I have already more-or-less described the criteria that I want the note-taking system to satisfy, and why I need it, so here I'm going to talk about its **implementation details**.
 
+
 ### Purpose
 
-![A cloud with a question markn in the middle.](/img/004/purpose.svg)
+{{< figure src=`/img/004/purpose.svg` alt=`A cloud with a question markn in the middle.` >}}
 
 I hope this post may be an **inspiration** for somebody to start taking notes or improve their existing approach to that.
 I also want to improve mine, and I think writing about it and listening to feedback is good for it.
@@ -28,9 +30,10 @@ It is also just fun to write about it and make illustrations :)
 > Note:
 > This is, after all, an opinion-centric post, and the experience described can be different for different people.
 
+
 ## Note vault
 
-![An image of a folder and of a file joining together like puzzle pieces.](/img/004/vault.svg)
+{{< figure src=`/img/004/vault.svg` alt=`An image of a folder and of a file joining together like puzzle pieces.` >}}
 
 I want my notes to be somewhat accessible and I don't want to be afraid to lose them in a fire or some other kind of accident.
 Because of this, I store my notes in [Git](https://git-scm.com) and access them through [Obsidian](https://obsidian.md).
@@ -50,7 +53,8 @@ I think a general idea was not bad, but I never used these tags to access my not
 After ~1.5 years of writing notes like this, I decided I want to also have **separate sections** for notes not bounded by the date of writing and with better interconnectivity.
 So this is what I got:
 
-![A graph showing the structure of the note vault. Includes Journal, Wiki and Writing sections. Journal is further subdivided into Date, Reading and Topics subsections.](/img/004/structure.svg)
+{{< figure src=`/img/004/structure.svg` alt=`A graph showing the structure of the note vault. Includes Journal, Wiki and Writing sections. Journal is further subdivided into Date, Reading and Topics subsections.` >}}
+
 
 ## Note vault sections
 
@@ -74,11 +78,12 @@ On the topic of **accessibility**, here is a general "nice to have" requirement 
       By the way, NHS has it, you can see it on their pages;
     - Tracking *integration state* (for cases when notes require further work);
 
+
 ### Section one: Journal
 
 > *Having some notes is generally better than having no notes at all.*
 
-![A book with a big "J" on it.](/img/004/journal.svg)
+{{< figure src=`/img/004/journal.svg` alt=`A book with a big "J" on it.` >}}
 
 [Journal/Diary](https://en.wikipedia.org/wiki/Diary) on Wikipedia.
 
@@ -95,11 +100,12 @@ After some thinking, I made this list that describes the section pretty well:
    They are intended to be a reflection of what was happening at the time of their writing.
    At the same time, correcting minor typos, and adding comments and/or clarifications is fine.
 
+
 #### Journal "By date" note structure
 
 Although these journal notes have the most complicated inner structure compared to all other types of notes I have, it's still quite simple.
 
-![Structure of a journal "By date" note.](/img/004/journal-note.svg)
+{{< figure src=`/img/004/journal-note.svg` alt=`Structure of a journal "By date" note.` >}}
 
 A basic note has its file name in the format `YYYY-MM-DD.md`, and sometimes I add an extra quantifier like that: `YYYY-MM-DD SUFFIX.md`, where `SUFFIX` is some topic that the note is dedicated to.
 For example, a note written on 27 February 2022 would have the name `2022-02-27.md`, and if it was dedicated to a `meta` topic, its name would be `2022-02-27 meta.md`.
@@ -124,9 +130,10 @@ I also often take notes that are quite long, so it is sometimes very helpful to 
 This way I don't have to worry about forgetting to write something.
 That was a concern before headings were introduced, I would write a note mid-way and forget what else I wanted to "talk" about.
 
+
 #### Topic splitting
 
-![Illustrating of topic splitting. A series of main notes and a separate series of topic notes that were separated from the main notes.](/img/004/topic-split.svg)
+{{< figure src=`/img/004/topic-split.svg` alt=`Illustrating of topic splitting. A series of main notes and a separate series of topic notes that were separated from the main notes.` >}}
 
 Remember the separate type of journal notes that I called "grouped by topic" in the structure introduction?
 
@@ -161,6 +168,7 @@ These are Obsidian-style links, by the way.
 And you can see a cool feature of Obsidian -- [links to blocks](https://help.obsidian.md/How+to/Link+to+blocks).
 Rather than creating a heading in the original text, it creates a "block" with a hex code and links to it like this: `[[something#^abcdef]]`.
 
+
 ### Wiki
 
 Onwards!
@@ -174,7 +182,7 @@ For now, I kept this simple, and I will add or reformat things as I need.
 Of course, the cost of editing lots of notes can be a big burden, but I feel like I need to learn my preference first and design **my** system by myself, possibly taking inspiration from other sources.
 I will probably make an update on this matter if I get more good ideas.
 
-![Structure of the wiki, showing hierachical relations between notes and additional links between related notes from different parts of the wiki.](/img/004/wiki-structure.svg)
+{{< figure src=`/img/004/wiki-structure.svg` alt=`Structure of the wiki, showing hierachical relations between notes and additional links between related notes from different parts of the wiki.` >}}
 
 As you can see, the general structure of the notes is [tree-like](https://en.wikipedia.org/wiki/Tree_(graph_theory)).
 However, there are also connections about related things and just between things that remind me of each other.
@@ -186,9 +194,10 @@ Anyways, here are the simple requirements I had in mind when I just started fill
 1. There should be a knowledge base, that is more effective than journal notes for its main purpose.
 2. Data in the knowledge base can be altered as time passes, but the possible usefulness of older versions of information should be taken into account when changing something.
 
+
 #### Wiki note structure
 
-![Structure of a wiki note.](/img/004/wiki-note.svg)
+{{< figure src=`/img/004/wiki-note.svg` alt=`Structure of a wiki note.` >}}
 
 This is not too different from the notes in the journal.
 There is no "time" heading, and this one has a list of references.
@@ -197,9 +206,10 @@ They equally serve as a list of sources, but also as a list of *interesting rela
 Most of the links lead to [Wikipedia](https://en.wikipedia.org).
 Probably my favourite website at the moment.
 
+
 ### Writing
 
-![Illustration of a writing note. Not really any structure.](/img/004/writing-note.svg)
+{{< figure src=`/img/004/writing-note.svg` alt=`Illustration of a writing note. Not really any structure.` >}}
 
 The writing section is the simplest one.
 You see, I want to have a section for **high-quality writing**, for something that can theoretically be published with little or no processing.
@@ -209,21 +219,24 @@ The file structure is arbitrary, and here's the single requirement I have:
 
 1. There should be a way to compose data from journal notes, from the knowledge base and my brain into whole blocks of information -- essays.
 
+
 ## Conclusion: the full picture
 
 It's time to wrap up the talk about the note-taking system, at least for now.
 I've prepared an **awesome picture** describing the roles of the components of the system:
 
-![Full picture of the parts of the current system, showing the roles of the components. Includes: Brain (agent, source of data, memory); Journal (written down experience, tracker, short-term memory); Wiki (associative and systematic storage, long-term memory); Writing (personal research).](/img/004/everything.svg)
+{{< figure src=`/img/004/everything.svg` alt=`Full picture of the parts of the current system, showing the roles of the components. Includes: Brain (agent, source of data, memory); Journal (written down experience, tracker, short-term memory); Wiki (associative and systematic storage, long-term memory); Writing (personal research).` >}}
 
 Ask me questions if you have any, and tell me if you want me to cover something else, or something I've mentioned but in greater detail.
 Let's move to some extras:
 
+
 ## Extras
+
 
 ### "Steamroller"
 
-![Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.](/img/004/steamroller.svg)
+{{< figure src=`/img/004/steamroller.svg` alt=`Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.` >}}
 
 > *It makes rough surfaces flat.*
 > *But it is also really heavy.*
@@ -238,9 +251,10 @@ I won't say anything specific, I think everybody can find their own meaning in t
 I think the value of the analogy, in this case, is not in illustrating something (and then somebody can tell you that it's a [leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction) anyway), but rather in how it can help somebody to think about a problem from a different perspective.
 Don't think too much about it.
 
+
 ### Dedicated time
 
-![An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.](/img/004/dedicated-time.svg)
+{{< figure src=`/img/004/dedicated-time.svg` alt=`An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.` >}}
 
 > *Time.*
 > *Dedicated.*
@@ -257,6 +271,7 @@ Because of this, I started trying to dedicate some time every week to taking not
 It doesn't work perfectly, because *life*-thigs don't go anywhere.
 But it helps, and I will keep trying.
 Maybe that could help you as well.
+
 
 ### To-do lists, choices and priorities
 
@@ -278,13 +293,14 @@ So far I've been revising the list at the end of the week, on Sunday evening, an
 On top of this, I came up with an **activity choice map** for myself.
 This is a simplified illustration of it:
 
-![Choice map, a graph, separating things into useful, fun and a combination of them.](/img/004/choice-map.svg)
+{{< figure src=`/img/004/choice-map.svg` alt=`Choice map, a graph, separating things into useful, fun and a combination of them.` >}}
 
 In real life, it takes a whole A5 page, in a quite compressed manner.
 As you can see, it separates activities into **Fun** and **Useful** (not that they can't intersect).
 
 I haven't been using this too much yet, but this kind of tool has already allowed me to know what options I have at all (I did include everything there, even mindless scrolling) by making them all explicit.
 I hope this helps me avoid [procrastination](https://en.wikipedia.org/wiki/Procrastination) by providing more fitting activities if I'm not satisfied with what I'm doing.
+
 
 ## Bye
 

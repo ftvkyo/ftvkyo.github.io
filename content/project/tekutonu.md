@@ -22,6 +22,7 @@ However, my task tracking and planning was rudimentary.
 I would say that the experience I got working on this was one of the important drivers for improving my skills of getting things done and ultimately building [Obsidian ftvkyo](/project/obsidian-ftvkyo/).
 Not that I am stopping there, though.
 
+
 ## Achievements
 
 In terms of features, Tekutonu has:
@@ -56,19 +57,22 @@ Not that I will stop tinkering.
 I just think this experience taught me a lesson in task management --- I should only do it *if I set it as one of the goals*, take into account the extra effort it will require and how it will affect approaching other goals.
 So I don't get upset later.
 
+
 ### Screenshots
 
 The following is a picture with some floating cubes.
 There is an invisible light source somewhere there.
 I think.
 
-![](/img/tekutonu/main.webp)
+{{< figure src=`/img/tekutonu/main.webp` caption=`Cubes floating in space` >}}
+
 
 The following is an illustration of sky lighting.
 The overhang in the top-left corner of the picture blocks the light from the sky.
 The light level decreases "by 1" for each of the blocks it travels from the edge of the overhang.
 
-![](/img/tekutonu/lighting.webp)
+{{< figure src=`/img/tekutonu/lighting.webp` caption=`Cubes are shaded by their exposure to the sky light` >}}
+
 
 ## Lessons learned
 

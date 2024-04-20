@@ -6,9 +6,10 @@ description: >
   Exploring methods of personal organization and why I would want to do that.
 ---
 
-![Checkbox "Fix all problems"](/img/003/fix-all-problems.svg)
+{{< figure src=`/img/003/fix-all-problems.svg` alt=`Checkbox "Fix all problems"` >}}
 
 {{<toc>}}
+
 
 ## Introduction
 
@@ -21,12 +22,13 @@ In other words, I want to begin by describing things I already understand, and a
 
 Please note that the experience described is not universal and your mileage may vary.
 
+
 ## So what is the problem, exactly?
 
 Do you feel like your ambitions break against the wall of life?
 There are so many things that need your attention, and so many things that you distract yourself with, that the things you think are important all feel hindered.
 
-![Something bouncing back from the wall that hides an obstacle course with a box at the end](/img/003/against-the-wall.svg)
+{{< figure src=`/img/003/against-the-wall.svg` alt=`Something bouncing back from the wall that hides an obstacle course with a box at the end` >}}
 
 I found myself in a situation like that when it is difficult to have consistent progress in anything, and the existing approach to life is just not good enough.
 My attention gets scattered between work, life events, a bunch of personal projects and other things I like to do (like reading, gaming and chatting with my friends).
@@ -36,7 +38,7 @@ This dissatisfaction has led me to make attempts to analyze the situation and co
 There's *no "final solution"* and probably never going to be, but there is a **journey towards the destination**, and this is what these posts are about.
 I am already quite far from where I started, I have passed a few milestones along the way, and I have ideas about where to head next.
 
-![A treasure map with an infinity symbol instead of X mark](/img/003/journey.svg)
+{{< figure src=`/img/003/journey.svg` alt=`A treasure map with an infinity symbol instead of X mark` >}}
 
 I'll reiterate on the problem in a more granular way, specifying it in terms of **circumstances** and what **changes** I want to see, so we can analyze how the strategies I employ can help with that.
 
@@ -47,10 +49,11 @@ I'll reiterate on the problem in a more granular way, specifying it in terms of 
 2. I do not like my **approach to learning things** because of how **random and disorganized** it is.
   I want to improve my *focus* on the process, improve *knowledge retention* and make the activity more *systemized*.
 
-![Kind of a changes finite state machine](/img/003/changes.svg)
+{{< figure src=`/img/003/changes.svg` alt=`Kind of a changes finite state machine` >}}
 
 I should point out that these things are based on my perception and on some standards that I set for myself.
 Figuring out if the standards are reasonable and not too high or low is a separate question that I'm not going to discuss much because I think it is individual for everybody.
+
 
 ## What strategies do I use?
 
@@ -72,7 +75,9 @@ One of the adjustments I heavily rely upon is the skill of taking notes I have d
 At this moment, I consider note-taking **the core** of my self-organization efforts.
 Note-taking will be the *primary focus of these posts*, but let's not get ahead of ourselves.
 
+
 ## Adjusting the environment
+
 
 ### Managing distractions
 
@@ -86,7 +91,7 @@ I think I can separate distractions into two categories based on their nature:
   Let's imagine you have a phone and it can make sounds.
   Notifications can interrupt whatever you are doing and break the flow or just provide an escape from the thing that you didn't want to do.
 
-![Distracting environment](/img/003/distractions.svg)
+{{< figure src=`/img/003/distractions.svg` alt=`Distracting environment` >}}
 
 For both of these, I think the main thing you can do is learn to recognize them.
 Recognition, in turn, will allow you to think about how to mitigate the problems caused by them (if you want to, of course).
@@ -102,12 +107,13 @@ For some time even my phone had "Do not disturb" constantly enabled, allowing me
 
 In general, I can say that this approach of opting in for notifications rather than opting out of them has been a good thing for me and my productivity and has not resulted in problems or conflicts.
 
+
 ### Email inbox
 
 Just a few paragraphs about emails.
 Ever since I had my first email address (around 2009, I think), I had a huge ever-growing and overwhelming inbox, where I tried to delete all the irrelevant stuff and left many things unread.
 
-![An open letter with a notification badge saying 9](/img/003/inbox.svg)
+{{< figure src=`/img/003/inbox.svg` alt=`An open letter with a notification badge saying 9` >}}
 
 However, a few years ago I changed my approach.
 I made sure to reduce the number of emails I get.
@@ -127,6 +133,7 @@ And I leave them unread until I am ready to read them.
 I know I won't lose them because there is only a handful of them there at all times.
 That probably won't scale if you're Linus Torvalds, though.
 
+
 ### Structuring time
 
 Time structuring is an interesting topic because I can call it highly experimental in the context of my life.
@@ -138,7 +145,7 @@ You can do timeblocking in many ways.
 My history of attempting it is quite long, it starts in my childhood and it is full of failures.
 However, I think it still had an overall positive effect and I periodically return to try it again.
 
-![Timeblocking as if done in google calendar](/img/003/timeblocking.svg)
+{{< figure src=`/img/003/timeblocking.svg` alt=`Timeblocking as if done in google calendar` >}}
 
 My first timeblocking attempts started with trying to draw out the coming week on a piece of paper and fill in the areas where I had to be doing something certain.
 That didn't go too well because that was difficult to edit, difficult to replicate every week, and difficult to follow.
@@ -152,16 +159,18 @@ I stopped paying attention to it pretty quickly, although the idea of a notifica
 I am currently attempting timeblocking again, with Google Calendar, but also using an app called [Sectograph](https://sectograph.com), which provides me with a very cool visual clock face widget on my phone's desktop.
 I think this is quite epic, even though it is still difficult to pay attention to it sometimes.
 
-![Timeblocking in timetune and sectograph](/img/003/timeblocking-apps.svg)
+{{< figure src=`/img/003/timeblocking-apps.svg` alt=`Timeblocking in timetune and sectograph` >}}
 
 But it has worked pretty well for me when my calendar wasn't very packed and it reminded me about upcoming things like calls with my friends or parents.
+
 
 ## Adjusting myself
 
 Now that we have looked at other important things, we can move on to the main focus of the post, the other "half" of self-organization efforts.
 As I mentioned, my main tool for it is extensive note-taking.
 
-![Pencil writing something](/img/003/note-taking.svg)
+{{< figure src=`/img/003/note-taking.svg` alt=`Pencil writing something` >}}
+
 
 ### Note-taking
 
@@ -173,10 +182,11 @@ They also help me remember events or thoughts that are important to me.
 
 In other words, my notes are a _framework_ that works as my external brain: they allow me to store and retrieve information, along with providing structure for achieving certain goals.
 
-![Anvil with a laptop on it, showing "42", and a chair to the side](/img/003/framework.svg)
+{{< figure src=`/img/003/framework.svg` alt=`Anvil with a laptop on it, showing "42", and a chair to the side` >}}
 
 However, this framework is a thing that one should adapt to themselves.
 To achieve goals by using the framework, one should know what one wants.
+
 
 ### What do I want from note-taking then?
 
@@ -197,7 +207,7 @@ Because of this, there are three main parameters I am trying to optimize my note
   This is something to do with knowledge retention and other benefits of having a personal knowledge base;
 3. How simple it is to draw conclusions from my notes and possibly make whole "essays" out of them.
 
-![Cloud moving away and unveiling the sun at a constant speed](/img/003/consistent-progress.svg)
+{{< figure src=`/img/003/consistent-progress.svg` alt=`Cloud moving away and unveiling the sun at a constant speed` >}}
 
 **Number 1** directly corresponds to the cirumstance+change pair about my attention getting dispersed from the beginning of this post.
 It allows me to:
@@ -207,7 +217,7 @@ It allows me to:
 - Progress in things that refuse to move forward when you just keep thinking about them in a loop;
 - Be more mindful about what I'm doing.
 
-![Ghost of ephemeral knowledge suffers damage from a book attack](/img/003/ghost-of-ephemeral-knowledge.svg)
+{{< figure src=`/img/003/ghost-of-ephemeral-knowledge.svg` alt=`Ghost of ephemeral knowledge suffers damage from a book attack` >}}
 
 **Number 2** directly corresponds to the circumstance+change pair about systemizing my learning process and improving knowledge retention.
 The mere fact that some knowledge is recorded helps with its understanding and retention, even if you never return to it.
@@ -217,13 +227,14 @@ I like it.
 
 So, let's see what we can do with these parameters for optimization ;)
 
+
 ### Formalization of the note-taking framework
 
 I am going to define some nice boundaries that are going to be the cornerstones of the framework.
 That should help with information consistency and save thinking time by providing a set of basic answers to what should be done.
 That will reduce the usage barrier for the framework.
 
-![Photo editing "crop" symbol](/img/003/boundaries.svg)
+{{< figure src=`/img/003/boundaries.svg` alt=`Photo editing "crop" symbol` >}}
 
 However, that doesn't mean that these boundaries can't be redefined.
 I am willing to adjust the "rules" if that makes the situation better, I just want them to be clear.
@@ -256,7 +267,8 @@ I start every sentence on a new line in my markdown files, so line breaks roughl
 
 In part 2, I intend to cover all three sections in detail and tell you how this system evolved into what it is now.
 
-![A person and arrows to journal, knowledge graph and an essay from them](/img/003/afterword.svg)
+{{< figure src=`/img/003/afterword.svg` alt=`A person and arrows to journal, knowledge graph and an essay from them` >}}
+
 
 ## Afterword
 
