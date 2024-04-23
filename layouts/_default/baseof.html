@@ -19,11 +19,11 @@
         {{ $title := print .Site.Title " | " .Title }}
         {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
         <title>{{ $title }}</title>
-
-        <!-- https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer -->
-        <script>0</script>
     </head>
     <body>
+        <!-- https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer -->
+        <script>0</script>
+
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}
