@@ -1,7 +1,7 @@
 ---
 title: "Hovert60 keyboard devlog #1: Init"
 date: 2024-04-10T22:00:00Z
-tags: [Devlog, Hovert60 keyboard, IRL]
+tags: [Devlog, Hovert60 keyboard]
 toc: true
 description: >
   Making a low-profile wireless split keyboard from scratch.
