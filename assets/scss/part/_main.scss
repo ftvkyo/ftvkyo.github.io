@@ -189,7 +189,7 @@ main .metadata {
     }
 
     .fields > * {
-        display: inline;
+        display: inline-flex;
 
         margin-left: 0.5ch;
         margin-right: 1ch;
@@ -198,7 +198,7 @@ main .metadata {
         img {
             position: relative;
             width: 0.8em;
-            margin-right: 0.25ch;
+            margin-right: 0.5ch;
             filter: c.$invert;
         }
     }
