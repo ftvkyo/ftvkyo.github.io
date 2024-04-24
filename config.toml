@@ -10,15 +10,6 @@ title = "ftvkyo"
   dateFormat = "Jan 2, 2006"
 
 
-[markup.highlight]
-  style = "onedark"
-  guessSyntax = true
-
-# Enable raw HTML in the pages.
-[markup.goldmark.renderer]
-  unsafe = true
-
-
 [taxonomies]
   tag = "tags"
 
@@ -40,3 +31,21 @@ title = "ftvkyo"
     name = "About me"
     url = "/about/"
     weight = 40
+
+
+[markup]
+  # Reference: https://gohugo.io/getting-started/configuration-markup/
+
+  [markup.highlight]
+    style = "onedark"
+    guessSyntax = true
+
+  [markup.goldmark]
+
+    [markup.goldmark.renderer]
+      # Enable raw HTML in the pages.
+      unsafe = true
+
+    [markup.goldmark.extensions.typographer]
+      leftDoubleQuote = "&laquo;"
+      rightDoubleQuote = "&raquo;"
