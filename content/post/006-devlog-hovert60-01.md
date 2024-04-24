@@ -150,6 +150,7 @@ Maybe it could work if I used a PCB to hold the switches in place, but I don't w
 Here are some links:
 - [An amazing in-depth keyboard handwiring guide](https://yarukizero.files.wordpress.com/2021/09/handwired-keyboard-guide.pdf) by Ewen Cluney
 - [Another keyboard handwiring guide with amazing photos](https://geekhack.org/index.php?topic=87689.0) by `@cribbit`
+- [A multi-part handwiring guide with nice extra info](https://matt3o.com/hand-wiring-a-custom-keyboard/) by Matteo Spinelli
 - [Sofle Choc build guide](https://josefadamcik.github.io/SofleKeyboard/build_guide_choc.html) (uses a PCB)
 
 It's also important to mention that there are tools that can make the design process significantly easier:
