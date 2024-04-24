@@ -4,6 +4,8 @@ date: 2021-06-27T21:00:00+08:00
 tags: [Devlog, Parentheses]
 archived: true
 toc: true
+aliases:
+- "001"
 description: >
   Trying to make a simple programming language using LLVM.
   I want it to have Scheme-like syntax and C-like internals.

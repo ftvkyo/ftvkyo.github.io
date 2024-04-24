@@ -3,6 +3,8 @@ title: "Hovert60 keyboard devlog #2: Design"
 date: 2024-04-12T22:00:00Z
 tags: [Devlog, Hovert60 keyboard]
 toc: true
+aliases:
+- "007"
 description: >
   What shape should my keyboard have?
   How do I avoid making expensive mistakes?

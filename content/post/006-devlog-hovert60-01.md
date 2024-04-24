@@ -3,6 +3,8 @@ title: "Hovert60 keyboard devlog #1: Init"
 date: 2024-04-10T22:00:00Z
 tags: [Devlog, Hovert60 keyboard]
 toc: true
+aliases:
+- "006"
 description: >
   Making a low-profile wireless split keyboard from scratch.
   I also intend to handwire it rather than use a PCB.
