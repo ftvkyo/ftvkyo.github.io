@@ -52,6 +52,9 @@ main {
         }
     }
 
+    abbr[title], span[title] {
+        text-decoration: underline dotted;
+    }
 
     blockquote {
         border: 1px dotted c.$muted;
