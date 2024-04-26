@@ -63,43 +63,138 @@ Maybe next time.
 ### Can I use a laser cutter?
 
 At first I was considering using a sheet of wood or acrylic for the top plate of the keyboard.
-Prototyping something with a laser cutter would also be easier than on a CNC router.
+Prototyping something with a laser cutter would also be easier than with a CNC router.
 So I started by drawing a test pattern to find what size of the holes I should use.
 
 {{< figure src=`/img/007/test-holes.svg` caption=`Holes of different sizes to check laser cutter tolerance. For actual testing, line thickness should be set to "hairline", but I changed it here for better visibility.` >}}
 
-However, as I was about to perform the test, I learned that with the thickness I wanted, neither wood or acrylic would be reliable options.
+However, as I was about to perform the test, I learned that with the thickness of the plate I wanted, neither wood or acrylic would be reliable options.
 I could opt-in for a thicker plate and give up the idea of making the key switches click in place, but at that moment, the idea of making the front plate out of metal using a CNC router took over.
 
 
 ## Going with metal
 
 So, I decided to use metal.
-As I mentioned in the previous post, my metal of choice is Brass.
-However, I still bought some `3mm`-thick sheets of Acrylic and two `1.5mm`-thick plates of 6061 Aluminium for testing.
+As I mentioned in the previous post, my metal of choice is brass.
+However, I still bought a few sheets of acrylic (3mm thick) and two plates of 6061 aluminium (1.5mm thick) for testing.
 
 At this point, the front plate stopped being 2D.
-On a laser cutter, you control depth of the cut by changing the speed with which the laser moves.
-On a CNC router, you need to care about 3-axial movement of the milling bit.
-Additionally, I want my front plate to have features that would not cut fully cut through the stock.
+On a laser cutter, the depth of the cut is controlled by changing the speed with which the laser moves.
+On a CNC router, the milling bit moves on 3 axes.
+As I also want the switches to snap into their holes, some cutting movements don't reach through the <span title="The piece of material to be cut">stock</span>.
 
-It was time to learn a new tool: Autodesk Fusion.
+It was time to learn a new tool: [Autodesk Fusion][fusion].
+
+[fusion]: https://www.autodesk.co.uk/products/fusion-360/overview
 
 
 ### Picking up Autodesk Fusion
 
-{{< figure src=`/img/007/v4-sketch.webp` caption=`Sketching holes of the bottom row` >}}
+For a few first minutes, the program was a bit confusing.
+I intend to make 3D models, are 2D sketches really the way to go?
+Why isn't it something like [Blender][blender]?
+However, after watching a random tutorial, things started making more sense.
+With sketches, it's easy to define sizes and constraints for different features.
+
+[blender]: https://www.blender.org/
+
+
+{{% details "Terminology used" %}}
+
+Please note that these definitions are contextual and may be incomplete.
+
+
+#### Plane
+
+Plane is a flat surface that extends indefinitely.
+
+There are three "main" planes: XY, XZ and YZ.
+They intersect with the origin and contain the corresponding axes.
+
+Planes can be based on various surfaces of the model designed.
+
+
+#### Sketch
+
+Sketch is a 2-dimensional drawing.
+Each sketch is made on some plane.
+
+When a sketch is finished, various commands like "Extrude" can reference its features.
+
+To work well, sketches should be "fully constrained".
+When making a sketch, the user can generally do two things:
+- Draw various points, lines and shapes
+- Specify constraints between drawn things
+
+Some examples of constraints are:
+- Length of a line (you can see lots of these in the next illustration)
+- Distance between lines or between a line and a point
+- Lines being parallel or perpendicular
+- Lines and points being incident
+- Lines being tangential to curves
+
+The program accumulates this data and tries to figure out how to place all the parts of the drawing in a way that complies with the constraints.
+When there is enough information for the program to resolve all uncertainities, the sketch is considered to be "fully constrained".
+
+
+#### "Extrude" command
+
+"Extrude" is the primary command that allows turning 2D sketches into 3D shapes.
+In the most general case, it allows specifying thickness to be used for selected areas of an existing sketch.
+It can also be used to cut *into* the model.
+
+{{% /details %}}
+
+
+I started by creating a flat piece of material of random width and length and known thickness.
+I then sketched square holes for the keys on the surface of that piece.
+
+{{< figure src=`/img/007/v4-sketch.webp` caption=`Sketching the holes for the bottom row of keys` >}}
+
+After I had the sketch for holes, I was able to use the Extrude command to cut them out of the existing plate.
+Then, by using a Rectangular pattern command, I repeated the cutting operation 4 times on the Y axis using some offset.
 
 {{< figure src=`/img/007/v4-cutout-pattern.webp` caption=`Repeating cutouts along the Y axis` >}}
 
 
 ### It just makes sense
 
+At this point I found out that I can actually specify some variables to be reused when settings constraints and configuring various commands.
+This greatly sped up the development process.
+I could adjust dimensions in multiple places at the same time.
+
+On top of that, formulas for these variables can contain mentions of other variables!
+This way I could give names to common values that depended on other values.
+
+One of such values is the area that is occupied by a key.
+It consists of the size of the cutout together with some margin around it.
+It is called `keyspace` in the next illustration.
+
 {{< figure src=`/img/007/v9-parameters.webp` caption=`Discovering parameters` >}}
+
+After I got the first batch of parameters specified, I redefined my sketch in terms of them.
+Dimensions that are prefixed with `fx:` in the next screenshot are those that use parameters (so, all of them).
 
 {{< figure src=`/img/007/v9-parametrised-sketch.webp` caption=`Using parameters in a sketch` >}}
 
+As you can see, I decided to design a single row of the keyboard, and then duplicate these rows.
+To be fair, it might have worked better if I learned more advanced pattern techniques, such as making patterns of a sketch.
+But it still worked fine.
+
+In the following picture you can see the design that I came to after doing all these things with parameters.
+There you can also see that columns 4, 5 and 6 are one key taller.
+This was the initial version of a thumb cluster -- a group of keys that are meant to be pressed with the thumb.
+
 {{< figure src=`/img/007/v11-thumb-attempt.webp` caption=`Trying to design the thumb cluster` >}}
+
+When I arrived to this complex shape, I realized that I don't like the approach of "cut out the holes in a predefined plate" I have been using.
+If I wanted to continue, I would need to define parameters that would define the initial dimensions of the plate.
+And I would also need to do a lot of "cutting" work to strip down the excess pieces of the plate.
+
+It would get even worse if I wanted to design a more advanced thumb cluster.
+I would have to use even more complex calculations to determine the initial size of the plate, or I'd have to do intermediate Extrusions to stretch out the plate and make space for more keys.
+
+I didn't want to deal with any of that, so I decided to try an alternative approach.
 
 
 ### Additive design approach
