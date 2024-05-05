@@ -308,6 +308,6 @@ The name of the project, `Hovert60` or `h/t60`, highlights several project featu
 ## What's next
 
 I plan the following posts after this one:
-- Design process
+- Design process -- [post #2](/post/007/)
 - Manufacture
 - Configuration
