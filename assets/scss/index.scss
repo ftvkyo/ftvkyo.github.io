@@ -16,16 +16,12 @@
 @media screen {
 
     html {
-        background-color: c.$void;
+        color: c.$primary;
+        background-color: c.$bg;
     }
 
     body {
         max-width: s.$w-readable;
-
-        color: c.$primary;
-        background-color: c.$bg;
-
-        box-shadow: 0 0 10px c.$shadow;
     }
 
     /* ====== *
