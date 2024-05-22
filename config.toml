@@ -28,8 +28,8 @@ title = "ftvkyo"
     url = "/post/"
     weight = 30
   [[menu.main]]
-    name = "About me"
-    url = "/about/"
+    name = "CV"
+    url = "/cv/"
     weight = 40
 
 

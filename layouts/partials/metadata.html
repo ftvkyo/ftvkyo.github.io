@@ -1,31 +1,32 @@
+{{ if or (or .Params.description .Params.tags) .Date }}
+    <div class="metadata">
+        {{ if .Params.description }}
+            <div class="description">
+                {{ .Params.description | markdownify }}
+            </div>
+        {{ end }}
 
-<div class="metadata">
-    {{ if .Params.description }}
-        <div class="description">
-            {{ .Params.description | markdownify }}
-        </div>
-    {{ end }}
+        {{ if or .Date .Params.tags }}
+            <div class="fields">
+                {{ if .Date }}
+                    {{ $dateSystem := .Date.Format "2006-01-02" }}
+                    {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
+                    <div>
+                        <img src="/icon/calendar.svg"/>
+                        <time datetime="{{ $dateSystem }}">
+                            {{ $dateReadable }}
+                        </time>
+                    </div>
+                {{ end }}
 
-    {{ if or .Date .Params.tags }}
-        <div class="fields">
-            {{ if .Date }}
-                {{ $dateSystem := .Date.Format "2006-01-02" }}
-                {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
-                <div>
-                    <img src="/icon/calendar.svg"/>
-                    <time datetime="{{ $dateSystem }}">
-                        {{ $dateReadable }}
-                    </time>
-                </div>
-            {{ end }}
-
-            {{ range .Params.tags }}
-                {{ $href := print (relLangURL "tags/") (urlize .) }}
-                <a href="{{ $href }}">
-                    <img src="/icon/tag.svg"/>
-                    {{ . }}
-                </a>
-            {{ end }}
-        </div>
-    {{ end }}
-</div>
+                {{ range .Params.tags }}
+                    {{ $href := print (relLangURL "tags/") (urlize .) }}
+                    <a href="{{ $href }}">
+                        <img src="/icon/tag.svg"/>
+                        {{ . }}
+                    </a>
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

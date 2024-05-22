@@ -3,6 +3,13 @@ title: "CV"
 titleClass: "screen"
 ---
 
+<div class="screen">
+
+*You can use your browser's "Print" feature to export this page as a PDF.*
+
+</div>
+
+
 {{< socials >}}
 
 I am a Software Engineer with a diverse skill set and a passion for innovation.
