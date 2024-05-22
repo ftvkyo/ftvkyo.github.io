@@ -11,15 +11,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: s.$pad;
 
     min-height: 100vh; // Don't be shorter than the viewport
 
     margin: 0 auto; // Center the body
     padding: s.$pad; // Leave some space as if the body is a sheet of paper
-
-    & > * {
-        padding: s.$pad; // Section contents should be padded even further
-    }
 
     & main {
         flex: 1; // Grow the main section to fill the remaining space

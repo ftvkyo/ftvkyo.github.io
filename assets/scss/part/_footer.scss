@@ -1,14 +1,12 @@
+@use "../var/size" as s;
 @use "../var/color" as c;
 
 
-// Colors
-
-$text: c.$muted;
-
-
-// Selectors
-
 footer {
-    color: $text;
-    border-top: 1px solid $text;
+    padding-top: s.$pad;
+
+    color: c.$muted;
+    border-top: 1px solid c.$muted;
+
+    font-size: small;
 }

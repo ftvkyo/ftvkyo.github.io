@@ -49,7 +49,7 @@ $bright: white;
     --accent-2-dull: #{color.scale($purple, $lightness: -50%)};
 
     --primary: black;
-    --muted: grey;
+    --muted: gray;
     --warning: #{$red};
 
     --bg: white;
@@ -69,7 +69,7 @@ $bright: white;
         --accent-2-dull: #{color.scale($purple, $lightness: +20%)};
 
         --primary: #e8e8e8;
-        --muted: lightgrey;
+        --muted: gray;
         --warning: #{$red};
 
         --bg: #080808;
