@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="center-self">
+<div class="center-self hyperspace">
 
     ┌─────────────────┐
     │ Hello, stranger │
