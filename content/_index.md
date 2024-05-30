@@ -25,3 +25,5 @@ This website was created so I could present my work and share my notes with othe
 ## Contact me
 
 {{< socials "contacts" >}}
+
+At EMF Camp 2024, my phone number is `8800`.
