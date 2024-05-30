@@ -267,6 +267,10 @@ main .socials {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     a, span {
@@ -274,8 +278,6 @@ main .socials {
         flex-direction: row;
         gap: s.$gap * 0.5;
         align-items: center;
-
-        text-decoration: none;
     }
 
     svg {

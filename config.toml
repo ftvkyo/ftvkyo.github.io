@@ -72,7 +72,7 @@ title = "ftvkyo"
   [[menu.cv]]
     name = "ftvkyo.me"
     url = "https://ftvkyo.me"
-    params = { img = "icon/person.svg" }
+    params = { img = "icon/person.svg", class = "print" }
     weight = 40
 
 

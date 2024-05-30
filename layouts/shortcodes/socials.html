@@ -1,7 +1,8 @@
 <ul class="socials">
     {{ range (index .Site.Menus (.Get 0)) }}
         {{ $text := print .Name }}
-        <li class="embed">
+        {{ $class := printf "class=\"embed %s\"" (or .Params.class "") }}
+        <li {{ $class | safeHTMLAttr }}>
             {{ if .URL }}<a href="{{ .URL }}">{{ else }}<span>{{ end }}
                 {{ partial .Params.img . }}
                 {{ $text }}
