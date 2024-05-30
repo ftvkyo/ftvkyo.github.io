@@ -46,7 +46,6 @@ title = "ftvkyo"
     weight = 10
   [[menu.contacts]]
     name = "Discord: @ftvkyo"
-    url = "https://discordapp.com/users/ftvkyo"
     params = { img = "icon/discord.svg" }
     weight = 20
   [[menu.contacts]]
@@ -61,7 +60,6 @@ title = "ftvkyo"
     params = { img = "icon/email.svg" }
     weight = 10
   [[menu.cv]]
-    identifier = "github"
     name = "github.com/ftvkyo"
     url = "https://github.com/ftvkyo"
     params = { img = "icon/github.svg" }

@@ -1,9 +1,11 @@
 <ul class="socials">
     {{ range (index .Site.Menus (.Get 0)) }}
-        {{ $text := print .Name | safeHTML }}
-        <li class="embed"><a href="{{ .URL }}">
-            {{ partial .Params.img . }}
-            <span>{{ $text }}</span>
-        </a></li>
+        {{ $text := print .Name }}
+        <li class="embed">
+            {{ if .URL }}<a href="{{ .URL }}">{{ else }}<span>{{ end }}
+                {{ partial .Params.img . }}
+                {{ $text }}
+            {{ if .URL }}</a>{{ else }}</span>{{ end }}
+        </li>
     {{ end }}
 </ul>

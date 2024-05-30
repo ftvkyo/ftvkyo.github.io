@@ -269,7 +269,7 @@ main .socials {
         justify-content: space-around;
     }
 
-    a {
+    a, span {
         display: flex;
         flex-direction: row;
         gap: s.$gap * 0.5;
