@@ -39,6 +39,45 @@ title = "ftvkyo"
     url = "/cv/"
     weight = 40
 
+  [[menu.contacts]]
+    name = "Telegram: @ftvkyo"
+    url = "https://t.me/ftvkyo"
+    params = { img = "icon/telegram.svg" }
+    weight = 10
+  [[menu.contacts]]
+    name = "Discord: @ftvkyo"
+    url = "https://discordapp.com/users/ftvkyo"
+    params = { img = "icon/discord.svg" }
+    weight = 20
+  [[menu.contacts]]
+    name = "ftvkyo@gmail.com"
+    url = "mailto:ftvkyo@gmail.com"
+    params = { img = "icon/email.svg" }
+    weight = 30
+
+  [[menu.cv]]
+    name = "ftvkyo@gmail.com"
+    url = "mailto:ftvkyo@gmail.com"
+    params = { img = "icon/email.svg" }
+    weight = 10
+  [[menu.cv]]
+    identifier = "github"
+    name = "github.com/ftvkyo"
+    url = "https://github.com/ftvkyo"
+    params = { img = "icon/github.svg" }
+    weight = 20
+  [[menu.cv]]
+    name = "linkedin.com/in/ftvkyo"
+    url = "https://www.linkedin.com/in/ftvkyo/"
+    params = { img = "icon/linkedin.svg" }
+    weight = 30
+  [[menu.cv]]
+    name = "ftvkyo.me"
+    url = "https://ftvkyo.me"
+    params = { img = "icon/person.svg" }
+    weight = 40
+
+
 
 [markup]
   # Reference: https://gohugo.io/getting-started/configuration-markup/

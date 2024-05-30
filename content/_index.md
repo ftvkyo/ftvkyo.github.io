@@ -24,4 +24,4 @@ This website was created so I could present my work and share my notes with othe
 
 ## Contact me
 
-{{< contacts >}}
+{{< socials "contacts" >}}
