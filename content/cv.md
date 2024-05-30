@@ -10,7 +10,7 @@ titleClass: "screen"
 </div>
 
 
-{{< socials >}}
+{{< contacts-cv >}}
 
 I am a Software Engineer with a diverse skill set and a passion for innovation.
 My technical interests include software architecture, UI/UX design, game development and embedded systems, among other things.
