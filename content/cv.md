@@ -152,3 +152,12 @@ I also have hobbies outside of tech:
 This role was my first big step in the profession.
 I gained some experience in Project management, Full-stack development and supporting legacy systems.
 I also learned soldering and modified and assembled multiple custom door Access Control Systems that used campus cards and integrated with our website.
+
+### Member of Edinburgh Hacklab
+
+{{< geo
+    "Apr 2024 - present"
+    "Edinburgh, UK"
+>}}
+
+- Learn more about the organization at the [Edinburgh Hacklab Wiki](https://wiki.ehlab.uk)
