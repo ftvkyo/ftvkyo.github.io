@@ -80,28 +80,6 @@ pre {
     margin: 0 auto;
 }
 
-@keyframes hyperspace {
-    from {
-        filter: drop-shadow(2px 2px 5px c.$accent-1);
-    }
-
-    25% {
-        filter: drop-shadow(-2px 2px 5px c.$accent-2);
-    }
-
-    50% {
-        filter: drop-shadow(-2px -2px 5px c.$accent-1);
-    }
-
-    75% {
-        filter: drop-shadow(2px -2px 5px c.$accent-2);
-    }
-
-    to {
-        filter: drop-shadow(2px 2px 5px c.$accent-1);
-    }
-}
-
-.hyperspace {
-    animation: 2s linear infinite "hyperspace";
+.cow {
+    font-variant-ligatures: none;
 }

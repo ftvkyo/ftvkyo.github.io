@@ -1,16 +1,18 @@
 ---
 ---
 
-<div class="center-self hyperspace">
+<div class="center-self cow">
 
-    ┌─────────────────┐
-    │ Hello, stranger │
-    └─────────────────┘
-            \   ^__^
-             \  (oo)\_______
-                (__)\       )\/\
-                    ||----w |
-                    ||     ||
+                              \  |  /
+    /* =============== *       ,---.
+     * Hello, stranger *     --| o |--
+     * =============== */      '---'
+            \                 /  |  \
+             \   ^__^
+              \  (oO)\_______
+       Ж         (_,)\       )\/\
+       |             ||----w |      O
+    .  |/   vVv   .. ||  .  || ..   |.
 
 </div>
 
@@ -19,5 +21,7 @@ I am Andrei, known as `ftvkyo`.
 
 I work as a Software Engineer and like doing various tech stuff as a hobby.
 This website was created so I could present my work and share my notes with other people.
+
+## Contact me
 
 {{< contacts >}}
