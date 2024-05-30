@@ -109,11 +109,11 @@ The development process allowed me to reflect on the workflow and improve it gre
 [Tekutonu](/project/tekutonu/) is a simple voxel engine written in Rust and aimed at learning Vulkan.
 It's not the first time I've experimented with voxels, and this project is interesting because of the lessons in engine architecture and the development process I learned.
 
-### Keymap-gen
+### Lazy Keymap
 
-{{< skills "Rust, C, QMK, X Keyboard Config, SVG, Python" >}}
+{{< skills "Rust, ZMK, X Keyboard Config, SVG" >}}
 
-[Keymap-gen](/project/keymap-gen/) is a generator of keyboard layouts and their reference cards.
+[Lazy Keymap](/project/lazy-keymap/) is a generator of keyboard layouts and their reference cards.
 My keyboard has an irregular shape and custom firmware, and the OS keyboard layouts are also non-trivial.
 This project reduces the burden of configuring that all by hand by providing a unified configuration format that expands into the firmware sources, OS configuration and a compact reference card.
 
@@ -126,6 +126,9 @@ I have many more personal projects, they include:
   - *C++ & LLVM, Rust, Scheme and other LISP-likes, TypeScript*
 - Small 2D and 3D games
   - *Java & OpenGL, Lua & LÖVE, Godot*
+- Building a keyboard from scratch: [Hovert60][hovert60]
+
+[hovert60]: /tags/hovert60-keyboard/
 
 ## Activities
 

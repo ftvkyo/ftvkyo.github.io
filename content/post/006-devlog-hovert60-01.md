@@ -76,12 +76,12 @@ And they can also be used in input configuration of something like `sway` if you
 I should mention that keyboard layout configuration does not end with XKB config.
 It can also be configured by modifying keyboard firmware, and some use cases really benefit from configuring **both**.
 However, this is a whole another topic which I will save for later.
-I plan to write more about this as a part of my [Keymap-gen][keymap-gen] project.
+I plan to write more about this as a part of my [Lazy keymap][lazy-keymap] project.
 
-[keymap-gen]: /project/keymap-gen/
+[lazy-keymap]: /project/lazy-keymap/
 
 So, considering my experience of using "ergonomic" keyboards and `ru(unipunct)` layout, I felt like I can improve something.
-This, along with the aforementioned Keymap-gen, is what this devlog is about.
+This, along with the aforementioned `lazy-keymap`, is what this devlog is about.
 
 
 ## Idea
