@@ -5,7 +5,7 @@ title = "ftvkyo"
 
 [params]
   fullName = "Andrei Stepanenko"
-  footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/about/)."
+  footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/)."
 
   dateFormat = "Jan 2, 2006"
 
