@@ -167,8 +167,10 @@ main .cards {
 
     li {
         padding: 0 s.$pad;
-        border: 1px solid c.$shadow;
+        border: 2px solid c.$shadow;
         border-radius: s.$pad * 0.5;
+
+        box-shadow: 2.5px 2.5px 5px c.$shadow;
     }
 
     .archived {
@@ -197,7 +199,9 @@ main .tagcloud {
 
     > * {
         padding: s.$gap * 0.25;
+        border-radius: s.$pad * 0.125;
         border: 1px solid c.$shadow;
+        box-shadow: 2.5px 2.5px 5px c.$shadow;
     }
 }
 
