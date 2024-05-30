@@ -16,7 +16,6 @@ $warning: var(--warning);
 
 $bg: var(--bg);
 $bg-img: var(--img-bg);
-$void: var(--void);
 $shadow: var(--shadow);
 
 $code: var(--code);
@@ -54,8 +53,7 @@ $bright: white;
 
     --bg: white;
     --img-bg: lightgrey;
-    --void: lightgrey;
-    --shadow: grey;
+    --shadow: lightgrey;
 
     --code: #111;
     --code-bg: #eee;
@@ -74,7 +72,6 @@ $bright: white;
 
         --bg: #080808;
         --img-bg: lightgrey;
-        --void: #111;
         --shadow: #333;
 
         --code: #eee;
