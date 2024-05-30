@@ -1,13 +1,21 @@
-{{ if or (or .Params.description .Params.tags) .Date }}
+{{ if (or .Params.description .Params.archived .Params.tags .Date) }}
     <div class="metadata">
+
         {{ if .Params.description }}
             <div class="description">
                 {{ .Params.description | markdownify }}
             </div>
         {{ end }}
 
-        {{ if or .Date .Params.tags }}
+        {{ if (or .Params.archived .Date .Params.tags) }}
             <div class="fields">
+                {{ if .Params.archived }}
+                    <div>
+                        <img src="/icon/archive.svg"/>
+                        Archived
+                    </div>
+                {{ end }}
+
                 {{ if .Date }}
                     {{ $dateSystem := .Date.Format "2006-01-02" }}
                     {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}

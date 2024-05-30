@@ -1,4 +1,4 @@
-<li>
+<li {{ if .Params.archived }}class="archived"{{ end }}>
     <a class="title" href="{{ .RelPermalink }}">
         {{ .Title }}
     </a>

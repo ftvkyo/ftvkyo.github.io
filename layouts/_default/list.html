@@ -4,18 +4,7 @@
 
     <ul class="cards">
         {{ range .Pages.ByPublishDate.Reverse }}
-            {{ if not .Params.archived }}
-                {{ partial "list-item.html" . }}
-            {{ end }}
-        {{ end }}
-    </ul>
-
-    <h2>{{ .Params.textArchived }}</h2>
-    <ul class="cards">
-        {{ range .Pages.ByPublishDate.Reverse }}
-            {{ if .Params.archived }}
-                {{ partial "list-item.html" . }}
-            {{ end }}
+            {{ partial "list-item.html" . }}
         {{ end }}
     </ul>
 {{ end }}

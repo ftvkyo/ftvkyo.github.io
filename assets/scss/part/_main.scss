@@ -171,6 +171,10 @@ main .cards {
         border-radius: s.$pad * 0.5;
     }
 
+    .archived {
+        opacity: 75%;
+    }
+
     .title {
         display: block;
         font-size: 1.3em;
