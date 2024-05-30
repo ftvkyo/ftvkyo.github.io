@@ -1,12 +1,14 @@
 {{ define "main" }}
+    {{ $fontSizeMax := index $.Site.Params.tagcloud "max" }}
+
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    <ul class="links">
+    <ul class="tagcloud">
         {{ range .Data.Terms.Alphabetical }}
-            <li>
-                <a href="{{ .Page.RelPermalink }}">
-                    {{ .Page.Title }}
-                </a>&nbsp;({{ .Count }})
+            {{ $fontSize := or (index $.Site.Params.tagcloud .Count) $fontSizeMax }}
+            {{ $style := printf "style=\"font-size: %s\"" $fontSize | safeHTMLAttr }}
+            <li {{ $style }}>
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
             </li>
         {{ end }}
     </ul>

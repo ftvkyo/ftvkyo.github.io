@@ -1,7 +1,8 @@
 {{ define "main" }}
-    <h1>Posts with tag "{{ .Title }}"</h1>
+    <h1><img class="invert" src="/icon/tag.svg"/> {{ .Title }}</h1>
     {{ .Content }}
-    <ul class="links">
+    Posts with this tag:
+    <ul class="cards">
         {{ range .Pages.ByPublishDate.Reverse }}
             {{ partial "list-item.html" . }}
         {{ end }}

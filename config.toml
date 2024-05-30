@@ -9,6 +9,13 @@ title = "ftvkyo"
 
   dateFormat = "Jan 2, 2006"
 
+  # Font sizes to use for different thresholds of posts with tag
+  [params.tagcloud]
+    "1" = "0.8rem"
+    "2" = "1rem"
+    "3" = "1.2rem"
+    "max" = "1.4rem"
+
 
 [taxonomies]
   tag = "tags"
