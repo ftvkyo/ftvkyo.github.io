@@ -161,3 +161,4 @@ I also learned soldering and modified and assembled multiple custom door Access 
 >}}
 
 - Learn more about the organization at the [Edinburgh Hacklab Wiki](https://wiki.ehlab.uk)
+- I went to [EMF Camp](https://emfcamp.org) 2024 with Edinburgh Hacklab (and had a great time)
