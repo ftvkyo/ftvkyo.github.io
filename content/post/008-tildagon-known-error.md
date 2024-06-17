@@ -115,6 +115,8 @@ mpremote
 #   Press Ctrl-X
 ```
 
+{{< figure src=`/img/008/app-in-the-list.webp` caption=`App as it's shown in the list of apps in the main menu of the badge` >}}
+
 Now, let's look at the actual code!
 
 ### Displaying text
@@ -147,6 +149,8 @@ class KnownErrorApp(app.App):
         ctx.rgb(1, 1, 1).move_to(-80, 0).text("Known Error")
         ctx.restore()
 ```
+
+{{< figure src=`/img/008/app-1.webp` caption=`App displaying "Known Error" text` >}}
 
 ### Changing displayed text in runtime
 
@@ -208,6 +212,8 @@ class KnownErrorApp(app.App):
 ```
 
 {{% /details %}}
+
+{{< figure src=`/img/008/app-2.webp` caption=`App displaying "Unknown Error" text` >}}
 
 
 ### Adding glitch effects to make it more fun
@@ -360,3 +366,5 @@ class KnownErrorApp(app.App):
 ```
 
 {{% /details %}}
+
+{{< figure src=`/img/008/app-3.webp` caption=`App in the glitch mode, displaying "Known Error" text` >}}
