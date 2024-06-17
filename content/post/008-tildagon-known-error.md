@@ -13,7 +13,7 @@ At the end of May 2024, I went to my first [EMF Camp](https://emfcamp.org), and 
 It had many interesting things to see and cool people to meet.
 I wouldn't say I made new friends there, but I did get closer to members of [Edinburgh Hacklab](https://wiki.ehlab.uk) which I am also a member of.
 
-This post if not about EMF Camp though, it is about one of its highlights: the [Tildagon](https://tildagon.badge.emfcamp.org/) badge.
+This post is not about EMF Camp though, it is about one of its highlights: the [Tildagon](https://tildagon.badge.emfcamp.org/) badge.
 These badges are electronic devices that are meant to be extended and modified, this is a [hacker](https://en.wikipedia.org/wiki/Hacker) festival after all.
 The badges could be preordered for 25£.
 
