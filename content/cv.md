@@ -95,6 +95,9 @@ Through personal projects and professional endeavours, I continually seek to ref
 
 ## Personal projects
 
+I have worked on many personal projects -- they are my favourite way to learn new things.
+Here are some projects I would highlight:
+
 ### Obsidian ftvkyo
 
 {{< skills "TypeScript (React), Electron, CSS (SASS)" >}}
@@ -102,12 +105,16 @@ Through personal projects and professional endeavours, I continually seek to ref
 [Obsidian ftvkyo](/project/obsidian-ftvkyo/) is an Obsidian plugin that accommodates my workflow.
 The development process allowed me to reflect on the workflow and improve it greatly, and this project helped me achieve a huge productivity boost on a day-to-day basis.
 
-### Tekutonu
+### Hovert60
 
-{{< skills "Rust, Vulkan (vulkano.rs)" >}}
+{{< skills "Autodesk Fusion 360, CNC Router, 3D printer, Soldering" >}}
 
-[Tekutonu](/project/tekutonu/) is a simple voxel engine written in Rust and aimed at learning Vulkan.
-It's not the first time I've experimented with voxels, and this project is interesting because of the lessons in engine architecture and the development process I learned.
+Making something physical, something you can touch can be very exciting.
+More so, making something interactive, and what's more interactive for a software developer than their keyboard?
+So, I decided to design and make a wireless, split & hardwired (no PCB) keyboard from scratch.
+Learn more in the devlog posts with the [Hovert60 keyboard][hovert60] tag.
+
+[hovert60]: /tags/hovert60-keyboard/
 
 ### Lazy Keymap
 
@@ -117,6 +124,13 @@ It's not the first time I've experimented with voxels, and this project is inter
 My keyboard has an irregular shape and custom firmware, and the OS keyboard layouts are also non-trivial.
 This project reduces the burden of configuring that all by hand by providing a unified configuration format that expands into the firmware sources, OS configuration and a compact reference card.
 
+### Tekutonu
+
+{{< skills "Rust, Vulkan (vulkano.rs)" >}}
+
+[Tekutonu](/project/tekutonu/) is a simple voxel engine written in Rust and aimed at learning Vulkan.
+It's not the first time I've experimented with voxels, and this project is interesting because of the lessons in engine architecture and the development process I learned.
+
 ### Other personal projects
 
 I have many more personal projects, they include:
@@ -125,10 +139,9 @@ I have many more personal projects, they include:
 - Experiments with programming languages
   - *C++ & LLVM, Rust, Scheme and other LISP-likes, TypeScript*
 - Small 2D and 3D games
-  - *Java & OpenGL, Lua & LÖVE, Godot*
-- Building a keyboard from scratch: [Hovert60][hovert60]
-
-[hovert60]: /tags/hovert60-keyboard/
+  - *Java & OpenGL, Lua & LÖVE, Godot, TIC-80*
+- Making 3D models for 3D printing
+  - *Autodesk Fusion 360, Blender, OpenSCAD*
 
 ## Activities
 
