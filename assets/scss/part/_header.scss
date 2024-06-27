@@ -1,14 +1,14 @@
-@use "../var/color" as c;
-@use "../var/size" as s;
+@use "../color" as c;
+@use "../var" as *;
 
 
 header {
-    padding: s.$pad;
+    padding: $size-l;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: s.$gap;
+    gap: $size-l;
 
     color: c.$dark;
 
@@ -20,14 +20,14 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: s.$gap * 0.25;
+        gap: $size-xs;
     }
 
     nav {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: s.$gap;
+        gap: $size-l;
 
         > * {
             flex: 1 0 auto;

@@ -1,6 +1,5 @@
-@use "var/color" as c;
-@use "var/font" as f;
-@use "var/size" as s;
+@use "color" as c;
+@use "var" as *;
 
 @use "shared";
 
@@ -21,7 +20,7 @@
     }
 
     body {
-        max-width: s.$w-readable;
+        max-width: $width-readable;
     }
 
     /* ====== *
