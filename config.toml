@@ -40,23 +40,21 @@ title = "ftvkyo"
     weight = 40
 
   [[menu.contacts]]
+    name = "`andrei (at) ftvkyo.me`"
+    params = { img = "icon/email.svg" }
+    weight = 10
+  [[menu.contacts]]
     name = "Telegram: @ftvkyo"
     url = "https://t.me/ftvkyo"
     params = { img = "icon/telegram.svg" }
-    weight = 10
+    weight = 20
   [[menu.contacts]]
     name = "Discord: @ftvkyo"
     params = { img = "icon/discord.svg" }
-    weight = 20
-  [[menu.contacts]]
-    name = "ftvkyo@gmail.com"
-    url = "mailto:ftvkyo@gmail.com"
-    params = { img = "icon/email.svg" }
     weight = 30
 
   [[menu.cv]]
-    name = "ftvkyo@gmail.com"
-    url = "mailto:ftvkyo@gmail.com"
+    name = "`andrei (at) ftvkyo.me`"
     params = { img = "icon/email.svg" }
     weight = 10
   [[menu.cv]]

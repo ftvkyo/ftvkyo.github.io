@@ -5,7 +5,7 @@
         <li {{ $class | safeHTMLAttr }}>
             {{ if .URL }}<a href="{{ .URL }}">{{ else }}<span>{{ end }}
                 {{ partial .Params.img . }}
-                {{ $text }}
+                {{ $text | markdownify }}
             {{ if .URL }}</a>{{ else }}</span>{{ end }}
         </li>
     {{ end }}
