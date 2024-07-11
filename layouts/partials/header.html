@@ -1,6 +1,10 @@
 <header>
     <div class="branding">
-        <div class="title">{{ .Site.Title }}</div>
+        <div class="title">
+            <img src="/logo.svg">
+            {{ .Site.Title }}
+            <img src="/logo.svg">
+        </div>
         <div class="name">{{ .Site.Params.fullName }}</div>
     </div>
     <nav>

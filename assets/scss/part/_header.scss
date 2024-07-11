@@ -21,6 +21,15 @@ header {
         flex-direction: column;
         align-items: center;
         gap: $size-xs;
+
+        img {
+            height: 0.8em;
+        }
+
+        img:first-child {
+            // Mirror horizontally
+            transform: scaleX(-1);
+        }
     }
 
     nav {
