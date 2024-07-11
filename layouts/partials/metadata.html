@@ -11,7 +11,7 @@
             <div class="fields">
                 {{ if .Params.archived }}
                     <div>
-                        <img src="/icon/archive.svg"/>
+                        {{ partial "icon/archive.svg" . }}
                         Archived
                     </div>
                 {{ end }}
@@ -20,7 +20,7 @@
                     {{ $dateSystem := .Date.Format "2006-01-02" }}
                     {{ $dateReadable := .Date.Format .Site.Params.dateFormat }}
                     <div>
-                        <img src="/icon/calendar.svg"/>
+                        {{ partial "icon/calendar.svg" . }}
                         <time datetime="{{ $dateSystem }}">
                             {{ $dateReadable }}
                         </time>
@@ -30,7 +30,7 @@
                 {{ range .Params.tags }}
                     {{ $href := print (relLangURL "tags/") (urlize .) }}
                     <a href="{{ $href }}">
-                        <img src="/icon/tag.svg"/>
+                        {{ partial "icon/tag.svg" . }}
                         {{ . }}
                     </a>
                 {{ end }}

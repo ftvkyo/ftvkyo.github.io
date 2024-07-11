@@ -1,11 +1,10 @@
 <div class="info geo">
     <span>
-        <img src="/icon/calendar.svg"/>
+        {{ partial "icon/calendar.svg" . }}
         {{ .Get 0 }}
     </span>
-
     <span>
-        <img src="/icon/location.svg"/>
+        {{ partial "icon/location.svg" . }}
         {{ .Get 1 }}
     </span>
 </div>

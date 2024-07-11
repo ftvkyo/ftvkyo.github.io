@@ -1,0 +1,49 @@
+// FILE:
+// General stuff to fix default CSS
+
+// Inheriting border-box.
+// Source: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+// Remove the weird body margin
+
+body {
+    margin: 0;
+}
+
+// Prefers reduced motion
+
+@media screen and (prefers-reduced-motion: reduce) {
+    * {
+        // Source: https://css-tricks.com/a-complete-guide-to-css-media-queries/
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+// Use sensible page size and margins
+
+@page {
+    size: A4;
+    margin: 1cm 0.5cm;
+}
+
+// Fix issues with printing
+
+@media print {
+    * {
+        // Ligatures can break the text layer of the PDF
+        font-variant-ligatures: none;
+
+        color: black !important;
+        background-color: white !important;
+    }
+}

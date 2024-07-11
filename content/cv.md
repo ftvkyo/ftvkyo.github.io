@@ -1,9 +1,9 @@
 ---
-title: "CV"
-titleClass: "screen"
+title: "Andrei Stepanenko"
+titleClass: "only-print"
 ---
 
-<div class="screen">
+<div class="only-screen">
 
 *You can use your browser's "Print" feature to export this page as a PDF.*
 

@@ -1,12 +1,7 @@
-<ul class="socials">
+<div class="socials">
     {{ range (index .Site.Menus (.Get 0)) }}
+        {{ partial .Params.img . }}
         {{ $text := print .Name }}
-        {{ $class := printf "class=\"embed %s\"" (or .Params.class "") }}
-        <li {{ $class | safeHTMLAttr }}>
-            {{ if .URL }}<a href="{{ .URL }}">{{ else }}<span>{{ end }}
-                {{ partial .Params.img . }}
-                {{ $text | markdownify }}
-            {{ if .URL }}</a>{{ else }}</span>{{ end }}
-        </li>
+        <span>{{ $text | markdownify }}</span>
     {{ end }}
-</ul>
+</div>

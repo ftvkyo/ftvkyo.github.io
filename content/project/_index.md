@@ -1,5 +1,4 @@
 ---
-title: Projects
 ---
 
 - My photos: [ポテト camera][photos]

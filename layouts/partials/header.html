@@ -1,17 +1,16 @@
-<header>
-    <div class="branding">
-        <div class="title">
-            <img src="/logo.svg">
-            {{ .Site.Title }}
-            <img src="/logo.svg">
-        </div>
-        <div class="name">{{ .Site.Params.fullName }}</div>
-    </div>
+<header class="only-screen">
     <nav>
         {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">
-                {{ $text := print .Name | safeHTML }}
-                {{ $text }}
+            <a
+                {{ if (eq .URL $.RelPermalink) }}
+                    aria-current="page"
+                {{ end }}
+                {{ if (eq .URL "/") }}
+                    class="logo"
+                {{ end }}
+                href="{{ .URL }}"
+            >
+                {{ .Name | safeHTML }}
             </a>
         {{ end }}
     </nav>

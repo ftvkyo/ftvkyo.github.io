@@ -4,8 +4,7 @@ title = "ftvkyo"
 
 
 [params]
-  fullName = "Andrei Stepanenko"
-  footer = "Made with [Hugo](https://gohugo.io/). Content and styles by [me](/)."
+  footer = "© Andrei"
 
   dateFormat = "Jan 2, 2006"
 
@@ -25,6 +24,7 @@ title = "ftvkyo"
   [[menu.main]]
     name = "Home"
     url = "/"
+    params = { img = "logo.svg" }
     weight = 10
   [[menu.main]]
     name = "Projects"
@@ -44,8 +44,7 @@ title = "ftvkyo"
     params = { img = "icon/email.svg" }
     weight = 10
   [[menu.contacts]]
-    name = "Telegram: @ftvkyo"
-    url = "https://t.me/ftvkyo"
+    name = "Telegram: [`@ftvkyo`](https://t.me/ftvkyo)"
     params = { img = "icon/telegram.svg" }
     weight = 20
   [[menu.contacts]]
@@ -58,19 +57,16 @@ title = "ftvkyo"
     params = { img = "icon/email.svg" }
     weight = 10
   [[menu.cv]]
-    name = "github.com/ftvkyo"
-    url = "https://github.com/ftvkyo"
+    name = "[github.com/ftvkyo](https://github.com/ftvkyo)"
     params = { img = "icon/github.svg" }
     weight = 20
   [[menu.cv]]
-    name = "linkedin.com/in/ftvkyo"
-    url = "https://www.linkedin.com/in/ftvkyo/"
+    name = "[linkedin.com/in/ftvkyo](https://www.linkedin.com/in/ftvkyo/)"
     params = { img = "icon/linkedin.svg" }
     weight = 30
   [[menu.cv]]
-    name = "ftvkyo.me"
-    url = "https://ftvkyo.me"
-    params = { img = "icon/person.svg", class = "print" }
+    name = "[ftvkyo.me](https://ftvkyo.me)"
+    params = { img = "icon/person.svg" }
     weight = 40
 
 

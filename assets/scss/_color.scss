@@ -1,102 +1,19 @@
 @use 'sass:color';
 
-
-/* =============== *
- * Color accessors *
- * =============== */
-
-$accent-1: var(--accent-1);
-$accent-2: var(--accent-2);
-$accent-1-dull: var(--accent-1-dull);
-$accent-2-dull: var(--accent-2-dull);
-
-$primary: var(--primary);
-$muted: var(--muted);
-$warning: var(--warning);
-
-$bg: var(--bg);
-$bg-img: var(--img-bg);
-$shadow: var(--shadow);
-
-$code: var(--code);
-$code-bg: var(--code-bg);
-
-$invert: var(--invert);
-
-
-/* ============= *
- * Static colors *
- * ============= */
-
 $pink: #e66465;
 $purple: #9198e5;
-$red: #f76c6c;
 
-$dark: black;
-$mid: lightgrey;
-$bright: white;
-
-
-/* ====================== *
- * Light/dark theme setup *
- * ====================== */
-
-:root {
-    --accent-1: #{$pink};
-    --accent-2: #{$purple};
-    --accent-1-dull: #{color.scale($pink, $lightness: -50%)};
-    --accent-2-dull: #{color.scale($purple, $lightness: -50%)};
-
-    --primary: black;
-    --muted: gray;
-    --warning: #{$red};
-
-    --bg: white;
-    --img-bg: lightgrey;
-    --shadow: lightgrey;
-
-    --code: #111;
-    --code-bg: #eee;
-
-    --invert: none;
-
-    @media (prefers-color-scheme: dark) {
-        --accent-1: #{$pink};
-        --accent-2: #{$purple};
-        --accent-1-dull: #{color.scale($pink, $lightness: +20%)};
-        --accent-2-dull: #{color.scale($purple, $lightness: +20%)};
-
-        --primary: #e8e8e8;
-        --muted: gray;
-        --warning: #{$red};
-
-        --bg: #080808;
-        --img-bg: lightgrey;
-        --shadow: #333;
-
-        --code: #eee;
-        --code-bg: #222;
-
-        --invert: invert(1);
-    }
-
-    @media print {
-        --img-bg: none;
-    }
-}
-
-
-/* ========= *
- * Gradients *
- * ========= */
-
-$header-gradient: linear-gradient(45deg, $accent-1, $accent-2);
-$hr-gradient: linear-gradient(to right, $accent-1, $accent-2);
-
-
-/* ======= *
- * Utility *
- * ======= */
+$grey-00: hsl(270, 15%, 5%);
+$grey-100: hsl(0, 0%, 95%);
+$grey-10: color.mix($grey-100, $grey-00, 10%);
+$grey-20: color.mix($grey-100, $grey-00, 20%);
+$grey-30: color.mix($grey-100, $grey-00, 30%);
+$grey-40: color.mix($grey-100, $grey-00, 40%);
+$grey-50: color.mix($grey-100, $grey-00, 50%);
+$grey-60: color.mix($grey-100, $grey-00, 60%);
+$grey-70: color.mix($grey-100, $grey-00, 70%);
+$grey-80: color.mix($grey-100, $grey-00, 80%);
+$grey-90: color.mix($grey-100, $grey-00, 90%);
 
 @mixin link($link, $visited, $hover, $active) {
     color: $link;

@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <h1><img class="invert" src="/icon/tag.svg"/> {{ .Title }}</h1>
+    <h1>{{ partial "icon/tag.svg" . }} {{ .Title }}</h1>
     {{ .Content }}
     Posts with this tag:
     <ul class="cards">

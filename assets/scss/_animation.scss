@@ -1,0 +1,29 @@
+@keyframes float {
+    from {
+        transform: translate(0px, -5px) rotate(0);
+    }
+
+    15% {
+        transform: translate(3px, -3px) rotate(-3deg);
+    }
+
+    30% {
+        transform: translate(-3px, -1px) rotate(3deg);
+    }
+
+    45% {
+        transform: translate(3px, 1px) rotate(-3deg);
+    }
+
+    60% {
+        transform: translate(-3px, 3px) rotate(3deg);
+    }
+
+    75% {
+        transform: translate(0px, 5px) rotate(0);
+    }
+
+    to {
+        transform: translate(0px, -5px) rotate(0);
+    }
+}
