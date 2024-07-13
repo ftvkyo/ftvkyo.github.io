@@ -6,6 +6,4 @@ description: >
 
 {{< interactive/milling-calculator >}}
 
----
-
 - Inspired by [Fablab Feeds and Speeds Calculator](https://pub.pages.cba.mit.edu/feed_speeds/)

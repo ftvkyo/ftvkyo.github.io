@@ -142,10 +142,28 @@ main {
 }
 
 footer {
-    padding: 1rem 0;
-    margin-top: 2rem;
-    border-top: 1px solid c.$grey-20;
+    margin: 1rem;
     font-size: s.$text-small;
+    text-align: center;
+}
+
+footer::before {
+    content: "";
+    display: block;
+    margin: 2rem auto;
+
+    $w: 7em;
+    $h: 3em;
+    $g: linear-gradient(to right, c.$pink, c.$purple);
+
+    width: $w;
+    height: $h;
+
+    background: $g;
+    mask-image: url("/logo.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: $w $h;
 }
 
 figure {
@@ -283,6 +301,12 @@ details {
     &[open] summary::after {
         transform: translateX(50%) rotate(180deg);
     }
+}
+
+hr {
+    border-style: dashed;
+    border-color: c.$grey-20;
+    margin: 1.5em 0;
 }
 
 // Custom elements
