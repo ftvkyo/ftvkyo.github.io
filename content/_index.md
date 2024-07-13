@@ -1,6 +1,3 @@
----
----
-
 <div class="center-self cow">
 
                               \  |  /
