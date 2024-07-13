@@ -48,7 +48,7 @@ title = "ftvkyo"
     params = { img = "icon/telegram.svg" }
     weight = 20
   [[menu.contacts]]
-    name = "Discord: @ftvkyo"
+    name = "Discord: `@ftvkyo`"
     params = { img = "icon/discord.svg" }
     weight = 30
 
