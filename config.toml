@@ -4,9 +4,11 @@ title = "ftvkyo"
 
 
 [params]
-  footer = "© Andrei"
-
   dateFormat = "Jan 2, 2006"
+  # Override on per-page basis
+  math = false
+
+  footer = "© Andrei"
 
   # Font sizes to use for different thresholds of posts with tag
   [params.tagcloud]
@@ -87,3 +89,10 @@ title = "ftvkyo"
     [markup.goldmark.extensions.typographer]
       leftDoubleQuote = "&laquo;"
       rightDoubleQuote = "&raquo;"
+
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
