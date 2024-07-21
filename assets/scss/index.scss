@@ -429,6 +429,14 @@ ul.cards {
 
             font-size: s.$text-title;
             text-decoration: none;
+
+            &.draft {
+                color: c.$pink;
+
+                &::before {
+                    content: "DRAFT: ";
+                }
+            }
         }
     }
 }
