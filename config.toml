@@ -10,6 +10,8 @@ title = "ftvkyo"
 
   footer = "© Andrei"
 
+  readingTimeSections = ["/post"]
+
   # Font sizes to use for different thresholds of posts with tag
   [params.tagcloud]
     "1" = "0.8rem"
