@@ -1,0 +1,10 @@
+{{ $class := .Get 0 }}
+{{ if $class }}
+<aside class="{{ $class | safeHTMLAttr }}">
+{{ else }}
+<aside>
+{{ end }}
+
+    {{ .Inner }}
+
+</aside>

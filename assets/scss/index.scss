@@ -309,6 +309,16 @@ hr {
     margin: 1.5em 0;
 }
 
+aside {
+    border: 1px solid c.$grey-50;
+    padding: 0 1em;
+    margin: 2em 0;
+
+    &.warn {
+        border-color: c.$pink;
+    }
+}
+
 // Custom elements
 
 .center-self {
