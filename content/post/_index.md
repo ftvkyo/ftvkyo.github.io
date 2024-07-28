@@ -3,4 +3,10 @@ title: "Posts"
 titleClass: "only-print"
 ---
 
-Check out [Tags](/tags/).
+{{% iconlink "rss" "index.xml"  %}}
+RSS
+{{% /iconlink %}}
+
+{{% iconlink "tag" "/tags/"  %}}
+Tags
+{{% /iconlink %}}

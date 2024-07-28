@@ -359,6 +359,23 @@ aside {
     }
 }
 
+.iconlink {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+
+    svg {
+        height: 0.8em;
+        align-self: center;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    margin: 1em 0;
+}
+
 .metadata {
     .description {
         margin: 1em 0;
