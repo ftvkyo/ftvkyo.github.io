@@ -217,11 +217,10 @@ blockquote {
 }
 
 table {
-    width: 100%;
+    display: block;
+    overflow-x: scroll;
 
     margin: 1em 0;
-
-    table-layout: fixed;
 
     border-collapse: collapse;
     border: 1px solid c.$grey-10;
