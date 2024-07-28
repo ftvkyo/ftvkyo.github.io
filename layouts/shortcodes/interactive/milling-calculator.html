@@ -1,25 +1,40 @@
 <style>
     #calculator {
         display: grid;
-        grid-template-columns: auto 1fr min-content;
-
+        grid-template-columns: 1fr 2fr;
         gap: 0.5em;
+    }
+
+    #calculator label {
+        grid-column: 1;
+    }
+
+    #calculator input {
+        grid-column: 2;
+        justify-self: end;
+
+        width: 100%;
     }
 
     #calculator span {
         white-space: nowrap;
+        font-style: italic;
+        opacity: 75%;
     }
 
     #calculator hr {
-        grid-column: 1 / 4;
+        grid-column: 1 / 3;
 
         width: 100%;
     }
 
     #calculator .buttons {
-        grid-column: 2 / 4;
+        grid-column: 1 / 3;
+
+        margin-bottom: 0.5em;
 
         display: flex;
+        justify-content: end;
         flex-wrap: wrap;
         gap: 0.25em;
     }
@@ -107,9 +122,8 @@ function setInput(key, value) {
 
 <!-- Inputs -->
 
-<label for="diameter">Tool diameter</label>
+<label for="diameter">Tool diameter <span>(mm)</span></label>
 <input id="diameter" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
-<span>mm</span>
 <div class="buttons">
     <button onclick="setInput('diameter', this.innerText)">1</button>
     <button onclick="setInput('diameter', this.innerText)">1.5</button>
@@ -125,9 +139,8 @@ function setInput(key, value) {
     <button onclick="setInput('diameter', this.innerText)">10</button>
 </div>
 
-<label for="flutes">Number of flutes</label>
+<label for="flutes">Number of flutes <span>(integer)</span></label>
 <input id="flutes" type="text" inputmode="numeric" pattern="\d*" oninput="update()"/>
-<span>integer</span>
 <div class="buttons">
     <button onclick="setInput('flutes', this.innerText)">1</button>
     <button onclick="setInput('flutes', this.innerText)">2</button>
@@ -135,17 +148,15 @@ function setInput(key, value) {
     <button onclick="setInput('flutes', this.innerText)">4</button>
 </div>
 
-<label for="feed">Surface speed</label>
+<label for="feed">Surface speed <span>(m/min)</span></label>
 <input id="feed" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
-<span>m/min</span>
 <div class="buttons">
     <button onclick="setInput('feed', '38.1')">Acrylic (dry)</button>
     <button onclick="setInput('feed', '60.96')">Aluminium (dry)</button>
 </div>
 
-<label for="chipLoad">Chip load</label>
+<label for="chipLoad">Chip load <span>(mm)</span></label>
 <input id="chipLoad" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
-<span>mm</span>
 <div class="buttons">
     <button onclick="setInput('chipLoad', this.innerText)">0.025</button>
     <button onclick="setInput('chipLoad', this.innerText)">0.05</button>
@@ -158,25 +169,20 @@ function setInput(key, value) {
 
 <!-- Results -->
 
-<label for="speed">Spindle speed</label>
+<label for="speed">Spindle speed <span>(RPM)</span></label>
 <input id="speed" type="text" readonly/>
-<span>rpm</span>
 
-<label for="feedXY">Feed XY</label>
+<label for="feedXY">Feed XY <span>(mm/min)</span></label>
 <input id="feedXY" type="text" readonly/>
-<span>mm/min</span>
 
-<label for="feedZ">Feed Z (plunge)</label>
+<label for="feedZ">Feed Z or plunge <span>(mm/min)</span></label>
 <input id="feedZ" type="text" readonly/>
-<span>mm/min</span>
 
-<label for="stepover">Stepover</label>
+<label for="stepover">Stepover <span>(mm)</span></label>
 <input id="stepover" type="text" readonly/>
-<span>mm</span>
 
-<label for="stepdown">Stepdown</label>
+<label for="stepdown">Stepdown <span>(mm)</span></label>
 <input id="stepdown" type="text" readonly/>
-<span>mm</span>
 
 <div class="buttons">
     <button onclick="clearEverything()">Clear</button>

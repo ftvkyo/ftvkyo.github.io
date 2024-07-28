@@ -195,13 +195,18 @@ input {
 
     border: none;
     border-radius: 5px;
-    outline: 1px solid c.$grey-30;
+    outline: 2px solid c.$grey-30;
 
     background-color: c.$grey-00;
     color: c.$grey-100;
 
     &:invalid {
         outline: 2px dashed c.$pink;
+    }
+
+    &:read-only {
+        background-color: c.$grey-10;
+        outline-color: c.$grey-30;
     }
 }
 
