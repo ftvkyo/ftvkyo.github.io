@@ -4,7 +4,7 @@ date: 2024-07-13T22:00:00Z
 tags: [3D-printing, Procedural generation, Maths]
 toc: true
 aliases:
-- "010"
+- "009"
 description: >
   OpenSCAD for the win!
   Even if it means I should implement Bézier curves from scratch.
@@ -24,7 +24,7 @@ However, Blender is huge, and learning it would be a great effort.
 Additionally, I expected it to be subpar with regards to version control of the models and precise changes to them.
 Not that those things would be impossible, but they would require even more involvement.
 
-{{< figure src=`/img/010/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with Binary Modifier for better bed adhesion` >}}
+{{< figure src=`/img/009/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with Binary Modifier for better bed adhesion` >}}
 
 I could, maybe, write scripts for Blender using its Python API.
 It would solve both problems -- I would be able to store the code in Git, and I would be able to calculate values for precise changes right in Python. [^blender-api]
@@ -52,6 +52,6 @@ At the same time, the custom G-Code solution was unique:
 
 The tips of the hair look really ugly, but the idea is neat, and what's cool, every hair strand only goes *one* way.
 
-{{< figure src=`/img/010/hair-g-code.webp` caption=`The 3D-printed hair in question, attempts 4 and 5` >}}
+{{< figure src=`/img/009/hair-g-code.webp` caption=`The 3D-printed hair in question, attempts 4 and 5` >}}
 
 ## OpenSCAD
