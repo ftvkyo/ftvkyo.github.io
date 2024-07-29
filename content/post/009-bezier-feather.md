@@ -1,5 +1,5 @@
 ---
-title: "Procedurally generating a feather for 3D-printing"
+title: "Procedural generation of organic shapes using Bézier curves"
 date: 2024-07-13T22:00:00Z
 tags: [3D-printing, Procedural generation, Maths]
 toc: true
@@ -12,19 +12,24 @@ draft: true
 ---
 
 Some time ago I got this idea to make some "organic" models for 3D-printing.
-Something that you woulnd't want to design using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
+It's something that you woulnd't want to do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
 I also didn't want to boot into Windows to use Fusion every time 😅
 
 [hovert60]: /tags/hovert60-keyboard/
 
-## Blender?
 
-I considered using Blender for that.
+## Maybe I want to use Blender?
+
+Short answer: no.
+
+{{< figure src=`/img/009/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
+
+{{% details "Long answer" %}}
+
+I considered using Blender.
 However, Blender is huge, and learning it would be a great effort.
 Additionally, I expected it to be subpar with regards to version control of the models and precise changes to them.
 Not that those things would be impossible, but they would require even more involvement.
-
-{{< figure src=`/img/009/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with Binary Modifier for better bed adhesion` >}}
 
 I could, maybe, write scripts for Blender using its Python API.
 It would solve both problems -- I would be able to store the code in Git, and I would be able to calculate values for precise changes right in Python. [^blender-api]
@@ -34,7 +39,16 @@ It would solve both problems -- I would be able to store the code in Git, and I 
 
 However, this would still mean I'd have to learn Blender.
 
-## Custom G-Code?
+{{% /details %}}
+
+
+## Maybe I should write some custom G-Code?
+
+Short answer: no.
+
+{{< figure src=`/img/009/hair-g-code.webp` caption=`Some 3D-printed "hair"` >}}
+
+{{% details "Long answer" %}}
 
 At this point, I realised I want to print some "hair".
 To achieve that, I decided to write some custom <span title="Commands that control movement and actions of automated machines">G-code</span> for the 3D printer I was using. [^dont-try-this-at-home]
@@ -52,9 +66,40 @@ At the same time, the custom G-Code solution was unique:
 
 The tips of the hair look really ugly, but the idea is neat, and what's cool, every hair strand only goes *one* way.
 
-{{< figure src=`/img/009/hair-g-code.webp` caption=`The 3D-printed hair in question, attempts 4 and 5` >}}
+{{% /details %}}
 
-## OpenSCAD
+
+## I can use OpenSCAD
+
+OpenSCAD is a program that allows modeling complex solid objects by combining simpler objects in various ways.
+It supports things like:
+
+- Creating primitive [polygons][polygon] like squares and other regular polygons (approximations of circles)
+- Creating arbitrary polygons from a set of points
+- Creating primitive [polyhedra][polyhedron] like cubes, prisms (approximations of cylinders), [UV spheres][uv-sphere]
+- Creating arbitraty polyhedra from a set of triangles
+- [Affine transformations][affine-transformation] of polygons and polyhedra
+  - Rotation
+  - Translation
+  - Scaling
+  - Mirroring
+  - Arbitraty transformations using a matrix
+- Boolean operations [on polygons][boolean-polygons] and on polyhedra
+  - Union
+  - Intersection
+  - Difference
+- [Convex hull][convex-hull] calculation for polygons and polyhedra
+- [Minkowski addition][minkowski] of polygons and polyhedra
+- Offsetting a polygon's outline
+- Extrusion of 2D shapes into 3D shapes with linear or rotational movement
+
+[polygon]: https://en.wikipedia.org/wiki/Polygon
+[polyhedron]: https://en.wikipedia.org/wiki/Polyhedron
+[affine-transformation]: https://en.wikipedia.org/wiki/Affine_transformation
+[uv-sphere]: https://en.wikipedia.org/wiki/UV_mapping
+[boolean-polygons]: https://en.wikipedia.org/wiki/Boolean_operations_on_polygons
+[convex-hull]: https://en.wikipedia.org/wiki/Convex_hull
+[minkowski]: https://en.wikipedia.org/wiki/Minkowski_addition
 
 ---
 
