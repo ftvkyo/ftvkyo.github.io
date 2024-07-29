@@ -55,3 +55,22 @@ The tips of the hair look really ugly, but the idea is neat, and what's cool, ev
 {{< figure src=`/img/009/hair-g-code.webp` caption=`The 3D-printed hair in question, attempts 4 and 5` >}}
 
 ## OpenSCAD
+
+---
+
+{{< figure src=`/img/009/vectors.svg` caption=`` >}}
+{{< figure src=`/img/009/lerp.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-quadratic-1.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-quadratic-2.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-quadratic-3.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-quadratic-4.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-cubic-1.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-cubic-2.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-cubic-3.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-cubic-4.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-cubic-5.svg` caption=`` >}}
+{{< figure src=`/img/009/bezier-derivative.svg` caption=`` >}}
+{{< figure src=`/img/009/stroke-expansion-1.svg` caption=`` >}}
+{{< figure src=`/img/009/stroke-expansion-2.svg` caption=`` >}}
+{{< figure src=`/img/009/stroke-expansion-3.svg` caption=`` >}}
+{{< figure src=`/img/009/stroke-expansion-4.svg` caption=`` >}}
