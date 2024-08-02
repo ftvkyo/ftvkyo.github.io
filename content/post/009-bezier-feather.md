@@ -11,17 +11,28 @@ description: >
 draft: true
 ---
 
-Some time ago I got this idea to make some "organic" models for 3D-printing.
-It's something that you woulnd't want to do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
+## Preface
+
+...
+
+
+## Background
+
+A while ago I got this idea to make some "organic" models for 3D-printing.
+It's something that I didn't want to try and do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
 I also didn't want to boot into Windows to use Fusion every time 😅
 
 [hovert60]: /tags/hovert60-keyboard/
 
+{{< figure src=`/img/009/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
+
+After some experiments with Blender and even with writing some custom G-code for 3D-printing, I stumbled upon a tool called OpenSCAD.
+
 
 ## What is OpenSCAD?
 
-OpenSCAD is a program that allows modeling complex solid objects by combining simpler objects in various ways.
-It supports things like:
+[OpenSCAD](https://openscad.org/) is a <abbr title="Computer-aided Design">CAD</abbr> program that allows modeling complex solid objects by combining simpler objects in various ways.
+Supported operations include:
 
 - Creating primitive [polygons][polygon] like squares and other regular polygons (approximations of circles)
 - Creating arbitrary polygons from a set of points
@@ -32,7 +43,7 @@ It supports things like:
   - Translation
   - Scaling
   - Mirroring
-  - Arbitraty transformations using a matrix
+  - Arbitrary transformations using a matrix
 - Boolean operations [on polygons][boolean-polygons] and on polyhedra
   - Union
   - Intersection
@@ -51,7 +62,31 @@ It supports things like:
 [minkowski]: https://en.wikipedia.org/wiki/Minkowski_addition
 
 
+Unlike in many other tools, models in OpenSCAD are created by writing code rather than by interacting with a GUI.
+I think this approach unlocks several benefits.
+
+For instance, my existing software development skills translate to OpenSCAD nicely, as it allows storing the code for my models in Git and provides capabilities for [code reuse](https://en.wikipedia.org/wiki/Code_reuse).
+It removes the need to learn a complex set of keyboard shortcuts and menu items, instead providing a simple <abbr title="Application Programming Interface">API</abbr> for which it has a [cheatsheet](https://openscad.org/cheatsheet/index.html).
+
+But OpenSCAD also has a bunch of drawbacks compared to other CAD software.
+It does not use the concept of [constraints][constraint], and the user has to figure out the formulas even for simple things.
+The simplicity of the API I mentioned requires a high degree of creativity from the user when making advanced designs.
+As a result, creating complex models can get overwhelming.
+
+[constraint]: https://en.wikipedia.org/wiki/Constraint_(computer-aided_design)
+
+In their work, software developers can spend some extra effort on making their code more "future-proof".
+The code could be organised more neatly, variables and functions could be named appropriately and so on.
+When working with OpenSCAD, you end up having to do the same.
+But organizing code and thinking of right names for parts of your designs can be quite hard.
+
+I think these limitations of OpenSCAD pose an interesting challenge for its users.
+I can't say if they make OpenSCAD less suited for professional work, but they definitely can make it more enjoyable.
+
+
 ## Theory
+
+...
 
 
 ### Basics
@@ -108,50 +143,3 @@ It supports things like:
 ## Results
 
 ...
-
-
-## Bonus
-
-{{< figure src=`/img/009/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
-
-
-{{% details "Why didn't I use Blender?" %}}
-
-I considered using Blender.
-However, Blender is huge, and learning it would be a great effort.
-Additionally, I expected it to be subpar with regards to version control of the models and precise changes to them.
-Not that those things would be impossible, but they would require even more involvement.
-
-I could, maybe, write scripts for Blender using its Python API.
-It would solve both problems -- I would be able to store the code in Git, and I would be able to calculate values for precise changes right in Python. [^blender-api]
-
-[^blender-api]: If you are interested, there is a brilliant answer on StackOverflow about this: [diff and version manage blender work -- answer by Brent Baccala](https://blender.stackexchange.com/a/9155).
-  It may also tease your curiosity, as it uses a cool approach to launch the script called "[Multiline shebang](https://rosettacode.org/wiki/Multiline_shebang)".
-
-However, this would still mean I'd have to learn Blender.
-
-{{% /details %}}
-
-
-
-{{% details "Why didn't I write some G-code by hand?" %}}
-
-At this point, I realised I want to print some "hair".
-To achieve that, I decided to write some custom <span title="Commands that control movement and actions of automated machines">G-code</span> for the 3D printer I was using. [^dont-try-this-at-home]
-
-[^dont-try-this-at-home]: **Don't try this at home unless you really know what you are doing!**
-
-I created a model of a flat square, loaded it into PrusaSlicer, generated G-code, and then tried to modify it.
-The G-code does not generally expect to be modified.
-For example, if you randomly insert extrusion commands in the middle of it, the print head may crash into those extruded bits later in the program, as it does not expect them to be there.
-
-Nothing went wrong in my experiments, but I found a better solution in the end.
-At the same time, the custom G-Code solution was unique:
-- I made the printer raise away from the layer and pull the "hair" up & sideways at the same time
-- I made it so the printer rips the "hair" by stopping extruding and pulling even further away
-
-The tips of the hair look really ugly, but the idea is neat, and what's cool, every hair strand only goes *one* way.
-
-{{< figure src=`/img/009/hair-g-code.webp` caption=`Some 3D-printed "hair" I printed using custom G-code` >}}
-
-{{% /details %}}
