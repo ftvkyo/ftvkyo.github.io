@@ -86,7 +86,17 @@ I can't say if they make OpenSCAD less suited for professional work, but they de
 
 ## Theory
 
-...
+When I started, I didn't know what I want to achieve, but I knew I wanted to use [Bézier curves][bezier] for this mini-project.
+There are 3 ways to use those in OpenSCAD:
+- Use a 3rd-party library (which is boring)
+- Imprort an SVG (which is not flexible, and also boring)
+- Implement the curves by myself (yeah, guess where this is going)
+
+[bezier]: https://en.wikipedia.org/wiki/Bézier_curve
+
+To implement the curves, I needed to revisit some theory.
+I will explain the theory behind them here.
+Feel free to skip the maths -- I think the pictures with their flavour text should be enough to get the basic idea.
 
 
 ### Basics
