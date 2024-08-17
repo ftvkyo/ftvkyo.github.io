@@ -181,15 +181,37 @@ For a different vector \(\vec{A}\),
 It's length \(\Vert A \Vert\) can be calculated by the [Pythagorean theorem][pythagor]:
 
 \[
-\Vert \vec{A} \Vert = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\Vert \vec{A} \Vert = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5
 \]
 
 [pythagor]: https://en.wikipedia.org/wiki/Pythagorean_theorem
 
 ---
 
+Now, the remaining piece of the puzzle is a function called \(lerp\) which stands for [Linear interpolation][lerp].
+This function receives 3 values: 2 values \(v_0\) and \(v_1\) to interpolate between, and a parameter \(t \in [0, 1]\).
+\(v_0\) and \(v_1\) can be real numbers, but they can also be vectors (with the same dimensionality).
+
+\(lerp\) can be defined like this:
+
+\[
+  lerp(v_0, v_1, t) := (1 - t) v_0 + t v_1
+\]
+
+Note the values of the function for \(t\) at the ends of the \([0, 1]\) interval:
+
+\[
+\begin{align}
+  lerp(v_0, v_1, 0) &= v_0 \\
+  lerp(v_0, v_1, 1) &= v_1 \\
+\end{align}
+\]
+
+Now, if we calculate \(lerp(\vec{A}, \vec{B}, t)\) for all \(t \in [0, 1]\) for some fixed \(\vec{A}\) and \(\vec{B}\), we get a set of points that live on the line segment connecting \(A\) and \(B\).
+
 {{< figure src=`/img/009/lerp.svg` caption=`` >}}
 
+[lerp]: https://en.wikipedia.org/wiki/Linear_interpolation
 
 ### Quadratic Bézier curves
 
