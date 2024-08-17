@@ -3,6 +3,7 @@ title: "Procedural generation of organic shapes using Bézier curves"
 date: 2024-07-13T22:00:00Z
 tags: [3D-printing, Procedural generation, Maths]
 toc: true
+math: true
 aliases:
 - "009"
 description: >
@@ -13,13 +14,25 @@ draft: true
 
 ## Preface
 
-...
+A while ago I got an idea to create some "organic" shapes for 3D-printing.
+I learned a bunch of interesting stuff trying to do that.
+This post captures the essence of my experience.
+
+The post starts with an introduction to the tools I am using.
+Then I present the concept of Bézier curves.
+I provide a bunch of illustrations to make it more intuitive and fun.
+After we are familiar with both the tools and the curves, I wrap up by showing how it works in practice.
+
+{{< figure src=`/img/009/openscad-new-assembly.webp` caption=`The resulting model to be 3D-printed` >}}
+
+{{< figure src=`/img/009/feather.webp` caption=`The result of 3D-printing said model` >}}
+
+The post contains some maths, but understanding them should not be necessary for enjoying the content.
 
 
-## Background
+## The tools
 
-A while ago I got this idea to make some "organic" models for 3D-printing.
-It's something that I didn't want to try and do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
+This project is something that I didn't want to try and do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
 I also didn't want to boot into Windows to use Fusion every time 😅
 
 [hovert60]: /tags/hovert60-keyboard/
@@ -29,7 +42,7 @@ I also didn't want to boot into Windows to use Fusion every time 😅
 After some experiments with Blender and even with writing some custom G-code for 3D-printing, I stumbled upon a tool called OpenSCAD.
 
 
-## What is OpenSCAD?
+### What is OpenSCAD?
 
 [OpenSCAD](https://openscad.org/) is a <abbr title="Computer-aided Design">CAD</abbr> program that allows modeling complex solid objects by combining simpler objects in various ways.
 Supported operations include:
@@ -84,24 +97,97 @@ I think these limitations of OpenSCAD pose an interesting challenge for its user
 I can't say if they make OpenSCAD less suited for professional work, but they definitely can make it more enjoyable.
 
 
-## Theory
+## Bézier curves
 
-When I started, I didn't know what I want to achieve, but I knew I wanted to use [Bézier curves][bezier] for this mini-project.
-There are 3 ways to use those in OpenSCAD:
-- Use a 3rd-party library (which is boring)
+When I started, I didn't know what I want to achieve, but I knew I wanted to use [Bézier curves][bezier] for this ~~small~~ project.
+You might have encountered these curves in programs like Inkscape or Adobe Illustrator.
+There are 3 ways to use them in OpenSCAD:
+- Through a 3rd-party library (which is boring)
 - Imprort an SVG (which is not flexible, and also boring)
-- Implement the curves by myself (yeah, guess where this is going)
+- Implement the curves by myself (yeah, try to guess where this is going...)
 
 [bezier]: https://en.wikipedia.org/wiki/Bézier_curve
 
-To implement the curves, I needed to revisit some theory.
-I will explain the theory behind them here.
+To implement the curves, I needed to revisit some theory, which I will explain here.
 Feel free to skip the maths -- I think the pictures with their flavour text should be enough to get the basic idea.
 
 
-### Basics
+### The Basics
 
-{{< figure src=`/img/009/vectors.svg` caption=`` >}}
+Before we can talk talk about advanced stuff, I should make sure we are on the same page with regards to the basics.
+I will be very brief.
+There are two very simple concepts that serve as a foundation for Bézier curves.
+They are:
+- Vectors and operations on them
+- Linear interpolation between two vectors
+
+In this post, we are working on a [Cartesian plane][cartesian-plane].
+That implies:
+- There are 2 axes (X-axis and Y-axis), 2 dimensions
+- The axes are perpendicular to each other
+- Any point (or vector) on the plane can be defined using a pair of two real numbers
+
+[cartesian-plane]: https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Cartesian_plane
+
+You might have learned about [vectors][vector] in school.
+For this post, what matters is:
+- A vector is a pair of two real numbers
+- Two vectors can be added together
+- Two vectors can be subtracted from each other
+- A vector can be multiplied by a scalar (a real number)
+- Each vector has some length
+
+[vector]: https://en.wikipedia.org/wiki/Euclidean_vector
+
+{{< figure src=`/img/009/vectors.svg` caption=`Examples of operations on vectors. Left: two vectors. Middle-Top: difference of two vectors. Middle-Bottom: multiplying vectors by scalars. Right-Top: sum of two vectors. Right-Bottom: length of a vector.` >}}
+
+Let's look at the examples.
+Given two vectors \(\vec{A}\) and \(\vec{B}\),
+
+\[
+\vec{A} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}, \;
+\vec{B} = \begin{bmatrix} 5 \\ 2 \end{bmatrix}
+\]
+
+Their sum is:
+
+\[
+\vec{D} = \vec{A} + \vec{B} = \begin{bmatrix} 2 + 5 \\ 4 + 2 \end{bmatrix} = \begin{bmatrix} 7 \\ 6 \end{bmatrix}
+\]
+
+Their difference is:
+
+\[
+\vec{C} = \vec{B} - \vec{A} = \begin{bmatrix} 5 - 2 \\ 2 - 4 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\]
+
+Multiplying them by a scalar:
+
+\[
+\begin{align}
+  \frac{3}{2} \vec{A} &= \begin{bmatrix} \frac{3}{2} \cdot 2 \\ \frac{3}{2} \cdot 4 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix} \\
+  \frac{1}{2} \vec{B} &= \begin{bmatrix} \frac{1}{2} \cdot 5 \\ \frac{1}{2} \cdot 2 \end{bmatrix} = \begin{bmatrix} 2.5 \\ 1 \end{bmatrix} \\
+\end{align}
+\]
+
+---
+
+For a different vector \(\vec{A}\),
+
+\[
+\vec{A} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}
+\]
+
+It's length \(\Vert A \Vert\) can be calculated by the [Pythagorean theorem][pythagor]:
+
+\[
+\Vert \vec{A} \Vert = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\]
+
+[pythagor]: https://en.wikipedia.org/wiki/Pythagorean_theorem
+
+---
+
 {{< figure src=`/img/009/lerp.svg` caption=`` >}}
 
 
@@ -136,7 +222,7 @@ Feel free to skip the maths -- I think the pictures with their flavour text shou
 {{< figure src=`/img/009/stroke-expansion-4.svg` caption=`` >}}
 
 
-## Practice
+## Putting it all together
 
 {{< figure src=`/img/009/openscad-curves.webp` caption=`` >}}
 
