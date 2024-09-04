@@ -4,7 +4,7 @@ date: 2021-06-27T20:20:00+08:00
 tags: [Website]
 archived: true
 aliases:
-- "000"
+- "000-a-new-website"
 ---
 
 Anybody here?

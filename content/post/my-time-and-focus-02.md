@@ -1,20 +1,20 @@
 ---
-title: "On self-organization, part 2: But how?"
+title: "My Time and Focus. Part 2: But how?"
 date: 2022-12-23T17:00:00+00:00
-tags: [Reflection, Organization]
+tags: [Reflection, Organisation, Psychological]
 toc: true
 aliases:
-- "004"
+- "004-on-self-organization-02"
 description: >
-  Personal organization through note-taking and some extra thoughts on the topic.
+  Personal organisation through note-taking and some extra thoughts on the topic.
 ---
 
-{{< figure src=`/img/004/reintroduction.svg` alt=`An arrow with a loop in the middle, representing "reintroduction".` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/reintroduction.svg` alt=`An arrow with a loop in the middle, representing "reintroduction".` >}}
 
 
 ## Reintroduction
 
-In the [previous part](/post/003-on-self-organization-01/) I have gone through some tools and approaches to self-organization.
+In the [previous part](/post/my-time-and-focus-01/) I have gone through some tools and approaches to self-organisation.
 The main focus was on note-taking, and now it is finally time to highlight some neat parts of it.
 
 I have already more-or-less described the criteria that I want the note-taking system to satisfy, and why I need it, so here I'm going to talk about its **implementation details**.
@@ -22,7 +22,7 @@ I have already more-or-less described the criteria that I want the note-taking s
 
 ### Purpose
 
-{{< figure src=`/img/004/purpose.svg` alt=`A cloud with a question markn in the middle.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/purpose.svg` alt=`A cloud with a question markn in the middle.` >}}
 
 I hope this post may be an **inspiration** for somebody to start taking notes or improve their existing approach to that.
 I also want to improve mine, and I think writing about it and listening to feedback is good for it.
@@ -34,7 +34,7 @@ It is also just fun to write about it and make illustrations :)
 
 ## Note vault
 
-{{< figure src=`/img/004/vault.svg` alt=`An image of a folder and of a file joining together like puzzle pieces.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/vault.svg` alt=`An image of a folder and of a file joining together like puzzle pieces.` >}}
 
 I want my notes to be somewhat accessible and I don't want to be afraid to lose them in a fire or some other kind of accident.
 Because of this, I store my notes in [Git](https://git-scm.com) and access them through [Obsidian](https://obsidian.md).
@@ -54,7 +54,7 @@ I think a general idea was not bad, but I never used these tags to access my not
 After ~1.5 years of writing notes like this, I decided I want to also have **separate sections** for notes not bounded by the date of writing and with better interconnectivity.
 So this is what I got:
 
-{{< figure src=`/img/004/structure.svg` alt=`A graph showing the structure of the note vault. Includes Journal, Wiki and Writing sections. Journal is further subdivided into Date, Reading and Topics subsections.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/structure.svg` alt=`A graph showing the structure of the note vault. Includes Journal, Wiki and Writing sections. Journal is further subdivided into Date, Reading and Topics subsections.` >}}
 
 
 ## Note vault sections
@@ -84,7 +84,7 @@ On the topic of **accessibility**, here is a general "nice to have" requirement 
 
 > *Having some notes is generally better than having no notes at all.*
 
-{{< figure src=`/img/004/journal.svg` alt=`A book with a big "J" on it.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/journal.svg` alt=`A book with a big "J" on it.` >}}
 
 [Journal/Diary](https://en.wikipedia.org/wiki/Diary) on Wikipedia.
 
@@ -106,7 +106,7 @@ After some thinking, I made this list that describes the section pretty well:
 
 Although these journal notes have the most complicated inner structure compared to all other types of notes I have, it's still quite simple.
 
-{{< figure src=`/img/004/journal-note.svg` alt=`Structure of a journal "By date" note.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/journal-note.svg` alt=`Structure of a journal "By date" note.` >}}
 
 A basic note has its file name in the format `YYYY-MM-DD.md`, and sometimes I add an extra quantifier like that: `YYYY-MM-DD SUFFIX.md`, where `SUFFIX` is some topic that the note is dedicated to.
 For example, a note written on 27 February 2022 would have the name `2022-02-27.md`, and if it was dedicated to a `meta` topic, its name would be `2022-02-27 meta.md`.
@@ -134,7 +134,7 @@ That was a concern before headings were introduced, I would write a note mid-way
 
 #### Topic splitting
 
-{{< figure src=`/img/004/topic-split.svg` alt=`Illustrating of topic splitting. A series of main notes and a separate series of topic notes that were separated from the main notes.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/topic-split.svg` alt=`Illustrating of topic splitting. A series of main notes and a separate series of topic notes that were separated from the main notes.` >}}
 
 Remember the separate type of journal notes that I called "grouped by topic" in the structure introduction?
 
@@ -183,7 +183,7 @@ For now, I kept this simple, and I will add or reformat things as I need.
 Of course, the cost of editing lots of notes can be a big burden, but I feel like I need to learn my preference first and design **my** system by myself, possibly taking inspiration from other sources.
 I will probably make an update on this matter if I get more good ideas.
 
-{{< figure src=`/img/004/wiki-structure.svg` alt=`Structure of the wiki, showing hierachical relations between notes and additional links between related notes from different parts of the wiki.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/wiki-structure.svg` alt=`Structure of the wiki, showing hierachical relations between notes and additional links between related notes from different parts of the wiki.` >}}
 
 As you can see, the general structure of the notes is [tree-like](https://en.wikipedia.org/wiki/Tree_(graph_theory)).
 However, there are also connections about related things and just between things that remind me of each other.
@@ -198,7 +198,7 @@ Anyways, here are the simple requirements I had in mind when I just started fill
 
 #### Wiki note structure
 
-{{< figure src=`/img/004/wiki-note.svg` alt=`Structure of a wiki note.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/wiki-note.svg` alt=`Structure of a wiki note.` >}}
 
 This is not too different from the notes in the journal.
 There is no "time" heading, and this one has a list of references.
@@ -210,7 +210,7 @@ Probably my favourite website at the moment.
 
 ### Writing
 
-{{< figure src=`/img/004/writing-note.svg` alt=`Illustration of a writing note. Not really any structure.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/writing-note.svg` alt=`Illustration of a writing note. Not really any structure.` >}}
 
 The writing section is the simplest one.
 You see, I want to have a section for **high-quality writing**, for something that can theoretically be published with little or no processing.
@@ -226,7 +226,7 @@ The file structure is arbitrary, and here's the single requirement I have:
 It's time to wrap up the talk about the note-taking system, at least for now.
 I've prepared an **awesome picture** describing the roles of the components of the system:
 
-{{< figure src=`/img/004/everything.svg` alt=`Full picture of the parts of the current system, showing the roles of the components. Includes: Brain (agent, source of data, memory); Journal (written down experience, tracker, short-term memory); Wiki (associative and systematic storage, long-term memory); Writing (personal research).` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/everything.svg` alt=`Full picture of the parts of the current system, showing the roles of the components. Includes: Brain (agent, source of data, memory); Journal (written down experience, tracker, short-term memory); Wiki (associative and systematic storage, long-term memory); Writing (personal research).` >}}
 
 Ask me questions if you have any, and tell me if you want me to cover something else, or something I've mentioned but in greater detail.
 Let's move to some extras:
@@ -237,7 +237,7 @@ Let's move to some extras:
 
 ### "Steamroller"
 
-{{< figure src=`/img/004/steamroller.svg` alt=`Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/steamroller.svg` alt=`Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.` >}}
 
 > *It makes rough surfaces flat.*
 > *But it is also really heavy.*
@@ -255,7 +255,7 @@ Don't think too much about it.
 
 ### Dedicated time
 
-{{< figure src=`/img/004/dedicated-time.svg` alt=`An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/dedicated-time.svg` alt=`An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.` >}}
 
 > *Time.*
 > *Dedicated.*
@@ -294,7 +294,7 @@ So far I've been revising the list at the end of the week, on Sunday evening, an
 On top of this, I came up with an **activity choice map** for myself.
 This is a simplified illustration of it:
 
-{{< figure src=`/img/004/choice-map.svg` alt=`Choice map, a graph, separating things into useful, fun and a combination of them.` >}}
+{{< figure src=`/img/post/my-time-and-focus-02/choice-map.svg` alt=`Choice map, a graph, separating things into useful, fun and a combination of them.` >}}
 
 In real life, it takes a whole A5 page, in a quite compressed manner.
 As you can see, it separates activities into **Fun** and **Useful** (not that they can't intersect).

@@ -4,7 +4,7 @@ date: 2021-09-17T13:00:00+01:00
 tags: [Website]
 archived: true
 aliases:
-- "002"
+- "002-website-tweaks"
 description: >
   Minor optimizations and trying out analytics.
 ---
@@ -54,5 +54,5 @@ It was an interesting experiment.
 
 [0]: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload
 [1]: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
-[2]: /post/001-devlog-parentheses-01/
+[2]: /post/devlog-parentheses-01/
 [3]: https://plausible.io

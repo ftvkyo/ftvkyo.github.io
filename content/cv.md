@@ -17,7 +17,7 @@ My technical interests include software architecture, UI/UX design, game develop
 My journey in software development is shaped by a relentless pursuit of knowledge and a drive to push the boundaries of what's possible.
 
 My curiosity extends beyond conventional boundaries, as I delve into the intricacies of low-level programming with languages like Rust and C++, while also exploring the nuances of high-level languages like TypeScript and Python.
-Through personal projects and professional endeavours, I continually seek to refine my skills in problem-solving, collaboration and organization.
+Through personal projects and professional endeavours, I continually seek to refine my skills in problem-solving, collaboration and organisation.
 
 ## Work experience
 
@@ -173,5 +173,5 @@ I also learned soldering and modified and assembled multiple custom door Access 
     "Edinburgh, UK"
 >}}
 
-- Learn more about the organization at the [Edinburgh Hacklab Wiki](https://wiki.ehlab.uk)
+- Learn more about the organisation at the [Edinburgh Hacklab Wiki](https://wiki.ehlab.uk)
 - I went to [EMF Camp](https://emfcamp.org) 2024 with Edinburgh Hacklab (and had a great time)

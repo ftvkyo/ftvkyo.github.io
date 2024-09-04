@@ -1,10 +1,10 @@
 ---
 title: "Making a \"Known Error\" app for Tildagon"
 date: 2024-06-17T10:00:00Z
-tags: [Events]
+tags: [Devlog, Events]
 toc: true
 aliases:
-- "008"
+- "008-tildagon-known-error"
 description: >
   Quick and not-so-dirty commemoration of an "Unknown Error" message we all know and "love"
 ---
@@ -17,7 +17,7 @@ This post is not about EMF Camp though, it is about one of its highlights: the [
 These badges are electronic devices that are meant to be extended and modified, this is a [hacker](https://en.wikipedia.org/wiki/Hacker) festival after all.
 The badges could be preordered for 25£.
 
-{{< figure src=`/img/008/tildagon.webp` caption=`My Tildagon when I just received and assembled it` >}}
+{{< figure src=`/img/post/tildagon-known-error/tildagon.webp` caption=`My Tildagon when I just received and assembled it` >}}
 
 ## A bit more about the Tildagon
 
@@ -117,7 +117,7 @@ mpremote
 #   Press Ctrl-X
 ```
 
-{{< figure src=`/img/008/app-in-the-list.webp` caption=`App as it's shown in the list of apps in the main menu of the badge` >}}
+{{< figure src=`/img/post/tildagon-known-error/app-in-the-list.webp` caption=`App as it's shown in the list of apps in the main menu of the badge` >}}
 
 Now, let's look at the actual code!
 It may be a bit buggy, or do things incorrectly, but it works well enough.
@@ -172,7 +172,7 @@ class KnownErrorApp(app.App):
         ctx.restore()
 ```
 
-{{< figure src=`/img/008/app-1.webp` caption=`App displaying "Known Error" text` >}}
+{{< figure src=`/img/post/tildagon-known-error/app-1.webp` caption=`App displaying "Known Error" text` >}}
 
 ### Changing displayed text in runtime
 
@@ -241,7 +241,7 @@ class KnownErrorApp(app.App):
 
 {{% /details %}}
 
-{{< figure src=`/img/008/app-2.webp` caption=`App displaying "Unknown Error" text` >}}
+{{< figure src=`/img/post/tildagon-known-error/app-2.webp` caption=`App displaying "Unknown Error" text` >}}
 
 
 ### Adding glitch effects to make it more fun
@@ -444,7 +444,7 @@ class KnownErrorApp(app.App):
 
 {{% /details %}}
 
-{{< figure src=`/img/008/app-3.webp` caption=`App in the glitch mode, displaying "Known Error" text (the pattern changes every 2 seconds)` >}}
+{{< figure src=`/img/post/tildagon-known-error/app-3.webp` caption=`App in the glitch mode, displaying "Known Error" text (the pattern changes every 2 seconds)` >}}
 
 
 All in all, I think this little project turned out to be very fun.

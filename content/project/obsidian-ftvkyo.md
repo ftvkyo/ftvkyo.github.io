@@ -60,9 +60,9 @@ And, most importantly, just like we can learn to utilize our biological brains b
 [^meta-learning]: See [Meta-learning](https://en.wikipedia.org/wiki/Meta-learning)
 
 With all that said, **the core goal of the project** is creating a synergy between the biological and digital brains, focusing on different types of memory and executive skills.
-I have previously explored some of this under the [Organization](/tags/organization/) tag.[^self-org]
+I have previously explored some of this under the [Organisation](/tags/organisation/) tag. [^self-org]
 
-[^self-org]: On self-organization: [part 1](/post/003-on-self-organization-01/), [part 2](/post/004-on-self-organization-02/). More may follow (or already be there).
+[^self-org]: My Time and Focus: [part 1](/post/my-time-and-focus-01/), [part 2](/post/my-time-and-focus-02/). More may follow (or already be there).
 
 
 ## Challenges
@@ -229,7 +229,7 @@ Another example, this is my monthly note template:
   This helps overcoming perfectionism and feature creep.
   In turn, this also helps with satisfaction, because the goals get more granular and it doesn't feel like the development is stuck.
 - I know how to reliably plan my time throughout the day.
-  This is an improvement from the time I wrote the first posts in the [Organization](/tags/organization/) tag.
+  This is an improvement from the time I wrote the first posts in the [Organisation](/tags/organisation/) tag.
 - I know how to set long-term goals and identify tasks that would bring me closer to these goals.
   I can schedule these tasks for months, weeks, days, and my perception of time and of what I am capable of is more realistic.
 - I learned a lot of interesting CSS, had some fun poking undocumented APIs, and I tried various interesting approaches to project and code structure.

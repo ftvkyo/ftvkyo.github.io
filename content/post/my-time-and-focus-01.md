@@ -1,15 +1,15 @@
 ---
-title: "On self-organization, part 1: But why?"
+title: "My Time and Focus. Part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
-tags: [Reflection, Organization]
+tags: [Reflection, Organisation, Psychological]
 toc: true
 aliases:
-- "003"
+- "003-on-self-organization-01"
 description: >
-  Exploring methods of personal organization and why I would want to do that.
+  Exploring methods of personal organisation and why I would want to do that.
 ---
 
-{{< figure src=`/img/003/fix-all-problems.svg` alt=`Checkbox "Fix all problems"` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/fix-all-problems.svg` alt=`Checkbox "Fix all problems"` >}}
 
 
 ## Introduction
@@ -29,7 +29,7 @@ Please note that the experience described is not universal and your mileage may 
 Do you feel like your ambitions break against the wall of life?
 There are so many things that need your attention, and so many things that you distract yourself with, that the things you think are important all feel hindered.
 
-{{< figure src=`/img/003/against-the-wall.svg` alt=`Something bouncing back from the wall that hides an obstacle course with a box at the end` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/against-the-wall.svg` alt=`Something bouncing back from the wall that hides an obstacle course with a box at the end` >}}
 
 I found myself in a situation like that when it is difficult to have consistent progress in anything, and the existing approach to life is just not good enough.
 My attention gets scattered between work, life events, a bunch of personal projects and other things I like to do (like reading, gaming and chatting with my friends).
@@ -39,7 +39,7 @@ This dissatisfaction has led me to make attempts to analyze the situation and co
 There's *no "final solution"* and probably never going to be, but there is a **journey towards the destination**, and this is what these posts are about.
 I am already quite far from where I started, I have passed a few milestones along the way, and I have ideas about where to head next.
 
-{{< figure src=`/img/003/journey.svg` alt=`A treasure map with an infinity symbol instead of X mark` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/journey.svg` alt=`A treasure map with an infinity symbol instead of X mark` >}}
 
 I'll reiterate on the problem in a more granular way, specifying it in terms of **circumstances** and what **changes** I want to see, so we can analyze how the strategies I employ can help with that.
 
@@ -50,7 +50,7 @@ I'll reiterate on the problem in a more granular way, specifying it in terms of 
 2. I do not like my **approach to learning things** because of how **random and disorganized** it is.
   I want to improve my *focus* on the process, improve *knowledge retention* and make the activity more *systemized*.
 
-{{< figure src=`/img/003/changes.svg` alt=`Kind of a changes finite state machine` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/changes.svg` alt=`Kind of a changes finite state machine` >}}
 
 I should point out that these things are based on my perception and on some standards that I set for myself.
 Figuring out if the standards are reasonable and not too high or low is a separate question that I'm not going to discuss much because I think it is individual for everybody.
@@ -58,7 +58,7 @@ Figuring out if the standards are reasonable and not too high or low is a separa
 
 ## What strategies do I use?
 
-I would say that my efforts in self-organization can essentially be split into two parts:
+I would say that my efforts in self-organisation can essentially be split into two parts:
 - Adjusting the environment for myself
 - Adjusting myself to the environment
 
@@ -73,7 +73,7 @@ It's not always straightforward though and can be difficult not just on the stag
 The other part, adjusting yourself to the environment, is also a tricky one.
 For me, it is about *learning to work with what you have*.
 One of the adjustments I heavily rely upon is the skill of taking notes I have developed.
-At this moment, I consider note-taking **the core** of my self-organization efforts.
+At this moment, I consider note-taking **the core** of my self-organisation efforts.
 Note-taking will be the *primary focus of these posts*, but let's not get ahead of ourselves.
 
 
@@ -92,7 +92,7 @@ I think I can separate distractions into two categories based on their nature:
   Let's imagine you have a phone and it can make sounds.
   Notifications can interrupt whatever you are doing and break the flow or just provide an escape from the thing that you didn't want to do.
 
-{{< figure src=`/img/003/distractions.svg` alt=`Distracting environment` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/distractions.svg` alt=`Distracting environment` >}}
 
 For both of these, I think the main thing you can do is learn to recognize them.
 Recognition, in turn, will allow you to think about how to mitigate the problems caused by them (if you want to, of course).
@@ -114,7 +114,7 @@ In general, I can say that this approach of opting in for notifications rather t
 Just a few paragraphs about emails.
 Ever since I had my first email address (around 2009, I think), I had a huge ever-growing and overwhelming inbox, where I tried to delete all the irrelevant stuff and left many things unread.
 
-{{< figure src=`/img/003/inbox.svg` alt=`An open letter with a notification badge saying 9` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/inbox.svg` alt=`An open letter with a notification badge saying 9` >}}
 
 However, a few years ago I changed my approach.
 I made sure to reduce the number of emails I get.
@@ -146,7 +146,7 @@ You can do timeblocking in many ways.
 My history of attempting it is quite long, it starts in my childhood and it is full of failures.
 However, I think it still had an overall positive effect and I periodically return to try it again.
 
-{{< figure src=`/img/003/timeblocking.svg` alt=`Timeblocking as if done in google calendar` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/timeblocking.svg` alt=`Timeblocking as if done in google calendar` >}}
 
 My first timeblocking attempts started with trying to draw out the coming week on a piece of paper and fill in the areas where I had to be doing something certain.
 That didn't go too well because that was difficult to edit, difficult to replicate every week, and difficult to follow.
@@ -160,17 +160,17 @@ I stopped paying attention to it pretty quickly, although the idea of a notifica
 I am currently attempting timeblocking again, with Google Calendar, but also using an app called [Sectograph](https://sectograph.com), which provides me with a very cool visual clock face widget on my phone's desktop.
 I think this is quite epic, even though it is still difficult to pay attention to it sometimes.
 
-{{< figure src=`/img/003/timeblocking-apps.svg` alt=`Timeblocking in timetune and sectograph` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/timeblocking-apps.svg` alt=`Timeblocking in timetune and sectograph` >}}
 
 But it has worked pretty well for me when my calendar wasn't very packed and it reminded me about upcoming things like calls with my friends or parents.
 
 
 ## Adjusting myself
 
-Now that we have looked at other important things, we can move on to the main focus of the post, the other "half" of self-organization efforts.
+Now that we have looked at other important things, we can move on to the main focus of the post, the other "half" of self-organisation efforts.
 As I mentioned, my main tool for it is extensive note-taking.
 
-{{< figure src=`/img/003/note-taking.svg` alt=`Pencil writing something` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/note-taking.svg` alt=`Pencil writing something` >}}
 
 
 ### Note-taking
@@ -183,7 +183,7 @@ They also help me remember events or thoughts that are important to me.
 
 In other words, my notes are a _framework_ that works as my external brain: they allow me to store and retrieve information, along with providing structure for achieving certain goals.
 
-{{< figure src=`/img/003/framework.svg` alt=`Anvil with a laptop on it, showing "42", and a chair to the side` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/framework.svg` alt=`Anvil with a laptop on it, showing "42", and a chair to the side` >}}
 
 However, this framework is a thing that one should adapt to themselves.
 To achieve goals by using the framework, one should know what one wants.
@@ -208,7 +208,7 @@ Because of this, there are three main parameters I am trying to optimize my note
   This is something to do with knowledge retention and other benefits of having a personal knowledge base;
 3. How simple it is to draw conclusions from my notes and possibly make whole "essays" out of them.
 
-{{< figure src=`/img/003/consistent-progress.svg` alt=`Cloud moving away and unveiling the sun at a constant speed` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/consistent-progress.svg` alt=`Cloud moving away and unveiling the sun at a constant speed` >}}
 
 **Number 1** directly corresponds to the cirumstance+change pair about my attention getting dispersed from the beginning of this post.
 It allows me to:
@@ -218,7 +218,7 @@ It allows me to:
 - Progress in things that refuse to move forward when you just keep thinking about them in a loop;
 - Be more mindful about what I'm doing.
 
-{{< figure src=`/img/003/ghost-of-ephemeral-knowledge.svg` alt=`Ghost of ephemeral knowledge suffers damage from a book attack` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/ghost-of-ephemeral-knowledge.svg` alt=`Ghost of ephemeral knowledge suffers damage from a book attack` >}}
 
 **Number 2** directly corresponds to the circumstance+change pair about systemizing my learning process and improving knowledge retention.
 The mere fact that some knowledge is recorded helps with its understanding and retention, even if you never return to it.
@@ -235,7 +235,7 @@ I am going to define some nice boundaries that are going to be the cornerstones 
 That should help with information consistency and save thinking time by providing a set of basic answers to what should be done.
 That will reduce the usage barrier for the framework.
 
-{{< figure src=`/img/003/boundaries.svg` alt=`Photo editing "crop" symbol` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/boundaries.svg` alt=`Photo editing "crop" symbol` >}}
 
 However, that doesn't mean that these boundaries can't be redefined.
 I am willing to adjust the "rules" if that makes the situation better, I just want them to be clear.
@@ -268,7 +268,7 @@ I start every sentence on a new line in my markdown files, so line breaks roughl
 
 In part 2, I intend to cover all three sections in detail and tell you how this system evolved into what it is now.
 
-{{< figure src=`/img/003/afterword.svg` alt=`A person and arrows to journal, knowledge graph and an essay from them` >}}
+{{< figure src=`/img/post/my-time-and-focus-01/afterword.svg` alt=`A person and arrows to journal, knowledge graph and an essay from them` >}}
 
 
 ## Afterword

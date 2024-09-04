@@ -14,7 +14,7 @@ It is not the first time I tried to build a voxel engine.
 This time, the primary objective of the project was to learn the basics of Vulkan.
 
 The development process went okay for the time.
-The endeavour coincides with me writing [a post about self-organization](/post/003-on-self-organization-01/).
+The endeavour coincides with me writing [a post about self-organisation](/post/my-time-and-focus-01/).
 While working on the project, I journaled some notes about it, and wrote down some ideas (I may or may not convert them into posts later).
 However, my task tracking and planning was rudimentary.
 
@@ -82,7 +82,7 @@ The light level decreases "by 1" for each of the blocks it travels from the edge
       This often becomes a very tedious process.
       For this, setting clearer goals, tasks, paying some attention to design beforehand, working in iterations, and not diving head first into refactors can be helpful.
 - Not a new thing, but still, despite the difficulties, I think tinkering with low-level stuff can be interesting, and the acquired knowledge can be useful if said tinkering is done right.
-- As I mentioned, work on this served as an inspiration for further development of my organizational skills, [Obsidian ftvkyo](/project/obsidian-ftvkyo/) describes the background.
+- As I mentioned, work on this served as an inspiration for further development of my organisational skills, [Obsidian ftvkyo](/project/obsidian-ftvkyo/) describes the background.
   The main improvement is probably my advancements in how I track and schedule tasks for my project work, because that's something that was lacking at the time.
 - It feels like it would be hard for me to return to the project because it would require an annoyingly high involvement with the necessary Vulkan-related code.
     - It might be interesting to build games with something like [`bevy`](https://bevyengine.org) though.

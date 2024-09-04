@@ -4,7 +4,7 @@ date: 2024-04-10T22:00:00Z
 tags: [Devlog, Hovert60 keyboard]
 toc: true
 aliases:
-- "006"
+- "006-devlog-hovert60-01"
 description: >
   Making a low-profile wireless split keyboard from scratch.
   I also intend to handwire it rather than use a PCB.
@@ -23,7 +23,7 @@ Additionally, my XKB configuration is somewhat interesting.
 
 [^planck-ez]: Planck EZ was [retired in 2023](https://blog.zsa.io/2307-goodbye-planck-ez/), but just Planck still exists
 
-{{< figure src=`/img/006/preonic.jpg` caption=`OLKB Planck with "ergonomic" wristrests` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/preonic.jpg` caption=`OLKB Planck with "ergonomic" wristrests` >}}
 
 You see, Russian alphabet has 33 letters, while English only has 26.
 This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.
@@ -203,9 +203,9 @@ Key (ha!) takeaways:
 
 I purchased Kailh Choc V1 Pink switches along with keycaps for them.
 
-{{< figure src=`/img/006/keyswitches.jpg` caption=`Kailh Choc V1 switches next to Cherry MX style switches` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/keyswitches.jpg` caption=`Kailh Choc V1 switches next to Cherry MX style switches` >}}
 
-{{< figure src=`/img/006/keycaps.jpg` caption=`Kailh Choc V1 keycaps` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/keycaps.jpg` caption=`Kailh Choc V1 keycaps` >}}
 
 
 #### Choice of front plate material
@@ -222,7 +222,7 @@ As I mentioned previously, wood and acrylic are pretty much out of the question.
 
 I purchased 2 brass sheets with the dimensions `150×150×1.5mm`.
 
-{{< figure src=`/img/006/brass.jpg` caption=`Brass sheets` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/brass.jpg` caption=`Brass sheets` >}}
 
 
 #### Choice of microcontroller and firmware
@@ -247,7 +247,7 @@ In the end I selected [Seeed XIAO BLE][seeed-xiao-ble] that uses an `nRF52840` c
 
 [seeed-xiao-ble]: https://wiki.seeedstudio.com/XIAO_BLE/
 
-{{< figure src=`/img/006/microcontroller.jpg` caption=`Seeed XIAO BLE microcontroller` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/microcontroller.jpg` caption=`Seeed XIAO BLE microcontroller` >}}
 
 
 #### Determining how to attach the microcontrollers to the boards
@@ -265,7 +265,7 @@ This brings additional benefits:
 {{% /details %}}
 
 
-{{< figure src=`/img/006/breadboards.jpg` caption=`Breadboards` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/breadboards.jpg` caption=`Breadboards` >}}
 
 
 ### Final list of parts
@@ -292,7 +292,7 @@ This brings additional benefits:
 [splitkb-keycaps]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811487039565
 [splitkb-keycaps-homing]: https://splitkb.com/products/blank-mbk-choc-low-profile-keycaps?variant=31811519709261
 
-{{< figure src=`/img/006/power.jpg` caption=`Battery, diodes, battery cable` >}}
+{{< figure src=`/img/post/devlog-hovert60-01/power.jpg` caption=`Battery, diodes, battery cable` >}}
 
 
 ## Naming
@@ -308,6 +308,6 @@ The name of the project, `Hovert60` or `h/t60`, highlights several project featu
 ## What's next
 
 I plan the following posts after this one:
-- Design process -- [post #2](/post/007/)
+- Design process -- [post #2](/post/devlog-hovert60-02/)
 - Manufacture
 - Configuration

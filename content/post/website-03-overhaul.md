@@ -5,7 +5,7 @@ tags: [Website]
 archived: true
 toc: true
 aliases:
-- "005"
+- "005-website-overhaul"
 description: >
   New theme that I made by myself and that is easier to tweak.
   Also, a new way of building the website.

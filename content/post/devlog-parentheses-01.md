@@ -1,11 +1,11 @@
 ---
-title: "Parentheses devlog #1: getting to LLVM IR emission"
+title: "Parentheses programming language devlog #1: getting to LLVM IR emission"
 date: 2021-06-27T21:00:00+08:00
-tags: [Devlog, Parentheses]
+tags: [Devlog, Parentheses programming language]
 archived: true
 toc: true
 aliases:
-- "001"
+- "001-devlog-parentheses-01"
 description: >
   Trying to make a simple programming language using LLVM.
   I want it to have Scheme-like syntax and C-like internals.
