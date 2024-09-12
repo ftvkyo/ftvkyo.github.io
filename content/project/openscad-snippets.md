@@ -14,7 +14,7 @@ You've been warned `¯\_(ツ)_/¯`
 
 *Just why did I do this?*
 
-{{< figure src=`/img/project/openscad-snippets/bent-torus.webp` caption=`A render of the bent torus` >}}
+{{< figure src=`/img/project/openscad-snippets/bent-torus-2.webp` caption=`A render of the bent torus with 2 "peaks"` >}}
 
 It is implemented using the `polyhedron()` OpenSCAD module.
 I generate flat slices of the torus, rotate and position them in 3D using `pts_rotate3` and `pts_translate3`, and then stitch them into a loop in the `pts_extrude` module.
@@ -22,6 +22,8 @@ I generate flat slices of the torus, rotate and position them in 3D using `pts_r
 There are alternative methods to get roughly similar results (e.g. intersecting cylinders or cones), but they are insufficient.
 Additionally, OpenSCAD's boolean operations with polyhedra are not very fast.
 Smoothing the results with something like a Minkowski sum of the shape's edge and a sphere would be painfully slow, and the result still won't be as smooth as this.
+
+{{< figure src=`/img/project/openscad-snippets/bent-torus-5.webp` caption=`The same bent torus, but with 5 "peaks"` >}}
 
 {{% details `Source code of the bent torus` %}}
 
@@ -163,11 +165,13 @@ module test() {
     thickness = 10;
     radius = 30;
     delta_z = 10;
+    peaks = 2;
 
     fn1 = 36;
-    fn2 = 120;
+    fn2 = 360;
 
-    function slice_displacement(t) = [0, 0, cos(2 * t * 360) * delta_z / 2];
+    function slice_tilt(t) = [- sin(peaks * t * 360) * delta_z * peaks * 2/3, 0, 0];
+    function slice_displacement(t) = [0, 0, cos(peaks * t * 360) * delta_z / 2];
 
     c_base = pts_translate3(
         pts_rotate3(
@@ -179,7 +183,13 @@ module test() {
 
     cs = [ for (t = [1 / fn2 : 1 / fn2 : 1])
         pts_translate3(
-            pts_rotate3(c_base, [0, 0, t * 360]),
+            pts_rotate3(
+                pts_rotate3(
+                    c_base,
+                    slice_tilt(t)
+                ),
+                [0, 0, t * 360]
+            ),
             slice_displacement(t)
         )
     ];
