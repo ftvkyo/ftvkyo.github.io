@@ -13,7 +13,7 @@
 
         {{ $scssOptions := (dict "transpiler" "dartsass") }}
         {{ $scss := resources.Get "scss/index.scss" }}
-        {{ $style := $scss | resources.ToCSS $scssOptions }}
+        {{ $style := $scss | css.Sass $scssOptions }}
         <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 
         {{ $title := print .Site.Title " | " .Title }}
