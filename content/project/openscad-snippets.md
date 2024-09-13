@@ -1,6 +1,7 @@
 ---
 title: "OpenSCAD snippets"
 toc: true
+math: true
 description: Some snapshots of my OpenSCAD adventures
 ---
 
@@ -10,22 +11,26 @@ Even worse, the functions with the same names may work differently in different 
 And there may be fewer comments than desired.
 You've been warned `¯\_(ツ)_/¯`
 
-## Bent torus
+## Wavy donut
 
 *Just why did I do this?*
 
-{{< figure src=`/img/project/openscad-snippets/bent-torus-2.webp` caption=`A render of the bent torus with 2 "peaks"` >}}
+{{< figure src=`/img/project/openscad-snippets/wavy-donut-2.webp` caption=`A render of the wavy donut with 2 waves` >}}
 
 It is implemented using the `polyhedron()` OpenSCAD module.
-I generate flat slices of the torus, rotate and position them in 3D using `pts_rotate3` and `pts_translate3`, and then stitch them into a loop in the `pts_extrude` module.
+I generate flat slices of the donut, rotate and position them in 3D using `pts_rotate3` and `pts_translate3`, and then stitch them into a loop in the `pts_extrude` module.
 
 There are alternative methods to get roughly similar results (e.g. intersecting cylinders or cones), but they are insufficient.
 Additionally, OpenSCAD's boolean operations with polyhedra are not very fast.
 Smoothing the results with something like a Minkowski sum of the shape's edge and a sphere would be painfully slow, and the result still won't be as smooth as this.
 
-{{< figure src=`/img/project/openscad-snippets/bent-torus-5.webp` caption=`The same bent torus, but with 5 "peaks"` >}}
+What I really like about this one, is that it took me just a couple minutes to implement tilting of individual slices to make the waves actually "bend" rather than "bob".
+I used the fact that if \( f(\alpha) = cos(\alpha) \), and \( f(\alpha) \) is the slice "bobbing" function, then \( f'(\alpha) = -sin(\alpha) \) which provides the tilt.
+And then guesstimated some magic coefficients because I couldn't be bothered.
 
-{{% details `Source code of the bent torus` %}}
+{{< figure src=`/img/project/openscad-snippets/wavy-donut-5.webp` caption=`The same wavy donut, but with 5 waves` >}}
+
+{{% details `Source code of the wavy donut` %}}
 
 ```scad
 function clamp(v_min, t, v_max) = max(v_min, min(t, v_max));
@@ -165,13 +170,13 @@ module test() {
     thickness = 10;
     radius = 30;
     delta_z = 10;
-    peaks = 2;
+    waves = 2;
 
     fn1 = 36;
     fn2 = 360;
 
-    function slice_tilt(t) = [- sin(peaks * t * 360) * delta_z * peaks * 2/3, 0, 0];
-    function slice_displacement(t) = [0, 0, cos(peaks * t * 360) * delta_z / 2];
+    function slice_tilt(t) = [- sin(waves * t * 360) * delta_z * waves * 2/3, 0, 0];
+    function slice_displacement(t) = [0, 0, cos(waves * t * 360) * delta_z / 2];
 
     c_base = pts_translate3(
         pts_rotate3(
