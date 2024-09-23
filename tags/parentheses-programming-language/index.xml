@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Parentheses Programming Language on ftvkyo</title><link>https://www.ftvkyo.me/tags/parentheses-programming-language/</link><description>Recent content in Parentheses Programming Language on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 27 Jun 2021 21:00:00 +0800</lastBuildDate><atom:link href="https://www.ftvkyo.me/tags/parentheses-programming-language/index.xml" rel="self" type="application/rss+xml"/><item><title>Parentheses programming language devlog #1: getting to LLVM IR emission</title><link>https://www.ftvkyo.me/post/devlog-parentheses-01/</link><pubDate>Sun, 27 Jun 2021 21:00:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/devlog-parentheses-01/</guid><description>&lt;h2 id="pre-intro">Pre-intro&lt;/h2>
+&lt;p>I start these series hoping to continue them along with the development of
+the project this devlog is related to.
+Not only the project is an excercise for me, but the devlog itself is as well.
+I think about making some games in the future, and how could I make a good
+game without having a devlog about it?&lt;/p>
+&lt;p>Also, thanks to all the advice from different people who suggested some better
+techniques of dealing with challenges I face in this project.&lt;/p></description></item></channel></rss>
