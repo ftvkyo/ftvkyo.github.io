@@ -7,12 +7,16 @@ aliases:
 
 {{< socials "about" >}}
 
-I am a Software Engineer with a diverse skill set and a passion for innovation.
-My technical interests include software architecture, UI/UX design, game development and embedded systems, among other things.
-My journey in software development is shaped by a relentless pursuit of knowledge and a drive to push the boundaries of what's possible.
+I am a Software Engineer with a broad set of interests that include:
+- High-Performance Computing
+- Embedded Development
+- Programming Language Development
+- UI/UX Design
+- Game Development
+- Software Architecture
+- Project Management
 
-My curiosity extends beyond conventional boundaries, as I delve into the intricacies of low-level programming with languages like Rust and C++, while also exploring the nuances of high-level languages like TypeScript and Python.
-Through personal projects and professional endeavours, I continually seek to refine my skills in problem-solving, collaboration and organisation.
+I have a passion for learning and trying new things as a way to refine my skills in collaboration, organisation and solving real-world problems.
 
 ## Work experience
 
@@ -131,6 +135,7 @@ It's not the first time I've experimented with voxels, and this project is inter
 I have many more personal projects, they include:
 - Full-stack applications
   - *TypeScript (React), Node.js, Electron, Next.js, TailwindCSS, Rust (tokio, async-std), PostgreSQL, Docker*
+  - *Flutter, Dart*
 - Experiments with programming languages
   - *C++ & LLVM, Rust, Scheme and other LISP-likes, TypeScript*
 - Small 2D and 3D games
