@@ -39,8 +39,8 @@ title = "ftvkyo"
     url = "/post/"
     weight = 30
   [[menu.main]]
-    name = "CV"
-    url = "/cv/"
+    name = "About"
+    url = "/about/"
     weight = 40
 
   [[menu.contacts]]
@@ -56,19 +56,19 @@ title = "ftvkyo"
     params = { img = "icon/discord.svg" }
     weight = 30
 
-  [[menu.cv]]
+  [[menu.about]]
     name = "`andrei (at) ftvkyo.me`"
     params = { img = "icon/email.svg" }
     weight = 10
-  [[menu.cv]]
+  [[menu.about]]
     name = "[github.com/ftvkyo](https://github.com/ftvkyo)"
     params = { img = "icon/github.svg" }
     weight = 20
-  [[menu.cv]]
+  [[menu.about]]
     name = "[linkedin.com/in/ftvkyo](https://www.linkedin.com/in/ftvkyo/)"
     params = { img = "icon/linkedin.svg" }
     weight = 30
-  [[menu.cv]]
+  [[menu.about]]
     name = "[ftvkyo.me](https://ftvkyo.me)"
     params = { img = "icon/person.svg" }
     weight = 40

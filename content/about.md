@@ -1,16 +1,11 @@
 ---
 title: "Andrei Stepanenko"
 titleClass: "only-print"
+aliases:
+- "cv"
 ---
 
-<div class="only-screen">
-
-*You can use your browser's "Print" feature to export this page as a PDF.*
-
-</div>
-
-
-{{< socials "cv" >}}
+{{< socials "about" >}}
 
 I am a Software Engineer with a diverse skill set and a passion for innovation.
 My technical interests include software architecture, UI/UX design, game development and embedded systems, among other things.
