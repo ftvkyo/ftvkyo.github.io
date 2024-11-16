@@ -1,4 +1,4 @@
-<div class="socials">
+<div class="socials {{ .Get 0 }}">
     {{ range (index .Site.Menus (.Get 0)) }}
         {{ partial .Params.img . }}
         {{ $text := print .Name }}

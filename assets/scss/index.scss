@@ -50,6 +50,13 @@ pre, code {
 
 h1, h2, h3, h4, h5, h6 {
     color: c.$pink;
+
+    margin: 1.5em 0 0.5em 0;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: solid c.$pink 1px;
 }
 
 // Print control
@@ -106,6 +113,10 @@ main {
     flex: 1;
 
     line-height: 1.5;
+
+    p {
+        margin: 1em 0;
+    }
 
     code {
         padding: 0 0.25em;
@@ -336,7 +347,10 @@ aside {
 
 .socials {
     list-style: none;
-    padding: 0;
+
+    padding: 0.5em 0.75em;
+    margin: 0 0 1em 0.5em;
+    border-left: dotted c.$grey-40 1px;
 
     display: grid;
     grid-template-columns: 2em 1fr;
@@ -352,10 +366,22 @@ aside {
         align-self: center;
 
         color: c.$pink;
+
+        padding: 0.1em;
     }
 
     span {
         grid-column: 2;
+    }
+
+    &.about {
+        float: right;
+
+        // The title is only shown in print, so margins on the neighbouring <p>
+        // collapse differently
+        @media screen {
+            margin-top: 1em;
+        }
     }
 }
 
