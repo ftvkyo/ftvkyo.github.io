@@ -433,6 +433,11 @@ aside {
             margin-right: 0.5ch;
         }
     }
+
+    .fields > .draft {
+        color: c.$pink;
+        text-transform: uppercase;
+    }
 }
 
 .info {
@@ -484,14 +489,6 @@ ul.cards {
 
             font-size: s.$text-title;
             text-decoration: none;
-
-            &.draft {
-                color: c.$pink;
-
-                &::before {
-                    content: "DRAFT: ";
-                }
-            }
         }
     }
 }

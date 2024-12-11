@@ -9,8 +9,15 @@
             </div>
         {{ end }}
 
-        {{ if (or .Params.archived $readingTime .Date .Params.tags) }}
+        {{ if (or .Params.draft .Params.archived $readingTime .Date .Params.tags) }}
             <div class="fields">
+                {{ if .Params.draft }}
+                    <div class="draft">
+                        {{ partial "icon/draft.svg" . }}
+                        Draft
+                    </div>
+                {{ end }}
+
                 {{ if .Params.archived }}
                     <div>
                         {{ partial "icon/archive.svg" . }}
