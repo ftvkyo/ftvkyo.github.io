@@ -63,7 +63,7 @@ The following is a picture with some floating cubes.
 There is an invisible light source somewhere there.
 I think.
 
-{{< figure src=`/img/tekutonu/main.webp` caption=`Cubes floating in space` >}}
+{{< figure src=`main.webp` caption=`Cubes floating in space` >}}
 
 
 The following is an illustration of sky lighting.

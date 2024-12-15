@@ -56,7 +56,7 @@ When I saw the paths, I understood that I don't want to use this approach anymor
 Maybe next time.
 At that moment it was too advanced for me.
 
-{{< figure src=`/img/post/devlog-hovert60-02/hand-adjusted.svg` caption=`An example of a hand traced in various positions. Thick grey lines represent favoured fingertip movement paths.` >}}
+{{< figure src=`hand-adjusted.svg` caption=`An example of a hand traced in various positions. Thick grey lines represent favoured fingertip movement paths.` >}}
 
 
 ### Can I use a laser cutter?
@@ -65,7 +65,7 @@ At first I was considering using a sheet of wood or acrylic for the top plate of
 Prototyping something with a laser cutter would also be easier than with a CNC router.
 So I started by drawing a test pattern to find what size of the holes I should use.
 
-{{< figure src=`/img/post/devlog-hovert60-02/test-holes.svg` caption=`Holes of different sizes to check laser cutter tolerance. For actual testing, line thickness should be set to "hairline", but I changed it here for better visibility.` >}}
+{{< figure src=`test-holes.svg` caption=`Holes of different sizes to check laser cutter tolerance. For actual testing, line thickness should be set to "hairline", but I changed it here for better visibility.` >}}
 
 However, as I was about to perform the test, I learned that with the thickness of the plate I wanted, neither wood or acrylic would be reliable options.
 I could opt-in for a thicker plate and give up the idea of making the key switches click in place, but at that moment, the idea of making the front plate out of metal using a CNC router took over.
@@ -149,12 +149,12 @@ It can also be used to cut *into* the model.
 I started by creating a flat piece of material of random width and length and known thickness.
 I then sketched square holes for the keys on the surface of that piece.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v4-sketch.webp` caption=`Sketching the holes for the bottom row of keys` >}}
+{{< figure src=`v4-sketch.webp` caption=`Sketching the holes for the bottom row of keys` >}}
 
 After I had the sketch for holes, I was able to use the Extrude command to cut them out of the existing plate.
 Then, by using a Rectangular pattern command, I repeated the cutting operation 4 times on the Y axis using some offset.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v4-cutout-pattern.webp` caption=`Repeating cutouts along the Y axis` >}}
+{{< figure src=`v4-cutout-pattern.webp` caption=`Repeating cutouts along the Y axis` >}}
 
 
 ### It just makes sense
@@ -169,12 +169,12 @@ This way I could give names to common values that depended on other values.
 One of such values is the width and length of the area occupied by a key, which includes the key hole and a margin around it.
 That parameter is called `keyspace` in the next illustration.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v9-parameters.webp` caption=`Discovering parameters` >}}
+{{< figure src=`v9-parameters.webp` caption=`Discovering parameters` >}}
 
 After I got the first batch of parameters specified, I added them to my sketch.
 Dimensions that are prefixed with `fx:` in the next screenshot are those that use parameters (so, all of them).
 
-{{< figure src=`/img/post/devlog-hovert60-02/v9-parametrised-sketch.webp` caption=`Using parameters in a sketch` >}}
+{{< figure src=`v9-parametrised-sketch.webp` caption=`Using parameters in a sketch` >}}
 
 As you can see, I decided to design a single row of keys, and then duplicate these rows.
 
@@ -182,7 +182,7 @@ In the following picture you can see the design that I came to after doing param
 You can also see that columns 4, 5 and 6 are one key taller.
 The 3 extra keys were the initial version of the thumb cluster -- a group of keys that are meant to be pressed with the thumb.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v11-thumb-attempt.webp` caption=`Trying to design the thumb cluster` >}}
+{{< figure src=`v11-thumb-attempt.webp` caption=`Trying to design the thumb cluster` >}}
 
 When I arrived to this complex shape, I realized that I don't like the approach of "cut out the holes in a predefined plate" I have been using.
 If I wanted to continue, I would need to define parameters that would define the initial dimensions of the plate.
@@ -211,7 +211,7 @@ You can see how the rows have thin black lines between them.
 That's because at the moment of taking the screenshot, they are all individual bodies.
 However, this is not a problem, as they can be joined into a single body with a command.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v15-additive.webp` caption=`Rather than cutting holes in a plate, extrude just the key "margins" of a single row and repeat that` >}}
+{{< figure src=`v15-additive.webp` caption=`Rather than cutting holes in a plate, extrude just the key "margins" of a single row and repeat that` >}}
 
 
 ### Taking inspiration
@@ -236,7 +236,7 @@ It would probably make it easier to use the keys on them with the little finger.
 However, that would require heavy modifications to my design, so I didn't do anything like that.
 Maybe next time.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v15-bent-thumb-cluster.webp` caption=`Designing a curved thumb cluster` >}}
+{{< figure src=`v15-bent-thumb-cluster.webp` caption=`Designing a curved thumb cluster` >}}
 
 
 ### Approaching the finish line
@@ -246,11 +246,11 @@ Maybe next time.
 To estimate what the final assembly would look like, I measured the parts I ordered and added them to the project as simple rectangles.
 Either way I needed to include the part responsible for mounting the microcontroller into the assembly, as I still needed to create the bottom plate that would fit under it.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v20-filled-and-with-mc-board.webp` caption=`Adding a microcontroller breadboard to see how it would look` >}}
+{{< figure src=`v20-filled-and-with-mc-board.webp` caption=`Adding a microcontroller breadboard to see how it would look` >}}
 
 Together with the battery and the bottom plate, the model looked like this:
 
-{{< figure src=`/img/post/devlog-hovert60-02/v23-bottom-plate-and-battery.webp` caption=`Adding a bottom plate and a battery to see how they fit` >}}
+{{< figure src=`v23-bottom-plate-and-battery.webp` caption=`Adding a bottom plate and a battery to see how they fit` >}}
 
 
 #### Projecting the bottom plate
@@ -263,7 +263,7 @@ This is where Autodesk Fusion shines.
 When I do minor changes to the top plate or the microcontroller part, the bottom plate gets recalculated automatically.
 Sadly, it's quite easy to break everything with larger changes, but this feature is still very helpful.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v29-bottom-sketch.webp` caption=`Making fillets on the bottom plate based on projections of other parts` >}}
+{{< figure src=`v29-bottom-sketch.webp` caption=`Making fillets on the bottom plate based on projections of other parts` >}}
 
 
 #### Feature showcase
@@ -279,7 +279,7 @@ In the following image:
 - There is a dark rectangular part with 4 screw holes that represents the microcontroller mount
 - There is a grey transparent bottom plate in the background (it does not have all the screw holes, but it should)
 
-{{< figure src=`/img/post/devlog-hovert60-02/v29-top.webp` caption=`Top view of the "almost final" version` >}}
+{{< figure src=`v29-top.webp` caption=`Top view of the "almost final" version` >}}
 
 Then, let's take a look at the sketch of the thumb cluster.
 Did you notice that there is no additional padding on the outer edge of the keyboard there?
@@ -287,18 +287,18 @@ That's because this sketch exists "in the past", before the padding is added.
 At the same time, it's still possible to come back to the past and edit it, recalculating everything "in the future" that depends on it.
 That's how the screenshot is taken.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v29-thumb-dimensions.webp` caption=`Dimensions of the thumb cluster` >}}
+{{< figure src=`v29-thumb-dimensions.webp` caption=`Dimensions of the thumb cluster` >}}
 
 The following image shows the "infamous" key switch notches on the bottom side of the top plate.
 They were not strictly necessary, they complicated the manufacture process, and they are just marginally better than nothing (the switches can still fall out of them if I don't glue them in).
 But I wanted them to be there.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v29-lock-notches.webp` caption=`Notches for the key switches to lock in (bottom side of the top plate)` >}}
+{{< figure src=`v29-lock-notches.webp` caption=`Notches for the key switches to lock in (bottom side of the top plate)` >}}
 
 And these are the parameters that I ended up with.
 There are a lot of them, and some of them are probably not even used now.
 
-{{< figure src=`/img/post/devlog-hovert60-02/v29-parameters.webp` caption=`Parameters used in the "almost final" version` >}}
+{{< figure src=`v29-parameters.webp` caption=`Parameters used in the "almost final" version` >}}
 
 
 ## What's next

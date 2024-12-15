@@ -10,6 +10,8 @@ title = "ftvkyo"
 
   footer = "© Andrei"
 
+  figureSrc = "/img"
+
   readingTimeSections = ["/post"]
 
   # Font sizes to use for different thresholds of posts with tag

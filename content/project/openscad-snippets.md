@@ -15,7 +15,7 @@ You've been warned `¯\_(ツ)_/¯`
 
 *Just why did I do this?*
 
-{{< figure src=`/img/project/openscad-snippets/wavy-donut-2.webp` caption=`A render of the wavy donut with 2 waves` >}}
+{{< figure src=`wavy-donut-2.webp` caption=`A render of the wavy donut with 2 waves` >}}
 
 It is implemented using the `polyhedron()` OpenSCAD module.
 I generate flat slices of the donut, rotate and position them in 3D using `pts_rotate3` and `pts_translate3`, and then stitch them into a loop in the `pts_extrude` module.
@@ -28,7 +28,7 @@ What I really like about this one, is that it took me just a couple minutes to i
 I used the fact that if \( f(\alpha) = cos(\alpha) \), and \( f(\alpha) \) is the slice "bobbing" function, then \( f'(\alpha) = -sin(\alpha) \) which provides the tilt.
 And then guesstimated some magic coefficients because I couldn't be bothered.
 
-{{< figure src=`/img/project/openscad-snippets/wavy-donut-5.webp` caption=`The same wavy donut, but with 5 waves` >}}
+{{< figure src=`wavy-donut-5.webp` caption=`The same wavy donut, but with 5 waves` >}}
 
 {{% details `Source code of the wavy donut` %}}
 

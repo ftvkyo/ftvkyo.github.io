@@ -21,9 +21,9 @@ Then I present the concept of Bézier curves.
 I provide a bunch of illustrations to make it more intuitive and fun.
 After we are familiar with both the tools and the curves, I wrap up by showing how it works in practice.
 
-{{< figure src=`/img/post/bezier-feather/openscad-new-assembly.webp` caption=`The resulting model to be 3D-printed` >}}
+{{< figure src=`openscad-new-assembly.webp` caption=`The resulting model to be 3D-printed` >}}
 
-{{< figure src=`/img/post/bezier-feather/feather.webp` caption=`The result of 3D-printing said model` >}}
+{{< figure src=`feather.webp` caption=`The result of 3D-printing said model` >}}
 
 The post contains some maths, but understanding them should not be necessary for enjoying the content.
 
@@ -35,7 +35,7 @@ I also didn't want to boot into Windows to use Fusion every time 😅
 
 [hovert60]: /tags/hovert60-keyboard/
 
-{{< figure src=`/img/post/bezier-feather/blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
+{{< figure src=`blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
 
 After some experiments with Blender and even with writing some custom G-code for 3D-printing, I stumbled upon a tool called OpenSCAD.
 
@@ -137,7 +137,7 @@ For this post, what matters is:
 
 [vector]: https://en.wikipedia.org/wiki/Euclidean_vector
 
-{{< figure src=`/img/post/bezier-feather/vectors.svg` caption=`Examples of operations on vectors. Left: two vectors. Middle-Top: difference of two vectors. Middle-Bottom: multiplying vectors by scalars. Right-Top: sum of two vectors. Right-Bottom: length of a vector.` >}}
+{{< figure src=`vectors.svg` caption=`Examples of operations on vectors. Left: two vectors. Middle-Top: difference of two vectors. Middle-Bottom: multiplying vectors by scalars. Right-Top: sum of two vectors. Right-Bottom: length of a vector.` >}}
 
 Let's look at the examples.
 Given two vectors \(\vec{A}\) and \(\vec{B}\),
@@ -207,53 +207,53 @@ Note the values of the function for \(t\) at the ends of the \([0, 1]\) interval
 
 Now, if we calculate \(lerp(\vec{A}, \vec{B}, t)\) for all \(t \in [0, 1]\) for some fixed \(\vec{A}\) and \(\vec{B}\), we get a set of points that live on the line segment connecting \(A\) and \(B\).
 
-{{< figure src=`/img/post/bezier-feather/lerp.svg` caption=`` >}}
+{{< figure src=`lerp.svg` caption=`` >}}
 
 [lerp]: https://en.wikipedia.org/wiki/Linear_interpolation
 
 ### Quadratic Bézier curves
 
-{{< figure src=`/img/post/bezier-feather/bezier-quadratic-1.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-quadratic-2.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-quadratic-3.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-quadratic-4.svg` caption=`` >}}
+{{< figure src=`bezier-quadratic-1.svg` caption=`` >}}
+{{< figure src=`bezier-quadratic-2.svg` caption=`` >}}
+{{< figure src=`bezier-quadratic-3.svg` caption=`` >}}
+{{< figure src=`bezier-quadratic-4.svg` caption=`` >}}
 
 
 ### Cubic Bézier curves
 
-{{< figure src=`/img/post/bezier-feather/bezier-cubic-1.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-cubic-2.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-cubic-3.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-cubic-4.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/bezier-cubic-5.svg` caption=`` >}}
+{{< figure src=`bezier-cubic-1.svg` caption=`` >}}
+{{< figure src=`bezier-cubic-2.svg` caption=`` >}}
+{{< figure src=`bezier-cubic-3.svg` caption=`` >}}
+{{< figure src=`bezier-cubic-4.svg` caption=`` >}}
+{{< figure src=`bezier-cubic-5.svg` caption=`` >}}
 
 
 ### Derivative of a Bézier curve
 
 
-{{< figure src=`/img/post/bezier-feather/bezier-derivative.svg` caption=`` >}}
+{{< figure src=`bezier-derivative.svg` caption=`` >}}
 
 
 ### Stroke expansion
 
-{{< figure src=`/img/post/bezier-feather/stroke-expansion-1.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/stroke-expansion-2.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/stroke-expansion-3.svg` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/stroke-expansion-4.svg` caption=`` >}}
+{{< figure src=`stroke-expansion-1.svg` caption=`` >}}
+{{< figure src=`stroke-expansion-2.svg` caption=`` >}}
+{{< figure src=`stroke-expansion-3.svg` caption=`` >}}
+{{< figure src=`stroke-expansion-4.svg` caption=`` >}}
 
 
 ## Putting it all together
 
-{{< figure src=`/img/post/bezier-feather/openscad-curves.webp` caption=`` >}}
+{{< figure src=`openscad-curves.webp` caption=`` >}}
 
-{{< figure src=`/img/post/bezier-feather/openscad-original-stem.webp` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/openscad-original-barbs.webp` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/openscad-original-assembly.webp` caption=`` >}}
+{{< figure src=`openscad-original-stem.webp` caption=`` >}}
+{{< figure src=`openscad-original-barbs.webp` caption=`` >}}
+{{< figure src=`openscad-original-assembly.webp` caption=`` >}}
 
-{{< figure src=`/img/post/bezier-feather/openscad-new-stem.webp` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/openscad-new-barbs.webp` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/openscad-new-barbs-control.webp` caption=`` >}}
-{{< figure src=`/img/post/bezier-feather/openscad-new-assembly.webp` caption=`` >}}
+{{< figure src=`openscad-new-stem.webp` caption=`` >}}
+{{< figure src=`openscad-new-barbs.webp` caption=`` >}}
+{{< figure src=`openscad-new-barbs-control.webp` caption=`` >}}
+{{< figure src=`openscad-new-assembly.webp` caption=`` >}}
 
 
 ## Results

@@ -11,7 +11,7 @@ description: >
     - And then again, but with a better approach to getting things done
 
 
-{{< figure src=`/img/project/lazy-keymap/refcard.svg` caption=`Example reference card for my one of a kind [Hovert60](/post/devlog-hovert60-01/) keyboard` >}}
+{{< figure src=`) keyboard` >}}
 
 That refcard is generated based on 2 config files.
 One of them is a config file that defines the shape and "slots" of the keyboard, and the other one specifies the actual mapping of the keys to those slots.
