@@ -28,9 +28,10 @@ I hope this post may be an **inspiration** for somebody to start taking notes or
 I also want to improve mine, and I think writing about it and listening to feedback is good for it.
 It is also just fun to write about it and make illustrations :)
 
-> Note:
-> This is, after all, an opinion-centric post, and the experience described can be different for different people.
-
+{{% aside %}}
+Note:
+This is, after all, an opinion-centric post, and the experience described can be different for different people.
+{{% /aside %}}
 
 ## Note vault
 
@@ -65,9 +66,11 @@ There is more to it and I will tell you the details further in the post.
 
 The words that I think describe the sections best are alphabetically ordered in a logical way, which is neat.
 
-> Note:
-> Previously, the names were *journal*, *knowledge base* and *essays*, but I changed them to be more fitting.
-> I kept the original names in the first part.
+{{% aside %}}
+Note:
+Previously, the names were *journal*, *knowledge base* and *essays*, but I changed them to be more fitting.
+I kept the original names in the first part.
+{{% /aside %}}
 
 On the topic of **accessibility**, here is a general "nice to have" requirement that is general for all the sections:
 
@@ -111,9 +114,11 @@ Although these journal notes have the most complicated inner structure compared 
 A basic note has its file name in the format `YYYY-MM-DD.md`, and sometimes I add an extra quantifier like that: `YYYY-MM-DD SUFFIX.md`, where `SUFFIX` is some topic that the note is dedicated to.
 For example, a note written on 27 February 2022 would have the name `2022-02-27.md`, and if it was dedicated to a `meta` topic, its name would be `2022-02-27 meta.md`.
 
-> Note: **Year, then the month, then day.**
-> Why?
-> Because then the alphabetic ordering will be equal to chronological ordering.
+{{% aside %}}
+Note: **Year, then the month, then day.**
+Why?
+Because then the alphabetic ordering will be equal to chronological ordering.
+{{% /aside %}}
 
 The contents of the note are also quite simple.
 In markdown frontmatter (YAML metadata at the start of the file) I have the day of the week and had tags before I scrapped them.
@@ -237,10 +242,9 @@ Let's move to some extras:
 
 ### "Steamroller"
 
-{{< figure src=`steamroller.svg` alt=`Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.` >}}
+{{< figure src=`steamroller.svg` alt=`Picture of a steamroller being pulled by a person. The steamroller flattens the surface under it.` caption=`It makes rough surfaces flat. But it is also really heavy.` >}}
 
-> *It makes rough surfaces flat.*
-> *But it is also really heavy.*
+
 
 I think this can be a good analogy for some of the difficulties I have described before.
 This "steamroller" allows you to *pave* the road, make it *flat*, easy to *walk* and *ride* on.
@@ -255,10 +259,7 @@ Don't think too much about it.
 
 ### Dedicated time
 
-{{< figure src=`dedicated-time.svg` alt=`An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.` >}}
-
-> *Time.*
-> *Dedicated.*
+{{< figure src=`dedicated-time.svg` alt=`An X axis representing time, some of the parts are colored in showing that that time is dedicated to something.` caption=`Time. Dedicated.` >}}
 
 This isn't some kind of secret, but I found that there were cases when I wanted to do something that I thought was important, but that I could not do under the pressure of all the other things I had to be doing.
 For example, this happens often with my notes.
