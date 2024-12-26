@@ -1,7 +1,7 @@
 ---
 title: "My Time and Focus. Part 2: But how?"
 date: 2022-12-23T17:00:00+00:00
-tags: [Reflection, Organisation, Psychological]
+tags: [Reflection, Organisation]
 toc: true
 aliases:
 - "004-on-self-organization-02"

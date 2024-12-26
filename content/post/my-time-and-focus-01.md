@@ -1,7 +1,7 @@
 ---
 title: "My Time and Focus. Part 1: But why?"
 date: 2022-10-21T11:00:00+01:00
-tags: [Reflection, Organisation, Psychological]
+tags: [Reflection, Organisation]
 toc: true
 aliases:
 - "003-on-self-organization-01"
