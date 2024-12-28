@@ -37,6 +37,7 @@ As a side-effect, this may also end up being interesting to other people 🤷
 - Throughout spring and summer I saw a bunch of friends I hadn't seen for a long time and made new friends
 - Mid-July, my company released [SCALE](https://docs.scale-lang.com) which was [met with great interest](https://news.ycombinator.com/item?id=40970560)
   - My contributions have been interesting and valuable
+- In August, I celebrated turning 25, a lot of guests visited me
 - In August I acquired a 3D-printer, learned [OpenSCAD](https://openscad.org/) *(pain.jpg)* and made a lot of models: [GitHub: ftvkyo/openscad](https://github.com/ftvkyo/openscad)
   - I did some cursed things with OpenSCAD -- see my [OpenSCAD snippets](/project/openscad-snippets/)
 - In December, I solved 16.5 days of [Advent of Code 2024](https://adventofcode.com/2024) in OCaml: [GitHub: ftvkyo/aoc](https://github.com/ftvkyo/aoc)
