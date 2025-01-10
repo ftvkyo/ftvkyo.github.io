@@ -158,14 +158,14 @@ The calendar is centered around the week rather than being centered around the m
 It supports opening existing notes and creating new notes from templates if they don't exist.
 The calendar allows easy yearly, quarterly, monthly, weekly and daily planning.
 
-{{< figure src=`/img/obsidian-ftvkyo/calendar.webp` caption=`Week-centric calendar with glowing text showing existing notes` >}}
+{{< figure src=`calendar.webp` caption=`Week-centric calendar with glowing text showing existing notes` >}}
 
 The file tree is quite simple in `0.2.0`, but already has some interesting quirks.
 For instance, if a note has `index: true` in its frontmatter, it will have a different icon in the file tree, and it will be sorted above the other notes in the same folder.
 
 {{< details "File tree screenshot" >}}
 
-{{< figure src=`/img/obsidian-ftvkyo/file-tree.webp` caption="File tree that highlights notes with `index: true` in their frontmatter and brings them up" >}}
+{{< figure src=`file-tree.webp` caption="File tree that highlights notes with `index: true` in their frontmatter and brings them up" >}}
 
 {{< /details >}}
 
@@ -191,7 +191,7 @@ This is an example of such a callout:
 > - [x] `20m` chats, planning
 ```
 
-{{< figure src=`/img/obsidian-ftvkyo/plan-callout.webp` caption=`How the previous example of Plan Callout gets rendered` >}}
+{{< figure src=`plan-callout.webp` caption=`How the previous example of Plan Callout gets rendered` >}}
 
 Another example, this is my monthly note template:
 

@@ -70,7 +70,7 @@ The following is an illustration of sky lighting.
 The overhang in the top-left corner of the picture blocks the light from the sky.
 The light level decreases "by 1" for each of the blocks it travels from the edge of the overhang.
 
-{{< figure src=`/img/tekutonu/lighting.webp` caption=`Cubes are shaded by their exposure to the sky light` >}}
+{{< figure src=`lighting.webp` caption=`Cubes are shaded by their exposure to the sky light` >}}
 
 
 ## Lessons learned

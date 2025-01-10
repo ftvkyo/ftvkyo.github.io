@@ -10,8 +10,8 @@ description: >
 draft: true
 ---
 
-{{< figure src=`/img/010/v29-test-plate.webp` caption=`A smaller 3×3 test model to reduce waste during prototyping` >}}
+{{< figure src=`v29-test-plate.webp` caption=`A smaller 3×3 test model to reduce waste during prototyping` >}}
 
-{{< figure src=`/img/010/v29-test-plate-simulated.webp` caption=`Simulation of cutting the test model` >}}
+{{< figure src=`v29-test-plate-simulated.webp` caption=`Simulation of cutting the test model` >}}
 
-{{< figure src=`/img/010/v29-screw-hole-plan.webp` caption=`Sketch used for positioning screw holes` >}}
+{{< figure src=`v29-screw-hole-plan.webp` caption=`Sketch used for positioning screw holes` >}}
