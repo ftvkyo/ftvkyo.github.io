@@ -3,7 +3,11 @@
     {{ .Content }}
 
     <ul class="cards">
-        {{ range .Pages.ByPublishDate.Reverse }}
+        {{ $range := .Pages.ByPublishDate.Reverse }}
+        {{ if .Params.alphabetic }}
+            {{ $range = .Pages.ByTitle }}
+        {{ end }}
+        {{ range $range }}
             {{ partial "list-item.html" . }}
         {{ end }}
     </ul>

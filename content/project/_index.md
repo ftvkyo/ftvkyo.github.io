@@ -1,6 +1,7 @@
 ---
 title: "Projects"
 titleClass: "only-print"
+alphabetic: true
 ---
 
 - My photos: [ポテト camera][photos]
