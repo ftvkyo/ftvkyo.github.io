@@ -388,20 +388,6 @@ aside {
     span {
         grid-column: 2;
     }
-
-    &.about {
-        float: right;
-
-        @media (max-width : 512px) {
-            float: none;
-        }
-
-        // The title is only shown in print, so margins on the neighbouring <p>
-        // collapse differently
-        @media screen {
-            margin-top: 1em;
-        }
-    }
 }
 
 .iconlink {

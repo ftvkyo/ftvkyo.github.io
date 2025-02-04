@@ -10,6 +10,8 @@ description: >
 - Work stopped: *Nov 20, 2022*
 - Timespan: 38 days, *17* of them have commits
 
+{{< skills "Rust, Vulkan (vulkano.rs)" >}}
+
 It is not the first time I tried to build a voxel engine.
 This time, the primary objective of the project was to learn the basics of Vulkan.
 

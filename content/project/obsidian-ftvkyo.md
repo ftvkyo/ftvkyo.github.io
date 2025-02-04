@@ -10,6 +10,8 @@ description: >
 - Work started: *Jul 23, 2023*
     - Code was migrated from "Inline plugins" I made earlier
 
+{{< skills "TypeScript (React), Electron, CSS (SASS)" >}}
+
 I have been using Obsidian for a while (since March 2021).
 Finding a good workflow, a good approach to work and study is important for me, and it is an interesting challenge.
 This project is the culmination of my efforts.

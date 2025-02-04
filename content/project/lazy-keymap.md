@@ -10,6 +10,7 @@ description: >
     - Code recreated based on a previous implementation written in Python
     - And then again, but with a better approach to getting things done
 
+{{< skills "Rust, ZMK, X Keyboard Config, SVG" >}}
 
 {{< figure src=`refcard.svg` caption=`Example reference card for my one of a kind [Hovert60](/post/devlog-hovert60-01/) keyboard` >}}
 
