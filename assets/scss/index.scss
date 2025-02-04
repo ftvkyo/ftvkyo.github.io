@@ -158,6 +158,13 @@ main {
             text-decoration: none;
         }
     }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 1.5em;
+    }
 }
 
 footer {
@@ -400,7 +407,7 @@ aside {
 .iconlink {
     display: flex;
     flex-direction: row;
-    gap: 0.5em;
+    gap: 0.33em;
 
     margin: 1em 0;
 
@@ -409,6 +416,7 @@ aside {
         align-self: center;
     }
 
+    // Hugo adds the <p> for .Inner
     p {
         margin: 0;
     }
