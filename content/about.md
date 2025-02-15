@@ -36,8 +36,6 @@ Other:
 
 ## Inspiration
 
-- [100 rabbits](https://100r.co/)
-- [Matt Keeter](https://www.mattkeeter.com/)
 - My friends
 - Fellow Edinburgh Hacklab members
 - Rust (Programming Language)
@@ -47,6 +45,8 @@ Other:
 
 Also:
 
+- [100 rabbits](https://100r.co/)
+- [Matt Keeter](https://www.mattkeeter.com/)
 - [Amos @fasterthanlime](https://fasterthanli.me/)
 - [Gwern](https://gwern.net/)
 
