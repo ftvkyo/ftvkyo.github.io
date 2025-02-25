@@ -62,7 +62,7 @@ Also:
 {{< skills "C++, CUDA, LLVM, CMake, sometimes Rust, TypeScript" >}}
 
 The main focus is development of [SCALE](https://scale-lang.com).
-See also the short-paper: [SCALE-Ahead-Of-Time Compilation of CUDA for AMD GPUs](https://dl.acm.org/doi/10.1145/3704440.3704782).
+See also the short-paper: [SCALE-Ahead-Of-Time Compilation of CUDA for AMD GPUs](/pdf/SCALE-Ahead-Of-Time_Compilation_of_CUDA_for_AMD_GPUs.pdf), also available on [[dl.acm.org]](https://dl.acm.org/doi/10.1145/3704440.3704782).
 Earlier on there was some other work too, e.g. web dev.
 
 ### Member of Edinburgh Hacklab
