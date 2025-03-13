@@ -207,3 +207,124 @@ test();
 ```
 
 {{% /details %}}
+
+## Funky vase
+
+{{< figure src=`funky-vase.webp` caption=`A funky vase` >}}
+
+I wanted to vary `twist` and `scale` while doing `linear_extrude()`.
+It's possible to do that in something like [ImplicitCAD](https://www.implicitcad.org)
+
+In OpenSCAD, I had to assemble the end result from multiple slices, each of which had a fixed `twist` and `scale` value.
+That also required correctly positioning and rotating the slices, so that they matched up with slices above and below.
+
+Because of the boolean operations to merge the slices, this is one of the longest models to render in my collection,
+especially if you increase the resolution.
+
+{{% details `Source code of the funky vase` %}}
+
+```scad
+/**
+    Performs linear interpolation between values `v0` and `v1`.
+
+    Parameter `t` determines the weights of `v0` and `v1`.
+    Its valid values are in the interval [0, 1].
+*/
+function lerp(v0, v1, t) = assert(t >= 0 && t <= 1) (1 - t) * v0 + t * v1;
+
+/**
+    Calculates a single point for a quadratic Bézier curve.
+    It has 3 control points.
+
+    Parameter `t` determines the extent from the start of the curve.
+    Its valid values are in the interval [0, 1].
+*/
+function _bezier2(pts, t) = lerp(lerp(pts[0], pts[1], t), lerp(pts[1], pts[2], t), t);
+
+/**
+    Calculates a single point for a cubic Bézier curve.
+    It has 4 control points.
+
+    Parameter `t` determines the extent from the start of the curve.
+    Its valid values are in the interval [0, 1].
+*/
+function _bezier3(pts, t) = lerp(_bezier2([pts[0], pts[1], pts[2]], t), _bezier2([pts[1], pts[2], pts[3]], t), t);
+
+// Height
+h = 120;
+
+// Sides of the base polygon
+f = 6;
+// Radius of the base polygon
+r = 35;
+
+// Slices
+s = 36;
+// Determines twist based on the slice
+function t(sn) = _bezier3([0, 120, -180, 30], sn / (s - 1)) / s;
+// Determines scale based on the slice
+function e(sn) = _bezier3([1, 2, 0.5, 1.2], sn / s);
+
+
+module __hidden__() {}
+
+$fn = 12;
+E = 0.01;
+
+
+module rounden(r) {
+    offset(- r)
+    offset(r * 2)
+    offset(- r)
+    children();
+}
+
+module profile() {
+    circle(r, $fn = f);
+
+    module corners(r) {
+        for (a = [1 : f])
+        rotate(360 * a/f)
+        translate([r, 0]) {
+            circle(r / 3, $fn = f);
+
+            children();
+        }
+    }
+
+    corners(r)
+    corners(r / 3);
+}
+
+module vase() {
+    module slice(sn) {
+        twist = t(sn);
+
+        scale_start = e(sn);
+        scale_end = e(sn + 1) / scale_start;
+
+        scale([scale_start, scale_start, 1])
+        linear_extrude(h / s + E, slices = 4, twist = twist, scale = scale_end)
+        rounden(3)
+        profile();
+
+        rotate([0, 0, - twist])
+        translate([0, 0, h / s])
+        children();
+    }
+
+    module reslice(recur = 0) {
+        if (recur < s) {
+            slice(recur)
+            reslice(recur + 1)
+            children();
+        }
+    }
+
+    reslice();
+}
+
+vase();
+```
+
+{{% /details %}}
