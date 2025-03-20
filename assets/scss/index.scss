@@ -145,7 +145,16 @@ main {
         line-height: normal;
     }
 
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 1.5em;
+    }
+
     #TableOfContents {
+        justify-content: unset;
+
         ul {
             list-style-position: inside;
             padding-left: 1ch;
@@ -157,13 +166,6 @@ main {
         a {
             text-decoration: none;
         }
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        gap: 1.5em;
     }
 }
 
