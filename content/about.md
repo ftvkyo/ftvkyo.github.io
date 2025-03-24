@@ -78,8 +78,13 @@ Earlier on there was some other work too, e.g. web dev.
     "Edinburgh, UK"
 >}}
 
+{{< skills "CNC routing, PCB design & assembly, sewing, 3D-printing and laser cutting stuff, other hacking & DIY" >}}
+
 Learn more about the organisation at the [Edinburgh Hacklab Wiki](https://wiki.ehlab.uk).
-I went to [EMF Camp](https://emfcamp.org) 2024 with them (and had a great time).
+I went to [EMF Camp](https://emfcamp.org) 2024 with them and had a great time.
+
+- I made a [milling calculator](/project/milling/) and people seem to use it 🎉
+- I now also have a personal 3D-printer (Ender 3 V3 SE with Klipper)
 
 ## Previously
 
