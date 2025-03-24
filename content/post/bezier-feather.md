@@ -30,10 +30,8 @@ The post contains some maths, but understanding them should not be necessary for
 
 ## The tools
 
-This project is something that I didn't want to try and do using Autodesk Fusion, which I used for [Hovert60 keyboard][hovert60] development.
+This project is something that I didn't want to try and do using Autodesk Fusion, which I used for [Hovert60 keyboard](/post/devlog-hovert60-02/) development.
 I also didn't want to boot into Windows to use Fusion every time 😅
-
-[hovert60]: /tags/hovert60-keyboard/
 
 {{< figure src=`blender.webp` caption=`Print-in-place mail made in Blender using an Array Modifier applied to an expanded NURBS curve, and flattened with a Boolean Modifier for better bed adhesion` >}}
 

@@ -1,7 +1,7 @@
 ---
 title: "Hovert60 keyboard devlog #2: Design"
 date: 2024-05-05T17:00:00Z
-tags: [Devlog, Hovert60 keyboard]
+tags: [Devlog, Keyboards]
 toc: true
 aliases:
 - "007-devlog-hovert60-02"

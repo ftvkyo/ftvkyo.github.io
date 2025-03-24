@@ -12,12 +12,10 @@ description: >
 
 {{< skills "Rust, ZMK, X Keyboard Config, SVG" >}}
 
-{{< figure src=`refcard.svg` caption=`Example reference card for my one of a kind [Hovert60](/post/devlog-hovert60-01/) keyboard` >}}
+{{< figure src=`refcard.svg` caption=`Example reference card for my one of a kind [Hovert60 keyboard](/post/devlog-hovert60-02/)` >}}
 
 That refcard is generated based on 2 config files.
 One of them is a config file that defines the shape and "slots" of the keyboard, and the other one specifies the actual mapping of the keys to those slots.
-
-[hovert60]: /tags/hovert60-keyboard/
 
 For now, what can be drawn in the SVG is quite limited, but it's already very useful.
 Even though I have to manually assign styles and labels to keys, it's nice to keep a single source of truth for everything, as it reduces the chance of making mistakes.

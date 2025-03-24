@@ -1,7 +1,7 @@
 ---
 title: "Hovert60 keyboard devlog #3: Design tweaks & production"
 date: 2024-06-09T22:00:00Z
-tags: [Devlog, Hovert60 keyboard]
+tags: [Devlog, Keyboards]
 toc: true
 aliases:
 - "010"
