@@ -10,18 +10,27 @@ draft: true
 ---
 
 Almost a year ago I made a split keyboard I named Hovert60.
-It was a fun project, and I wrote a couple posts about it.
+It was a fun project, and I wrote a [couple][hovert60-1] [posts][hovert60-2] about it.
 However, I didn't like the end result, so I never actually used it.
 
-(write what I didn't like)
+[hovert60-1]: /post/devlog-hovert60-01/
+[hovert60-2]: /post/devlog-hovert60-02/
 
-That experience let me understand my preferences better, so eventually I gave in to the temptation to try again.
+There were several issues with Hovert60:
+- The keyswitches I used were Kailh Pink, with actuation force of 20g.
+  They turned out to be too light to press for me, but I could not easily replace them due to the assembly method I used.
+- I didn't like the split aspect of the keyboard that much -- it was annoying to position and move around.
+- I didn't like having to deal with bluetooth and with charging the halves.
+
+That whole experience let me understand my preferences better, so eventually I gave in to the temptation to try again.
 This is how Cryptodancer was born.
+The name does not mean anything.
+I chose it because I once accidentally said that referring to the "Crypt of the Necrodancer" game and thought it sounded cool.
 
-(why "Cryptodancer")
+My friend Colin from Edinburgh Hacklab recently [wrote a blog post][colin-vt320] using a VT320 terminal, and I decided I should write this post using Cryptodancer.
+I need practice :)
 
-My friend Colin from Edinburgh Hacklab recently wrote a blog post using a VT320 terminal, and I decided I should commit and write this post using Cryptodancer.
-Gotta get used to it!
+[colin-vt320]: https://pointinthecloud.com/2025-03-15-190000.html
 
 ## What makes Cryptodancer unique
 
