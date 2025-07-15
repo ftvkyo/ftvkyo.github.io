@@ -24,12 +24,7 @@ body {
 }
 
 a {
-    @include c.link(
-        c.$purple,
-        c.$purple,
-        c.$purple,
-        c.$purple,
-    );
+    @include c.link(c.$purple, c.$purple, c.$purple, c.$purple);
 
     @media print {
         // Solid line is used for headings in print, so this adds visual distinction
@@ -38,15 +33,11 @@ a {
 }
 
 a[aria-current="page"] {
-    @include c.link(
-        c.$pink,
-        c.$pink,
-        c.$pink,
-        c.$pink,
-    );
+    @include c.link(c.$pink, c.$pink, c.$pink, c.$pink);
 }
 
-pre, code {
+pre,
+code {
     font-family: f.$font-monospace;
 
     color: #abb2bf;
@@ -55,7 +46,12 @@ pre, code {
 
 // Visually distinct headers
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: c.$pink;
     margin: 1.5em 0 0.5em 0;
 
@@ -238,7 +234,8 @@ input {
     }
 }
 
-abbr[title], span[title] {
+abbr[title],
+span[title] {
     text-decoration: underline dotted;
 }
 
@@ -258,7 +255,8 @@ table {
     border-collapse: collapse;
     border: 1px solid c.$grey-10;
 
-    th, td {
+    th,
+    td {
         padding: 0.25em;
         text-align: start;
     }
@@ -302,7 +300,8 @@ details {
         }
     }
 
-    summary::before, summary::after {
+    summary::before,
+    summary::after {
         content: "";
         position: absolute;
 
@@ -314,7 +313,9 @@ details {
         top: calc(50% - $h);
         right: $w * 0.5;
 
-        transition: transform 300ms, width 300ms;
+        transition:
+            transform 300ms,
+            width 300ms;
     }
 
     summary::before {
@@ -437,6 +438,10 @@ aside {
     .fields > .draft {
         color: c.$pink;
         text-transform: uppercase;
+
+        padding: 0 0.75ch;
+        outline: 1px solid c.$pink;
+        border-radius: 2.5px;
     }
 }
 
