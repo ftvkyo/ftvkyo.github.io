@@ -2,7 +2,6 @@
 title: "Website overhaul"
 date: 2023-03-19T14:00:00Z
 tags: [Website]
-archived: true
 toc: true
 aliases:
 - "005-website-overhaul"

@@ -2,7 +2,6 @@
 title: "Parentheses programming language devlog #1: getting to LLVM IR emission"
 date: 2021-06-27T21:00:00+08:00
 tags: [Devlog, Parentheses programming language]
-archived: true
 toc: true
 aliases:
 - "001-devlog-parentheses-01"

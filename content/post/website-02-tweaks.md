@@ -2,7 +2,6 @@
 title: "Website tweaks"
 date: 2021-09-17T13:00:00+01:00
 tags: [Website]
-archived: true
 aliases:
 - "002-website-tweaks"
 description: >
