@@ -2,6 +2,12 @@ baseURL = "https://www.ftvkyo.me/"
 languageCode = "en-us"
 title = "ftvkyo"
 
+buildDrafts = true
+
+
+[minify]
+minifyOutput = true
+
 
 [params]
 dateFormat = "Jan 2, 2006"
