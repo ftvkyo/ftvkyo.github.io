@@ -4,99 +4,108 @@ title = "ftvkyo"
 
 
 [params]
-  dateFormat = "Jan 2, 2006"
-  # Override on per-page basis
-  math = false
+dateFormat = "Jan 2, 2006"
+# Override on per-page basis
+math = false
 
-  footer = "© Andrei"
+footer = "© Andrei"
 
-  figureSrc = "/img"
+figureSrc = "/img"
 
-  readingTimeSections = ["/post"]
+readingTimeSections = ["/post"]
 
-  # Font sizes to use for different thresholds of posts with tag
-  [params.tagcloud]
-    "1" = "0.8rem"
-    "2" = "1rem"
-    "3" = "1.2rem"
-    "max" = "1.4rem"
+# Font sizes to use for different thresholds of posts with tag
+[params.tagcloud]
+"1" = "0.8rem"
+"2" = "1rem"
+"3" = "1.2rem"
+"max" = "1.4rem"
 
 
 [taxonomies]
-  tag = "tags"
+tag = "tags"
 
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    params = { img = "logo.svg" }
-    weight = 10
-  [[menu.main]]
-    name = "Projects"
-    url = "/project/"
-    weight = 20
-  [[menu.main]]
-    name = "Posts"
-    url = "/post/"
-    weight = 30
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 40
 
-  [[menu.contacts]]
-    name = "`andrei (at) ftvkyo.me`"
-    params = { img = "icon/email.svg" }
-    weight = 10
-  [[menu.contacts]]
-    name = "Telegram: [`@ftvkyo`](https://t.me/ftvkyo)"
-    params = { img = "icon/telegram.svg" }
-    weight = 20
-  [[menu.contacts]]
-    name = "Discord: `@ftvkyo`"
-    params = { img = "icon/discord.svg" }
-    weight = 30
+[[menu.main]]
+name = "Home"
+url = "/"
+params = { img = "logo.svg" }
+weight = 10
 
-  [[menu.about]]
-    name = "`andrei (at) ftvkyo.me`"
-    params = { img = "icon/email.svg" }
-    weight = 10
-  [[menu.about]]
-    name = "[github.com/ftvkyo](https://github.com/ftvkyo)"
-    params = { img = "icon/github.svg" }
-    weight = 20
-  [[menu.about]]
-    name = "[linkedin.com/in/ftvkyo](https://www.linkedin.com/in/ftvkyo/)"
-    params = { img = "icon/linkedin.svg" }
-    weight = 30
-  [[menu.about]]
-    name = "[ftvkyo.me](https://ftvkyo.me)"
-    params = { img = "icon/person.svg" }
-    weight = 40
+[[menu.main]]
 
+name = "Projects"
+url = "/project/"
+weight = 20
+
+[[menu.main]]
+name = "Posts"
+url = "/post/"
+weight = 30
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 40
+
+[[menu.contacts]]
+name = "`andrei (at) ftvkyo.me`"
+params = { img = "icon/email.svg" }
+weight = 10
+
+[[menu.contacts]]
+name = "Telegram: [`@ftvkyo`](https://t.me/ftvkyo)"
+params = { img = "icon/telegram.svg" }
+weight = 20
+
+[[menu.contacts]]
+name = "Discord: `@ftvkyo`"
+params = { img = "icon/discord.svg" }
+weight = 30
+
+[[menu.about]]
+name = "`andrei (at) ftvkyo.me`"
+params = { img = "icon/email.svg" }
+weight = 10
+
+[[menu.about]]
+name = "[github.com/ftvkyo](https://github.com/ftvkyo)"
+params = { img = "icon/github.svg" }
+weight = 20
+
+[[menu.about]]
+name = "[linkedin.com/in/ftvkyo](https://www.linkedin.com/in/ftvkyo/)"
+params = { img = "icon/linkedin.svg" }
+weight = 30
+
+[[menu.about]]
+name = "[ftvkyo.me](https://ftvkyo.me)"
+params = { img = "icon/person.svg" }
+weight = 40
 
 
 [markup]
-  # Reference: https://gohugo.io/getting-started/configuration-markup/
+# Reference: https://gohugo.io/getting-started/configuration-markup/
 
-  [markup.highlight]
-    style = "onedark"
-    guessSyntax = true
+[markup.highlight]
+style = "onedark"
+guessSyntax = true
 
-  [markup.goldmark]
+[markup.goldmark]
 
-    [markup.goldmark.renderer]
-      # Enable raw HTML in the pages.
-      unsafe = true
+[markup.goldmark.renderer]
+# Enable raw HTML in the pages.
+unsafe = true
 
-    [markup.goldmark.extensions.typographer]
-      leftDoubleQuote = "&laquo;"
-      rightDoubleQuote = "&raquo;"
+[markup.goldmark.extensions.typographer]
+leftDoubleQuote = "&laquo;"
+rightDoubleQuote = "&raquo;"
 
-    [markup.goldmark.extensions.passthrough]
-      enable = true
+[markup.goldmark.extensions.passthrough]
+enable = true
 
-      [markup.goldmark.extensions.passthrough.delimiters]
-        block = [['\[', '\]'], ['$$', '$$']]
-        inline = [['\(', '\)']]
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
