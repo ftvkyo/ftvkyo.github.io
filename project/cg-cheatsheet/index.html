@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=mask-icon href=/favicon.svg color=black><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat&family=Arvo&display=swap" rel=stylesheet><link rel=stylesheet type=text/css href=https://www.ftvkyo.me/scss/index.css><title>ftvkyo | Computer Graphics cheatsheet</title>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js></script><script>MathJax={tex:{displayMath:[["\\[","\\]"],["$$","$$"]],inlineMath:[["\\(","\\)"]]}}</script></head><body><script>0</script><header class=only-screen><nav><a class=logo href=/>Home
+</a><a href=/project/>Projects
+</a><a href=/post/>Posts
+</a><a href=/about/>About</a></nav></header><main><h1>Computer Graphics cheatsheet</h1><details><summary>Table of Contents</summary><nav id=TableOfContents><ul><li><a href=#coordinate-systems>Coordinate systems</a><ul><li><a href=#handedness>Handedness</a></li><li><a href=#normalized-device-coordinates-ndc>Normalized Device Coordinates (NDC)</a></li></ul></li></ul></nav></details><h2 id=coordinate-systems>Coordinate systems</h2><h3 id=handedness>Handedness</h3><p>Three-dimensional coordinate systems can be left-handed and right-handed.</p><p>How to remember which one is which:</p><ol><li>Use your corresponding hand</li><li>Form an <code>L</code> shape with the thumb and the index finger</li><li>Form an <code>L</code> shape with the index finger and the middle finger
+(make your middle finger perpendicular to the surface of your palm)</li><li>Assign the positive X, positive Y and positive Z directions to the fingers in the following order: the thumb, then the index finger, then the middle finger</li></ol><p>Different grapics APIs may use differently handed coordinate systems.</p><h3 id=normalized-device-coordinates-ndc>Normalized Device Coordinates (NDC)</h3><p>WebGPU expects all vertices output by the vertex shader to have normalised coordinates.</p>$$
+\begin{aligned}
+x &\in [-1.0, 1.0] \\
+y &\in [-1.0, 1.0] \\
+z &\in [0.0, 1.0] \\
+\end{aligned}
+$$</main><footer class=only-screen>© Andrei</footer></body></html>

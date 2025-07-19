@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 960 480">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="#9378e3" stroke-width="6.667" d="m191.469 295.634 26.794-107.937"/>
+        <path stroke="#6ac0c8" stroke-width="1.333" d="m266.973 241.129-57.13.237m-10.365.043-59.657.248"/>
+        <path stroke="#6ac0c8" stroke-width="3.333" d="m204.665 240.99-.087.205"/>
+        <path stroke="#6ac0c8" stroke-width="1.333" d="M145.634 249.275q.021.3.25 2.912.227 2.614.475 4.86.248 2.248.6 4.656.354 2.408.888 5.178.535 2.768 3.254 12.964l.232.928m-7.227-9.8.325.528q.2.153.55.582t.541.666q.192.238 1.19 1.677.997 1.439 2.066 3 1.07 1.563 1.536 2.217.468.655.863 1.167m.343-.796q.067-.655.045-4.255-.022-3.601.041-7.345.016-.081.03-.976"/>
+        <path stroke="#f66640" stroke-width="3.333" d="m262.994 251.142 10.543-24.655m.117.015 6.352 25.87m-21.06-16.563 21.037 16.518m-20.894-17.429 27.52 2.521m-23.829 14.075 23.87-13.963"/>
+    </g>
+    <g transform="translate(670.707 -1049.211)scale(1.33333)">
+        <path fill="none" stroke="#9378e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="m-158.823 967.351 20.097-80.953"/>
+        <path fill="none" stroke="#6ac0c8" stroke-linecap="round" stroke-linejoin="round" d="m-104.006 966.802-51.218.213m-6.997.029-36.571.152"/>
+        <circle cx="-159.036" cy="967.101" r="1.25" fill="#6ac0c8" stroke="#6ac0c8" stroke-width=".1"/>
+        <path fill="none" stroke="#6ac0c8" stroke-linecap="round" stroke-linejoin="round" d="M-192.308 973.68q.017.225.187 2.184.171 1.959.357 3.645t.451 3.492.666 3.883q.401 2.076 2.439 9.723l.175.696m-5.42-7.35.244.396q.149.115.412.437l.406.499q.144.179.892 1.258.747 1.078 1.549 2.25t1.153 1.663.646.875m.259-.597q.049-.491.033-3.191-.016-2.701.031-5.509.012-.061.022-.732"/>
+        <path fill="none" stroke="#f66640" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m-106.413 974.31 7.907-18.492m.089.011 4.764 19.403m-15.795-12.423 15.778 12.39m-15.672-13.072 20.64 1.891m-17.871 10.555 17.902-10.471"/>
+    </g>
+    <g transform="translate(670.707 -1049.211)scale(1.33333)">
+        <path fill="none" stroke="#9378e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="m40.981 1047.615 20.096-80.954"/>
+        <path fill="none" stroke="#6ac0c8" stroke-linecap="round" stroke-linejoin="round" d="m97.08 967.434-32.748.136m-7.18.03-55.935.233"/>
+        <circle cx="60.797" cy="967.39" r="1.25" fill="#6ac0c8" stroke="#6ac0c8" stroke-width=".1"/>
+        <path fill="none" stroke="#6ac0c8" stroke-linecap="round" stroke-linejoin="round" d="M6.784 973.865q.017.225.188 2.184t.356 3.645.451 3.492.666 3.883q.401 2.076 2.44 9.723l.174.696m-5.42-7.35.244.396q.149.115.412.437l.406.499q.144.179.892 1.258t1.55 2.25q.801 1.172 1.152 1.663t.646.875m.259-.597q.049-.491.033-3.191-.016-2.701.031-5.509.012-.061.022-.732"/>
+        <path fill="none" stroke="#f66640" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m93.596 974.947 7.908-18.492m.088.011 4.764 19.403m-15.795-12.423 15.778 12.39m-15.671-13.072 20.64 1.89M93.436 975.21l17.903-10.471"/>
+    </g>
+    <text xml:space="preserve" x="168.419" y="422.121" style="font-size:18.6667px;font-family:&quot;JetBrains Mono&quot;;-inkscape-font-specification:&quot;JetBrains Mono&quot;;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#fff;stroke-width:1.33417;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"><tspan x="168.419" y="422.121">fig 21</tspan></text>
+    <text xml:space="preserve" x="441.985" y="422.121" style="font-size:18.6667px;font-family:&quot;JetBrains Mono&quot;;-inkscape-font-specification:&quot;JetBrains Mono&quot;;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#fff;stroke-width:1.33417;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"><tspan x="441.985" y="422.121">fig 22</tspan></text>
+    <text xml:space="preserve" x="715.328" y="422.121" style="font-size:18.6667px;font-family:&quot;JetBrains Mono&quot;;-inkscape-font-specification:&quot;JetBrains Mono&quot;;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#fff;stroke-width:1.33417;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"><tspan x="715.328" y="422.121">fig 23</tspan></text>
+</svg>
