@@ -44,6 +44,31 @@ code {
     background-color: #282c34;
 }
 
+a.footnote-ref,
+a.footnote-backref {
+    font-family: f.$font-monospace;
+    text-decoration: none;
+
+    &::before {
+        content: "[";
+    }
+
+    &::after {
+        content: "]";
+    }
+}
+
+.footnotes {
+    & > ol > li {
+        padding: 0 0.5ch;
+    }
+
+    :target {
+        outline: 2px solid c.$pink;
+        border-radius: 5px;
+    }
+}
+
 // Visually distinct headers
 
 h1,
