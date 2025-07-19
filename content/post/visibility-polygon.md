@@ -1,5 +1,6 @@
 ---
-title: "Visibility Polygon calculation"
+title: "In search of the Visibility Polygon"
+description: "Implementing visibility polygon calculation based on the algorithm of Asano"
 date: 2025-07-13T22:00:00Z
 tags: [Maths]
 toc: true
@@ -7,11 +8,34 @@ math: true
 draft: true
 ---
 
-{{< figure src=`visibility.svg` >}}
+I have been building a 2D game for fun recently.
+Once I implemented a basic lighting system for it, I understood that I want game objects to cast shadows.
+There are multiple ways to achieve that, and the approach I selected is based on visibility polygons.
 
-... Context ...
+{{< figure src=`render.webp` caption=`A frame from the game I am building, with differently colored flames lighting up different areas based on their visibility` >}}
 
-## Used terminology
+A visibility polygon represents the area that, for a given arrangement of occluding objects, has a direct line of sight to a certain point (called the *query point*).
+You can read more about them here:
+
+- [Visibility polygon](https://en.wikipedia.org/wiki/Visibility_polygon) on Wikipedia
+- [2D Visibility](https://www.redblobgames.com/articles/visibility/) on Red Blob Games
+
+{{< figure src=`visibility.svg` caption=`This is what a visibility polygon looks like. The occluding objects are purple, the polygon is yellow, and the query point is red.` >}}
+
+I found the problem of finding the visibility polygon interesting, so I decided to implement an algorithm that can calculate them.
+The algorithm I implemented is based on a description I found in [^bungiu-2014] under the section "3.2 Algorithm of Asano".
+
+That paper actually suggests a different algorithm for this problem, but I found the algorithm of Asano more fun.
+That paper also references a source for the algorithm [^asano-1985] , but... I found the short description more fun to work with.
+Also, [^asano-1985] is quite hard to access.
+
+[^bungiu-2014]: Francisc Bungiu, Michael Hemmer, John Hershberger, Kan Huang, Alexander Kröller (2014). [Efficient Computation of Visibility Polygons](https://arxiv.org/abs/1403.3905).
+
+[^asano-1985]: Asano, Tetsuo (1985). An efficient algorithm for finding the visibility polygon for a polygonal region with holes. Institute of Electronics, Information, and Communication Engineers. Vol. 68. pp. 557–559.
+
+...
+
+## Terminology
 
 Used terminology:
 
@@ -43,6 +67,10 @@ An intersection of two segments [^segment-intersection] can be one of:
 [^line-intersection]: [Line–line intersection](https://en.wikipedia.org/wiki/Line–line_intersection) on Wikipedia
 [^segment-intersection]: [Intersection of two line segments](<https://en.wikipedia.org/wiki/Intersection_(geometry)#Two_line_segments>) on Wikipedia
 [^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
+
+## Determining whether a point lies in a half-plane
+
+...
 
 ## Ordering segments by distance to a point
 
