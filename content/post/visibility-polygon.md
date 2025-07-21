@@ -9,7 +9,7 @@ draft: true
 ---
 
 $$
-\newcommand{\coloneqq}{\mathrel{\vcenter{\colon}}=}
+\newcommand{\defined}{\mathrel{\vcenter{\colon}}=}
 $$
 
 I have been building a 2D game for fun recently.
@@ -30,97 +30,222 @@ I found the problem of finding the visibility polygon interesting, so I decided 
 The algorithm I implemented is based on a description I found in [^bungiu-2014] under the section "3.2 Algorithm of Asano".
 
 That paper actually suggests a different algorithm for this problem, but I found the algorithm of Asano more fun.
-That paper also references a source for the algorithm [^asano-1985] , but... I found the short description more interesting to work with.
+That paper also references a source for the algorithm [^asano-1985] , but I found the short description more interesting to work with.
 Also, [^asano-1985] is quite hard to access.
 
 [^bungiu-2014]: Francisc Bungiu, Michael Hemmer, John Hershberger, Kan Huang, Alexander Kröller (2014). [Efficient Computation of Visibility Polygons](https://arxiv.org/abs/1403.3905).
 
 [^asano-1985]: Asano, Tetsuo (1985). An efficient algorithm for finding the visibility polygon for a polygonal region with holes. Institute of Electronics, Information, and Communication Engineers. Vol. 68. pp. 557–559.
 
-## Terminology
+In this post I will describe the implementation of that algorithm.
+There are some basic concepts I expect the reader to be familiar with.
+For completeness, I will introduce those concepts now.
+There will be some additional ideas that I will explain in more detail further in the post.
 
-To explain the algorithm, I will need to use some basic terminology.
-There will be some additional concepts that I will explain in more detail in the process.
+{{% aside %}}
+I want the post to be enjoyable, but I also want it to be precise in the areas that matter.
+I don't want to overuse the mathematical notation and make the post unwelcoming, so I will do my best to keep it simple.
 
-- A *point* is a pair of coordinates in a Euclidean plane [^euclidean-plane]
-- A *line* is a set of points that is infinitely long and has no width [^line]
-    - A line can be defined by two points
-- A *segment* is an uninterrupted subset of a line [^segment]
-    - A segment is defined and bounded by two distinct endpoints
-    - A *closed segment* is a segment that includes both of its endpoints, only closed segments are discussed on this page
+Mathematical notation in the post should be supplementary to the text.
+In other words, the text should make sense on its own, but the math notes may make it easier to understand.
+
+I guess I am also a bit worried about using the notation wrong or being not pedantic enough.
+But oh well, I am learning here.
+{{% /aside %}}
+
+{{% details `Notation` %}}
+
+- \(\forall ...\) means "for all ..."
+- \(\exists ...\) means "there exists ... such that"
+- \(... \land ...\) means "... and ... (are true)"
+- \(... \lor ...\) means "... or ... (or both) (are true)"
+- \(... \implies ...\) means "... implies ..."
+- \(... \iff ...\) means "... if and only if ..."
+- \(... \, \defined \, ...\) means "... is defined as ..."
+
+A *set* is a collection of objects / elements.
+
+- \(\varnothing \defined \{\}\) is an empty set
+- \(A = \{a, b, c\}\) and \(B = \{0, 1, 2, \dots\}\) are sets defined by enumeration
+- \(A = \{\text{expression} \, | \, \text{condition}\}\) is a set of values of the "\(\text{expression}\)" for which the "\(\text{condition}\)" holds true
+- \(a \in A\) means "object \(a\) is an element of set \(A\)"
+
+\(A \subseteq B\) means "\(A\) is a subset of \(B\)":
+
+- \(A \subseteq B \implies \forall a \in A: a \in B\)
+- All elements of \(A\) are also elements of \(B\)
+
+\(A \cap B\) means "intersection of \(A\) and \(B\)":
+
+- \(A \cap B \defined \{x \, | \, x \in A \land x \in B\}\)
+- Set of all objects that are present both in set \(a\) and set \(b\)
+
+\(\mathbb{R}\) denotes the set of all real numbers [^real-number].
+
+\(\mathbb{R}^2\) is a set of all pairs of real numbers:
+
+$$
+\mathbb{R}^2 \defined \{(a, b) \, | \, a \in \mathbb{R}, b \in \mathbb{R}\}
+$$
+
+[^real-number]: [Real number](https://en.wikipedia.org/wiki/Real_number) on Wikipedia
+
+{{% /details %}}
+
+{{% details `Basic concepts` %}}
+
+A *point* is an element of \(\mathbb{R}^2\).
+It represents a location in Euclidean plane [^euclidean-plane].
+
+$$
+\text{point } A = (x, y)
+$$
+
+A *vector* is also an element of \(\mathbb{R}^2\).
+It represents an object with magnitude (length) and direction [^euclidean-vector].
+
+$$
+\text{vector } \vec{v} = (x, y)
+$$
+
+$$
+\begin{align}
+A =& (x_1, y_1) \\
+B =& (x_2, y_2) \\
+\text{vector } \overrightarrow{AB} \defined& (x_2 - x_1, y_2 - y_1) \\
+\end{align}
+$$
+
+\(\overrightarrow{AB}\) is a vector from point \(A\) to point \(B\), but it does not *start* in \(A\).
+It merely represents "how to get to point \(B\) if you are in point \(A\)".
+If you are not in point \(A\), it will take you somewhere else.
+
+A *line* is a set of points that is infinitely long and has no width [^line].
+It can be defined by two distinct points.
+
+$$
+\begin{align}
+A =& (x_1, y_1) \\
+B =& (x_2, y_2) \\
+\text{line } AB \defined& \{(x, y) \, | \, (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \} \\
+\end{align}
+$$
+
+A *segment* is an uninterrupted subset of a line [^segment].
+It is defined and bounded by two distinct endpoints.
+This post only discusses *closed segments*, which are segments that include both of its endpoints.
+
+$$
+\begin{align}
+\text{segment } &\overline{s} \\
+\text{segment } &\overline{AB} \\
+\end{align}
+$$
 
 [^euclidean-plane]: [Euclidean plane](https://en.wikipedia.org/wiki/Euclidean_plane) on Wikipedia
+[^euclidean-vector]: [Euclidean vector](https://en.wikipedia.org/wiki/Euclidean_vector) on Wikipedia
 [^line]: [Line](<https://en.wikipedia.org/wiki/Line_(geometry)>) on Wikipedia
 [^segment]: [Line segment](https://en.wikipedia.org/wiki/Line_segment) on Wikipedia
+
+---
 
 Collinearity [^collinearity]:
 - A point is collinear with a segment if it lies on the line defined by that segment's endpoints
 - A pair of segments is collinear if all of their points are on the same line
+
+[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
+
+$$
+\begin{align}
+\forall P, A, B, C, D \in& \, \mathbb{R}^2: \\
+P \text{ collinear } \overline{AB} \iff& P \in AB \\
+\overline{AB} \text{ collinear } \overline{CD} \iff& AB = CD \\
+\end{align}
+$$
 
 An intersection of two lines [^line-intersection] can be one of:
 - An empty set (then the two lines are *parallel*)
 - A single point
 - A line (then the lines are equal)
 
+$$
+\begin{align}
+\forall A, B, C, D \in& \, \mathbb{R}^2: \\
+AB \cap CD =& \varnothing \\
+\lor AB \cap CD =& \{P\} \text{ - a single point} \\
+\lor AB \cap CD =& AB = CD \\
+\end{align}
+$$
+
+[^line-intersection]: [Line–line intersection](https://en.wikipedia.org/wiki/Line–line_intersection) on Wikipedia
+
 An intersection of two segments [^segment-intersection] can be one of:
 - An empty set (no intersection, the segments may still be parallel and collinear)
 - A single point
 - A segment (then the segments are collinear, but may not be equal)
 
-[^line-intersection]: [Line–line intersection](https://en.wikipedia.org/wiki/Line–line_intersection) on Wikipedia
+$$
+\begin{align}
+\forall A, B, C, D \in& \, \mathbb{R}^2: \\
+\overline{AB} \cap \overline{CD} =& \varnothing \\
+\lor \overline{AB} \cap \overline{CD} =& \{P\} \text{ - a single point} \\
+\lor \overline{AB} \cap \overline{CD} =& \overline{EF} \text { - a segment} \\
+\end{align}
+$$
+
+Here, \(\overline{EF} \subseteq \overline{AB}\) and \(\overline{EF} \subseteq \overline{CD}\).
+
 [^segment-intersection]: [Intersection of two line segments](<https://en.wikipedia.org/wiki/Intersection_(geometry)#Two_line_segments>) on Wikipedia
-[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
 
-## The Algorithm
+{{% /details %}}
 
-### Overview
+## Overview of the algorithm
 
 The algorithm needs the following inputs:
+
 - \(Q\) -- the query point
 
 $$
 Q \in \mathbb{R}^2
 $$
 
-- \(\mathbb{S}\) -- the set of \(n\) occluding segments
+- \(\mathbf{S}\) -- the set of \(n\) occluding segments
 
 $$
-\mathbb{S} \coloneqq \{ s_1, s_2, \dots, s_n \}
+\mathbf{S} = \{ \overline{s_1}, \overline{s_2}, \dots, \overline{s_n} \}
 $$
 
-In \(\mathbb{S}\), each \(s_n\) is a segment between its endpoints \(A_n\) and \(B_n\):
-
-$$
-\begin{align}
-s_n \coloneqq& \, \overline{A_n B_n} \\
-A_n \in& \, \mathbb{R}^2 \\
-B_n \in& \, \mathbb{R}^2 \\
-\end{align}
-$$
-
-In \(\mathbb{S}\), segments are only allowed to intersect at their ends:
+In \(\mathbf{S}\), segments are only allowed to intersect at their ends:
 
 $$
 \begin{align}
-\forall s_j, s_k \in& \, \mathbb{S}, s_j \neq s_k \colon \\
-\text{either } s_j \cap s_k =& \, \varnothing, \\
-\text{or } s_j \cap s_k =& \{E \text{ - endpoint of both } s_j \text{ and } s_k \} \\
+\forall \overline{AB}, \overline{CD} \in& \, \mathbf{S}, \overline{AB} \neq \overline{CD} : \\
+\overline{AB} \cap \overline{CD} =& \, \varnothing \\
+\lor \overline{AB} \cap \overline{CD} =& \{E\} \\
 \end{align}
 $$
 
-In \(\mathbb{S}\), segments may not contain the point \(Q\):
+$$
+\text {where } (E = A \lor E = B) \land (E = C \lor E = D)) \\
+$$
+
+In \(\mathbf{S}\), segments may not contain the point \(Q\):
 
 $$
-\forall s \in \, \mathbb{S} \colon Q \notin s
+\forall \overline{s} \in \, \mathbf{S} \colon Q \notin s
 $$
 
 ---
 
-Define a function `angle` that receives a single point \(P\) and returns the angle between the vector \(\overrightarrow{QP}\) and the X-axis.
+Based on the inputs, we can now define several functions:
+
+- \(\text{angle}_Q(P)\) receives a single point \(P\) and returns the angle between the vector \(\overrightarrow{QP}\) and the X-axis
 
 $$
-\text{angle} \colon \mathbb{R}^2 \rightarrow \mathbb{R}
+\text{angle}_Q \colon \mathbb{R}^2 \rightarrow \mathbb{R}
 $$
+
+...
 
 Define a function `order_endpoints` that receives a single segment \(s\) and determines which of its endpoints is a "start event", and which is the "end event" with respect to \(Q\).
 In other words, it "reorders" the endpoints of the segment so that the first one is always the "start", and the other one is always the "end".
@@ -141,11 +266,11 @@ Then, to calculate the visibility polygon:
 
 ...
 
-### Determining whether a point lies in a half-plane
+## Determining whether a point lies in a half-plane
 
 ...
 
-### Ordering segments by distance to a point
+## Ordering segments by distance to a point
 
 The algorithm features a segment comparison routine that is aimed at decreasing the cost of performing the comparison by reducing the number of required floating point operations.
 
@@ -157,11 +282,11 @@ The cheap segment comparison routine is **only valid under the following assumpt
 The comparison routine can be simplified if all segments collinear with the query point are removed from the input data.
 For completeness, cases when the query point is collinear with the segments are still considered below.
 
-#### The segments are collinear
+### The segments are collinear
 
 {{< figure src=`segments-both-collinear.svg` >}}
 
-#### One of the segments is collinear with the query point
+### One of the segments is collinear with the query point
 
 {{< figure src=`segments-collinear-pointing.svg` >}}
 
@@ -169,7 +294,7 @@ For completeness, cases when the query point is collinear with the segments are 
 
 {{< figure src=`segments-collinear.svg` >}}
 
-#### None of the segments are collinear with the query point
+### None of the segments are collinear with the query point
 
 {{< figure src=`segments-pointing.svg` >}}
 
@@ -177,7 +302,7 @@ For completeness, cases when the query point is collinear with the segments are 
 
 {{< figure src=`segments.svg` >}}
 
-### Calculating the visibility polygon
+## Calculating the visibility polygon
 
 {{< figure src=`example-1.svg` >}}
 
@@ -187,6 +312,6 @@ For completeness, cases when the query point is collinear with the segments are 
 
 {{< figure src=`example-4.svg` >}}
 
-### Edge cases
+## Edge cases
 
 {{< figure src=`edge-cases.svg` >}}
