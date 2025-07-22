@@ -188,6 +188,14 @@ main {
             text-decoration: none;
         }
     }
+
+    .katex-display {
+        overflow-x: auto;
+
+        & > .katex {
+            padding: 0.5em;
+        }
+    }
 }
 
 footer {
