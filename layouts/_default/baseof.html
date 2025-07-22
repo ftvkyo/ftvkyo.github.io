@@ -20,8 +20,10 @@
         {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
         <title>{{ $title }}</title>
 
-        {{ if .Param "math" }}
-            {{ partialCached "math.html" . }}
+        <!-- Force content rendering before checking for "hasMath" -->
+        {{ $noop := .WordCount }}
+        {{ if .Page.Store.Get "hasMath" }}
+            <link href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" rel="stylesheet">
         {{ end }}
     </head>
     <body>

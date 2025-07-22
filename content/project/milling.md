@@ -2,7 +2,6 @@
 title: "Milling calculator"
 description: >
     Calculate speeds and feeds for milling bits.
-math: true
 ---
 
 {{% aside warn %}}
@@ -28,14 +27,14 @@ Code        | Diameter | Flutes | Material    | Link
 ### Settings
 
 Legend:
-- \(V_s\) - surface speed (m/min)
-- \(L\) - chip load (mm)
-- \(v\) - spindle speed (RPM)
-- \(V_f\) - feed XY (mm/min)
+- $V_s$ - surface speed (m/min)
+- $L$ - chip load (mm)
+- $v$ - spindle speed (RPM)
+- $V_f$ - feed XY (mm/min)
 
 #### Material: Acrylic
 
-Tool | \(V_s\) | \(L\) | \(v\) | \(V_f\) | Verdict
+Tool | $V_s$ | $L$ | $v$ | $V_f$ | Verdict
 --- | --- | --- | --- | --- | ---
 `EHC570040` | ~38.1 | 0.025 | 3032 | 152 | Perfect (slow)
 `EHC570040` | ~38.1 | 0.05  | 3032 | 303 | Perfect (medium)

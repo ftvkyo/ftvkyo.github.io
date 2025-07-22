@@ -3,7 +3,6 @@ title: "Procedural generation of organic shapes using Bézier curves"
 date: 2024-07-13T22:00:00Z
 tags: [3D-printing, Procedural generation, Maths]
 toc: true
-math: true
 description: >
   OpenSCAD for the win!
   Even if it means I should implement Bézier curves from scratch.
@@ -138,72 +137,72 @@ For this post, what matters is:
 {{< figure src=`vectors.svg` caption=`Examples of operations on vectors. Left: two vectors. Middle-Top: difference of two vectors. Middle-Bottom: multiplying vectors by scalars. Right-Top: sum of two vectors. Right-Bottom: length of a vector.` >}}
 
 Let's look at the examples.
-Given two vectors \(\vec{A}\) and \(\vec{B}\),
+Given two vectors $\vec{A}$ and $\vec{B}$,
 
-\[
+$$
 \vec{A} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}, \;
 \vec{B} = \begin{bmatrix} 5 \\ 2 \end{bmatrix}
-\]
+$$
 
 Their sum is:
 
-\[
+$$
 \vec{D} = \vec{A} + \vec{B} = \begin{bmatrix} 2 + 5 \\ 4 + 2 \end{bmatrix} = \begin{bmatrix} 7 \\ 6 \end{bmatrix}
-\]
+$$
 
 Their difference is:
 
-\[
+$$
 \vec{C} = \vec{B} - \vec{A} = \begin{bmatrix} 5 - 2 \\ 2 - 4 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-\]
+$$
 
 Multiplying them by a scalar:
 
-\[
+$$
 \begin{align}
   \frac{3}{2} \vec{A} &= \begin{bmatrix} \frac{3}{2} \cdot 2 \\ \frac{3}{2} \cdot 4 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix} \\
   \frac{1}{2} \vec{B} &= \begin{bmatrix} \frac{1}{2} \cdot 5 \\ \frac{1}{2} \cdot 2 \end{bmatrix} = \begin{bmatrix} 2.5 \\ 1 \end{bmatrix} \\
 \end{align}
-\]
+$$
 
 ---
 
-For a different vector \(\vec{A}\),
+For a different vector $\vec{A}$,
 
-\[
+$$
 \vec{A} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}
-\]
+$$
 
-It's length \(\Vert A \Vert\) can be calculated by the [Pythagorean theorem][pythagor]:
+It's length $\Vert A \Vert$ can be calculated by the [Pythagorean theorem][pythagor]:
 
-\[
+$$
 \Vert \vec{A} \Vert = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5
-\]
+$$
 
 [pythagor]: https://en.wikipedia.org/wiki/Pythagorean_theorem
 
 ---
 
-Now, the remaining piece of the puzzle is a function called \(lerp\) which stands for [Linear interpolation][lerp].
-This function receives 3 values: 2 values \(v_0\) and \(v_1\) to interpolate between, and a parameter \(t \in [0, 1]\).
-\(v_0\) and \(v_1\) can be real numbers, but they can also be vectors (with the same dimensionality).
+Now, the remaining piece of the puzzle is a function called $lerp$ which stands for [Linear interpolation][lerp].
+This function receives 3 values: 2 values $v_0$ and $v_1$ to interpolate between, and a parameter $t \in [0, 1]$.
+$v_0$ and $v_1$ can be real numbers, but they can also be vectors (with the same dimensionality).
 
-\(lerp\) can be defined like this:
+$lerp$ can be defined like this:
 
-\[
+$$
   lerp(v_0, v_1, t) := (1 - t) v_0 + t v_1
-\]
+$$
 
-Note the values of the function for \(t\) at the ends of the \([0, 1]\) interval:
+Note the values of the function for $t$ at the ends of the $[0, 1]$ interval:
 
-\[
+$$
 \begin{align}
   lerp(v_0, v_1, 0) &= v_0 \\
   lerp(v_0, v_1, 1) &= v_1 \\
 \end{align}
-\]
+$$
 
-Now, if we calculate \(lerp(\vec{A}, \vec{B}, t)\) for all \(t \in [0, 1]\) for some fixed \(\vec{A}\) and \(\vec{B}\), we get a set of points that live on the line segment connecting \(A\) and \(B\).
+Now, if we calculate $lerp(\vec{A}, \vec{B}, t)$ for all $t \in [0, 1]$ for some fixed $\vec{A}$ and $\vec{B}$, we get a set of points that live on the line segment connecting $A$ and $B$.
 
 {{< figure src=`lerp.svg` caption=`` >}}
 

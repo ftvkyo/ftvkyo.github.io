@@ -4,13 +4,8 @@ description: "Implementing visibility polygon calculation based on the algorithm
 date: 2025-07-13T22:00:00Z
 tags: [Maths, Gamedev]
 toc: true
-math: true
 draft: true
 ---
-
-$$
-\newcommand{\defined}{\mathrel{\vcenter{\colon}}=}
-$$
 
 I have been building a 2D game for fun recently.
 Once I implemented a basic lighting system for it, I understood that I want game objects to cast shadows.
@@ -55,37 +50,37 @@ But oh well, I am learning here.
 
 {{% details `Notation` %}}
 
-- \(\forall ...\) means "for all ..."
-- \(\exists ...\) means "there exists ... such that"
-- \(... \land ...\) means "... and ... (are true)"
-- \(... \lor ...\) means "... or ... (or both) (are true)"
-- \(... \implies ...\) means "... implies ..."
-- \(... \iff ...\) means "... if and only if ..."
-- \(... \, \defined \, ...\) means "... is defined as ..."
+- $\forall ...$ means "for all ..."
+- $\exists ...$ means "there exists ... such that"
+- $... \land ...$ means "... and ... (are true)"
+- $... \lor ...$ means "... or ... (or both) (are true)"
+- $... \implies ...$ means "... implies ..."
+- $... \iff ...$ means "... if and only if ..."
+- $... \, \defineas \, ...$ means "... is defined as ..."
 
 A *set* is a collection of objects / elements.
 
-- \(\varnothing \defined \{\}\) is an empty set
-- \(A = \{a, b, c\}\) and \(B = \{0, 1, 2, \dots\}\) are sets defined by enumeration
-- \(A = \{\text{expression} \, | \, \text{condition}\}\) is a set of values of the "\(\text{expression}\)" for which the "\(\text{condition}\)" holds true
-- \(a \in A\) means "object \(a\) is an element of set \(A\)"
+- $\varnothing \defineas \{\}$ is an empty set
+- $A = \{a, b, c\}$ and $B = \{0, 1, 2, \dots\}$ are sets defined by enumeration
+- $A = \{\text{expression} \, | \, \text{condition}\}$ is a set of values of the "$\text{expression}$" for which the "$\text{condition}$" holds true
+- $a \in A$ means "object $a$ is an element of set $A$"
 
-\(A \subseteq B\) means "\(A\) is a subset of \(B\)":
+$A \subseteq B$ means "$A$ is a subset of $B$":
 
-- \(A \subseteq B \implies \forall a \in A: a \in B\)
-- All elements of \(A\) are also elements of \(B\)
+- $A \subseteq B \implies \forall a \in A: a \in B$
+- All elements of $A$ are also elements of $B$
 
-\(A \cap B\) means "intersection of \(A\) and \(B\)":
+$A \cap B$ means "intersection of $A$ and $B$":
 
-- \(A \cap B \defined \{x \, | \, x \in A \land x \in B\}\)
-- Set of all objects that are present both in set \(a\) and set \(b\)
+- $A \cap B \defineas \{x \, | \, x \in A \land x \in B\}$
+- Set of all objects that are present both in set $a$ and set $b$
 
-\(\mathbb{R}\) denotes the set of all real numbers [^real-number].
+$\mathbb{R}$ denotes the set of all real numbers [^real-number].
 
-\(\mathbb{R}^2\) is a set of all pairs of real numbers:
+$\mathbb{R}^2$ is a set of all pairs of real numbers:
 
 $$
-\mathbb{R}^2 \defined \{(a, b) \, | \, a \in \mathbb{R}, b \in \mathbb{R}\}
+\mathbb{R}^2 \defineas \{(a, b) \, | \, a \in \mathbb{R}, b \in \mathbb{R}\}
 $$
 
 [^real-number]: [Real number](https://en.wikipedia.org/wiki/Real_number) on Wikipedia
@@ -94,14 +89,14 @@ $$
 
 {{% details `Basic concepts` %}}
 
-A *point* is an element of \(\mathbb{R}^2\).
+A *point* is an element of $\mathbb{R}^2$.
 It represents a location in Euclidean plane [^euclidean-plane].
 
 $$
 \text{point } A = (x, y)
 $$
 
-A *vector* is also an element of \(\mathbb{R}^2\).
+A *vector* is also an element of $\mathbb{R}^2$.
 It represents an object with magnitude (length) and direction [^euclidean-vector].
 
 $$
@@ -112,13 +107,13 @@ $$
 \begin{align}
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
-\text{vector } \overrightarrow{AB} \defined& (x_2 - x_1, y_2 - y_1) \\
+\text{vector } \overrightarrow{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
 \end{align}
 $$
 
-\(\overrightarrow{AB}\) is a vector from point \(A\) to point \(B\), but it does not *start* in \(A\).
-It merely represents "how to get to point \(B\) if you are in point \(A\)".
-If you are not in point \(A\), it will take you somewhere else.
+$\overrightarrow{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
+It merely represents "how to get to point $B$ if you are in point $A$".
+If you are not in point $A$, it will take you somewhere else.
 
 A *line* is a set of points that is infinitely long and has no width [^line].
 It can be defined by two distinct points.
@@ -127,7 +122,7 @@ $$
 \begin{align}
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
-\text{line } AB \defined& \{(x, y) \, | \, (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \} \\
+\text{line } AB \defineas& \{(x, y) \, | \, (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \} \\
 \end{align}
 $$
 
@@ -193,7 +188,7 @@ $$
 \end{align}
 $$
 
-Here, \(\overline{EF} \subseteq \overline{AB}\) and \(\overline{EF} \subseteq \overline{CD}\).
+Here, $\overline{EF} \subseteq \overline{AB}$ and $\overline{EF} \subseteq \overline{CD}$.
 
 [^segment-intersection]: [Intersection of two line segments](<https://en.wikipedia.org/wiki/Intersection_(geometry)#Two_line_segments>) on Wikipedia
 
@@ -203,19 +198,19 @@ Here, \(\overline{EF} \subseteq \overline{AB}\) and \(\overline{EF} \subseteq \o
 
 The algorithm needs the following inputs:
 
-- \(Q\) -- the query point
+- $Q$ -- the query point
 
 $$
 Q \in \mathbb{R}^2
 $$
 
-- \(\mathbf{S}\) -- the set of \(n\) occluding segments
+- $\mathbf{S}$ -- the set of $n$ occluding segments
 
 $$
 \mathbf{S} = \{ \overline{s_1}, \overline{s_2}, \dots, \overline{s_n} \}
 $$
 
-In \(\mathbf{S}\), segments are only allowed to intersect at their ends:
+In $\mathbf{S}$, segments are only allowed to intersect at their ends:
 
 $$
 \begin{align}
@@ -229,7 +224,7 @@ $$
 \text {where } (E = A \lor E = B) \land (E = C \lor E = D)) \\
 $$
 
-In \(\mathbf{S}\), segments may not contain the point \(Q\):
+In $\mathbf{S}$, segments may not contain the point $Q$:
 
 $$
 \forall \overline{s} \in \, \mathbf{S} \colon Q \notin s
@@ -239,7 +234,7 @@ $$
 
 Based on the inputs, we can now define several functions:
 
-- \(\text{angle}_Q(P)\) receives a single point \(P\) and returns the angle between the vector \(\overrightarrow{QP}\) and the X-axis
+- $\text{angle}_Q(P)$ receives a single point $P$ and returns the angle between the vector $\overrightarrow{QP}$ and the X-axis
 
 $$
 \text{angle}_Q \colon \mathbb{R}^2 \rightarrow \mathbb{R}
@@ -247,18 +242,18 @@ $$
 
 ...
 
-Define a function `order_endpoints` that receives a single segment \(s\) and determines which of its endpoints is a "start event", and which is the "end event" with respect to \(Q\).
+Define a function `order_endpoints` that receives a single segment $s$ and determines which of its endpoints is a "start event", and which is the "end event" with respect to $Q$.
 In other words, it "reorders" the endpoints of the segment so that the first one is always the "start", and the other one is always the "end".
 
 $$
-\text{order_endpoints} \colon (\mathbb{R}^2, \mathbb{R}^2) \rightarrow (\mathbb{R}^2, \mathbb{R}^2)
+\text{orderendpoints} \colon (\mathbb{R}^2, \mathbb{R}^2) \rightarrow (\mathbb{R}^2, \mathbb{R}^2)
 $$
 
 ---
 
 Then, to calculate the visibility polygon:
 
-1. Sort endpoints \(E_m\) of all segments by the value \(\text{angle(}E_m\text{)}\), keeping track of which segment \(n\) they came from and whether they are a "start" or an "end" event
+1. Sort endpoints $E_m$ of all segments by the value $\text{angle(}E_m\text{)}$, keeping track of which segment $n$ they came from and whether they are a "start" or an "end" event
 
 2. Go over all of the events once to determine which segments are "active" at angle zero
 

@@ -1,7 +1,6 @@
 ---
 title: "OpenSCAD snippets"
 toc: true
-math: true
 description: Some snapshots of my OpenSCAD adventures
 ---
 
@@ -25,7 +24,7 @@ Additionally, OpenSCAD's boolean operations with polyhedra are not very fast.
 Smoothing the results with something like a Minkowski sum of the shape's edge and a sphere would be painfully slow, and the result still won't be as smooth as this.
 
 What I really like about this one, is that it took me just a couple minutes to implement tilting of individual slices to make the waves actually "bend" rather than "bob".
-I used the fact that if \( f(\alpha) = cos(\alpha) \), and \( f(\alpha) \) is the slice "bobbing" function, then \( f'(\alpha) = -sin(\alpha) \) which provides the tilt.
+I used the fact that if $f(\alpha) = cos(\alpha)$, and $f(\alpha)$ is the slice "bobbing" function, then $f'(\alpha) = -sin(\alpha)$ which provides the tilt.
 And then guesstimated some magic coefficients because I couldn't be bothered.
 
 {{< figure src=`wavy-donut-5.webp` caption=`The same wavy donut, but with 5 waves` >}}

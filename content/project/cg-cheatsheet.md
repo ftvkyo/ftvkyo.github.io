@@ -1,7 +1,6 @@
 ---
 title: "Computer Graphics cheatsheet"
 toc: true
-math: true
 ---
 
 ## Coordinate systems

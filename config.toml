@@ -9,15 +9,33 @@ buildDrafts = true
 minifyOutput = true
 
 
+[markup]
+# Reference: https://gohugo.io/getting-started/configuration-markup/
+
+[markup.highlight]
+style = "onedark"
+guessSyntax = true
+
+[markup.goldmark.renderer]
+# Enable raw HTML in the pages.
+unsafe = true
+
+[markup.goldmark.extensions.typographer]
+leftDoubleQuote = "&laquo;"
+rightDoubleQuote = "&raquo;"
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['$$', '$$']]
+inline = [['$', '$']]
+
+
 [params]
 dateFormat = "Jan 2, 2006"
-# Override on per-page basis
-math = false
-
 footer = "© Andrei"
-
 figureSrc = "/img"
-
 readingTimeSections = ["/post"]
 
 # Font sizes to use for different thresholds of posts with tag
@@ -90,28 +108,3 @@ weight = 30
 name = "[ftvkyo.me](https://ftvkyo.me)"
 params = { img = "icon/person.svg" }
 weight = 40
-
-
-[markup]
-# Reference: https://gohugo.io/getting-started/configuration-markup/
-
-[markup.highlight]
-style = "onedark"
-guessSyntax = true
-
-[markup.goldmark]
-
-[markup.goldmark.renderer]
-# Enable raw HTML in the pages.
-unsafe = true
-
-[markup.goldmark.extensions.typographer]
-leftDoubleQuote = "&laquo;"
-rightDoubleQuote = "&raquo;"
-
-[markup.goldmark.extensions.passthrough]
-enable = true
-
-[markup.goldmark.extensions.passthrough.delimiters]
-block = [['\[', '\]'], ['$$', '$$']]
-inline = [['\(', '\)']]

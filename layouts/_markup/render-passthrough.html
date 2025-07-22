@@ -1,0 +1,19 @@
+{{- $macros := dict
+    "\\defineas" "\\mathrel{\\vcenter{\\colon}}="
+}}
+{{- $opts := dict
+    "output" "htmlAndMathml"
+    "strict" "error"
+    "displayMode" (eq .Type "block")
+    "macros" $macros
+}}
+{{- with try (transform.ToMath .Inner $opts) }}
+    {{- with .Err }}
+        {{- $message := "Unable to render mathematical markup to HTML using the 'transform.ToMath' function:" }}
+        {{- $location := $.Position }}
+        {{- errorf "%s\nat %s:\n%s" $message $location . }}
+    {{- else }}
+        {{- .Value }}
+        {{- $.Page.Store.Set "hasMath" true }}
+    {{- end }}
+{{- end -}}
