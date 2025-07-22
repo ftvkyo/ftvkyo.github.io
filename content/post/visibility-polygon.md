@@ -38,14 +38,11 @@ For completeness, I will introduce those concepts now.
 There will be some additional ideas that I will explain in more detail further in the post.
 
 {{% aside %}}
-I want the post to be enjoyable, but I also want it to be precise in the areas that matter.
-I don't want to overuse the mathematical notation and make the post unwelcoming, so I will do my best to keep it simple.
+I want the core ideas presented in the post to be easy to understand, but I also want the post to be useful in practice.
+Because of that, I aim to make the mathematical notation supplementary to the text.
 
-Mathematical notation in the post should be supplementary to the text.
-In other words, the text should make sense on its own, but the math notes may make it easier to understand.
-
-I guess I am also a bit worried about using the notation wrong or being not pedantic enough.
-But oh well, I am learning here.
+I am a bit worried about using the notation in uncommon ways.
+If you have advice, feel free to reach out!
 {{% /aside %}}
 
 {{% details `Notation` %}}
@@ -104,11 +101,11 @@ $$
 $$
 
 $$
-\aligd
+\alig
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
 \text{vector } \vecl{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
-\ealigd
+\ealig
 $$
 
 $\vecl{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
@@ -120,10 +117,13 @@ It can be defined by two distinct points.
 
 $$
 \alig
-A =& (x_1, y_1) \\
-B =& (x_2, y_2) \\
-\text{line } AB \defineas& \{(x, y) \, | \, (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \} \\
+A &= (x_1, y_1) \\
+B &= (x_2, y_2) \\
 \ealig
+$$
+
+$$
+\text{line } AB \defineas \{(x, y) \, | (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \}
 $$
 
 A *segment* is an uninterrupted subset of a line [^segment].
