@@ -1,9 +1,13 @@
 {{- $macros := dict
-    "\\defineas" "\\mathrel{\\vcenter{\\colon}}="
+    "\\defineas" "\\coloneqq"
+    "\\R" "\\mathbb{R}"
+    "\\RR" "\\mathbb{R}^2"
+    "\\vecl" "\\overrightarrow{#1}"
 }}
 {{- $opts := dict
     "output" "htmlAndMathml"
     "strict" "error"
+    "throwOnError" false
     "displayMode" (eq .Type "block")
     "macros" $macros
 }}

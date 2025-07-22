@@ -75,12 +75,12 @@ $A \cap B$ means "intersection of $A$ and $B$":
 - $A \cap B \defineas \{x \, | \, x \in A \land x \in B\}$
 - Set of all objects that are present both in set $a$ and set $b$
 
-$\mathbb{R}$ denotes the set of all real numbers [^real-number].
+$\R$ denotes the set of all real numbers [^real-number].
 
-$\mathbb{R}^2$ is a set of all pairs of real numbers:
+$\RR$ is a set of all pairs of real numbers:
 
 $$
-\mathbb{R}^2 \defineas \{(a, b) \, | \, a \in \mathbb{R}, b \in \mathbb{R}\}
+\RR \defineas \{(a, b) \, | \, a \in \R, b \in \R\}
 $$
 
 [^real-number]: [Real number](https://en.wikipedia.org/wiki/Real_number) on Wikipedia
@@ -89,14 +89,14 @@ $$
 
 {{% details `Basic concepts` %}}
 
-A *point* is an element of $\mathbb{R}^2$.
+A *point* is an element of $\RR$.
 It represents a location in Euclidean plane [^euclidean-plane].
 
 $$
 \text{point } A = (x, y)
 $$
 
-A *vector* is also an element of $\mathbb{R}^2$.
+A *vector* is also an element of $\RR$.
 It represents an object with magnitude (length) and direction [^euclidean-vector].
 
 $$
@@ -104,14 +104,14 @@ $$
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
-\text{vector } \overrightarrow{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
-\end{align}
+\text{vector } \vecl{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
+\end{aligned}
 $$
 
-$\overrightarrow{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
+$\vecl{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
 It merely represents "how to get to point $B$ if you are in point $A$".
 If you are not in point $A$, it will take you somewhere else.
 
@@ -152,7 +152,7 @@ Collinearity [^collinearity]:
 
 $$
 \begin{align}
-\forall P, A, B, C, D \in& \, \mathbb{R}^2: \\
+\forall P, A, B, C, D \in& \, \RR: \\
 P \text{ collinear } \overline{AB} \iff& P \in AB \\
 \overline{AB} \text{ collinear } \overline{CD} \iff& AB = CD \\
 \end{align}
@@ -165,7 +165,7 @@ An intersection of two lines [^line-intersection] can be one of:
 
 $$
 \begin{align}
-\forall A, B, C, D \in& \, \mathbb{R}^2: \\
+\forall A, B, C, D \in& \, \RR: \\
 AB \cap CD =& \varnothing \\
 \lor AB \cap CD =& \{P\} \text{ - a single point} \\
 \lor AB \cap CD =& AB = CD \\
@@ -181,7 +181,7 @@ An intersection of two segments [^segment-intersection] can be one of:
 
 $$
 \begin{align}
-\forall A, B, C, D \in& \, \mathbb{R}^2: \\
+\forall A, B, C, D \in& \, \RR: \\
 \overline{AB} \cap \overline{CD} =& \varnothing \\
 \lor \overline{AB} \cap \overline{CD} =& \{P\} \text{ - a single point} \\
 \lor \overline{AB} \cap \overline{CD} =& \overline{EF} \text { - a segment} \\
@@ -201,7 +201,7 @@ The algorithm needs the following inputs:
 - $Q$ -- the query point
 
 $$
-Q \in \mathbb{R}^2
+Q \in \RR
 $$
 
 - $\mathbf{S}$ -- the set of $n$ occluding segments
@@ -227,17 +227,17 @@ $$
 In $\mathbf{S}$, segments may not contain the point $Q$:
 
 $$
-\forall \overline{s} \in \, \mathbf{S} \colon Q \notin s
+\forall \overline{s} \in \, \mathbf{S} : Q \notin s
 $$
 
 ---
 
 Based on the inputs, we can now define several functions:
 
-- $\text{angle}_Q(P)$ receives a single point $P$ and returns the angle between the vector $\overrightarrow{QP}$ and the X-axis
+- $\text{angle}_Q(P)$ receives a single point $P$ and returns the angle between the vector $\vecl{QP}$ and the X-axis
 
 $$
-\text{angle}_Q \colon \mathbb{R}^2 \rightarrow \mathbb{R}
+\text{angle}_Q : \RR \rightarrow \R
 $$
 
 ...
@@ -246,7 +246,7 @@ Define a function `order_endpoints` that receives a single segment $s$ and deter
 In other words, it "reorders" the endpoints of the segment so that the first one is always the "start", and the other one is always the "end".
 
 $$
-\text{orderendpoints} \colon (\mathbb{R}^2, \mathbb{R}^2) \rightarrow (\mathbb{R}^2, \mathbb{R}^2)
+\text{orderendpoints} : (\RR, \RR) \rightarrow (\RR, \RR)
 $$
 
 ---
