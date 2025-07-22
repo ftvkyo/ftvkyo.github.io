@@ -48,7 +48,7 @@ $a \land b$     | $a$ and $b$ (are true)
 $a \lor b$      | $a$ or $b$ (or both) (are true)
 $a \implies b$  | $a$ implies $b$
 $a \iff b$      | $a$ if and only if $b$
-$a \defineas b$ | $a$ is defined as $b$
+$a := b$        | $a$ is defined as $b$
 
 A *set* is a collection of objects, which are called *elements* of the set.
 The order of the elements in the set does not matter.
@@ -61,7 +61,7 @@ $$
 $$
 
 $$
-\text{Empty set } \varnothing \defineas \{\}.
+\text{Empty set } \varnothing := \{\}.
 $$
 
 Sets can be declared by specifying the rules of element inclusion.
@@ -74,7 +74,7 @@ $$
 For example, the set of all integers
 
 $$
-\mathbb{Z} \defineas \{n \, | \, n \text{ is an integer} \}.
+\mathbb{Z} := \{n \, | \, n \text{ is an integer} \}.
 $$
 
 The following are some symbols related to sets:
@@ -90,7 +90,7 @@ A \subseteq B \implies \forall a \in A : a \in B.
 $$
 
 $$
-A \cap B \defineas \{a \, | \, a \in A \land a \in B \}.
+A \cap B := \{a \, | \, a \in A \land a \in B \}.
 $$
 
 The set of all real numbers [^real-number] is denoted as $\R$.
@@ -98,7 +98,7 @@ The set of all real numbers [^real-number] is denoted as $\R$.
 The set of all pairs of real numbers
 
 $$
-\RR \defineas \{(a, b) \, | \, a \in \R \land b \in \R\}.
+\RR := \{(a, b) \, | \, a \in \R \land b \in \R\}.
 $$
 
 [^real-number]: [Real number](https://en.wikipedia.org/wiki/Real_number) on Wikipedia
@@ -154,9 +154,9 @@ $$
 $$
 
 An intersection of two lines [^line-intersection] can be one of:
-- An empty set (then the two lines are *parallel*)
-- A single point
-- A line (then the lines are equal)
+- An empty set (then the two lines are *parallel*),
+- A single point,
+- A line (then the lines are equal).
 
 $$
 \alig
@@ -171,9 +171,9 @@ $$
 [^line-intersection]: [Line–line intersection](https://en.wikipedia.org/wiki/Line–line_intersection) on Wikipedia
 
 An intersection of two segments [^segment-intersection] can be one of:
-- An empty set (no intersection, the segments may still be parallel and collinear)
-- A single point
-- A segment (then the segments are collinear, but may not be equal)
+- An empty set (no intersection, the segments may still be parallel and collinear),
+- A single point,
+- A segment (then the segments are collinear, but may not be equal).
 
 $$
 \alig
@@ -190,41 +190,72 @@ $$
 
 {{% /details %}}
 
-## Overview of the algorithm
+## Algorithm inputs and outputs
 
 The algorithm needs the following inputs:
 
-- $Q$ -- the query point
+- a query point $Q$,
+- a set of segments $\mathbf{S}$.
+
+No segment in $\mathbf{S}$ should include $Q$.
 
 $$
-Q \in \RR
+\forall \overline{s} \in \mathbf{S} : Q \notin \overline{s}.
 $$
 
-- $\mathbf{S}$ -- the set of $n$ occluding segments
-
-$$
-\mathbf{S} = \{ \overline{s_1}, \overline{s_2}, \dots, \overline{s_n} \}
-$$
-
-In $\mathbf{S}$, segments are only allowed to intersect at their ends:
+No two distinct segments in $\mathbf{S}$ are allowed to intersect, unless their intersection is a single point that is an endpoint of both of those segments.
 
 $$
 \alig
-\forall \overline{AB}, \overline{CD} \in& \, \mathbf{S}, \overline{AB} \neq \overline{CD} : \\
-\overline{AB} \cap \overline{CD} =& \, \varnothing \\
-\lor \overline{AB} \cap \overline{CD} =& \{E\} \\
+& \forall \overline{AB}, \overline{CD} \in \mathbf{S}, \, \overline{AB} \neq \overline{CD} : \\
+& \overline{AB} \cap \overline{CD} = \varnothing \\
+& \lor \, \overline{AB} \cap \overline{CD} = \{E\}, \\
+\text {where } & E \in \{A, B\} \land E \in \{C, D\} \\
 \ealig
 $$
 
-$$
-\text {where } (E = A \lor E = B) \land (E = C \lor E = D)) \\
-$$
-
-In $\mathbf{S}$, segments may not contain the point $Q$:
+Running the algorithm produces a set of segments $\mathbf{S}_Q$ that represents the surfaces visible from $Q$.
+Each segment in $\mathbf{S}_Q$ is a subset of some segment from $\mathbf{S}$.
 
 $$
-\forall \overline{s} \in \, \mathbf{S} : Q \notin s
+\mathbf{S}_Q := \text{calculateVisibility} (Q, \mathbf{S}). \\
 $$
+
+$$
+\forall \overline{q} \in \mathbf{S}_Q, \exists \overline{s} \in \mathbf{S} : \overline{q} \subseteq \overline{s}.
+$$
+
+{{% aside %}}
+As you are going to see, this has some implications on the produced output.
+Basically, if there are no segments in some direction relative to $Q$, there won't be any surfaces visible there.
+
+For practical applications such as determining the area illuminated from $Q$, the solution is quite simple: $\mathbf{S}$ is made to include a bunch of segments that completely encompass all of the other segments.
+
+This way, there would be at least one segment in $\mathbf{S}$ for every direction relative to $Q$.
+{{% /aside %}}
+
+From $\mathbf{S}_Q$, the actual polygon can be obtained by combining the endpoints of each of the segments in $\mathbf{S}_Q$ with $Q$ to form triangles.
+The polygon is the union of all such triangles
+
+$$
+\text{Vis}_{QS} := \{P \, | \, \overline{AB} \in \mathbf{S}_Q, P \in \triangle ABQ \}.
+$$
+
+The outline of the polygon can also be trivially generated with a slight modification to the algorithm, which is left as an exercise for the reader.
+
+## Algorithm overview
+
+The algorithm consists of several steps:
+
+1. ...
+
+{{< figure src=`example-1.svg` >}}
+
+{{< figure src=`example-2.svg` >}}
+
+{{< figure src=`example-3.svg` >}}
+
+{{< figure src=`example-4.svg` >}}
 
 ---
 
@@ -295,13 +326,7 @@ For completeness, cases when the query point is collinear with the segments are 
 
 ## Calculating the visibility polygon
 
-{{< figure src=`example-1.svg` >}}
-
-{{< figure src=`example-2.svg` >}}
-
-{{< figure src=`example-3.svg` >}}
-
-{{< figure src=`example-4.svg` >}}
+...
 
 ## Edge cases
 

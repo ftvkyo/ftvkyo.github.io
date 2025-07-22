@@ -1,7 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 960 480">
     <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="#9378e3" stroke-width="6.667" d="M402.667 290.695H456v53.333h-53.333zm133.333-80V317.36h26.667V210.695zm-80-26.667h160v-26.667H456z"/>
-        <path stroke="#f66640" stroke-width="3.333" d="m473.528 247.073 10.544-24.654m.118.014 6.351 25.87m-21.06-16.563 21.038 16.52m-20.895-17.43 27.52 2.52m-23.829 14.075 23.87-13.961"/>
+        <path stroke="#9378e3" stroke-width="10" d="M325.672 305.295h80v80h-80Zm200-120v159.998h40V185.295Zm-120-40h240v-40h-240Z"/>
+        <path stroke="#f66640" stroke-width="5" d="m431.964 239.862 15.816-36.98m.177.02 9.526 38.805m-31.59-24.844 31.557 24.78m-31.342-26.145 41.28 3.78m-35.744 21.112 35.805-20.941"/>
     </g>
-    <text xml:space="preserve" x="446.738" y="424.228" style="font-size:18.6667px;font-family:&quot;JetBrains Mono&quot;;-inkscape-font-specification:&quot;JetBrains Mono&quot;;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#fff;stroke-width:1.33417;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"><tspan x="446.738" y="424.228">fig 17</tspan></text>
+    <text xml:space="preserve" x="83.899" y="250.287" style="font-size:18.6667px;font-family:&quot;JetBrains Mono&quot;;-inkscape-font-specification:&quot;JetBrains Mono&quot;;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#fff;stroke-width:1.33417;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"><tspan x="83.899" y="250.287">fig 2</tspan></text>
+    <text xml:space="preserve" x="291.869" y="290.538" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="291.869" y="290.538">A₁</tspan></text>
+    <text xml:space="preserve" x="489.472" y="185.114" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="489.472" y="185.114">B₁</tspan></text>
+    <text xml:space="preserve" x="363.967" y="87.62" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="363.967" y="87.62">C₁</tspan></text>
+    <text xml:space="preserve" x="416.944" y="290.538" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="416.944" y="290.538">A₂</tspan></text>
+    <text xml:space="preserve" x="577.567" y="185.114" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="577.567" y="185.114">B₂</tspan></text>
+    <text xml:space="preserve" x="653.967" y="87.62" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="653.967" y="87.62">C₂</tspan></text>
+    <text xml:space="preserve" x="291.802" y="418.341" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="291.802" y="418.341">A₄</tspan></text>
+    <text xml:space="preserve" x="489.405" y="378.012" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="489.405" y="378.012">B₄</tspan></text>
+    <text xml:space="preserve" x="363.9" y="172.727" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="363.9" y="172.727">C₄</tspan></text>
+    <text xml:space="preserve" x="417.078" y="418.234" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="417.078" y="418.234">A₃</tspan></text>
+    <text xml:space="preserve" x="400.208" y="229.257" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="400.208" y="229.257">Q</tspan></text>
+    <text xml:space="preserve" x="577.701" y="377.799" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="577.701" y="377.799">B₃</tspan></text>
+    <text xml:space="preserve" x="654.1" y="172.62" style="font-size:26.6667px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#fff"><tspan x="654.1" y="172.62">C₃</tspan></text>
 </svg>
