@@ -33,128 +33,123 @@ Also, [^asano-1985] is quite hard to access.
 [^asano-1985]: Asano, Tetsuo (1985). An efficient algorithm for finding the visibility polygon for a polygonal region with holes. Institute of Electronics, Information, and Communication Engineers. Vol. 68. pp. 557–559.
 
 In this post I will describe the implementation of that algorithm.
-There are some basic concepts I expect the reader to be familiar with.
-For completeness, I will introduce those concepts now.
-There will be some additional ideas that I will explain in more detail further in the post.
+There are some basic concepts I expect the reader to be familiar with, I will cover them briefly.
+There will also be some additional ideas that I will explain in more detail further in the post.
 
-{{% aside %}}
-I want the core ideas presented in the post to be easy to understand, but I also want the post to be useful in practice.
-Because of that, I aim to make the mathematical notation supplementary to the text.
+{{% details `Basic concepts` %}}
 
-I am a bit worried about using the notation in uncommon ways.
-If you have advice, feel free to reach out!
-{{% /aside %}}
+There are some common symbols I am going to use:
 
-{{% details `Notation` %}}
+Symbol          | Meaning
+----------------|--------
+$\forall a ...$ | for all $a$ ...
+$\exists a ...$ | there exists $a$ such that ...
+$a \land b$     | $a$ and $b$ (are true)
+$a \lor b$      | $a$ or $b$ (or both) (are true)
+$a \implies b$  | $a$ implies $b$
+$a \iff b$      | $a$ if and only if $b$
+$a \defineas b$ | $a$ is defined as $b$
 
-- $\forall ...$ means "for all ..."
-- $\exists ...$ means "there exists ... such that"
-- $... \land ...$ means "... and ... (are true)"
-- $... \lor ...$ means "... or ... (or both) (are true)"
-- $... \implies ...$ means "... implies ..."
-- $... \iff ...$ means "... if and only if ..."
-- $... \, \defineas \, ...$ means "... is defined as ..."
-
-A *set* is a collection of objects / elements.
-
-- $\varnothing \defineas \{\}$ is an empty set
-- $A = \{a, b, c\}$ and $B = \{0, 1, 2, \dots\}$ are sets defined by enumeration
-- $A = \{\text{expression} \, | \, \text{condition}\}$ is a set of values of the "$\text{expression}$" for which the "$\text{condition}$" holds true
-- $a \in A$ means "object $a$ is an element of set $A$"
-
-$A \subseteq B$ means "$A$ is a subset of $B$":
-
-- $A \subseteq B \implies \forall a \in A: a \in B$
-- All elements of $A$ are also elements of $B$
-
-$A \cap B$ means "intersection of $A$ and $B$":
-
-- $A \cap B \defineas \{x \, | \, x \in A \land x \in B\}$
-- Set of all objects that are present both in set $a$ and set $b$
-
-$\R$ denotes the set of all real numbers [^real-number].
-
-$\RR$ is a set of all pairs of real numbers:
+A *set* is a collection of objects, which are called *elements* of the set.
+The order of the elements in the set does not matter.
 
 $$
-\RR \defineas \{(a, b) \, | \, a \in \R, b \in \R\}
+\alig
+\{a, b, c\} & \text{ is a set}, \\
+\{3, 2, 1, -5, 8\} & \text{ is also a set}. \\
+\ealig
+$$
+
+$$
+\text{Empty set } \varnothing \defineas \{\}.
+$$
+
+Sets can be declared by specifying the rules of element inclusion.
+For a condition $\text{cond}$ and expression $\text{expr}$, a set of all values of $\text{expr}$ for which $\text{cond}$ is true can be denoted like this:
+
+$$
+\{\text{expr} \, | \, \text{cond}\}.
+$$
+
+For example, the set of all integers
+
+$$
+\mathbb{Z} \defineas \{n \, | \, n \text{ is an integer} \}.
+$$
+
+The following are some symbols related to sets:
+
+Symbol          | Meaning
+----------------|--------
+$a \in A$       | $a$ is an element of set $A$
+$A \subseteq B$ | $A$ is a subset of $B$
+$A \cap B$      | intersection of sets $A$ and $B$
+
+$$
+A \subseteq B \implies \forall a \in A : a \in B.
+$$
+
+$$
+A \cap B \defineas \{a \, | \, a \in A \land a \in B \}.
+$$
+
+The set of all real numbers [^real-number] is denoted as $\R$.
+
+The set of all pairs of real numbers
+
+$$
+\RR \defineas \{(a, b) \, | \, a \in \R \land b \in \R\}.
 $$
 
 [^real-number]: [Real number](https://en.wikipedia.org/wiki/Real_number) on Wikipedia
 
-{{% /details %}}
+---
 
-{{% details `Basic concepts` %}}
-
-A *point* is an element of $\RR$.
-It represents a location in Euclidean plane [^euclidean-plane].
-
-$$
-\text{point } A = (x, y)
-$$
-
-A *vector* is also an element of $\RR$.
-It represents an object with magnitude (length) and direction [^euclidean-vector].
-
-$$
-\text{vector } \vec{v} = (x, y)
-$$
-
-$$
-\alig
-A =& (x_1, y_1) \\
-B =& (x_2, y_2) \\
-\text{vector } \vecl{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
-\ealig
-$$
-
-$\vecl{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
-It merely represents "how to get to point $B$ if you are in point $A$".
-If you are not in point $A$, it will take you somewhere else.
-
-A *line* is a set of points that is infinitely long and has no width [^line].
-It can be defined by two distinct points.
-
-$$
-\alig
-A &= (x_1, y_1) \\
-B &= (x_2, y_2) \\
-\ealig
-$$
-
-$$
-\text{line } AB \defineas \{(x, y) \, | (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \}
-$$
-
-A *segment* is an uninterrupted subset of a line [^segment].
-It is defined and bounded by two distinct endpoints.
-This post only discusses *closed segments*, which are segments that include both of its endpoints.
-
-$$
-\alig
-\text{segment } &\overline{s} \\
-\text{segment } &\overline{AB} \\
-\ealig
-$$
+- A *point* is represented using an element of $\RR$ [^euclidean-plane].
+- A *vector* is also represented using an element of $\RR$, even though it has a different meaning [^euclidean-vector].
+- A *line* is a set of points that is infinitely long and has no width [^line].
+  A line can be defined by two distinct points.
+- A *segment* is an uninterrupted subset of a line [^segment].
+  A segment can be defined by two distinct points.
+  All segments in this post are *closed segments*, which means they include their endpoints.
 
 [^euclidean-plane]: [Euclidean plane](https://en.wikipedia.org/wiki/Euclidean_plane) on Wikipedia
 [^euclidean-vector]: [Euclidean vector](https://en.wikipedia.org/wiki/Euclidean_vector) on Wikipedia
 [^line]: [Line](<https://en.wikipedia.org/wiki/Line_(geometry)>) on Wikipedia
 [^segment]: [Line segment](https://en.wikipedia.org/wiki/Line_segment) on Wikipedia
 
----
-
-Collinearity [^collinearity]:
-- A point is collinear with a segment if it lies on the line defined by that segment's endpoints
-- A pair of segments is collinear if all of their points are on the same line
-
-[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
+In this post, I use the following notation:
 
 $$
 \alig
-\forall P, A, B, C, D \in& \, \RR: \\
-P \text{ collinear } \overline{AB} \iff& P \in AB \\
-\overline{AB} \text{ collinear } \overline{CD} \iff& AB = CD \\
+A, B, C, D, ... & - \text{points}, \\
+\vec{a}, \vec{b}, ..., \vecl{AB}, \vecl{CD}, ... & - \text{vectors}, \\
+AB, CD, ... & - \text{lines}, \\
+\overline{a}, \overline{b}, ..., \overline{AB}, \overline{CD}, ... & - \text{segments}. \\
+\ealig
+$$
+
+---
+
+Collinearity [^collinearity]:
+
+[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
+
+- A point is collinear with a segment if it lies on the line defined by that segment's endpoints.
+
+$$
+\alig
+&\forall P, A, B \in \, \RR: \\
+&P \text{ collinear } \overline {AB} \iff P \in AB.
+\ealig
+$$
+
+- A pair of segments is collinear if all of their points are on the same line.
+
+$$
+\alig
+&\forall A, B, C, D \in \, \RR: \\
+&\overline{AB} \text{ collinear } \overline{CD} \iff AB = CD. \\
 \ealig
 $$
 
@@ -165,10 +160,11 @@ An intersection of two lines [^line-intersection] can be one of:
 
 $$
 \alig
-\forall A, B, C, D \in& \, \RR: \\
-AB \cap CD =& \varnothing \\
-\lor AB \cap CD =& \{P\} \text{ - a single point} \\
-\lor AB \cap CD =& AB = CD \\
+& \forall A, B, C, D \in \RR: \\
+& AB \cap CD = \varnothing \\
+& \lor \, AB \cap CD = \{P\} \\
+& \lor \, AB \cap CD = AB = CD, \\
+\text{where } & P \in \, \RR. \\
 \ealig
 $$
 
@@ -181,14 +177,14 @@ An intersection of two segments [^segment-intersection] can be one of:
 
 $$
 \alig
-\forall A, B, C, D \in& \, \RR: \\
-\overline{AB} \cap \overline{CD} =& \varnothing \\
-\lor \overline{AB} \cap \overline{CD} =& \{P\} \text{ - a single point} \\
-\lor \overline{AB} \cap \overline{CD} =& \overline{EF} \text { - a segment} \\
+& \forall A, B, C, D \in \RR: \\
+& \overline{AB} \cap \overline{CD} = \varnothing \\
+& \lor \, \overline{AB} \cap \overline{CD} = \{P\} \\
+& \lor \, \overline{AB} \cap \overline{CD} = \overline{EF}, \\
+\text{where } & P \in \, \RR, \\
+& \overline{EF} \subseteq \overline{AB} \land \overline{EF} \subseteq \overline{CD}.
 \ealig
 $$
-
-Here, $\overline{EF} \subseteq \overline{AB}$ and $\overline{EF} \subseteq \overline{CD}$.
 
 [^segment-intersection]: [Intersection of two line segments](<https://en.wikipedia.org/wiki/Intersection_(geometry)#Two_line_segments>) on Wikipedia
 
