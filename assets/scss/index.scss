@@ -286,15 +286,19 @@ table {
     margin: 1em 0;
 
     border-collapse: collapse;
-    border: 1px solid c.$grey-10;
 
     th,
     td {
-        padding: 0.25em;
+        padding: 0.25em 1ch;
         text-align: start;
+
+        &:not(:last-child) {
+            border-right: 1px solid c.$pink;
+        }
     }
 
     th {
+        color: c.$pink;
         background-color: c.$grey-20;
     }
 
