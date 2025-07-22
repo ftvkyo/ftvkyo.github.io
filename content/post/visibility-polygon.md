@@ -104,11 +104,11 @@ $$
 $$
 
 $$
-\begin{aligned}
+\aligd
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
 \text{vector } \vecl{AB} \defineas& (x_2 - x_1, y_2 - y_1) \\
-\end{aligned}
+\ealigd
 $$
 
 $\vecl{AB}$ is a vector from point $A$ to point $B$, but it does not *start* in $A$.
@@ -119,11 +119,11 @@ A *line* is a set of points that is infinitely long and has no width [^line].
 It can be defined by two distinct points.
 
 $$
-\begin{align}
+\alig
 A =& (x_1, y_1) \\
 B =& (x_2, y_2) \\
 \text{line } AB \defineas& \{(x, y) \, | \, (x_2 - x_1)(y - y_1) - (y_2 - y_1)(x - x_1) = 0 \} \\
-\end{align}
+\ealig
 $$
 
 A *segment* is an uninterrupted subset of a line [^segment].
@@ -131,10 +131,10 @@ It is defined and bounded by two distinct endpoints.
 This post only discusses *closed segments*, which are segments that include both of its endpoints.
 
 $$
-\begin{align}
+\alig
 \text{segment } &\overline{s} \\
 \text{segment } &\overline{AB} \\
-\end{align}
+\ealig
 $$
 
 [^euclidean-plane]: [Euclidean plane](https://en.wikipedia.org/wiki/Euclidean_plane) on Wikipedia
@@ -151,11 +151,11 @@ Collinearity [^collinearity]:
 [^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
 
 $$
-\begin{align}
+\alig
 \forall P, A, B, C, D \in& \, \RR: \\
 P \text{ collinear } \overline{AB} \iff& P \in AB \\
 \overline{AB} \text{ collinear } \overline{CD} \iff& AB = CD \\
-\end{align}
+\ealig
 $$
 
 An intersection of two lines [^line-intersection] can be one of:
@@ -164,12 +164,12 @@ An intersection of two lines [^line-intersection] can be one of:
 - A line (then the lines are equal)
 
 $$
-\begin{align}
+\alig
 \forall A, B, C, D \in& \, \RR: \\
 AB \cap CD =& \varnothing \\
 \lor AB \cap CD =& \{P\} \text{ - a single point} \\
 \lor AB \cap CD =& AB = CD \\
-\end{align}
+\ealig
 $$
 
 [^line-intersection]: [Line–line intersection](https://en.wikipedia.org/wiki/Line–line_intersection) on Wikipedia
@@ -180,12 +180,12 @@ An intersection of two segments [^segment-intersection] can be one of:
 - A segment (then the segments are collinear, but may not be equal)
 
 $$
-\begin{align}
+\alig
 \forall A, B, C, D \in& \, \RR: \\
 \overline{AB} \cap \overline{CD} =& \varnothing \\
 \lor \overline{AB} \cap \overline{CD} =& \{P\} \text{ - a single point} \\
 \lor \overline{AB} \cap \overline{CD} =& \overline{EF} \text { - a segment} \\
-\end{align}
+\ealig
 $$
 
 Here, $\overline{EF} \subseteq \overline{AB}$ and $\overline{EF} \subseteq \overline{CD}$.
@@ -213,11 +213,11 @@ $$
 In $\mathbf{S}$, segments are only allowed to intersect at their ends:
 
 $$
-\begin{align}
+\alig
 \forall \overline{AB}, \overline{CD} \in& \, \mathbf{S}, \overline{AB} \neq \overline{CD} : \\
 \overline{AB} \cap \overline{CD} =& \, \varnothing \\
 \lor \overline{AB} \cap \overline{CD} =& \{E\} \\
-\end{align}
+\ealig
 $$
 
 $$
