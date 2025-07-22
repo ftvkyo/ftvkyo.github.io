@@ -1,4 +1,8 @@
+{{- if hugo.IsServer }}
+<details open>
+{{- else }}
 <details>
+{{- end }}
 
 <summary>
 {{ .Get 0 | markdownify }}
