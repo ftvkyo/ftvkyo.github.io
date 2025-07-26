@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gamedev on ftvkyo</title><link>https://www.ftvkyo.me/tags/gamedev/</link><description>Recent content in Gamedev on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 13 Jul 2025 22:00:00 +0000</lastBuildDate><atom:link href="https://www.ftvkyo.me/tags/gamedev/index.xml" rel="self" type="application/rss+xml"/><item><title>In search of the Visibility Polygon</title><link>https://www.ftvkyo.me/post/visibility-polygon/</link><pubDate>Sun, 13 Jul 2025 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/visibility-polygon/</guid><description>&lt;p>I have been building a 2D game for fun recently.
+Once I implemented a basic lighting system for it, I understood that I want game objects to cast shadows.
+There are multiple ways to achieve that, and the approach I selected is based on visibility polygons.&lt;/p>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/visibility-polygon/render.webp"
+ alt="A frame from the game I am building, with differently colored flames lighting up different areas based on their visibility">&lt;figcaption>
+ &lt;p>A frame from the game I am building, with differently colored flames lighting up different areas based on their visibility&lt;/p></description></item></channel></rss>
