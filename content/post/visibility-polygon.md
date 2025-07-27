@@ -322,7 +322,11 @@ For completeness, cases when the query point is collinear with the segments are 
 
 {{< figure src=`segments-touching.svg` >}}
 
-{{< figure src=`segments.svg` >}}
+{{< figure src=`segments-touching-equal.svg` >}}
+
+{{< figure src=`segments-1.svg` >}}
+
+{{< figure src=`segments-2.svg` >}}
 
 ## Calculating the visibility polygon
 
