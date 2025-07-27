@@ -238,59 +238,94 @@ From $\mathbf{S}_Q$, the actual polygon can be obtained by combining the endpoin
 The polygon is the union of all such triangles
 
 $$
-\text{Vis}_{QS} := \{P \, | \, \overline{AB} \in \mathbf{S}_Q, P \in \triangle ABQ \}.
+\mathbf{V}_{\mathbf{S}Q} := \{P \, | \, \overline{AB} \in \mathbf{S}_Q, P \in \triangle ABQ \}.
 $$
 
 The outline of the polygon can also be trivially generated with a slight modification to the algorithm, which is left as an exercise for the reader.
 
 ## Algorithm overview
 
-The algorithm consists of several steps:
+To calculate the visibility polygon, we will "visit" all of the segment endpoints, keeping track of which segment is the nearest to $Q$ at all times.
 
-1. ...
+This is a sweep line algorithm [^sweep-line-algo].
+The sweep line in this case is the line that connects $Q$ with the current endpoint.
+As the current endpoint changes, the line rotates around $Q$.
 
-{{< figure src=`example-1.svg` >}}
+[^sweep-line-algo]: [Sweep line algorithm](https://en.wikipedia.org/wiki/Sweep_line_algorithm) on Wikipedia.
 
-{{< figure src=`example-2.svg` >}}
+{{% aside %}}
 
-{{< figure src=`example-3.svg` >}}
+It's important to understand why we only care about endpoints, and not whole segments.
+As stated before, the input data prohibits segments that intersect anywhere but at their endpoints.
+This basically means that as the sweep line rotates around $Q$, the notion of the "segment nearest to $Q$" can only ever change when the sweep line goes through a segment endpoint.
 
-{{< figure src=`example-4.svg` >}}
+{{% /aside %}}
+
+Let $n$ be the number of segments in the input.
+
+This problem can be solved naively in $O(n^2)$ time.
+For example:
+
+1. Sort segment endpoints by their position relative to $Q$.
+2. For each endpoint $E$, find all intersections between $EQ$ and all other segments.
+  Use that information to keep track of which segment is the nearest to $Q$.
+3. Whenever the segment nearest to $Q$ changes, take note of that.
+
+An optimisation allows us to cut down the time to $O(n \, \text{log} \, n)$.
+Instead of keeping track of just the nearest segments, we will keep track of all segments that are currently intersected by our sweep line (henceforth called *active* segments).
+
+As the sweep line goes through segment endpoints, we will be "activating" and "deactivating" corresponding segments.
+In practice, given some endpoint, it can be difficult to tell what to do with it on the fly.
+For this reason, all endpoints are designated as $\text{Start}$ or $\text{End}$ events.
+See [Ordering endpoints within a segment](#ordering-endpoints-within-a-segment) for details.
+
+To keep track of currently active segments, an ordered set can be used.
+Common implementations of ordered sets [^ordered-sets] can do insertion and removal in $O(\text{log} \, n)$ time -- that's exactly what we need!
+
+[^ordered-sets]: For example, [BTreeSet](https://doc.rust-lang.org/stable/std/collections/struct.BTreeSet.html) in Rust. Read about [BTrees](https://en.wikipedia.org/wiki/B-tree) on Wikipedia.
+
+Note, though, that we need to define the ordering between the segments to store them in an ordered set.
+It's a bit tricky to do, so see [Ordering segments by distance to a point](#ordering-segments-by-distance-to-a-point) for details.
 
 ---
 
-Based on the inputs, we can now define several functions:
+Time to bring this all together.
+So, that's what the algorithm needs to do:
 
-- $\text{angle}_Q(P)$ receives a single point $P$ and returns the angle between the vector $\vecl{QP}$ and the X-axis
-
-$$
-\text{angle}_Q : \RR \rightarrow \R
-$$
-
-...
-
-Define a function `order_endpoints` that receives a single segment $s$ and determines which of its endpoints is a "start event", and which is the "end event" with respect to $Q$.
-In other words, it "reorders" the endpoints of the segment so that the first one is always the "start", and the other one is always the "end".
-
-$$
-\text{orderendpoints} : (\RR, \RR) \rightarrow (\RR, \RR)
-$$
+1. Prepare the input data:
+    - Create a set of all segment endpoints, keeping track of which segment they came from;
+    - Order the endpoints based on the direction from $Q$ to the endpoint;
+    - For each of the endpoints, designate it is a $\text{Start}$ or an $\text{End}$ event.
+2. Determine the initial state -- choose the first endpoint and find all segments that are active when the sweep line passes through it.
+3. Go over all events, doing the following:
+    - Activate the segment if this is a $\text{Start}$ event,
+    - Deactivate the segment if this is an $\text{End}$ event,
+    - Save a new visibility segment whenever the segment closest to $Q$ changes.
 
 ---
 
-Then, to calculate the visibility polygon:
+### Example
 
-1. Sort endpoints $E_m$ of all segments by the value $\text{angle(}E_m\text{)}$, keeping track of which segment $n$ they came from and whether they are a "start" or an "end" event
+{{< figure src=`example-1.svg` caption=`**Fig. 1.1**` >}}
 
-2. Go over all of the events once to determine which segments are "active" at angle zero
+{{< figure src=`example-2.svg` caption=`**Fig. 1.2**` >}}
 
-3. Go over all of the events again, "activating" segments on start events, and "deactivating" them on end events, keeping track of the nearest segment at any moment and generating new segments that represent the visibility polygon whenever the nearest segment changes
+{{< figure src=`example-3.svg` caption=`**Fig. 1.3**` >}}
 
-...
+{{< figure src=`example-4.svg` caption=`**Fig. 1.4**` >}}
+
+
+## Ordering endpoints within a segment
+
+{{< figure src=`edge-cases.svg` caption=`**Fig. 2**` >}}
+
 
 ## Determining whether a point lies in a half-plane
 
+A naive implementation of $\text{cmp}_Q$ can ...
+
 ...
+
 
 ## Ordering segments by distance to a point
 
@@ -306,32 +341,24 @@ For completeness, cases when the query point is collinear with the segments are 
 
 ### The segments are collinear
 
-{{< figure src=`segments-both-collinear.svg` >}}
+{{< figure src=`segments-both-collinear.svg` caption=`**Fig. 3.1**` >}}
 
 ### One of the segments is collinear with the query point
 
-{{< figure src=`segments-collinear-pointing.svg` >}}
+{{< figure src=`segments-collinear-pointing.svg` caption=`**Fig. 3.2**` >}}
 
-{{< figure src=`segments-collinear-touching.svg` >}}
+{{< figure src=`segments-collinear-touching.svg` caption=`**Fig. 3.3**` >}}
 
-{{< figure src=`segments-collinear.svg` >}}
+{{< figure src=`segments-collinear.svg` caption=`**Fig. 3.4**` >}}
 
 ### None of the segments are collinear with the query point
 
-{{< figure src=`segments-pointing.svg` >}}
+{{< figure src=`segments-pointing.svg` caption=`**Fig. 3.5**` >}}
 
-{{< figure src=`segments-touching.svg` >}}
+{{< figure src=`segments-touching.svg` caption=`**Fig. 3.6**` >}}
 
-{{< figure src=`segments-touching-equal.svg` >}}
+{{< figure src=`segments-touching-equal.svg` caption=`**Fig. 3.7**` >}}
 
-{{< figure src=`segments-1.svg` >}}
+{{< figure src=`segments-1.svg` caption=`**Fig. 3.8**` >}}
 
-{{< figure src=`segments-2.svg` >}}
-
-## Calculating the visibility polygon
-
-...
-
-## Edge cases
-
-{{< figure src=`edge-cases.svg` >}}
+{{< figure src=`segments-2.svg` caption=`**Fig. 3.9**` >}}
