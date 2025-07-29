@@ -226,12 +226,14 @@ $$
 $$
 
 {{% aside %}}
+
 As you are going to see, this has some implications on the produced output.
 Basically, if there are no segments in some direction relative to $Q$, there won't be any surfaces visible there.
 
 For practical applications such as determining the area illuminated from $Q$, the solution is quite simple: $\mathbf{S}$ is made to include a bunch of segments that completely encompass all of the other segments.
 
 This way, there would be at least one segment in $\mathbf{S}$ for every direction relative to $Q$.
+
 {{% /aside %}}
 
 From $\mathbf{S}_Q$, the actual polygon can be obtained by combining the endpoints of each of the segments in $\mathbf{S}_Q$ with $Q$ to form triangles.
@@ -269,10 +271,10 @@ For example:
 1. Sort segment endpoints by their position relative to $Q$.
 2. For each endpoint $E$, find all intersections between $EQ$ and all other segments.
   Use that information to keep track of which segment is the nearest to $Q$.
-3. Whenever the segment nearest to $Q$ changes, take note of that.
+3. Whenever the segment nearest to $Q$ changes, register that, and build up the visibility polygon out of the relevant subsegments.
 
 An optimisation allows us to cut down the time to $O(n \, \text{log} \, n)$.
-Instead of keeping track of just the nearest segments, we will keep track of all segments that are currently intersected by our sweep line (henceforth called *active* segments).
+Instead of keeping track of just the nearest segment, we will keep track of all segments that are currently intersected by our sweep line (henceforth called *active* segments).
 
 As the sweep line goes through segment endpoints, we will be "activating" and "deactivating" corresponding segments.
 In practice, given some endpoint, it can be difficult to tell what to do with it on the fly.
@@ -282,7 +284,8 @@ See [Ordering endpoints within a segment](#ordering-endpoints-within-a-segment) 
 To keep track of currently active segments, an ordered set can be used.
 Common implementations of ordered sets [^ordered-sets] can do insertion and removal in $O(\text{log} \, n)$ time -- that's exactly what we need!
 
-[^ordered-sets]: For example, [BTreeSet](https://doc.rust-lang.org/stable/std/collections/struct.BTreeSet.html) in Rust. Read about [BTrees](https://en.wikipedia.org/wiki/B-tree) on Wikipedia.
+[^ordered-sets]: For example, [BTreeSet](https://doc.rust-lang.org/stable/std/collections/struct.BTreeSet.html) in Rust.
+Read about [BTrees](https://en.wikipedia.org/wiki/B-tree) on Wikipedia.
 
 Note, though, that we need to define the ordering between the segments to store them in an ordered set.
 It's a bit tricky to do, so see [Ordering segments by distance to a point](#ordering-segments-by-distance-to-a-point) for details.
@@ -302,22 +305,72 @@ So, that's what the algorithm needs to do:
     - Deactivate the segment if this is an $\text{End}$ event,
     - Save a new visibility segment whenever the segment closest to $Q$ changes.
 
----
+Let's go through an example, and then we can look into the fun implementation detais.
 
 ### Example
 
-{{< figure src=`example-1.svg` caption=`**Fig. 1.1**` >}}
+In this example, we will ...
 
-{{< figure src=`example-2.svg` caption=`**Fig. 1.2**` >}}
+Let's define some example input data.
+The input data consists of the point $Q$ and a set of segments $\mathbf{S}$.
+You can see the input configuration in **Fig. 1.1**.
+It contains the point $Q$ (the star in the middle) and 16 segments (purple lines) connecting 16 points.
 
-{{< figure src=`example-3.svg` caption=`**Fig. 1.3**` >}}
+Note the 4 segments $\overline{R_1R_2}, \overline{R_2R_3}, \overline{R_3R_4}, \overline{R_4R_1}$ that together form a rectangle that surrounds everything else.
+This guarantees that there is at least one segment in any direction from $Q$, as explained in a side-note in [Algorithm inputs and outputs](#algorithm-inputs-and-outputs).
 
-{{< figure src=`example-4.svg` caption=`**Fig. 1.4**` >}}
+{{< figure src=`example-1.svg` caption=`**Fig. 1.1.** Example input data.` >}}
+
+For simplicity, let's say that $Q = (0, 0)$.
+Let's also choose coordinates for all of the points:
+
+$$
+\alig
+A_1 &= (2, 1), \\
+A_2 &= (2, -3), \\
+A_3 &= (3, -3), \\
+A_4 &= (4, -3), \\
+\\
+B_1 &= (-1, 3), \\
+B_2 &= (-1, 2), \\
+B_3 &= (5, 2), \\
+B_4 &= (5, 3), \\
+\\
+C_1 &= (-3, -2), \\
+C_2 &= (-3, -4), \\
+C_3 &= (-1, -4), \\
+C_4 &= (-1, -2), \\
+\\
+R_1 &= (-6, 5), \\
+R_2 &= (-6, -5), \\
+R_3 &= (6, -5), \\
+R_4 &= (6, 5). \\
+\ealig
+$$
+
+And, based on those points, let's define the set of occluding segments
+
+$$
+\alig
+S = \{
+& \overline{A_1A_2}, \overline{A_2A_3}, \overline{A_3A_4}, \overline{A_4A_1}, \\
+&\overline{B_1B_2}, \overline{B_2B_3}, \overline{B_3B_4}, \overline{B_4B_1}, \\
+&\overline{C_1C_2}, \overline{C_2C_3}, \overline{C_3C_4}, \overline{C_4C_1}, \\
+&\overline{R_1R_2}, \overline{R_2R_3}, \overline{R_3R_4}, \overline{R_4R_1}
+\}. \\
+\ealig
+$$
+
+{{< figure src=`example-2.svg` caption=`**Fig. 1.2.**` >}}
+
+{{< figure src=`example-3.svg` caption=`**Fig. 1.3.**` >}}
+
+{{< figure src=`example-4.svg` caption=`**Fig. 1.4.**` >}}
 
 
 ## Ordering endpoints within a segment
 
-{{< figure src=`edge-cases.svg` caption=`**Fig. 2**` >}}
+{{< figure src=`edge-cases.svg` caption=`**Fig. 2.**` >}}
 
 
 ## Determining whether a point lies in a half-plane
@@ -339,7 +392,7 @@ The cheap segment comparison routine is **only valid under the following assumpt
 The comparison routine can be simplified if all segments collinear with the query point are removed from the input data.
 For completeness, cases when the query point is collinear with the segments are still considered below.
 
-### The segments are collinear
+### Both segments are collinear with the query point
 
 {{< figure src=`segments-both-collinear.svg` caption=`**Fig. 3.1**` >}}
 
@@ -356,6 +409,8 @@ For completeness, cases when the query point is collinear with the segments are 
 {{< figure src=`segments-pointing.svg` caption=`**Fig. 3.5**` >}}
 
 {{< figure src=`segments-touching.svg` caption=`**Fig. 3.6**` >}}
+
+<!-- TODO: add an illustration for when the segments are collinear to each other -->
 
 {{< figure src=`segments-touching-equal.svg` caption=`**Fig. 3.7**` >}}
 
