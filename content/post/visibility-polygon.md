@@ -123,35 +123,38 @@ In this post, I use the following notation:
 $$
 \alig
 A, B, C, D, ... & - \text{points}, \\
-\vec{a}, \vec{b}, ..., \vecl{AB}, \vecl{CD}, ... & - \text{vectors}, \\
-AB, CD, ... & - \text{lines}, \\
-\overline{a}, \overline{b}, ..., \overline{AB}, \overline{CD}, ... & - \text{segments}. \\
+\vecl{AB}, \vecl{CD}, ... & - \text{vectors}, \\
+\overline{AB}, \overline{CD}, ... & - \text{lines}, \\
+AB, CD, ... & - \text{segments}. \\
 \ealig
 $$
 
----
+{{< aside >}}
 
-Collinearity [^collinearity]:
+The notation I use in this post is not conventional.
+Commonly, it's the segments that are written with a line above them, not lines.
 
-[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
+{{< /aside >}}
 
-- A point is collinear with a segment if it lies on the line defined by that segment's endpoints.
+A point is collinear [^collinearity] with a segment if it lies on the line defined by that segment's endpoints.
 
 $$
 \alig
 &\forall P, A, B \in \, \RR: \\
-&P \text{ collinear } \overline {AB} \iff P \in AB.
+&P \text{ collinear } AB \iff P \in \overline{AB}.
 \ealig
 $$
 
-- A pair of segments is collinear if all of their points are on the same line.
+A pair of segments is collinear [^collinearity] if all of their points are on the same line.
 
 $$
 \alig
 &\forall A, B, C, D \in \, \RR: \\
-&\overline{AB} \text{ collinear } \overline{CD} \iff AB = CD. \\
+&AB \text{ collinear } CD \iff \overline{AB} = \overline{CD}. \\
 \ealig
 $$
+
+[^collinearity]: [Collinearity](https://en.wikipedia.org/wiki/Collinearity) on Wikipedia
 
 An intersection of two lines [^line-intersection] can be one of:
 - An empty set (then the two lines are *parallel*),
@@ -161,9 +164,9 @@ An intersection of two lines [^line-intersection] can be one of:
 $$
 \alig
 & \forall A, B, C, D \in \RR: \\
-& AB \cap CD = \varnothing \\
-& \lor \, AB \cap CD = \{P\} \\
-& \lor \, AB \cap CD = AB = CD, \\
+& \overline{AB} \cap \overline{CD} = \varnothing \\
+& \lor \, \overline{AB} \cap \overline{CD} = \{P\} \\
+& \lor \, \overline{AB} \cap \overline{CD} = \overline{AB} = \overline{CD}, \\
 \text{where } & P \in \, \RR. \\
 \ealig
 $$
@@ -178,11 +181,11 @@ An intersection of two segments [^segment-intersection] can be one of:
 $$
 \alig
 & \forall A, B, C, D \in \RR: \\
-& \overline{AB} \cap \overline{CD} = \varnothing \\
-& \lor \, \overline{AB} \cap \overline{CD} = \{P\} \\
-& \lor \, \overline{AB} \cap \overline{CD} = \overline{EF}, \\
+& AB \cap CD = \varnothing \\
+& \lor \, AB \cap CD = \{P\} \\
+& \lor \, AB \cap CD = EF, \\
 \text{where } & P \in \, \RR, \\
-& \overline{EF} \subseteq \overline{AB} \land \overline{EF} \subseteq \overline{CD}.
+& EF \subseteq AB \land EF \subseteq CD.
 \ealig
 $$
 
@@ -200,16 +203,16 @@ The algorithm needs the following inputs:
 No segment in $\mathbf{S}$ should include $Q$.
 
 $$
-\forall \overline{s} \in \mathbf{S} : Q \notin \overline{s}.
+\forall s \in \mathbf{S} : Q \notin s.
 $$
 
 No two distinct segments in $\mathbf{S}$ are allowed to intersect, unless their intersection is a single point that is an endpoint of both of those segments.
 
 $$
 \alig
-& \forall \overline{AB}, \overline{CD} \in \mathbf{S}, \, \overline{AB} \neq \overline{CD} : \\
-& \overline{AB} \cap \overline{CD} = \varnothing \\
-& \lor \, \overline{AB} \cap \overline{CD} = \{E\}, \\
+& \forall AB, CD \in \mathbf{S}, \, AB \neq CD : \\
+& AB \cap CD = \varnothing \\
+& \lor \, AB \cap CD = \{E\}, \\
 \text {where } & E \in \{A, B\} \land E \in \{C, D\} \\
 \ealig
 $$
@@ -222,7 +225,7 @@ $$
 $$
 
 $$
-\forall \overline{q} \in \mathbf{S}_Q, \exists \overline{s} \in \mathbf{S} : \overline{q} \subseteq \overline{s}.
+\forall q \in \mathbf{S}_Q, \exists s \in \mathbf{S} : q \subseteq s.
 $$
 
 {{% aside %}}
@@ -240,7 +243,7 @@ From $\mathbf{S}_Q$, the actual polygon can be obtained by combining the endpoin
 The polygon is the union of all such triangles
 
 $$
-\mathbf{V}_{\mathbf{S}Q} := \{P \, | \, \overline{AB} \in \mathbf{S}_Q, P \in \triangle ABQ \}.
+\mathbf{V}_{\mathbf{S}Q} := \{P \, | \, AB \in \mathbf{S}_Q, P \in \triangle ABQ \}.
 $$
 
 The outline of the polygon can also be trivially generated with a slight modification to the algorithm, which is left as an exercise for the reader.
@@ -316,7 +319,7 @@ The input data consists of the point $Q$ and a set of segments $\mathbf{S}$.
 You can see the input configuration in **Fig. 1.1**.
 It contains the point $Q$ (the star in the middle) and 16 segments (purple lines) connecting 16 points.
 
-Note the 4 segments $\overline{R_1R_2}, \overline{R_2R_3}, \overline{R_3R_4}, \overline{R_4R_1}$ that together form a rectangle that surrounds everything else.
+Note the 4 segments $R_1R_2, R_2R_3, R_3R_4, R_4R_1$ that together form a rectangle that surrounds everything else.
 This guarantees that there is at least one segment in any direction from $Q$, as explained in a side-note in [Algorithm inputs and outputs](#algorithm-inputs-and-outputs).
 
 {{< figure src=`example-1.svg` caption=`**Fig. 1.1.** Example input data.` >}}
@@ -353,10 +356,10 @@ And, based on those points, let's define the set of occluding segments
 $$
 \alig
 S = \{
-& \overline{A_1A_2}, \overline{A_2A_3}, \overline{A_3A_4}, \overline{A_4A_1}, \\
-&\overline{B_1B_2}, \overline{B_2B_3}, \overline{B_3B_4}, \overline{B_4B_1}, \\
-&\overline{C_1C_2}, \overline{C_2C_3}, \overline{C_3C_4}, \overline{C_4C_1}, \\
-&\overline{R_1R_2}, \overline{R_2R_3}, \overline{R_3R_4}, \overline{R_4R_1}
+& A_1A_2, A_2A_3, A_3A_4, A_4A_1, \\
+&B_1B_2, B_2B_3, B_3B_4, B_4B_1, \\
+&C_1C_2, C_2C_3, C_3C_4, C_4C_1, \\
+&R_1R_2, R_2R_3, R_3R_4, R_4R_1
 \}. \\
 \ealig
 $$
