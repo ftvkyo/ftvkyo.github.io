@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devlog on ftvkyo</title><link>https://www.ftvkyo.me/tags/devlog/</link><description>Recent content in Devlog on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 17 Jun 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://www.ftvkyo.me/tags/devlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Making a "Known Error" app for Tildagon</title><link>https://www.ftvkyo.me/post/tildagon-known-error/</link><pubDate>Mon, 17 Jun 2024 10:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/tildagon-known-error/</guid><description>&lt;p>At the end of May 2024, I went to my first &lt;a href="https://emfcamp.org">EMF Camp&lt;/a>, and I loved it.
+It had many interesting things to see and cool people to meet.
+I wouldn&amp;rsquo;t say I made new friends there, but I did get closer to members of &lt;a href="https://wiki.ehlab.uk">Edinburgh Hacklab&lt;/a> which I am also a member of.&lt;/p>
+&lt;p>This post is not about EMF Camp though, it is about one of its highlights: the &lt;a href="https://tildagon.badge.emfcamp.org/">Tildagon&lt;/a> badge.
+These badges are electronic devices that are meant to be extended and modified, this is a &lt;a href="https://en.wikipedia.org/wiki/Hacker">hacker&lt;/a> festival after all.
+The badges could be preordered for 25£.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #2: Design</title><link>https://www.ftvkyo.me/post/devlog-hovert60-02/</link><pubDate>Sun, 05 May 2024 17:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-02/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>In the &lt;a href="https://www.ftvkyo.me/post/devlog-hovert60-01/">previous post&lt;/a> on the topic, I introcuded my new project: making a personalized mechanical keyboard from scratch.
+I described my criteria for the end result and showed you the components I intend to use.&lt;/p>
+&lt;p>This post is focused on the design process of the project.
+The posts are sequential, but in reality they go hand-in-hand.
+The design influences which components can be used.
+Availability, price and properties of the components influence the design.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #1: Init</title><link>https://www.ftvkyo.me/post/devlog-hovert60-01/</link><pubDate>Wed, 10 Apr 2024 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-01/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>I have been a mild fan of mechanical and &lt;a href="https://deskthority.net/wiki/Ergonomic_keyboard">ergonomic&lt;/a> keyboards for a while now.
+I have used &lt;a href="https://ergodox-ez.com/">Ergodox EZ&lt;/a>, Planck EZ &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> and &lt;a href="https://drop.com/buy/preonic-mechanical-keyboard">OLKB Preonic&lt;/a>.
+Additionally, my XKB configuration is somewhat interesting.&lt;/p>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/devlog-hovert60-01/preonic.jpg"
+ alt="OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests">&lt;figcaption>
+ &lt;p>OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>You see, Russian alphabet has 33 letters, while English only has 26.
+This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.&lt;/p></description></item><item><title>Parentheses programming language devlog #1: getting to LLVM IR emission</title><link>https://www.ftvkyo.me/post/devlog-parentheses-01/</link><pubDate>Sun, 27 Jun 2021 21:00:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/devlog-parentheses-01/</guid><description>&lt;h2 id="pre-intro">Pre-intro&lt;/h2>
+&lt;p>I start these series hoping to continue them along with the development of
+the project this devlog is related to.
+Not only the project is an excercise for me, but the devlog itself is as well.
+I think about making some games in the future, and how could I make a good
+game without having a devlog about it?&lt;/p>
+&lt;p>Also, thanks to all the advice from different people who suggested some better
+techniques of dealing with challenges I face in this project.&lt;/p></description></item></channel></rss>
