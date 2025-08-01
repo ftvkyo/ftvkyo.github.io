@@ -19,11 +19,12 @@ You can read more about them here:
 - [Visibility polygon](https://en.wikipedia.org/wiki/Visibility_polygon) on Wikipedia
 - [2D Visibility](https://www.redblobgames.com/articles/visibility/) on Red Blob Games
 
+I find the problem of calculating the visibility polygon interesting, and in this post I will tell you how I implemented an algorithm that finds them.
+I think the algorithm itself and the optimisations involved are conceptually cool, so I am excited to illustrate and describe them.
+
 {{< figure src=`visibility.svg` caption=`**Fig. 2.** This is what a visibility polygon looks like. The occluding objects are purple, the polygon is yellow, and the query point is red.` >}}
 
-I found the problem of finding the visibility polygon interesting, so I decided to implement an algorithm that can calculate them.
 The algorithm I implemented is based on a description I found in [^bungiu-2014] under the section "3.2 Algorithm of Asano".
-
 That paper actually suggests a different algorithm for this problem, but I found the algorithm of Asano more fun.
 That paper also references a source for the algorithm [^asano-1985] , but I found the short description more interesting to work with.
 Also, [^asano-1985] is quite hard to access.
@@ -304,8 +305,8 @@ This is what the algorithm does:
 
 1. Prepare the input data:
     - Create a set of all segment endpoints, keeping track of which segment they came from;
-    - Order the endpoints based on the direction from $Q$ to the endpoint;
-    - For each of the endpoints, designate it is a $\text{Start}$ or an $\text{End}$ event.
+    - For each of the endpoints, designate it is a $\text{Start}$ or an $\text{End}$ event;
+    - Order the endpoints based on the direction from $Q$ to the endpoint.
 2. Determine the initial state -- choose the first endpoint and find all segments that are active when the sweep line passes through it.
 3. Go over all events, doing the following:
     - Activate the segment if this is a $\text{Start}$ event,
@@ -368,9 +369,29 @@ S = \{
 \ealig
 $$
 
-{{< figure src=`example-2.svg` caption=`**Fig. 3.2.**` >}}
+{{< figure src=`example-2.svg` caption=`**Fig. 3.2.** Ordering points based on the angle between the $X$-axis and a vector from $Q$ to that point.` >}}
 
-{{< figure src=`example-3.svg` caption=`**Fig. 3.3.**` >}}
+We need to order all segment endpoints by their position relative to $Q$.
+For each point $E$, let's find the angle $\overrightarrow{QE}$ makes with the $X$-axis.
+It can be calculated using the function
+
+$$
+\alig
+\text{angle}_Q \text{(} E \text{)} & := \text{atan2(} E_x - Q_x, E_y - Q_y \text{)}, \\
+where \, & Q = (Q_x, Q_y), Q \in \RR, \\
+         & E = (E_x, E_y), Q \in \RR. \\
+\ealig
+$$
+
+$$
+\alig
+S_\text{ordered} = [ \\
+(..., ...), \\
+] \\
+\ealig
+$$
+
+{{< figure src=`example-3.svg` caption=`**Fig. 3.3.** Segments connecting $Q$ with all other points.` >}}
 
 {{< figure src=`example-4.svg` caption=`**Fig. 3.4.**` >}}
 
@@ -426,3 +447,7 @@ For completeness, cases when the query point is collinear with the segments are 
 {{< figure src=`segments-1.svg` caption=`**Fig. 6.16, 6.17.**` >}}
 
 {{< figure src=`segments-2.svg` caption=`**Fig. 6.18, 6.19.**` >}}
+
+### Reducing input size
+
+...
