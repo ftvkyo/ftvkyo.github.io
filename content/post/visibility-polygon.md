@@ -379,12 +379,14 @@ $$
 
 ### Ordering endpoints within a segment
 
-{{< figure src=`edge-cases.svg` caption=`**Fig. 4.1, 4.2, 4.3.**` >}}
+{{< figure src=`ordering-endpoints.svg` caption=`**Fig. 4.1, 4.2, 4.3.**` >}}
 
 
 ### Determining whether a point lies in a half-plane
 
 A naive implementation of $\text{cmp}_Q$ can ...
+
+{{< figure src=`half-plane-check.svg` caption=`**Fig. 5.**` >}}
 
 ...
 
@@ -403,24 +405,24 @@ For completeness, cases when the query point is collinear with the segments are 
 
 #### Both segments are collinear with the query point
 
-{{< figure src=`segments-both-collinear.svg` caption=`**Fig. 5.1, 5.2.**` >}}
+{{< figure src=`segments-both-collinear.svg` caption=`**Fig. 6.1, 6.2.**` >}}
 
 #### One of the segments is collinear with the query point
 
-{{< figure src=`segments-collinear-pointing.svg` caption=`**Fig. 5.3, 5.4.**` >}}
+{{< figure src=`segments-collinear-pointing.svg` caption=`**Fig. 6.3, 6.4.**` >}}
 
-{{< figure src=`segments-collinear-touching.svg` caption=`**Fig. 5.5, 5.6.**` >}}
+{{< figure src=`segments-collinear-touching.svg` caption=`**Fig. 6.5, 6.6.**` >}}
 
-{{< figure src=`segments-collinear.svg` caption=`**Fig. 5.7, 5.8.**` >}}
+{{< figure src=`segments-collinear.svg` caption=`**Fig. 6.7, 6.8.**` >}}
 
 #### None of the segments are collinear with the query point
 
-{{< figure src=`segments-pointing.svg` caption=`**Fig. 5.9, 5.10.**` >}}
+{{< figure src=`segments-pointing.svg` caption=`**Fig. 6.9, 6.10.**` >}}
 
-{{< figure src=`segments-touching.svg` caption=`**Fig. 5.11, 5.12.**` >}}
+{{< figure src=`segments-touching.svg` caption=`**Fig. 6.11, 6.12.**` >}}
 
-{{< figure src=`segments-touching-equal.svg` caption=`**Fig. 5.13, 5.14. 5.15.**` >}}
+{{< figure src=`segments-touching-equal.svg` caption=`**Fig. 6.13, 6.14. 6.15.**` >}}
 
-{{< figure src=`segments-1.svg` caption=`**Fig. 5.16, 5.17.**` >}}
+{{< figure src=`segments-1.svg` caption=`**Fig. 6.16, 6.17.**` >}}
 
-{{< figure src=`segments-2.svg` caption=`**Fig. 5.18, 5.19.**` >}}
+{{< figure src=`segments-2.svg` caption=`**Fig. 6.18, 6.19.**` >}}
