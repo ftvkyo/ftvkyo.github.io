@@ -11,7 +11,7 @@ I have been building a 2D game for fun recently.
 Once I implemented a basic lighting system for it, I understood that I want game objects to cast shadows.
 There are multiple ways to achieve that, and the approach I selected is based on visibility polygons.
 
-{{< figure src=`render.webp` caption=`A frame from the game I am building, with differently colored flames lighting up different areas based on their visibility` >}}
+{{< figure src=`render.webp` caption=`**Fig. 1.** A frame from the game I am building, with differently colored flames lighting up different areas based on their visibility` >}}
 
 A visibility polygon represents the area that, for a given arrangement of occluding objects, has a direct line of sight to a certain point (called the *query point*).
 You can read more about them here:
@@ -19,7 +19,7 @@ You can read more about them here:
 - [Visibility polygon](https://en.wikipedia.org/wiki/Visibility_polygon) on Wikipedia
 - [2D Visibility](https://www.redblobgames.com/articles/visibility/) on Red Blob Games
 
-{{< figure src=`visibility.svg` caption=`This is what a visibility polygon looks like. The occluding objects are purple, the polygon is yellow, and the query point is red.` >}}
+{{< figure src=`visibility.svg` caption=`**Fig. 2.** This is what a visibility polygon looks like. The occluding objects are purple, the polygon is yellow, and the query point is red.` >}}
 
 I found the problem of finding the visibility polygon interesting, so I decided to implement an algorithm that can calculate them.
 The algorithm I implemented is based on a description I found in [^bungiu-2014] under the section "3.2 Algorithm of Asano".
@@ -230,6 +230,8 @@ $$
 
 {{% aside %}}
 
+### Side note: Implications on the output
+
 As you are going to see, this has some implications on the produced output.
 Basically, if there are no segments in some direction relative to $Q$, there won't be any surfaces visible there.
 
@@ -260,6 +262,8 @@ As the current endpoint changes, the line rotates around $Q$.
 
 {{% aside %}}
 
+### Side note: Why we only care about endpoints
+
 It's important to understand why we only care about endpoints, and not whole segments.
 As stated before, the input data prohibits segments that intersect anywhere but at their endpoints.
 This basically means that as the sweep line rotates around $Q$, the notion of the "segment nearest to $Q$" can only ever change when the sweep line goes through a segment endpoint.
@@ -282,7 +286,7 @@ Instead of keeping track of just the nearest segment, we will keep track of all 
 As the sweep line goes through segment endpoints, we will be "activating" and "deactivating" corresponding segments.
 In practice, given some endpoint, it can be difficult to tell what to do with it on the fly.
 For this reason, all endpoints are designated as $\text{Start}$ or $\text{End}$ events.
-See [Ordering endpoints within a segment](#ordering-endpoints-within-a-segment) for details.
+See [Ordering endpoints within a segment](#ordering-endpoints-within-a-segment).
 
 To keep track of currently active segments, an ordered set can be used.
 Common implementations of ordered sets [^ordered-sets] can do insertion and removal in $O(\text{log} \, n)$ time -- that's exactly what we need!
@@ -291,12 +295,12 @@ Common implementations of ordered sets [^ordered-sets] can do insertion and remo
 Read about [BTrees](https://en.wikipedia.org/wiki/B-tree) on Wikipedia.
 
 Note, though, that we need to define the ordering between the segments to store them in an ordered set.
-It's a bit tricky to do, so see [Ordering segments by distance to a point](#ordering-segments-by-distance-to-a-point) for details.
+It's a bit tricky to do, so see [Ordering segments by distance to a point](#ordering-segments-by-distance-to-a-point).
 
----
+### Summary
 
 Time to bring this all together.
-So, that's what the algorithm needs to do:
+This is what the algorithm does:
 
 1. Prepare the input data:
     - Create a set of all segment endpoints, keeping track of which segment they came from;
@@ -310,19 +314,19 @@ So, that's what the algorithm needs to do:
 
 Let's go through an example, and then we can look into the fun implementation detais.
 
-### Example
+## Example
 
 In this example, we will ...
 
 Let's define some example input data.
 The input data consists of the point $Q$ and a set of segments $\mathbf{S}$.
-You can see the input configuration in **Fig. 1.1**.
+You can see the input configuration in **Fig. 3.1**.
 It contains the point $Q$ (the star in the middle) and 16 segments (purple lines) connecting 16 points.
 
 Note the 4 segments $R_1R_2, R_2R_3, R_3R_4, R_4R_1$ that together form a rectangle that surrounds everything else.
-This guarantees that there is at least one segment in any direction from $Q$, as explained in a side-note in [Algorithm inputs and outputs](#algorithm-inputs-and-outputs).
+This guarantees that there is at least one segment in any direction from $Q$, as explained in the [Side note: Implications on the output](#side-note-implications-on-the-output).
 
-{{< figure src=`example-1.svg` caption=`**Fig. 1.1.** Example input data.` >}}
+{{< figure src=`example-1.svg` caption=`**Fig. 3.1.** Example input data.` >}}
 
 For simplicity, let's say that $Q = (0, 0)$.
 Let's also choose coordinates for all of the points:
@@ -364,26 +368,28 @@ S = \{
 \ealig
 $$
 
-{{< figure src=`example-2.svg` caption=`**Fig. 1.2.**` >}}
+{{< figure src=`example-2.svg` caption=`**Fig. 3.2.**` >}}
 
-{{< figure src=`example-3.svg` caption=`**Fig. 1.3.**` >}}
+{{< figure src=`example-3.svg` caption=`**Fig. 3.3.**` >}}
 
-{{< figure src=`example-4.svg` caption=`**Fig. 1.4.**` >}}
-
-
-## Ordering endpoints within a segment
-
-{{< figure src=`edge-cases.svg` caption=`**Fig. 2.**` >}}
+{{< figure src=`example-4.svg` caption=`**Fig. 3.4.**` >}}
 
 
-## Determining whether a point lies in a half-plane
+## Implementation details
+
+### Ordering endpoints within a segment
+
+{{< figure src=`edge-cases.svg` caption=`**Fig. 4.1, 4.2, 4.3.**` >}}
+
+
+### Determining whether a point lies in a half-plane
 
 A naive implementation of $\text{cmp}_Q$ can ...
 
 ...
 
 
-## Ordering segments by distance to a point
+### Ordering segments by distance to a point
 
 The algorithm features a segment comparison routine that is aimed at decreasing the cost of performing the comparison by reducing the number of required floating point operations.
 
@@ -395,28 +401,26 @@ The cheap segment comparison routine is **only valid under the following assumpt
 The comparison routine can be simplified if all segments collinear with the query point are removed from the input data.
 For completeness, cases when the query point is collinear with the segments are still considered below.
 
-### Both segments are collinear with the query point
+#### Both segments are collinear with the query point
 
-{{< figure src=`segments-both-collinear.svg` caption=`**Fig. 3.1**` >}}
+{{< figure src=`segments-both-collinear.svg` caption=`**Fig. 5.1, 5.2.**` >}}
 
-### One of the segments is collinear with the query point
+#### One of the segments is collinear with the query point
 
-{{< figure src=`segments-collinear-pointing.svg` caption=`**Fig. 3.2**` >}}
+{{< figure src=`segments-collinear-pointing.svg` caption=`**Fig. 5.3, 5.4.**` >}}
 
-{{< figure src=`segments-collinear-touching.svg` caption=`**Fig. 3.3**` >}}
+{{< figure src=`segments-collinear-touching.svg` caption=`**Fig. 5.5, 5.6.**` >}}
 
-{{< figure src=`segments-collinear.svg` caption=`**Fig. 3.4**` >}}
+{{< figure src=`segments-collinear.svg` caption=`**Fig. 5.7, 5.8.**` >}}
 
-### None of the segments are collinear with the query point
+#### None of the segments are collinear with the query point
 
-{{< figure src=`segments-pointing.svg` caption=`**Fig. 3.5**` >}}
+{{< figure src=`segments-pointing.svg` caption=`**Fig. 5.9, 5.10.**` >}}
 
-{{< figure src=`segments-touching.svg` caption=`**Fig. 3.6**` >}}
+{{< figure src=`segments-touching.svg` caption=`**Fig. 5.11, 5.12.**` >}}
 
-<!-- TODO: add an illustration for when the segments are collinear to each other -->
+{{< figure src=`segments-touching-equal.svg` caption=`**Fig. 5.13, 5.14. 5.15.**` >}}
 
-{{< figure src=`segments-touching-equal.svg` caption=`**Fig. 3.7**` >}}
+{{< figure src=`segments-1.svg` caption=`**Fig. 5.16, 5.17.**` >}}
 
-{{< figure src=`segments-1.svg` caption=`**Fig. 3.8**` >}}
-
-{{< figure src=`segments-2.svg` caption=`**Fig. 3.9**` >}}
+{{< figure src=`segments-2.svg` caption=`**Fig. 5.18, 5.19.**` >}}
