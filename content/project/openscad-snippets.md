@@ -619,3 +619,188 @@ double_helix_bridges(
 ```
 
 {{% /details %}}
+
+## Interpolated extrusion
+
+{{% figure src=`interpolate-extrude.webp` %}}
+
+This shows how to extrude while interpolating between two outlines.
+It reuses the `pts_extrude` module from previous examples.
+The difference is in how individual slices of the extrusion are generated.
+
+There are functions `f_circle` and `f_hexagon`, they take a parameter $t \in [0, 1]$ and return points of their outline.
+Each resulting slice is an interpolation of the slices that come from those functions.
+See function `f_slice` for a complete list of transformations applied to the slices.
+
+I also used an easing function for interpolation to make the transition away from the circle more smooth.
+For fun, there is also an added twist interpolated with a cubic ease-in-out function.
+
+{{% details `Source code of the interpolated extrusion` %}}
+
+```scad
+/**
+    Performs linear interpolation between values `v0` and `v1`.
+
+    Parameter `t` determines the weights of `v0` and `v1`.
+    Its valid values are in the interval [0, 1].
+*/
+function lerp(v0, v1, t) = assert(t >= 0 && t <= 1) (1 - t) * v0 + t * v1;
+
+
+function _assert_vec2(vec) =
+    assert(is_list(vec) && len(vec) == 2, "a vec is not a list of 2 elements")
+    assert(is_num(vec.x) && is_num(vec.y), "a vec component is not a number")
+    true;
+
+function _assert_vec3(vec) =
+    assert(is_list(vec) && len(vec) == 3, "a vec is not a list of 3 elements")
+    assert(is_num(vec.x) && is_num(vec.y) && is_num(vec.z), "a vec component is not a number")
+    true;
+
+function _assert_flat(flat) =
+    assert(is_list(flat) && len(flat) > 2, "a flat is not a list of more than 2 points")
+    is_list([ for (point = flat)
+        assert(is_list(point) && len(point) == 2, "a point in a flat is not a list of 2 elements")
+        assert(is_num(point.x) && is_num(point.y), "a component of a point in a flat is not a number")
+        true
+    ]);
+
+function _assert_slice(slice) =
+    assert(is_list(slice) && len(slice) > 2, "a slice is not a list of more than 2 points")
+    is_list([ for (point = slice)
+        assert(is_list(point) && len(point) == 3, "a point in a slice is not a list of 3 elements")
+        assert(is_num(point.x) && is_num(point.y) && is_num(point.z), "a component of a point in a slice is not a number")
+        true
+    ]);
+
+
+function pts_f(f, edges) =
+    assert(is_function(f), "'f' is not a function")
+    assert(is_num(edges) && edges > 2, "'edges' is not a number greater than 2")
+    [ for (e = [1 : 1 : edges]) f(e / edges) ];
+
+function pts_f_interp(f1, f2, t) =
+    assert(is_num(t) && 0 <= t && t <= 1, "'t' is not a number between 0 and 1")
+    let (
+        s1 = pts_f(f1, $fn),
+        s2 = pts_f(f2, $fn)
+    )
+    [ for (i = [0 : $fn - 1]) lerp(s1[i], s2[i], t) ];
+
+function pts_scale2(slice, s) =
+    assert(_assert_flat(slice))
+    assert(_assert_vec2(s))
+    [ for (p = slice) [p.x * s.x, p.y * s.y] ];
+
+function pts_rotate2(flat, r) =
+    assert(_assert_flat(flat))
+    assert(is_num(r))
+    [ for (p = flat) [p.x * cos(r) - p.y * sin(r), p.x * sin(r) + p.y * cos(r)] ];
+
+function pts_translate3(slice, t) =
+    assert(_assert_slice(slice))
+    assert(_assert_vec3(t))
+    [ for (point = slice) point + t ];
+
+function pts_rotate3(s, r) =
+    assert(_assert_slice(s))
+    assert(_assert_vec3(r))
+    [ for (p0 = s)
+        let (
+            // 1. rotate around Z
+            p1 = [
+                p0.x * cos(r.z) - p0.y * sin(r.z),
+                p0.x * sin(r.z) + p0.y * cos(r.z),
+                p0.z,
+            ],
+            // 2. rotate around Y
+            p2 = [
+                p1.x * cos(r.y) + p1.z * sin(r.y),
+                p1.y,
+              - p1.x * sin(r.y) + p1.z * cos(r.y),
+            ],
+            // 3. rotate around X
+            p3 = [
+                p2.x,
+                p2.y * cos(r.x) - p2.z * sin(r.x),
+                p2.y * sin(r.x) + p2.z * cos(r.x),
+            ]
+        ) p3
+    ];
+
+function pts_inflate(flat) =
+    assert(_assert_flat(flat))
+    [ for (point = flat) [point.x, point.y, 0] ];
+
+
+// Credit: https://easings.net/
+function ease_in_sine(t) = 1 - cos(t * 90);
+function ease_in_out_cubic(t) =
+    t < 0.5
+    ? 4 * t * t * t
+    : 1 - pow(-2 * t + 2, 3) / 2;
+
+
+radius = 10;
+
+bend_radius = 25;
+bend_angle = 45;
+
+twist = 30;
+
+$fn = 120;
+
+f_circle = function(t) [cos(t * 360), sin(t * 360)];
+
+f_hexagon_point = function(n)
+    assert(is_num(n) && n >= 0, "'n' is not a number greater than 0")
+    let (n = n % 6)
+    let (r = sqrt(3) / 2)
+    n == 0 ? [1, 0] :
+    n == 1 ? [1/2, r] :
+    n == 2 ? [- 1/2, r] :
+    n == 3 ? [-1 , 0] :
+    n == 4 ? [- 1/2, - r] :
+    n == 5 ? [1/2, - r] :
+    undef;
+
+f_hexagon = function(t)
+    assert(is_num(t) && 0 <= t && t <= 1, "'t' is not a number between 0 and 1")
+    let (
+        r = sqrt(3) / 2,
+        sector = floor(t * 6),
+        sector_t = t * 6 - sector,
+        sector_point_a = f_hexagon_point(sector),
+        sector_point_b = f_hexagon_point(sector + 1)
+    ) lerp(sector_point_a, sector_point_b, sector_t);
+
+f_slice = function(t, ease_interp, ease_twist)
+    pts_translate3(
+        pts_rotate3(
+            pts_translate3(
+                pts_inflate(
+                    pts_rotate2(
+                        pts_scale2(
+                            pts_f_interp(
+                                f_circle,
+                                f_hexagon,
+                                ease_interp(t)
+                            ),
+                            [radius, radius]
+                        ),
+                        ease_twist(t) * twist
+                    )
+                ),
+                [-bend_radius, 0, 0]
+            ),
+            [0, bend_angle * t, 0]
+        ),
+        [bend_radius, 0, 0]
+    );
+
+f_slice_eased = function(t) f_slice(t, function(t) ease_in_sine(t), function(t) ease_in_out_cubic(t));
+
+pts_extrude([ for (t = [0 : 1 / bend_angle : 1]) f_slice_eased(t) ], loop = false);
+```
+
+{{% /details %}}
