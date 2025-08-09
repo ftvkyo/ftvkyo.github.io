@@ -34,7 +34,7 @@ inline = [['$', '$']]
 
 [params]
 dateFormat = "Jan 2, 2006"
-footer = "© Andrei"
+footer = "© Rei"
 figureSrc = "/img"
 readingTimeSections = ["/post"]
 
@@ -75,7 +75,7 @@ url = "/about/"
 weight = 40
 
 [[menu.contacts]]
-name = "`andrei (at) ftvkyo.me`"
+name = "`rei (at) ftvkyo.me`"
 params = { img = "icon/email.svg" }
 weight = 10
 
@@ -90,7 +90,7 @@ params = { img = "icon/discord.svg" }
 weight = 30
 
 [[menu.about]]
-name = "`andrei (at) ftvkyo.me`"
+name = "`rei (at) ftvkyo.me`"
 params = { img = "icon/email.svg" }
 weight = 10
 
