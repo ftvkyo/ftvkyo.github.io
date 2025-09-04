@@ -732,6 +732,86 @@ function pts_inflate(flat) =
     assert(_assert_flat(flat))
     [ for (point = flat) [point.x, point.y, 0] ];
 
+module pts_extrude(slices, loop = true, quads = true) {
+    /* Validate the data */
+
+    // Check that 'slices' is a list of slices
+    assert(is_list(slices) && len(slices) > 2, "'slices' is not a list of more than 2 slices");
+
+    // Check that the first slice has enough points
+    assert(is_list(slices[0]) && len(slices[0]) > 2, "'slices[0]' is not a slice of more than 2 points");
+
+    _num_slices = len(slices);
+    _num_points = len(slices[0]);
+
+    // Check that all the slices have the same number of points
+    for (slice = slices) {
+        assert(is_list(slice) && len(slice) == _num_points, "a slice has a wrong number of points");
+    }
+
+    // Check that all slices contain points of right dimensionality
+    for (slice = slices) {
+        for (point = slice) {
+            assert(is_list(point) && len(point) == 3, "a point is not a list of 3 elements");
+            assert(is_num(point.x) && is_num(point.y) && is_num(point.z), "a point component is not a number");
+        }
+    }
+
+    /* Generate inputs */
+
+    // Collect all the points
+    points = [ for (slice = slices) each slice ];
+
+    // If not loop, don't connect the last slice with the zeroth
+    _last_slice = loop ? _num_slices - 1 : _num_slices - 2;
+
+    // Define all the faces
+    faces = [ for (slice = [0 : _last_slice]) each [
+        // For each slice, define rectangular faces that connect it to the next slice
+        if (quads)
+            for (i = [0 : _num_points - 1])[
+                // Two points on the current slice
+                (slice * _num_points) + i,
+                (slice * _num_points) + (i + 1) % _num_points,
+                    // Two points on the next slice (possibly zeroth)
+                ((slice + 1) % _num_slices * _num_points) + (i + 1) % _num_points,
+                ((slice + 1) % _num_slices * _num_points) + i,
+            ]
+        else
+            for (i = [0 : _num_points - 1]) each [
+                [
+                    // Two points on the current slice
+                    (slice * _num_points) + i,
+                    (slice * _num_points) + (i + 1) % _num_points,
+                    // One point on the next slice (possibly zeroth)
+                    ((slice + 1) % _num_slices * _num_points) + (i + 1) % _num_points,
+                ],
+                [
+                    // One point on the current slice
+                    (slice * _num_points) + i,
+                    // Two points on the next slice (possibly zeroth)
+                    ((slice + 1) % _num_slices * _num_points) + (i + 1) % _num_points,
+                    ((slice + 1) % _num_slices * _num_points) + i,
+                ]
+            ]
+    ]];
+
+    /* Render */
+
+    if (loop) {
+        polyhedron(points, faces, convexity = 10);
+    } else {
+        // Add closing faces
+
+        face_end_1 = [ for (i = [1 : _num_points]) _num_points - i ];
+        face_end_2 = [ for (i = [0 : _num_points - 1]) i + (_num_slices - 1) * _num_points];
+
+        faces = [ for (fs = [[face_end_1], faces, [face_end_2]]) each fs];
+
+        polyhedron(points, faces, convexity = 10);
+    }
+}
+
 
 // Credit: https://easings.net/
 function ease_in_sine(t) = 1 - cos(t * 90);
