@@ -319,6 +319,8 @@ Let's go through an example, and then we can look into the fun implementation de
 
 In this example, we will ...
 
+### Example: defining input data
+
 Let's define some example input data.
 The input data consists of the point $Q$ and a set of segments $\mathbf{S}$.
 You can see the input configuration in **Fig. 3.1**.
@@ -360,7 +362,7 @@ And, based on those points, let's define the set of occluding segments
 
 $$
 \alig
-S = \{
+\mathbf{S} = \{
 & A_1A_2, A_2A_3, A_3A_4, A_4A_1, \\
 &B_1B_2, B_2B_3, B_3B_4, B_4B_1, \\
 &C_1C_2, C_2C_3, C_3C_4, C_4C_1, \\
@@ -369,9 +371,88 @@ S = \{
 \ealig
 $$
 
-{{< figure src=`example-2.svg` caption=`**Fig. 3.2.** Ordering points based on the angle between the $X$-axis and a vector from $Q$ to that point.` >}}
+### Example: ordering segment endpoints
 
-We need to order all segment endpoints by their position relative to $Q$.
+Now that we defined the input data, we need to order all segment endpoints by their position relative to $Q$.
+For each point $E$, we will use the angle between the $\overrightarrow{QE}$ and the $X$-axis shown in **Fig. 3.2**.
+
+{{< figure src=`example-2.svg` caption=`**Fig. 3.2.** Ordering points based on the angle between the $X$-axis (in blue) and a vector from $Q$ to that point.` >}}
+
+We also need to keep track of what segment each endpoint came from, and designate the endpoints as $\text{Start}$ or $\text{End}$ of that segment.
+Read more about how this is done in the [Ordering endpoints](#ordering-endpoints) section.
+
+The result of this step is an ordered list of all endpoints, together with their $\text{Start}$/$\text{End}$ designation and their segment:
+
+$\mathbf{P}_\text{ordered} = $
+
+1. $A_4$ in $A_3A_4$ is $\text{End}$,
+1. $A_4$ in $A_1A_4$ is $\text{Start}$,
+1. $B_3$ in $B_2B_3$ is $\text{Start}$,
+1. $B_3$ in $B_3B_4$ is $\text{Start}$,
+1. $A_1$ in $A_1A_2$ is $\text{End}$,
+1. $A_1$ in $A_4A_1$ is $\text{End}$,
+1. $B_4$ in $B_3B_4$ is $\text{End}$,
+1. $B_4$ in $B_4B_1$ is $\text{Start}$,
+1. $R_4$ in $R_3R_4$ is $\text{End}$,
+1. $R_4$ in $R_4R_1$ is $\text{Start}$,
+1. $B_1$ in $B_4B_1$ is $\text{End}$,
+1. $B_1$ in $B_1B_2$ is $\text{Start}$,
+1. $B_2$ in $B_1B_2$ is $\text{End}$,
+1. $B_2$ in $B_2B_3$ is $\text{End}$,
+1. $R_1$ in $R_4R_1$ is $\text{End}$,
+1. $R_1$ in $R_1R_2$ is $\text{Start}$,
+1. $C_1$ in $C_4C_1$ is $\text{Start}$,
+1. $C_1$ in $C_1C_2$ is $\text{Start}$,
+1. $R_2$ in $R_1R_2$ is $\text{End}$,
+1. $R_2$ in $R_2R_3$ is $\text{Start}$,
+1. $C_2$ in $C_1C_2$ is $\text{End}$,
+1. $C_2$ in $C_2C_3$ is $\text{Start}$,
+1. $C_4$ in $C_4C_1$ is $\text{End}$,
+1. $C_4$ in $C_3C_4$ is $\text{Start}$,
+1. $C_3$ in $C_2C_3$ is $\text{End}$,
+1. $C_3$ in $C_3C_4$ is $\text{End}$,
+1. $A_2$ in $A_1A_2$ is $\text{Start}$,
+1. $A_2$ in $A_2A_3$ is $\text{Start}$,
+1. $A_3$ in $A_2A_3$ is $\text{End}$,
+1. $A_3$ in $A_3A_4$ is $\text{Start}$,
+1. $R_3$ in $R_2R_3$ is $\text{End}$,
+1. $R_3$ in $R_3R_4$ is $\text{Start}$.
+
+### Example: finding the initial state
+
+Our sweep line will start from the first point in the list.
+As you might have noticed in **Fig. 3.2**, the positive direction of the $X$-axis intersects with some of the segments.
+We need to determine which segments are initially intersected before we can start the main sweep.
+
+To do that, we will perform an "initialisation" sweep, in which we will simply track segment $\text{Start}$ and $\text{End}$ events.
+Let's say we have a (mutable) set of active segmens $S_\text{initial}$ which starts empty.
+Then, let's go through the ordered list of all endpoints and:
+- if the endpoint is a $\text{Start}$ of a segment, add the segment to the set,
+- if it is an $\text{End}$ of a segment that is present in the set, remove the segment from the set,
+- otherwise, keep the set intact.
+
+After that, $S_\text{initial}$ will contain the segments that have "started" but have not yet "ended".
+
+### Example: sweeping the line
+
+---
+
+**Fig. 3.3** shows the lines connecting $Q$ with all of the segment endpoints.
+It also shows points $A'_1$, $B'_2$, $C'_1$, $C'_3$ and $A'_2$ that represent projections of the corresponding points onto the next closest segment in that direction.
+
+{{< figure src=`example-3.svg` caption=`**Fig. 3.3.** Segments connecting $Q$ with all other points.` >}}
+
+### Example: result
+
+{{< figure src=`example-4.svg` caption=`**Fig. 3.4.**` >}}
+
+
+## Implementation details
+
+### Ordering endpoints
+
+1. by angle
+
 For each point $E$, let's find the angle $\overrightarrow{QE}$ makes with the $X$-axis.
 It can be calculated using the function
 
@@ -383,22 +464,7 @@ where \, & Q = (Q_x, Q_y), Q \in \RR, \\
 \ealig
 $$
 
-$$
-\alig
-S_\text{ordered} = [ \\
-(..., ...), \\
-] \\
-\ealig
-$$
-
-{{< figure src=`example-3.svg` caption=`**Fig. 3.3.** Segments connecting $Q$ with all other points.` >}}
-
-{{< figure src=`example-4.svg` caption=`**Fig. 3.4.**` >}}
-
-
-## Implementation details
-
-### Ordering endpoints within a segment
+2. within a segment
 
 {{< figure src=`ordering-endpoints.svg` caption=`**Fig. 4.1, 4.2, 4.3.**` >}}
 
