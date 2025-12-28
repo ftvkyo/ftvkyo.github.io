@@ -1,7 +1,7 @@
 ---
 title: "2024 in review"
 date: 2024-12-26T12:00:00Z
-tags: [Reflection]
+tags: [Reflection, Year in review]
 toc: true
 ---
 
