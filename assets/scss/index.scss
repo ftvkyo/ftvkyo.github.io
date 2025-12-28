@@ -36,6 +36,10 @@ a[aria-current="page"] {
     @include c.link(c.$pink, c.$pink, c.$pink, c.$pink);
 }
 
+a[href^="#"]::before {
+    content: "# ";
+}
+
 pre,
 code {
     font-family: f.$font-monospace;
