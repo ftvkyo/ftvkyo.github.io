@@ -1,23 +1,12 @@
 {{ define "main" }}
     {{ $pages := cond (eq .Params.alphabetic true) .Pages.ByTitle .Pages.ByPublishDate.Reverse }}
 
-    {{ $pages_out := where $pages "Params.draft" false }}
-    {{ $pages_drafts := where $pages "Params.draft" true }}
-    {{ $show_drafts := gt (len $pages_drafts) 0 }}
-
     <h1 class="{{ .Params.titleClass }}">{{ .Title | markdownify }}</h1>
     {{ .Content }}
 
     <ul class="cards">
-        {{ range $pages_out }}
+        {{ range $pages }}
             {{ partial "list-item.html" . }}
-        {{ end }}
-
-        {{ if $show_drafts }}
-            <h2>Drafts</h2>
-            {{ range where $pages "Params.draft" true }}
-                {{ partial "list-item.html" . }}
-            {{ end }}
         {{ end }}
     </ul>
 {{ end }}
