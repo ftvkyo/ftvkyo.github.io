@@ -1,40 +1,40 @@
 name: Deploy to ftvkyo.github.io
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      # Used by hugo for better sass (e.g. @use)
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Used by hugo for better sass (e.g. @use)
+            - name: Install Dart Sass
+              run: sudo snap install dart-sass
 
-      - uses: actions/checkout@v4
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+            - uses: actions/checkout@v4
+              with:
+                  submodules: true # Fetch Hugo themes (true OR recursive)
+                  fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: '0.148.0'
-          extended: true
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: "0.148.0"
+                  extended: true
 
-      - name: Build
-        run: hugo
+            - name: Build
+              run: hugo
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
-        with:
-          cname: www.ftvkyo.me
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          force_orphan: true
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v4
+              if: github.ref == 'refs/heads/main'
+              with:
+                  cname: ftvkyo.me
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./public
+                  force_orphan: true
