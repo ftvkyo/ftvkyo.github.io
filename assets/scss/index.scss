@@ -388,9 +388,21 @@ details {
 }
 
 hr {
-    border-style: dashed;
-    border-color: c.$grey-20;
-    margin: 1.5em 0;
+    margin: 2em 0;
+
+    @media screen {
+        border: none;
+        border-radius: calc(s.$text-small / 2);
+
+        height: s.$text-small;
+        background: linear-gradient(in oklch to right, c.$pink, c.$purple);
+        filter: blur(calc(s.$text-small / 4));
+    }
+
+    @media print {
+        border-style: dashed;
+        border-color: c.$grey-20;
+    }
 }
 
 aside {
