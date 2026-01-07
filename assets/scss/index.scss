@@ -225,7 +225,7 @@ footer::before {
 
     $w: 7em;
     $h: 3em;
-    $g: linear-gradient(to right, c.$pink, c.$purple);
+    $g: linear-gradient(in oklch to right, c.$pink, c.$purple);
 
     width: $w;
     height: $h;
