@@ -298,57 +298,62 @@ I would use Pulseaudio, but for some reason the overwhelming majority of my atte
 
 I am looking forward to the future improvements in the user experience of this system.
 
-### Other events
 
-- I went to 20 [parkruns][parkrun]
-- I organised an "OpenSCAD for Beginners" workshop at [Edinburgh Hacklab][ehlab]
-    - You can find the slides on GitHub: [ftvkyo/openscad-workshop][openscad-workshop]
-    - A few of my colleagues came to Edinburgh for the workshop, I was very happy to see them
-- I organised a lot of boardgames, videogames and movie watching events
+### Other events and projects
 
-[parkrun]: https://www.parkrun.org.uk/
+I organised an "OpenSCAD for Beginners" workshop at [Edinburgh Hacklab][ehlab].
+You can find the slides on GitHub: [ftvkyo/openscad-workshop][openscad-workshop].
+A few of my colleagues came to Edinburgh for the workshop, I was very happy to see them.
+
 [ehlab]: https://ehlab.uk
 [openscad-workshop]: https://github.com/ftvkyo/openscad-workshop
 
+I did a bunch of things with my IKEA Ivar shelves.
+My friend and I painted one double unit, and I used the other double unit to make ~~a giraffe~~ a projector stand, a steering wheel rig and a few other small things.
 
-### Other projects
+I did a lot of 3D-designing and 3D-printing and levelled up my OpenSCAD incantations (with a particular focus on curves).
+I did some drawing and leatherwork.
 
-- Modifying IKEA Ivars
-    - Projector giraffe
-    - Racing wheel rig
-    - Painting a shelf with a friend
-- 3D-designing and 3D-printing
-    - Upgraded laptop stand hinges
-    - A stand for TRMNL
-    - Choreboard
-    - Various hooks and clips
-    - Steam Deck d-pad replacement
-    - Car phone magnet
-    - Procedurally generated keycaps for preonic
-    - Many cool shapes
-- Coding
-    - ?
-- Some leatherwork
-- Laser-printed daily planner
-- Drawing
+I went to 20 [parkruns][parkrun] and organised a bunch of boardgames, videogames and movie watching events.
+
+[parkrun]: https://www.parkrun.org.uk/
 
 
-### Travel
+### Travel and holidays
 
-- Narrowboat (4 days)
-- London (5 days)
-  - YOASOBI
-- London (8 days)
-  - Friends
-- Sheffield (3 days)
-- Liverpool (? days)
+My friends and I sailed a narrowboat from Falkirk to Winchburgh Marina and back over 4 days.
+That was a very fun adventure that included going through the [Falkirk Wheel][falkirk-wheel] twice, finding a sheep skull, exploring multiple towns, rescuing a drowned drone, and even ordering a taxi by calling their dispatch centre!
+
+[falkirk-wheel]: https://en.wikipedia.org/wiki/Falkirk_Wheel
+
+I went to London twice, for a total of 13 days.
+I saw [Yoasobi][yoasobi] in [Wembley Arena][wembley-arena], went to the [Thames Traditional Boat Festival][ttbf] in [Henley-on-Thames][henley-on-thames] and rode on the (miniature) [Great Cockcrow Railway][cockcrow-railway].
+
+[yoasobi]: https://en.wikipedia.org/wiki/Yoasobi
+[wembley-arena]: https://en.wikipedia.org/wiki/Wembley_Arena
+[ttbf]: https://tradboatfestival.com/
+[henley-on-thames]: https://en.wikipedia.org/wiki/Henley-on-Thames
+[cockcrow-railway]: https://en.wikipedia.org/wiki/Great_Cockcrow_Railway
+
+The second trip to London was also the first time I travelled truly by myself.
+I stayed in a hostel and did a lot of walking, coding and writing in-between hanging out with friends.
+
+I saw my childhood friend in Sheffield before she left the country.
+I explored Liverpool and went to a [Pendulum][pendulum] set there.
+
+[pendulum]: https://en.wikipedia.org/wiki/Pendulum_(drum_and_bass_band)
 
 
-### Work
+### Work stuff
 
-- Work: Business Insider
-- Work: trip 1 (4 days)
-- Work: trip 2 (6 days)
+Work life has also been eventful.
+I went on two work trips over 10 days in total, both for productivity and social purposes.
+I got to meet most of my colleagues in person, it was wonderful and I am looking forward to future gatherings.
+Our company also appeared at multiple conferences and even got featured in [Business Insider][work-business-insider]!
+
+[work-business-insider]: https://www.businessinsider.com/spectral-compute-funding-pitch-deck-nvidia-cuda-2025-11
+
+---
 
 
 ## Goals from last year
