@@ -1,6 +1,6 @@
 ---
 title: "2025 in review"
-date: 2025-12-31T23:59:59Z
+date: 2026-01-18T23:59:59Z
 tags: [Reflection, Year in review]
 toc: true
 draft: true
@@ -17,51 +17,14 @@ So, here I am, writing a follow-up :)
 
 2025 has been a transformative year.
 It had its ups and downs, and felt somewhat chaotic.
-But the overall feelings about it are positive, and I am looking forward to reviewing it.
+But the overall feelings about it are positive, and I think I made a lot of progress.
 
 
 ## Key events of 2025
 
-{{% aside %}}
-
-Over the last few days I have been slowly realising how many things happened in 2025.
-I am curious to see how long this section is going to be once I write it.
-
-{{% /aside %}}
-
-
-### Event highlight: Moving
-
-At the start of the year, I moved into a different flat, having spent 3 years in the last one.
-I really appreciate the move, as I find the new area much more enjoyable.
-A few months after I moved, I drew a [floorplan][floorplans] of the new place.
-
-[floorplans]: /project/floorplans
-
-Now, almost a year later, this place feels like home even more than the last place did after 3 years there.
-I put a lot of effort into adapting to the new place and into adapting it for me.
-The scope of these adjustments can be pretty big, and I mostly focused on the following:
-
-- Adding decorations that feel "right" and that require minimal attention
-- Disassembling and getting rid of some of the furniture that I kept from the old flat
-- Finding appropriate places to store many little things (or getting rid of them)
-
-This year I learned a lot about optimising my living/working space.
-At the same time, there are a couple of things that are becoming increasingly clear to me.
-
-First, for many reasons, I need more space.
-I do a lot of things at home, so the space has to stay highly multifunctional, and that often causes conflicts between activities.
-This is complicated by the fact that a lot of the furniture is "glued" in place because there is no better place for it.
-And, well, I also just want to have a guest bedroom, a guest desk, and a greater ability to reconfigure my flat.
-
-And the other thing -- I want to have more control over noise levels.
-The biggest noise sources are the boiler, the radiators and the fridge.
-Don't get me wrong, on their own they are alright, but any source of noise can drive you mad if it's around you all day every day.
-And there are many other little things that contribute to the noisescape.
-Just for instance --- squeaky floors (don't get me started on how uneven they are!), coil whine from various power supplies and tech devices, fan noises, upstairs neighbours walking around or doing laundry.
-My bed is also right against the wall of the stairwell, so all of the corridor sounds get nicely amplified for the optimal sleep experience.
-
-So, having learned so much, maybe I will move again in 2026 :)
+At the time of writing, I am still processing just how many things happened in 2025.
+A few things deserve more than just a line in a list, so I gave them separate sections.
+There is a Table of Contents at the top of the page if you need it :)
 
 
 ### Event highlight: Factorio LAN party
@@ -82,6 +45,8 @@ It is based on [graftorio2][graftorio2] but has some unique statistics and bugs.
 One of the unique statistics is "Area Paved" --- we all know it's not a megabase if there is no concrete.
 During the game, we projected a Grafana dashboard with game stats onto the wall, and one of the guests even wrote custom CSS to give it some party vibes.
 
+{{< figure src=`factorio-grafana.webp` caption=`Factorio Grafana projected onto a wall in my living room` >}}
+
 I recorded a timelapse of the game, if you'd like to see it:
 - [Day 1][factorio-day1]
 - [Day 2][factorio-day2]
@@ -92,6 +57,43 @@ I recorded a timelapse of the game, if you'd like to see it:
 [factorio-day3]: https://www.youtube.com/watch?v=CyJb9VveP2Y
 [statorio]: https://github.com/ftvkyo/statorio
 [graftorio2]: https://github.com/remijouannet/graftorio2
+
+
+### Event highlight: Moving
+
+At the start of the year, I moved into a different flat, having spent 3 years in the last one.
+I really appreciate the move, as I find the new area much more enjoyable.
+A few months after I moved, I drew a [floorplan][floorplan] of the new place.
+
+[floorplan]: /project/floorplans/#edinburgh-may-2025
+
+Now, almost a year later, this place feels like home even more than the last place did after 3 years there.
+I put a lot of effort into adapting to the new place and into adapting it for me.
+The scope of these adjustments can be pretty big, and I mostly focused on the following:
+
+- Adding decorations that feel "right" and that require minimal attention
+- Disassembling and getting rid of some of the furniture that I kept from the old flat
+- Finding appropriate places to store many little things (or getting rid of them)
+
+{{< figure src=`ceiling-decorations.webp` caption=`UV-reactive stars on the ceiling, lit up by UV fairy lights` >}}
+
+This year I learned a lot about optimising my living/working space.
+At the same time, there are a couple of things that are becoming increasingly clear to me.
+
+First, for many reasons, I need more space.
+I do a lot of things at home, so the space has to stay highly multifunctional, and that often causes conflicts between activities.
+This is complicated by the fact that a lot of the furniture is "glued" in place because there is no better place for it.
+And, well, I also just want to have a guest bedroom, a guest desk, and a greater ability to reconfigure my flat.
+
+And the other thing -- I want to have more control over noise levels.
+The biggest noise sources are the boiler, the radiators and the fridge.
+Don't get me wrong, on their own they are alright, but any source of noise can drive you mad if it's around you all day every day.
+
+There are many other little things that contribute to the noisescape.
+Just for instance --- squeaky floors (don't get me started on how uneven they are!), coil whine from various power supplies and tech devices, fan noises, upstairs neighbours walking around or doing laundry.
+My bed is also right against the wall of the stairwell, so all of the corridor sounds get nicely amplified for the optimal sleep experience.
+
+So, having learned so much, maybe I will move again in 2026 :)
 
 
 ### Project highlight: Donut renderer
@@ -111,6 +113,8 @@ The project is called [`donut`][donut] because, like Towerfall, it is topologica
 [towerfall]: https://en.wikipedia.org/wiki/TowerFall
 [donut]: https://github.com/ftvkyo/donut
 [^topo-torus]: Wikipedia: [Wraparound](https://en.wikipedia.org/wiki/Wraparound_(video_games))
+
+{{< figure src=`/img/post/visibility-polygon/render.webp` >}}
 
 One of my favourite parts of the project is an implementation of an algorithm for calculating [Visibility Polygons][visibility-polygon].
 I spent a long time writing a post about it, but the post is [still a draft][visibility-polygon-post-draft] at the time of publishing.
@@ -169,6 +173,8 @@ I recorded a bunch of videos from the different stages in development:
 At the start of the year, I felt like I wanted to improve the User Experience in my interactions with digital devices.
 Since I was also interested in learning how to design PCBs and wanted to manufacture a PCB without using chemicals, I decided to make another custom keyboard.
 I called it Cryptodancer, inspired by the title of "Crypt of the NecroDancer" game (there is no connection).
+
+{{< figure src=`cryptodancer.webp` caption=`The keyboard` >}}
 
 I started by deciding which components I am going to use and designing the PCB in KiCad.
 I also needed to decide how I was going to manufacture it, and I decided to mill it on the CNC-router that I used when working on my [last][hovert60-01] [keyboard][hovert60-02] at the Edinburgh Hacklab.
@@ -261,6 +267,8 @@ I used Rust with `esp-idf-hal` and I implemented the following features:
 - Communicating with the central unit over serial based on user input
 
 [ftvkyo-ggroohauga-rs]: https://github.com/ftvkyo/ggroohauga-rs
+
+{{< figure src=`ggroohauga-output.webp` caption=`Example output from <code>ggroohauga-rs</code> over MQTT` >}}
 
 Somewhere in-between I acquired and connected the other speakers, completing the MVP.
 There are still some hardware things to improve, and a lot of software stuff to work out.
