@@ -4,7 +4,7 @@
     {{ partial "metadata.html" . }}
 
     {{ if .Params.toc }}
-        <details>
+        <details id="TableOfContentsDetails">
             <summary>Table of Contents</summary>
 
             {{ .Page.TableOfContents }}
