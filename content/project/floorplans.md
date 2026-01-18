@@ -31,9 +31,13 @@ To be added:
 
 ## Asia, 2019&ndash;2021
 
-{{< figure src=`2020-01-01-Philippines.svg` caption=`Philippines, January 2020` >}}
+### Philippines, January 2020
 
-{{< figure src=`2020-09-01-HongKong.svg` caption=`Hong Kong, September 2020` >}}
+{{< figure src=`2020-01-01-Philippines.svg` >}}
+
+### Hong Kong, September 2020
+
+{{< figure src=`2020-09-01-HongKong.svg` >}}
 
 {{% aside %}}
 
@@ -45,14 +49,26 @@ To be added:
 
 ## UK, 2021&ndash;now
 
-{{< figure src=`2021-09-01-Cambridge.svg` caption=`Cambridge, September 2021` >}}
+### Cambridge, September 2021
 
-{{< figure src=`2022-09-10-Edinburgh.webp` caption=`Edinburgh, September 2022` >}}
+{{< figure src=`2021-09-01-Cambridge.svg` >}}
 
-{{< figure src=`2023-03-09-Edinburgh.svg` caption=`Edinburgh, March 2023` >}}
+### Edinburgh, September 2022
 
-{{< figure src=`2023-08-27-Edinburgh.svg` caption=`Edinburgh, August 2023` >}}
+{{< figure src=`2022-09-10-Edinburgh.webp` >}}
 
-{{< figure src=`2024-11-13-Edinburgh.svg` caption=`Edinburgh, November 2024` >}}
+### Edinburgh, March 2023
 
-{{< figure src=`2025-05-04-Edinburgh.svg` caption=`Edinburgh, May 2025` >}}
+{{< figure src=`2023-03-09-Edinburgh.svg` >}}
+
+### Edinburgh, August 2023
+
+{{< figure src=`2023-08-27-Edinburgh.svg` >}}
+
+### Edinburgh, November 2024
+
+{{< figure src=`2024-11-13-Edinburgh.svg` >}}
+
+### Edinburgh, May 2025
+
+{{< figure src=`2025-05-04-Edinburgh.svg` >}}
