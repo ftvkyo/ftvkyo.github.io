@@ -11,3 +11,12 @@ svgo -r -f static
 svgo -r -f assets/img
 svgo -r -f layouts/partials/icon
 ```
+
+## Convertion to WebP
+
+```sh
+cwebp "FILENAME.jpg" -o "FILENAME.webp" -q 80 -m 6
+
+# Bulk:
+for i in ./*.jpg ; do cwebp "$i" -o "${i/.jpg/.webp}" -q 80 -m 6 ; done
+```
