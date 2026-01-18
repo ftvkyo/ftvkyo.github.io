@@ -82,14 +82,21 @@ h4,
 h5,
 h6 {
     color: c.$pink;
-    margin: 1.5em 0 0.5em 0;
-
     font-family: f.$font-heading;
 }
 
 h1 {
+    margin: 1.5em 0 0.5em 0;
     text-align: center;
     border-bottom: solid c.$pink 1px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 2.5em 0 0.5em 0;
 }
 
 // Print control
