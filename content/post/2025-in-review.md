@@ -539,6 +539,10 @@ There were also some conflicts in which crying worked as a "reset" point that wo
 Crying by myself felt counter-productive too.
 I cried a bunch while I was stuck alone in a hotel room in the Philippines for half a year during COVID-19, and I burned out on that because I felt like there was nothing I could do.
 
+The detachment from emotions also creates a multitude of more subtle issues.
+For instance, I struggle to understand how I feel about various things.
+I find it quite frustrating.
+
 There is probably more to this all, but I think I captured the overall state of my being quite well.
 The bad news is that this affects me and people around me to this day.
 The good news is that I seem to be aware of this, as aware as ever, and I am working on reconnecting with my emotions.
