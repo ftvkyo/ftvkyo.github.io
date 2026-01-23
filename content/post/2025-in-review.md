@@ -599,7 +599,7 @@ I want to thank all the people who provided support, advice, listened to me, and
 Thank you, Mom, Alla, and Oleg.
 
 Thank you
-Aria,
+Ariadne,
 Artem,
 Ashley,
 Blake,
