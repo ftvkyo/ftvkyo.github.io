@@ -636,7 +636,8 @@ Sophia,
 Taylor,
 Vanessa,
 Vera,
-Yara.
+Yara,
+Yasha.
 
 Thank you fellow Spectral Compute colleagues and Edinburgh Hacklab members.
 
