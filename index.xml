@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ftvkyo</title><link>https://www.ftvkyo.me/</link><description>Recent content on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 22 Jan 2026 22:00:00 +0000</lastBuildDate><atom:link href="https://www.ftvkyo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 in review</title><link>https://www.ftvkyo.me/post/2025-in-review/</link><pubDate>Thu, 22 Jan 2026 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/2025-in-review/</guid><description>&lt;p>Last year, I wrote &lt;a href="https://www.ftvkyo.me/post/2024-in-review">2024 in review&lt;/a>.
+There are many good things about that post.
+I reviewed it a few times throughout the year, curious about the changes in my mental state since then and about the goals I had set.
+It has also been fun to share it with my friends and acquaintances.
+And, most importantly, it presented a good opportunity for reflection at the time of writing.
+So, here I am, writing a follow-up :)&lt;/p></description></item><item><title>2024 in review</title><link>https://www.ftvkyo.me/post/2024-in-review/</link><pubDate>Thu, 26 Dec 2024 12:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/2024-in-review/</guid><description>&lt;p>Recently, I considered writing a follow-up for &lt;a href="https://www.ftvkyo.me/post/my-time-and-focus-02/">My Time and Focus&lt;/a> posts, titled &amp;laquo;My Time and Focus. 2 years later&amp;raquo;.
+I thought I couldn&amp;rsquo;t finish writing it in one day, so I didn&amp;rsquo;t start.&lt;/p>
+&lt;p>This post is what I am writing instead.
+It will touch on some of the topics I wanted to bring up, but won&amp;rsquo;t go into as much detail.
+This is a spontaneous decision, I am doing it instead of other plans.
+But today is a holiday, so I am fine with it.&lt;/p></description></item><item><title>Making a "Known Error" app for Tildagon</title><link>https://www.ftvkyo.me/post/tildagon-known-error/</link><pubDate>Mon, 17 Jun 2024 10:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/tildagon-known-error/</guid><description>&lt;p>At the end of May 2024, I went to my first &lt;a href="https://emfcamp.org">EMF Camp&lt;/a>, and I loved it.
+It had many interesting things to see and cool people to meet.
+I wouldn&amp;rsquo;t say I made new friends there, but I did get closer to members of &lt;a href="https://wiki.ehlab.uk">Edinburgh Hacklab&lt;/a> which I am also a member of.&lt;/p>
+&lt;p>This post is not about EMF Camp though, it is about one of its highlights: the &lt;a href="https://tildagon.badge.emfcamp.org/">Tildagon&lt;/a> badge.
+These badges are electronic devices that are meant to be extended and modified, this is a &lt;a href="https://en.wikipedia.org/wiki/Hacker">hacker&lt;/a> festival after all.
+The badges could be preordered for 25£.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #2: Design</title><link>https://www.ftvkyo.me/post/devlog-hovert60-02/</link><pubDate>Sun, 05 May 2024 17:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-02/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>In the &lt;a href="https://www.ftvkyo.me/post/devlog-hovert60-01/">previous post&lt;/a> on the topic, I introcuded my new project: making a personalized mechanical keyboard from scratch.
+I described my criteria for the end result and showed you the components I intend to use.&lt;/p>
+&lt;p>This post is focused on the design process of the project.
+The posts are sequential, but in reality they go hand-in-hand.
+The design influences which components can be used.
+Availability, price and properties of the components influence the design.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #1: Init</title><link>https://www.ftvkyo.me/post/devlog-hovert60-01/</link><pubDate>Wed, 10 Apr 2024 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-01/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>I have been a mild fan of mechanical and &lt;a href="https://deskthority.net/wiki/Ergonomic_keyboard">ergonomic&lt;/a> keyboards for a while now.
+I have used &lt;a href="https://ergodox-ez.com/">Ergodox EZ&lt;/a>, Planck EZ &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> and &lt;a href="https://drop.com/buy/preonic-mechanical-keyboard">OLKB Preonic&lt;/a>.
+Additionally, my XKB configuration is somewhat interesting.&lt;/p>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/devlog-hovert60-01/preonic.jpg"
+ alt="OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests">&lt;figcaption>
+ &lt;p>OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>You see, Russian alphabet has 33 letters, while English only has 26.
+This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.&lt;/p></description></item><item><title>Website overhaul</title><link>https://www.ftvkyo.me/post/website-03-overhaul/</link><pubDate>Sun, 19 Mar 2023 14:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/website-03-overhaul/</guid><description>&lt;p>I have done a major overhaul of the website.&lt;/p>
+&lt;p>The primary focus was on styling.
+I was not satisfied with the original theme (&lt;a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman&lt;/a>) and wanted to change it.
+The problem was not in the look of the theme, but in how much tweaking I wanted to do, so it was easier to just make a new theme of my own.&lt;/p>
+&lt;p>I have also changed the way the website is built.
+I used to have the website sources in a public Github repository and the deployments were done with a Github Action, to a &lt;code>gh-pages&lt;/code> branch in the same repo.
+I have moved the sources of the website to a separate repository and the deployments are set up to update &lt;code>gh-pages&lt;/code> in the original repository.&lt;/p></description></item><item><title>My Time and Focus. Part 2: But how?</title><link>https://www.ftvkyo.me/post/my-time-and-focus-02/</link><pubDate>Fri, 23 Dec 2022 17:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/my-time-and-focus-02/</guid><description>&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/my-time-and-focus-02/reintroduction.svg"
+ alt="An arrow with a loop in the middle, representing &amp;#34;reintroduction&amp;#34;.">
+&lt;/figure>
+
+&lt;h2 id="reintroduction">Reintroduction&lt;/h2>
+&lt;p>In the &lt;a href="https://www.ftvkyo.me/post/my-time-and-focus-01/">previous part&lt;/a> I have gone through some tools and approaches to self-organisation.
+The main focus was on note-taking, and now it is finally time to highlight some neat parts of it.&lt;/p>
+&lt;p>I have already more-or-less described the criteria that I want the note-taking system to satisfy, and why I need it, so here I&amp;rsquo;m going to talk about its &lt;strong>implementation details&lt;/strong>.&lt;/p></description></item><item><title>My Time and Focus. Part 1: But why?</title><link>https://www.ftvkyo.me/post/my-time-and-focus-01/</link><pubDate>Fri, 21 Oct 2022 11:00:00 +0100</pubDate><guid>https://www.ftvkyo.me/post/my-time-and-focus-01/</guid><description>&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/my-time-and-focus-01/fix-all-problems.svg"
+ alt="Checkbox &amp;#34;Fix all problems&amp;#34;">
+&lt;/figure>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this series of posts is to share some details of my journey of organizing myself.
+I think this might be interesting or even useful for somebody, but I am mostly writing this to stay motivated to continue (and as writing practice).&lt;/p>
+&lt;p>I&amp;rsquo;ll start by explaining the problems I&amp;rsquo;m trying to solve and why they matter.
+Along the way, I might learn new things or find some insights I missed in the past.
+In other words, I want to begin by describing things I already understand, and after that, I would like to continue the series by making &amp;laquo;progress updates&amp;raquo;.&lt;/p></description></item><item><title>Website tweaks</title><link>https://www.ftvkyo.me/post/website-02-tweaks/</link><pubDate>Fri, 17 Sep 2021 13:00:00 +0100</pubDate><guid>https://www.ftvkyo.me/post/website-02-tweaks/</guid><description>&lt;p>I have done some minor optimization of the website in order to improve its
+Lighthouse score and its performance.&lt;/p>
+&lt;p>The score should be above 90% in every category (except PWA that I don&amp;rsquo;t target)
+at the moment of publishing this post. I only tested it on localhost,
+but as the most significant problem was caused by Google Fonts the website
+depends on, that part should be the same as in production.&lt;/p></description></item><item><title>Parentheses programming language devlog #1: getting to LLVM IR emission</title><link>https://www.ftvkyo.me/post/devlog-parentheses-01/</link><pubDate>Sun, 27 Jun 2021 21:00:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/devlog-parentheses-01/</guid><description>&lt;h2 id="pre-intro">Pre-intro&lt;/h2>
+&lt;p>I start these series hoping to continue them along with the development of
+the project this devlog is related to.
+Not only the project is an excercise for me, but the devlog itself is as well.
+I think about making some games in the future, and how could I make a good
+game without having a devlog about it?&lt;/p>
+&lt;p>Also, thanks to all the advice from different people who suggested some better
+techniques of dealing with challenges I face in this project.&lt;/p></description></item><item><title>A New Website</title><link>https://www.ftvkyo.me/post/website-01-new/</link><pubDate>Sun, 27 Jun 2021 20:20:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/website-01-new/</guid><description>&lt;p>Anybody here?&lt;/p>
+&lt;p>I got this thought to make my website a very long time ago. A classic
+idea for a developer, right? However, I could never finish its creation.
+For a long time, I had some random pages dangling on my domain.&lt;/p>
+&lt;p>I always wanted to put something interesting there, and as I never truly
+needed a website, I just played with different things abandoning them later.&lt;/p>
+&lt;p>Only two attempts were notable. One where I made it work, with some pages
+and even some interactivity, but it all was weird, as I started trying out
+some unrelated ideas. &amp;laquo;What if I use Python for boring content serving and Rust
+for a quick API?&amp;raquo; (not that I needed this API). I managed to make it work,
+it was running in Docker for quite a while, but it had zero useful
+content and almost no value except the experience I got from it.&lt;/p></description></item><item><title>ftvkyo</title><link>https://www.ftvkyo.me/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/about/</guid><description>&lt;div class="socials about">
+ 
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="M0 3v18h24V3zm21.518 2L12 12.713 2.482 5zM2 19V7.183l10 8.104 10-8.104V19z"/>
+&lt;/svg>
+
+ 
+ &lt;span>&lt;code>rei (at) ftvkyo.me&lt;/code>&lt;/span>
+ 
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12"/>
+&lt;/svg>
+
+ 
+ &lt;span>&lt;a href="https://github.com/ftvkyo">github.com/ftvkyo&lt;/a>&lt;/span>
+ 
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5M8 19H5V8h3zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764M20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476z"/>
+&lt;/svg>
+
+ 
+ &lt;span>&lt;a href="https://www.linkedin.com/in/ftvkyo/">linkedin.com/in/ftvkyo&lt;/a>&lt;/span>
+ 
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12S0 18.623 0 12 5.377 0 12 0m8.127 19.41c-.282-.401-.772-.654-1.624-.85-3.848-.906-4.097-1.501-4.352-2.059-.259-.565-.19-1.23.205-1.977 1.726-3.257 2.09-6.024 1.027-7.79C14.709 5.615 13.508 5 12 5c-1.521 0-2.732.626-3.409 1.763-1.066 1.789-.693 4.544 1.049 7.757.402.742.476 1.406.22 1.974-.265.586-.611 1.19-4.365 2.066-.852.196-1.342.449-1.623.848C5.884 21.615 8.782 23 12 23s6.115-1.385 8.127-3.59m.65-.782A10.95 10.95 0 0 0 23 12c0-6.071-4.929-11-11-11S1 5.929 1 12c0 2.487.827 4.783 2.222 6.626.409-.452 1.049-.81 2.049-1.041 2.025-.462 3.376-.836 3.678-1.502.122-.272.061-.628-.188-1.087-1.917-3.535-2.282-6.641-1.03-8.745C8.584 4.82 10.139 4 12 4c1.845 0 3.391.808 4.24 2.218 1.251 2.079.896 5.195-1 8.774-.245.463-.304.821-.179 1.094.305.668 1.644 1.038 3.667 1.499 1 .23 1.64.59 2.049 1.043"/>
+&lt;/svg>
+
+ 
+ &lt;span>&lt;a href="https://ftvkyo.me">ftvkyo.me&lt;/a>&lt;/span>
+ 
+&lt;/div>
+
+&lt;h2 id="interests">Interests&lt;/h2>
+&lt;p>The field of Software Engineering as a whole, and these things in particular:&lt;/p></description></item><item><title>Home floorplans</title><link>https://www.ftvkyo.me/project/floorplans/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/floorplans/</guid><description>&lt;h2 id="russia-19992019">Russia, 1999–2019&lt;/h2>
+&lt;p>Dates are approximate.&lt;/p>
+&lt;aside>
+&lt;p>Missing data:&lt;/p>
+&lt;ol>
+&lt;li>Chernogolovka&lt;/li>
+&lt;li>Moscow, Yuzhnoye Butovo&lt;/li>
+&lt;li>Moscow, Severnoye Butovo&lt;/li>
+&lt;/ol>
+&lt;p>To be added:&lt;/p>
+&lt;ol start="4">
+&lt;li>Korolyov, 2005&lt;/li>
+&lt;li>Moscow, Kurjanovo, 2006&lt;/li>
+&lt;li>Moscow, Severnoye Izmaylovo, 2007&lt;/li>
+&lt;li>Chernogolovka x2, 2008–2013&lt;/li>
+&lt;li>Moscow, Severnoye Izmaylovo, 2013–2014&lt;/li>
+&lt;li>Shchyolkovo, 2014–2016&lt;/li>
+&lt;li>Chernogolovka (back), 2016–2017&lt;/li>
+&lt;li>Dolgoprudny x3, 2017–2019&lt;/li>
+&lt;/ol>
+&lt;/aside>
+&lt;h2 id="asia-20192021">Asia, 2019–2021&lt;/h2>
+&lt;h3 id="philippines-january-2020">Philippines, January 2020&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2020-01-01-Philippines.svg">
+&lt;/figure>
+
+&lt;h3 id="hong-kong-september-2020">Hong Kong, September 2020&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2020-09-01-HongKong.svg">
+&lt;/figure>
+
+&lt;aside>
+&lt;p>To be added:&lt;/p>
+&lt;ol>
+&lt;li>Hong Kong, December 2020–August 2021&lt;/li>
+&lt;/ol>
+&lt;/aside>
+&lt;h2 id="uk-2021now">UK, 2021–now&lt;/h2>
+&lt;h3 id="cambridge-september-2021">Cambridge, September 2021&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2021-09-01-Cambridge.svg">
+&lt;/figure>
+
+&lt;h3 id="edinburgh-september-2022">Edinburgh, September 2022&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2022-09-10-Edinburgh.webp">
+&lt;/figure>
+
+&lt;h3 id="edinburgh-march-2023">Edinburgh, March 2023&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2023-03-09-Edinburgh.svg">
+&lt;/figure>
+
+&lt;h3 id="edinburgh-august-2023">Edinburgh, August 2023&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2023-08-27-Edinburgh.svg">
+&lt;/figure>
+
+&lt;h3 id="edinburgh-november-2024">Edinburgh, November 2024&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2024-11-13-Edinburgh.svg">
+&lt;/figure>
+
+&lt;h3 id="edinburgh-may-2025">Edinburgh, May 2025&lt;/h3>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/floorplans/2025-05-04-Edinburgh.svg">
+&lt;/figure></description></item><item><title>Lazy keymap</title><link>https://www.ftvkyo.me/project/lazy-keymap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/lazy-keymap/</guid><description>&lt;ul>
+&lt;li>Github repository: &lt;a href="https://github.com/ftvkyo/lazy-keymap">ftvkyo/lazy-keymap&lt;/a>&lt;/li>
+&lt;li>Work started: &lt;em>Dec 5, 2023&lt;/em>
+&lt;ul>
+&lt;li>Code recreated based on a previous implementation written in Python&lt;/li>
+&lt;li>And then again, but with a better approach to getting things done&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="info skills">
+ &lt;span>
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="m6.914 2.741 15.557 15.556-4.243 4.243L2.672 6.983zm-.707-.707L4.174 0 0 4.243l1.965 2.034zm12.821 21.119L24 24l-.918-4.901zM14.461 7.459l.389-.388.707.707.707-.707-.707-.707.707-.707.707.707.708-.708-.707-.706 2.121-2.121 2.121 2.121-4.631 4.631 1.393 1.393L24 4.95 19.092 0l-6.045 6.045zm-4.949 9.193L4.95 21.213l-2.121-2.121.707-.708.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.706.319-.319-1.415-1.415L0 19.092 4.95 24l5.955-5.955zm9.934-11.349a.5.5 0 1 0-.708-.707.5.5 0 0 0 .708.707"/>
+&lt;/svg>
+
+ Rust, ZMK, X Keyboard Config, SVG
+ &lt;/span>
+&lt;/div>
+
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/lazy-keymap/refcard.svg"
+ alt="Example reference card for my one of a kind Hovert60 keyboard">&lt;figcaption>
+ &lt;p>Example reference card for my one of a kind &lt;a href="https://www.ftvkyo.me/post/devlog-hovert60-02/">Hovert60 keyboard&lt;/a>&lt;/p></description></item><item><title>Milling calculator</title><link>https://www.ftvkyo.me/project/milling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/milling/</guid><description>&lt;aside class="warn">
+&lt;p>Surface speed presets are &lt;strong>unreliable&lt;/strong>.&lt;/p>
+&lt;/aside>
+&lt;style>
+ #calculator {
+ display: grid;
+ grid-template-columns: 1fr 2fr;
+ gap: 0.5em;
+ }
+
+ #calculator label {
+ grid-column: 1;
+ }
+
+ #calculator input {
+ grid-column: 2;
+ justify-self: end;
+
+ width: 100%;
+ }
+
+ #calculator span {
+ white-space: nowrap;
+ font-style: italic;
+ opacity: 75%;
+ }
+
+ #calculator hr {
+ grid-column: 1 / 3;
+
+ width: 100%;
+ }
+
+ #calculator .buttons {
+ grid-column: 1 / 3;
+
+ margin-bottom: 0.5em;
+
+ display: flex;
+ justify-content: end;
+ flex-wrap: wrap;
+ gap: 0.25em;
+ }
+&lt;/style>
+
+
+&lt;noscript>
+&lt;strong>JavaScript is required.&lt;/strong>
+&lt;/noscript>
+
+
+&lt;script>
+
+function el(key) {
+ return document.querySelector("input#" + key);
+}
+
+function clearOutputs() {
+ el("speed").value = "";
+ el("feedXY").value = "";
+ el("feedZ").value = "";
+ el("stepover").value = "";
+ el("stepdown").value = "";
+}
+
+function clearEverything() {
+ el("diameter").value = "";
+ el("flutes").value = "";
+ el("feed").value = "";
+ el("chipLoad").value = "";
+
+ clearOutputs();
+}
+
+function getInput(key) {
+ const e = el(key);
+
+ if (e &amp;&amp; e.checkValidity()) {
+ const n = Number(e.value);
+ if (typeof n === "number" &amp;&amp; !Number.isNaN(n) &amp;&amp; n !== 0) {
+ return n;
+ }
+ }
+ return undefined;
+}
+
+function update() {
+ const diameter = getInput("diameter");
+ const flutes = getInput("flutes");
+ const feed = getInput("feed");
+ const chipLoad = getInput("chipLoad");
+
+ switch (undefined) {
+ case diameter:
+ case flutes:
+ case feed:
+ case chipLoad:
+ clearOutputs();
+ return;
+ }
+
+ const speed = 1000 * feed / (Math.PI * diameter);
+ const feedXY = speed * flutes * chipLoad;
+ const feedZ = feedXY / 2;
+ const stepover = diameter * 0.45;
+ const stepdown = diameter * 0.45;
+
+ el("speed").value = speed.toFixed(0);
+ el("feedXY").value = feedXY.toFixed(0);
+ el("feedZ").value = feedZ.toFixed(0);
+ el("stepover").value = stepover.toFixed(3);
+ el("stepdown").value = stepdown.toFixed(3);
+}
+
+function setInput(key, value) {
+ const e = el(key);
+ e.value = value;
+ update();
+}
+
+&lt;/script>
+
+
+&lt;div id="calculator">
+
+
+
+&lt;label for="diameter">Tool diameter &lt;span>(mm)&lt;/span>&lt;/label>
+&lt;input id="diameter" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
+&lt;div class="buttons">
+ &lt;button onclick="setInput('diameter', this.innerText)">1&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">1.5&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">2&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">2.5&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">3&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">4&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">5&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">6&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">7&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">8&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">9&lt;/button>
+ &lt;button onclick="setInput('diameter', this.innerText)">10&lt;/button>
+&lt;/div>
+
+&lt;label for="flutes">Number of flutes &lt;span>(integer)&lt;/span>&lt;/label>
+&lt;input id="flutes" type="text" inputmode="numeric" pattern="\d*" oninput="update()"/>
+&lt;div class="buttons">
+ &lt;button onclick="setInput('flutes', this.innerText)">1&lt;/button>
+ &lt;button onclick="setInput('flutes', this.innerText)">2&lt;/button>
+ &lt;button onclick="setInput('flutes', this.innerText)">3&lt;/button>
+ &lt;button onclick="setInput('flutes', this.innerText)">4&lt;/button>
+&lt;/div>
+
+&lt;label for="feed">Surface speed &lt;span>(m/min)&lt;/span>&lt;/label>
+&lt;input id="feed" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
+&lt;div class="buttons">
+ &lt;button onclick="setInput('feed', '38.1')">Acrylic (dry)&lt;/button>
+ &lt;button onclick="setInput('feed', '60.96')">Aluminium (dry)&lt;/button>
+&lt;/div>
+
+&lt;label for="chipLoad">Chip load &lt;span>(mm)&lt;/span>&lt;/label>
+&lt;input id="chipLoad" type="text" inputmode="numeric" pattern="\d*(\.\d*)?" oninput="update()"/>
+&lt;div class="buttons">
+ &lt;button onclick="setInput('chipLoad', this.innerText)">0.025&lt;/button>
+ &lt;button onclick="setInput('chipLoad', this.innerText)">0.05&lt;/button>
+ &lt;button onclick="setInput('chipLoad', this.innerText)">0.075&lt;/button>
+ &lt;button onclick="setInput('chipLoad', this.innerText)">0.1&lt;/button>
+ &lt;button onclick="setInput('chipLoad', this.innerText)">0.125&lt;/button>
+&lt;/div>
+
+&lt;hr/>
+
+
+
+&lt;label for="speed">Spindle speed &lt;span>(RPM)&lt;/span>&lt;/label>
+&lt;input id="speed" type="text" readonly/>
+
+&lt;label for="feedXY">Feed XY &lt;span>(mm/min)&lt;/span>&lt;/label>
+&lt;input id="feedXY" type="text" readonly/>
+
+&lt;label for="feedZ">Feed Z or plunge &lt;span>(mm/min)&lt;/span>&lt;/label>
+&lt;input id="feedZ" type="text" readonly/>
+
+&lt;label for="stepover">Stepover &lt;span>(mm)&lt;/span>&lt;/label>
+&lt;input id="stepover" type="text" readonly/>
+
+&lt;label for="stepdown">Stepdown &lt;span>(mm)&lt;/span>&lt;/label>
+&lt;input id="stepdown" type="text" readonly/>
+
+&lt;div class="buttons">
+ &lt;button onclick="clearEverything()">Clear&lt;/button>
+ &lt;button onclick="update()">Update&lt;/button>
+&lt;/div>
+
+&lt;hr/>
+
+&lt;/div>
+
+&lt;h2 id="personal-experience">Personal experience&lt;/h2>
+&lt;p>There are some settings that worked well for me.&lt;/p></description></item><item><title>Obsidian ftvkyo</title><link>https://www.ftvkyo.me/project/obsidian-ftvkyo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/obsidian-ftvkyo/</guid><description>&lt;ul>
+&lt;li>Github repository: &lt;a href="https://github.com/ftvkyo/obsidian-ftvkyo">ftvkyo/obsidian-ftvkyo&lt;/a>&lt;/li>
+&lt;li>Work started: &lt;em>Jul 23, 2023&lt;/em>
+&lt;ul>
+&lt;li>Code was migrated from &amp;laquo;Inline plugins&amp;raquo; I made earlier&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="info skills">
+ &lt;span>
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="m6.914 2.741 15.557 15.556-4.243 4.243L2.672 6.983zm-.707-.707L4.174 0 0 4.243l1.965 2.034zm12.821 21.119L24 24l-.918-4.901zM14.461 7.459l.389-.388.707.707.707-.707-.707-.707.707-.707.707.707.708-.708-.707-.706 2.121-2.121 2.121 2.121-4.631 4.631 1.393 1.393L24 4.95 19.092 0l-6.045 6.045zm-4.949 9.193L4.95 21.213l-2.121-2.121.707-.708.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.706.319-.319-1.415-1.415L0 19.092 4.95 24l5.955-5.955zm9.934-11.349a.5.5 0 1 0-.708-.707.5.5 0 0 0 .708.707"/>
+&lt;/svg>
+
+ TypeScript (React), Electron, CSS (SASS)
+ &lt;/span>
+&lt;/div>
+
+&lt;p>I have been using Obsidian for a while (since March 2021).
+Finding a good workflow, a good approach to work and study is important for me, and it is an interesting challenge.
+This project is the culmination of my efforts.&lt;/p></description></item><item><title>OpenSCAD snippets</title><link>https://www.ftvkyo.me/project/openscad-snippets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/openscad-snippets/</guid><description>&lt;p>For now, the snippets are self-contained.
+That implies there may be duplicates of common functions between snippets.
+Even worse, the functions with the same names may work differently in different snippets.
+And there may be fewer comments than desired.
+You&amp;rsquo;ve been warned &lt;code>¯\_(ツ)_/¯&lt;/code>&lt;/p>
+&lt;h2 id="wavy-donut">Wavy donut&lt;/h2>
+&lt;p>&lt;em>Just why did I do this?&lt;/em>&lt;/p>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/project/openscad-snippets/wavy-donut-2.webp"
+ alt="A render of the wavy donut with 2 waves">&lt;figcaption>
+ &lt;p>A render of the wavy donut with 2 waves&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>It is implemented using the &lt;code>polyhedron()&lt;/code> OpenSCAD module.
+I generate flat slices of the donut, rotate and position them in 3D using &lt;code>pts_rotate3&lt;/code> and &lt;code>pts_translate3&lt;/code>, and then stitch them into a loop in the &lt;code>pts_extrude&lt;/code> module.&lt;/p></description></item><item><title>Tekutonu</title><link>https://www.ftvkyo.me/project/tekutonu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/project/tekutonu/</guid><description>&lt;ul>
+&lt;li>GitHub repository: &lt;a href="https://github.com/ftvkyo/tekutonu">ftvkyo/tekutonu&lt;/a>&lt;/li>
+&lt;li>Work started: &lt;em>Oct 14, 2022&lt;/em>&lt;/li>
+&lt;li>Work stopped: &lt;em>Nov 20, 2022&lt;/em>&lt;/li>
+&lt;li>Timespan: 38 days, &lt;em>17&lt;/em> of them have commits&lt;/li>
+&lt;/ul>
+&lt;div class="info skills">
+ &lt;span>
+ &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ &lt;path fill="currentColor" d="m6.914 2.741 15.557 15.556-4.243 4.243L2.672 6.983zm-.707-.707L4.174 0 0 4.243l1.965 2.034zm12.821 21.119L24 24l-.918-4.901zM14.461 7.459l.389-.388.707.707.707-.707-.707-.707.707-.707.707.707.708-.708-.707-.706 2.121-2.121 2.121 2.121-4.631 4.631 1.393 1.393L24 4.95 19.092 0l-6.045 6.045zm-4.949 9.193L4.95 21.213l-2.121-2.121.707-.708.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.706.319-.319-1.415-1.415L0 19.092 4.95 24l5.955-5.955zm9.934-11.349a.5.5 0 1 0-.708-.707.5.5 0 0 0 .708.707"/>
+&lt;/svg>
+
+ Rust, Vulkan (vulkano.rs)
+ &lt;/span>
+&lt;/div>
+
+&lt;p>It is not the first time I tried to build a voxel engine.
+This time, the primary objective of the project was to learn the basics of Vulkan.&lt;/p></description></item></channel></rss>

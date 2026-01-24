@@ -1,0 +1,324 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=mask-icon href=/favicon.svg color=black><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat&family=Arvo&display=swap" rel=stylesheet><link rel=stylesheet type=text/css href=https://www.ftvkyo.me/scss/index.css><title>ftvkyo | Making a "Known Error" app for Tildagon</title></head><body><script>0</script><header class=only-screen><nav><a class=logo href=/>Home
+</a><a href=/project/>Projects
+</a><a href=/post/>Posts
+</a><a href=/about/>About</a></nav></header><main><h1>Making a &#171;Known Error&#187; app for Tildagon</h1><div class=metadata><div class=description>Quick and not-so-dirty commemoration of an &#171;Unknown Error&#187; message we all know and &#171;love&#187;</div><div class=fields><div><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.514.0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2m0-2C5.373.0.0 5.373.0 12s5.373 12 12 12 12-5.373 12-12S18.627.0 12 0m1 12V6h-2v8h7v-2z"/></svg>
+11 minutes</div><div><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 20h-4v-4h4zm-6-10h-4v4h4zm6 0h-4v4h4zM8 16H4v4h4zm6 0h-4v4h4zm-6-6H4v4h4zm16-8v22H0V2h3v1c0 1.103.897 2 2 2s2-.897 2-2V2h10v1c0 1.103.897 2 2 2s2-.897 2-2V2zm-2 6H2v14h20zm-2-7a1 1 0 10-2 0v2a1 1 0 102 0zM6 3A1 1 0 114 3V1a1 1 0 112 0z"/></svg>
+<time datetime=2024-06-17>Jun 17, 2024</time></div><a href=/tags/devlog><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.776 2 11.395 11.395-7.78 7.777L2 9.781V2zm.829-2H0v10.609L13.391 24 24 13.396zM7.414 7.414a2 2 0 11-2.83-2.826 2 2 0 012.83 2.826"/></svg>
+Devlog
+</a><a href=/tags/events><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m9.776 2 11.395 11.395-7.78 7.777L2 9.781V2zm.829-2H0v10.609L13.391 24 24 13.396zM7.414 7.414a2 2 0 11-2.83-2.826 2 2 0 012.83 2.826"/></svg>
+Events</a></div></div><details id=TableOfContentsDetails><summary>Table of Contents</summary><nav id=TableOfContents><ul><li><a href=#a-bit-more-about-the-tildagon>A bit more about the Tildagon</a></li><li><a href=#why-i-made-this-post>Why I made this post</a></li><li><a href=#how-i-made-the-known-error-app>How I made the &#171;Known Error&#187; app</a><ul><li><a href=#displaying-text>Displaying text</a></li><li><a href=#changing-displayed-text-in-runtime>Changing displayed text in runtime</a></li><li><a href=#adding-glitch-effects-to-make-it-more-fun>Adding glitch effects to make it more fun</a></li></ul></li></ul></nav></details><p>At the end of May 2024, I went to my first <a href=https://emfcamp.org>EMF Camp</a>, and I loved it.
+It had many interesting things to see and cool people to meet.
+I wouldn&rsquo;t say I made new friends there, but I did get closer to members of <a href=https://wiki.ehlab.uk>Edinburgh Hacklab</a> which I am also a member of.</p><p>This post is not about EMF Camp though, it is about one of its highlights: the <a href=https://tildagon.badge.emfcamp.org/>Tildagon</a> badge.
+These badges are electronic devices that are meant to be extended and modified, this is a <a href=https://en.wikipedia.org/wiki/Hacker>hacker</a> festival after all.
+The badges could be preordered for 25£.</p><figure><img src=/img/post/tildagon-known-error/tildagon.webp alt="My Tildagon when I just received and assembled it"><figcaption><p>My Tildagon when I just received and assembled it</p></figcaption></figure><h2 id=a-bit-more-about-the-tildagon>A bit more about the Tildagon</h2><p>Tildagons have many features, some of which are:</p><ul><li>Amazing artwork and interesting design</li><li>ESP32 microcontroller that runs <a href=https://micropython.org/>MicroPython</a></li><li>Round display, some bright RGB LEDs</li><li>USB-C, WiFi, Bluetooth with BLE</li><li>6 Hexpansion connectors (custom solution for extending functionality or changing the look of the badge)</li><li>Some buttons, a bunch of sensors</li><li>A battery</li></ul><p>People can freely develop applications and hexpansions for these badges.
+It&rsquo;s an open-souce project, and even if some hardware is poorly documented or inaccessible from software, it can be fixed.
+EMF organisers also intend to reuse the same badges for future events, unlike the previous generations of badges.</p><p>I am excited to see what people would come up with in the following 2 years by the time EMF Camp 2026 comes.
+In fact, many people had already developed something for the Tildagons by the EMF Camp 2024!
+Lots of simple hexpansions were available for purchase or just given away.
+There was also the amazing <a href=https://gchq.net/>Great Camp Hexpansion Quest</a> &ndash; they hang <strong>88</strong> little hexpansions around the entire campsite for people to find, plug into their badges and progress in leaderboards! <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><h2 id=why-i-made-this-post>Why I made this post</h2><p>Some creators have already made some inspirational publications about the badges.
+I want my post to be inspirational for others as well, even if it does not feel very sophisticated.</p><ul><li>Hackaday: <a href=https://hackaday.com/2024/06/01/hands-on-with-the-electromagnetic-field-2024-badge/>Hands-On With The Electromagnetic Field 2024 Badge</a></li><li>Terence Eden: <a href=https://shkspr.mobi/blog/2024/06/displaying-a-qr-code-in-micropython-on-the-tildagon-badge/>Displaying a QR code in MicroPython on the Tildagon Badge</a></li></ul><p>On the day I received the badge, its firmware was not very useful.
+I think it was not even possible to install software from their App store at that time.
+However, it was still fun to play with, and cool to see how quickly problems got fixed by the badge volunteer team.</p><p>On that day, I got my badge stuck in a state where it would just show &#171;Unknown Error&#187; and would not respond.
+I could just reboot it, but I thought &ndash; isn&rsquo;t this in the spirit of the festival?
+However, I thought that the error message was not flashy enough.
+So I decided to make an app that would let me access the &#171;flashy error experience&#187; on demand.</p><h2 id=how-i-made-the-known-error-app>How I made the &#171;Known Error&#187; app</h2><ul><li>GitHub: <a href=https://github.com/ftvkyo/tildagon-known-error>ftvkyo/tildagon-known-error</a></li><li>Tildagon Docs: <a href=https://tildagon.badge.emfcamp.org/tildagon-apps/run-on-badge/>Run apps on real hardware</a></li></ul><p>It was actually very easy to make an app.
+As I had a physical badge, I didn&rsquo;t need to bother with setting up an emulator.</p><p>I mentioned that the badge runs MicroPython.
+For the app to work, it only needed a few files:</p><ul><li><code>metadata.json</code> that tells the badge&rsquo;s firmware infomation about the app</li><li><code>__init__.py</code> to export the main class of the app (not sure if it&rsquo;s required)</li><li><code>app.py</code> with the actuall app functionality</li></ul><p><code>metadata.json</code> stayed the same:</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>&#34;callable&#34;</span>: <span style=color:#98c379>&#34;KnownErrorApp&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>&#34;name&#34;</span>: <span style=color:#98c379>&#34;Known Error&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>&#34;path&#34;</span>: <span style=color:#98c379>&#34;apps.known-error.app&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>&#34;hidden&#34;</span>: <span style=color:#e5c07b>false</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><code>__init__.py</code> stayed the same:</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>.app</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>KnownErrorApp</span>
+</span></span></code></pre></div><p>For the first installation, a directory for the app needs to be created:</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#7f848e># Note: you may need to change permissions on /dev/ttyACM0</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># or add your user to a correct group to let mpremote access the device.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mpremote mkdir apps
+</span></span><span style=display:flex><span>mpremote mkdir apps/known-error
+</span></span></code></pre></div><p>App installation process looked like this:</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#7f848e># Assuming the 3 app files I mentioned are in the `app/` directory</span>
+</span></span><span style=display:flex><span>mpremote cp app/* :/apps/known-error/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Now the controller needs to be rebooted.</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>#</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># For me, the easiest way was to:</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 1. Launch mpremote:</span>
+</span></span><span style=display:flex><span>mpremote
+</span></span><span style=display:flex><span><span style=color:#7f848e># 2. Send an interrupt:</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>#   Press Ctrl-C</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 3. Soft-reset the device:</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>#   Press Ctrl-D</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 4. Disconnect from mpremote:</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>#   Press Ctrl-X</span>
+</span></span></code></pre></div><figure><img src=/img/post/tildagon-known-error/app-in-the-list.webp alt="App as it&rsquo;s shown in the list of apps in the main menu of the badge"><figcaption><p>App as it&rsquo;s shown in the list of apps in the main menu of the badge</p></figcaption></figure><p>Now, let&rsquo;s look at the actual code!
+It may be a bit buggy, or do things incorrectly, but it works well enough.</p><h3 id=displaying-text>Displaying text</h3><p>Here is the full code of the initial version.
+It does 3 things:</p><ul><li>Checks if the &#171;CANCEL&#187; button was pressed to exit the app</li><li>Fills the screen with black colour</li><li>Draws &#171;Known Error&#187; text roughly in the middle of the screen</li></ul><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#7f848e># There are some libraries provided by the Tildagon&#39;s creators</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># that can be imported at runtime:</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>import</span> <span style=color:#e06c75>app</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>events.input</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>Buttons</span>, <span style=color:#e06c75>BUTTON_TYPES</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Note that the `KnownErrorApp` class inherits `app.App`.</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># We will be overriding some of the `app.App`&#39;s methods.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>class</span> <span style=color:#e5c07b>KnownErrorApp</span>(<span style=color:#e06c75>app</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>App</span>):
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#56b6c2;font-weight:700>__init__</span>(<span style=color:#e5c07b>self</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>Buttons</span>(<span style=color:#e5c07b>self</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># `update()` is expected to update the state of the app.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>#</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Its `delta` parameter tells how much time has passed since</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># the function was last called. This allows compensating for</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># possible irregularity of the calls. This is a common technique.</span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>update</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>delta</span>):
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;CANCEL&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># It&#39;s important to clear the state of the buttons</span>
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># because otherwise the app may exit immediately if</span>
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># you open it, close it, and open it again.</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>minimise</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># `draw()` is expected to display stuff on the screen.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>#</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Its `ctx` parameter provides access to a drawing API.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Ideally, this function shouldn&#39;t update the state of the app.</span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>draw</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>save</span>()
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># Clear the screen (fill with black)</span>
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>rectangle</span>(<span style=color:#56b6c2>-</span><span style=color:#d19a66>120</span>, <span style=color:#56b6c2>-</span><span style=color:#d19a66>120</span>, <span style=color:#d19a66>240</span>, <span style=color:#d19a66>240</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>fill</span>()
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># Render the rext</span>
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>move_to</span>(<span style=color:#56b6c2>-</span><span style=color:#d19a66>80</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>text</span>(<span style=color:#98c379>&#34;Known Error&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>restore</span>()
+</span></span></code></pre></div><figure><img src=/img/post/tildagon-known-error/app-1.webp alt="App displaying &#171;Known Error&#187; text"><figcaption><p>App displaying &#171;Known Error&#187; text</p></figcaption></figure><h3 id=changing-displayed-text-in-runtime>Changing displayed text in runtime</h3><p>I wanted some interactivity from the app.
+Specifically, I wanted to be able to select which error message is displayed.</p><p>This required:</p><ul><li>Determining which error messages should be available</li><li>Checking if &#171;UP&#187; or &#171;DOWN&#187; buttons were pressed to change the text</li><li>Displaying the currently selected error message</li></ul><details><summary>How I implemented text selection</summary><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#c678dd>import</span> <span style=color:#e06c75>app</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>events.input</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>Buttons</span>, <span style=color:#e06c75>BUTTON_TYPES</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># This is a list of text strings available for display.</span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>TEXTS</span> <span style=color:#56b6c2>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#98c379>&#34;Known Error&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#98c379>&#34;Unknown Error&#34;</span>,
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>class</span> <span style=color:#e5c07b>KnownErrorApp</span>(<span style=color:#e06c75>app</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>App</span>):
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#56b6c2;font-weight:700>__init__</span>(<span style=color:#e5c07b>self</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>Buttons</span>(<span style=color:#e5c07b>self</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># This field tracks which text from the list</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># is supposed to be displayed.</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>update</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>delta</span>):
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;CANCEL&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>minimise</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># The following 2 `if` statements check if &#34;UP&#34; or &#34;DOWN&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># buttons have been pressed and update which text should</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># be displayed.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;UP&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>+=</span> <span style=color:#d19a66>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>%=</span> <span style=color:#e5c07b>len</span>(<span style=color:#e06c75>TEXTS</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;DOWN&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>-=</span> <span style=color:#d19a66>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>%=</span> <span style=color:#e5c07b>len</span>(<span style=color:#e06c75>TEXTS</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>draw</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>save</span>()
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear_background</span>(<span style=color:#e06c75>ctx</span>)
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># We now select the text to display based on the app state.</span>
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>move_to</span>(<span style=color:#56b6c2>-</span><span style=color:#d19a66>80</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>text</span>(<span style=color:#e06c75>TEXTS</span>[<span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span>])
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>restore</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>clear_background</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>rectangle</span>(<span style=color:#56b6c2>-</span><span style=color:#d19a66>120</span>, <span style=color:#56b6c2>-</span><span style=color:#d19a66>120</span>, <span style=color:#d19a66>240</span>, <span style=color:#d19a66>240</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>fill</span>()
+</span></span></code></pre></div></details><figure><img src=/img/post/tildagon-known-error/app-2.webp alt="App displaying &#171;Unknown Error&#187; text"><figcaption><p>App displaying &#171;Unknown Error&#187; text</p></figcaption></figure><h3 id=adding-glitch-effects-to-make-it-more-fun>Adding glitch effects to make it more fun</h3><p>I mentioned I wanted the app to be flashy.
+Just displaying static text is not flashy.
+So I wanted to add something dynamic into the app, something that changes on its own, without user interaction.</p><p>My original idea was to fill some part of the display with scattered pixels of different colors.
+However, I crashed the badge a few times trying to do this (probably consumed too much memory), and it didn&rsquo;t look great either.</p><p>So in the end I decided to do these things:</p><ul><li>Add vertical stripes on top of the displayed image<ul><li>Random number</li><li>Random colors</li><li>Random positions</li></ul></li><li>Make the LEDs around the display more chaotic</li><li>Change the pattern periodically (every 2 seconds)</li></ul><details><summary>How I implemented glitch effects</summary><p>Note: the following code omits a few intermediate steps I made.
+However, it would not make much sense to describe those steps.</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#c678dd>import</span> <span style=color:#e06c75>math</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>random</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>random</span>, <span style=color:#e06c75>randint</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># More stuff provided by the Tildagon developers is now exported.</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Specifically, `tildagonos` will be used to control LED colors,</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># and event stuff will enable or disable the default LED animation.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>import</span> <span style=color:#e06c75>app</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>tildagonos</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>tildagonos</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>events.input</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>Buttons</span>, <span style=color:#e06c75>BUTTON_TYPES</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>system.eventbus</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>eventbus</span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>from</span> <span style=color:#e06c75>system.patterndisplay.events</span> <span style=color:#c678dd>import</span> <span style=color:#e06c75>PatternDisable</span>, <span style=color:#e06c75>PatternEnable</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># This is some info about the display, extracted into variables</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># for readability.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>MIN</span> <span style=color:#56b6c2>=</span> <span style=color:#56b6c2>-</span><span style=color:#d19a66>120</span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>MAX</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>120</span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>SIDE</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>MAX</span> <span style=color:#56b6c2>-</span> <span style=color:#e06c75>MIN</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>CENTER</span> <span style=color:#56b6c2>=</span> (<span style=color:#e06c75>MIN</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>MAX</span>) <span style=color:#56b6c2>/</span> <span style=color:#d19a66>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># This is a list of LED colors to be used in RGB format.</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># The values in each of the tuples can range from 0 to 255.</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># However, 255 is extremely bright, and just 15 is already good enough.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>LED_COLORS</span> <span style=color:#56b6c2>=</span> [
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>15</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>0</span>, <span style=color:#d19a66>15</span>, <span style=color:#d19a66>0</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>0</span>, <span style=color:#d19a66>15</span>, <span style=color:#d19a66>15</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>15</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>15</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>15</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>15</span>, <span style=color:#d19a66>15</span>, <span style=color:#d19a66>0</span>),
+</span></span><span style=display:flex><span>    (<span style=color:#d19a66>15</span>, <span style=color:#d19a66>15</span>, <span style=color:#d19a66>15</span>),
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>TEXTS</span> <span style=color:#56b6c2>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#98c379>&#34;Known Error&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#98c379>&#34;Unknown Error&#34;</span>,
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>class</span> <span style=color:#e5c07b>KnownErrorApp</span>(<span style=color:#e06c75>app</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>App</span>):
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#56b6c2;font-weight:700>__init__</span>(<span style=color:#e5c07b>self</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>Buttons</span>(<span style=color:#e5c07b>self</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># The following are some settings and state</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># of the glitch effect being implemented.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># Whether glitch is enabled at all</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span> <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>False</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># How long has it been since we updated the glitch</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_timing</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># How often the glitch should be updated</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_period_ms</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>2000</span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># What are the current glitch stripes to be displayed</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_stripes</span> <span style=color:#56b6c2>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># What are the current glitch LED values to be displayed</span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_leds</span> <span style=color:#56b6c2>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>#############</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Overrides #</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>#############</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>update</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>delta</span>):
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span>:
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># Track how much time it&#39;s been since we updated the glitch effect</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_timing</span> <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>delta</span>
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># If we reached the threshold when we should update, update the effect</span>
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_timing</span> <span style=color:#56b6c2>&gt;</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_period_ms</span>:
+</span></span><span style=display:flex><span>                <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_timing</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>
+</span></span><span style=display:flex><span>                <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>update_glitch</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;CANCEL&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>print</span>(<span style=color:#98c379>&#34;Closing&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># Restart the default LED animation when exiting the app</span>
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>eventbus</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>emit</span>(<span style=color:#e06c75>PatternEnable</span>())
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>minimise</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># &#34;CONFIRM&#34; is the button to toggle the glitch effect on and off</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>elif</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;CONFIRM&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># Toggle glitch effect</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span> <span style=color:#56b6c2>=</span> <span style=color:#56b6c2>not</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>print</span>(<span style=color:#98c379>f</span><span style=color:#98c379>&#34;Glitch enabled: </span><span style=color:#98c379>{</span><span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span><span style=color:#98c379>}</span><span style=color:#98c379>&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span>:
+</span></span><span style=display:flex><span>                <span style=color:#7f848e># Stop the default LED animation when enabling glitch effect</span>
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>eventbus</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>emit</span>(<span style=color:#e06c75>PatternDisable</span>())
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#7f848e># Restart the default LED animation when disabling glitch effect</span>
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>eventbus</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>emit</span>(<span style=color:#e06c75>PatternEnable</span>())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>elif</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;UP&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>+=</span> <span style=color:#d19a66>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>%=</span> <span style=color:#e5c07b>len</span>(<span style=color:#e06c75>TEXTS</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>elif</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>get</span>(<span style=color:#e06c75>BUTTON_TYPES</span>[<span style=color:#98c379>&#34;DOWN&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>button_states</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>-=</span> <span style=color:#d19a66>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span> <span style=color:#56b6c2>%=</span> <span style=color:#e5c07b>len</span>(<span style=color:#e06c75>TEXTS</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># To keep `draw()` nice and simple, the actual drawing is</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># &#34;outsourced&#34; to `clear()`, `text()` and `glitch()`</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>draw</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>save</span>()
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>clear</span>(<span style=color:#e06c75>ctx</span>)
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text</span>(<span style=color:#e06c75>ctx</span>, <span style=color:#e06c75>TEXTS</span>[<span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_index</span>])
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_enabled</span>:
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch</span>(<span style=color:#e06c75>ctx</span>)
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>restore</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>###########</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Updates #</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>###########</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># To keep the original `update()` simple, glitch updating logic</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># is extracted here.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>#</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># `update_glitch()` fills `glitch_stripes` and `glitch_leds`</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># fields with the content that should be displayed.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Later on, `glitch()` will draw stuff based on those fields.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>update_glitch</span>(<span style=color:#e5c07b>self</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_stripes</span> <span style=color:#56b6c2>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#7f848e># Generates from 0 to 31 stripes.</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> <span style=color:#e06c75>_</span> <span style=color:#56b6c2>in</span> <span style=color:#e5c07b>range</span>(<span style=color:#e06c75>randint</span>(<span style=color:#d19a66>0</span>, <span style=color:#d19a66>32</span>)):
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># Choses a random x position and a random RGB color for the stripe.</span>
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>x</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>MIN</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>random</span>() <span style=color:#56b6c2>*</span> <span style=color:#e06c75>SIDE</span>
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>r</span>, <span style=color:#e06c75>g</span>, <span style=color:#e06c75>b</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>random</span>(), <span style=color:#e06c75>random</span>(), <span style=color:#e06c75>random</span>()
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_stripes</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>append</span>((<span style=color:#e06c75>x</span>, <span style=color:#e06c75>r</span>, <span style=color:#e06c75>g</span>, <span style=color:#e06c75>b</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_leds</span> <span style=color:#56b6c2>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> <span style=color:#e06c75>_</span> <span style=color:#56b6c2>in</span> <span style=color:#e5c07b>range</span>(<span style=color:#d19a66>12</span>):
+</span></span><span style=display:flex><span>            <span style=color:#7f848e># Chooses a random item from the LED_COLORS list</span>
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>randint</span>(<span style=color:#d19a66>0</span>, <span style=color:#e5c07b>len</span>(<span style=color:#e06c75>LED_COLORS</span>) <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>)
+</span></span><span style=display:flex><span>            <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_leds</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>append</span>(<span style=color:#e06c75>LED_COLORS</span>[<span style=color:#e06c75>i</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>###########</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Display #</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e>###########</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>clear</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>rectangle</span>(<span style=color:#e06c75>MIN</span>, <span style=color:#e06c75>MIN</span>, <span style=color:#e06c75>SIDE</span>, <span style=color:#e06c75>SIDE</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>fill</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># Text rendering function now includes a call to `ctx.text_width()`.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># It calculates the width of the text in pixels without actually displaying it.</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># This way the text can be positioned dynamically, based on how much space</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># it actually takes. So the text is now properly centered.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>text</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>, <span style=color:#e06c75>text</span>):
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>width</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>text_width</span>(<span style=color:#e06c75>text</span>)
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>left_edge</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>CENTER</span> <span style=color:#56b6c2>-</span> <span style=color:#e06c75>width</span> <span style=color:#56b6c2>/</span> <span style=color:#d19a66>2</span>
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>move_to</span>(<span style=color:#e06c75>left_edge</span>, <span style=color:#d19a66>0</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>text</span>(<span style=color:#e06c75>text</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># The `glitch()` function just draws 1px-wide and 100%-tall rectangles</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># of specified color at specified X positions, and then updates the</span>
+</span></span><span style=display:flex><span>    <span style=color:#7f848e># LEDs with the selected colors.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>def</span> <span style=color:#61afef;font-weight:700>glitch</span>(<span style=color:#e5c07b>self</span>, <span style=color:#e06c75>ctx</span>):
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e06c75>x</span>, <span style=color:#e06c75>r</span>, <span style=color:#e06c75>g</span>, <span style=color:#e06c75>b</span>) <span style=color:#56b6c2>in</span> <span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_stripes</span>:
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>ctx</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>rgb</span>(<span style=color:#e06c75>r</span>, <span style=color:#e06c75>g</span>, <span style=color:#e06c75>b</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>rectangle</span>(<span style=color:#e06c75>x</span>, <span style=color:#e06c75>MIN</span>, <span style=color:#d19a66>1</span>, <span style=color:#e06c75>SIDE</span>)<span style=color:#56b6c2>.</span><span style=color:#e06c75>fill</span>()
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e06c75>i</span>, <span style=color:#e06c75>color</span>) <span style=color:#56b6c2>in</span> <span style=color:#e5c07b>enumerate</span>(<span style=color:#e5c07b>self</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>glitch_leds</span>):
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>tildagonos</span><span style=color:#56b6c2>.</span><span style=color:#e06c75>leds</span>[<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#d19a66>1</span>] <span style=color:#56b6c2>=</span> <span style=color:#e06c75>color</span>
+</span></span></code></pre></div></details><figure><img src=/img/post/tildagon-known-error/app-3.webp alt="App in the glitch mode, displaying &#171;Known Error&#187; text (the pattern changes every 2 seconds)"><figcaption><p>App in the glitch mode, displaying &#171;Known Error&#187; text (the pattern changes every 2 seconds)</p></figcaption></figure><p>All in all, I think this little project turned out to be very fun.
+It had the perfect balance of novelty for me &ndash; I never used MicroPython, but it was easy to figure it out.
+The drawing API and other interfaces were also quite easy to pick up.
+I haven&rsquo;t played with the device since I came home yet, but I would like to return to it and do more fun stuff with it.</p><p>This experience has also been quite rewarding.
+I didn&rsquo;t have to write much code, and everything was done within basically one day.
+Apparently, I added the LED glitching functionality at around 2am.
+During the event, a few people asked me about what is displayed on my badge, and I was happy to tell them about the app.</p><ul><li>GitHub: <a href=https://github.com/ftvkyo/tildagon-known-error>ftvkyo/tildagon-known-error</a></li></ul><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Generally&mldr; please don&rsquo;t connect random stuff you find outside to your devices.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer class=only-screen>© Rei</footer></body></html>

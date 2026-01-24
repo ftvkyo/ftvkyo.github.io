@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Website on ftvkyo</title><link>https://www.ftvkyo.me/tags/website/</link><description>Recent content in Website on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 19 Mar 2023 14:00:00 +0000</lastBuildDate><atom:link href="https://www.ftvkyo.me/tags/website/index.xml" rel="self" type="application/rss+xml"/><item><title>Website overhaul</title><link>https://www.ftvkyo.me/post/website-03-overhaul/</link><pubDate>Sun, 19 Mar 2023 14:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/website-03-overhaul/</guid><description>&lt;p>I have done a major overhaul of the website.&lt;/p>
+&lt;p>The primary focus was on styling.
+I was not satisfied with the original theme (&lt;a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman&lt;/a>) and wanted to change it.
+The problem was not in the look of the theme, but in how much tweaking I wanted to do, so it was easier to just make a new theme of my own.&lt;/p>
+&lt;p>I have also changed the way the website is built.
+I used to have the website sources in a public Github repository and the deployments were done with a Github Action, to a &lt;code>gh-pages&lt;/code> branch in the same repo.
+I have moved the sources of the website to a separate repository and the deployments are set up to update &lt;code>gh-pages&lt;/code> in the original repository.&lt;/p></description></item><item><title>Website tweaks</title><link>https://www.ftvkyo.me/post/website-02-tweaks/</link><pubDate>Fri, 17 Sep 2021 13:00:00 +0100</pubDate><guid>https://www.ftvkyo.me/post/website-02-tweaks/</guid><description>&lt;p>I have done some minor optimization of the website in order to improve its
+Lighthouse score and its performance.&lt;/p>
+&lt;p>The score should be above 90% in every category (except PWA that I don&amp;rsquo;t target)
+at the moment of publishing this post. I only tested it on localhost,
+but as the most significant problem was caused by Google Fonts the website
+depends on, that part should be the same as in production.&lt;/p></description></item><item><title>A New Website</title><link>https://www.ftvkyo.me/post/website-01-new/</link><pubDate>Sun, 27 Jun 2021 20:20:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/website-01-new/</guid><description>&lt;p>Anybody here?&lt;/p>
+&lt;p>I got this thought to make my website a very long time ago. A classic
+idea for a developer, right? However, I could never finish its creation.
+For a long time, I had some random pages dangling on my domain.&lt;/p>
+&lt;p>I always wanted to put something interesting there, and as I never truly
+needed a website, I just played with different things abandoning them later.&lt;/p>
+&lt;p>Only two attempts were notable. One where I made it work, with some pages
+and even some interactivity, but it all was weird, as I started trying out
+some unrelated ideas. &amp;laquo;What if I use Python for boring content serving and Rust
+for a quick API?&amp;raquo; (not that I needed this API). I managed to make it work,
+it was running in Docker for quite a while, but it had zero useful
+content and almost no value except the experience I got from it.&lt;/p></description></item></channel></rss>

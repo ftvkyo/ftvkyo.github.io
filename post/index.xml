@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ftvkyo</title><link>https://www.ftvkyo.me/post/</link><description>Recent content in Posts on ftvkyo</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 22 Jan 2026 22:00:00 +0000</lastBuildDate><atom:link href="https://www.ftvkyo.me/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 in review</title><link>https://www.ftvkyo.me/post/2025-in-review/</link><pubDate>Thu, 22 Jan 2026 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/2025-in-review/</guid><description>&lt;p>Last year, I wrote &lt;a href="https://www.ftvkyo.me/post/2024-in-review">2024 in review&lt;/a>.
+There are many good things about that post.
+I reviewed it a few times throughout the year, curious about the changes in my mental state since then and about the goals I had set.
+It has also been fun to share it with my friends and acquaintances.
+And, most importantly, it presented a good opportunity for reflection at the time of writing.
+So, here I am, writing a follow-up :)&lt;/p></description></item><item><title>2024 in review</title><link>https://www.ftvkyo.me/post/2024-in-review/</link><pubDate>Thu, 26 Dec 2024 12:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/2024-in-review/</guid><description>&lt;p>Recently, I considered writing a follow-up for &lt;a href="https://www.ftvkyo.me/post/my-time-and-focus-02/">My Time and Focus&lt;/a> posts, titled &amp;laquo;My Time and Focus. 2 years later&amp;raquo;.
+I thought I couldn&amp;rsquo;t finish writing it in one day, so I didn&amp;rsquo;t start.&lt;/p>
+&lt;p>This post is what I am writing instead.
+It will touch on some of the topics I wanted to bring up, but won&amp;rsquo;t go into as much detail.
+This is a spontaneous decision, I am doing it instead of other plans.
+But today is a holiday, so I am fine with it.&lt;/p></description></item><item><title>Making a "Known Error" app for Tildagon</title><link>https://www.ftvkyo.me/post/tildagon-known-error/</link><pubDate>Mon, 17 Jun 2024 10:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/tildagon-known-error/</guid><description>&lt;p>At the end of May 2024, I went to my first &lt;a href="https://emfcamp.org">EMF Camp&lt;/a>, and I loved it.
+It had many interesting things to see and cool people to meet.
+I wouldn&amp;rsquo;t say I made new friends there, but I did get closer to members of &lt;a href="https://wiki.ehlab.uk">Edinburgh Hacklab&lt;/a> which I am also a member of.&lt;/p>
+&lt;p>This post is not about EMF Camp though, it is about one of its highlights: the &lt;a href="https://tildagon.badge.emfcamp.org/">Tildagon&lt;/a> badge.
+These badges are electronic devices that are meant to be extended and modified, this is a &lt;a href="https://en.wikipedia.org/wiki/Hacker">hacker&lt;/a> festival after all.
+The badges could be preordered for 25£.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #2: Design</title><link>https://www.ftvkyo.me/post/devlog-hovert60-02/</link><pubDate>Sun, 05 May 2024 17:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-02/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>In the &lt;a href="https://www.ftvkyo.me/post/devlog-hovert60-01/">previous post&lt;/a> on the topic, I introcuded my new project: making a personalized mechanical keyboard from scratch.
+I described my criteria for the end result and showed you the components I intend to use.&lt;/p>
+&lt;p>This post is focused on the design process of the project.
+The posts are sequential, but in reality they go hand-in-hand.
+The design influences which components can be used.
+Availability, price and properties of the components influence the design.&lt;/p></description></item><item><title>Hovert60 keyboard devlog #1: Init</title><link>https://www.ftvkyo.me/post/devlog-hovert60-01/</link><pubDate>Wed, 10 Apr 2024 22:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/devlog-hovert60-01/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>I have been a mild fan of mechanical and &lt;a href="https://deskthority.net/wiki/Ergonomic_keyboard">ergonomic&lt;/a> keyboards for a while now.
+I have used &lt;a href="https://ergodox-ez.com/">Ergodox EZ&lt;/a>, Planck EZ &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> and &lt;a href="https://drop.com/buy/preonic-mechanical-keyboard">OLKB Preonic&lt;/a>.
+Additionally, my XKB configuration is somewhat interesting.&lt;/p>
+
+
+&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/devlog-hovert60-01/preonic.jpg"
+ alt="OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests">&lt;figcaption>
+ &lt;p>OLKB Planck with &amp;laquo;ergonomic&amp;raquo; wristrests&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>You see, Russian alphabet has 33 letters, while English only has 26.
+This means that on the default Russian layout more keys are used for letters, and punctuation keys are different from the US layout.&lt;/p></description></item><item><title>Website overhaul</title><link>https://www.ftvkyo.me/post/website-03-overhaul/</link><pubDate>Sun, 19 Mar 2023 14:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/website-03-overhaul/</guid><description>&lt;p>I have done a major overhaul of the website.&lt;/p>
+&lt;p>The primary focus was on styling.
+I was not satisfied with the original theme (&lt;a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman&lt;/a>) and wanted to change it.
+The problem was not in the look of the theme, but in how much tweaking I wanted to do, so it was easier to just make a new theme of my own.&lt;/p>
+&lt;p>I have also changed the way the website is built.
+I used to have the website sources in a public Github repository and the deployments were done with a Github Action, to a &lt;code>gh-pages&lt;/code> branch in the same repo.
+I have moved the sources of the website to a separate repository and the deployments are set up to update &lt;code>gh-pages&lt;/code> in the original repository.&lt;/p></description></item><item><title>My Time and Focus. Part 2: But how?</title><link>https://www.ftvkyo.me/post/my-time-and-focus-02/</link><pubDate>Fri, 23 Dec 2022 17:00:00 +0000</pubDate><guid>https://www.ftvkyo.me/post/my-time-and-focus-02/</guid><description>&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/my-time-and-focus-02/reintroduction.svg"
+ alt="An arrow with a loop in the middle, representing &amp;#34;reintroduction&amp;#34;.">
+&lt;/figure>
+
+&lt;h2 id="reintroduction">Reintroduction&lt;/h2>
+&lt;p>In the &lt;a href="https://www.ftvkyo.me/post/my-time-and-focus-01/">previous part&lt;/a> I have gone through some tools and approaches to self-organisation.
+The main focus was on note-taking, and now it is finally time to highlight some neat parts of it.&lt;/p>
+&lt;p>I have already more-or-less described the criteria that I want the note-taking system to satisfy, and why I need it, so here I&amp;rsquo;m going to talk about its &lt;strong>implementation details&lt;/strong>.&lt;/p></description></item><item><title>My Time and Focus. Part 1: But why?</title><link>https://www.ftvkyo.me/post/my-time-and-focus-01/</link><pubDate>Fri, 21 Oct 2022 11:00:00 +0100</pubDate><guid>https://www.ftvkyo.me/post/my-time-and-focus-01/</guid><description>&lt;figure>&lt;img src="https://www.ftvkyo.me/img/post/my-time-and-focus-01/fix-all-problems.svg"
+ alt="Checkbox &amp;#34;Fix all problems&amp;#34;">
+&lt;/figure>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this series of posts is to share some details of my journey of organizing myself.
+I think this might be interesting or even useful for somebody, but I am mostly writing this to stay motivated to continue (and as writing practice).&lt;/p>
+&lt;p>I&amp;rsquo;ll start by explaining the problems I&amp;rsquo;m trying to solve and why they matter.
+Along the way, I might learn new things or find some insights I missed in the past.
+In other words, I want to begin by describing things I already understand, and after that, I would like to continue the series by making &amp;laquo;progress updates&amp;raquo;.&lt;/p></description></item><item><title>Website tweaks</title><link>https://www.ftvkyo.me/post/website-02-tweaks/</link><pubDate>Fri, 17 Sep 2021 13:00:00 +0100</pubDate><guid>https://www.ftvkyo.me/post/website-02-tweaks/</guid><description>&lt;p>I have done some minor optimization of the website in order to improve its
+Lighthouse score and its performance.&lt;/p>
+&lt;p>The score should be above 90% in every category (except PWA that I don&amp;rsquo;t target)
+at the moment of publishing this post. I only tested it on localhost,
+but as the most significant problem was caused by Google Fonts the website
+depends on, that part should be the same as in production.&lt;/p></description></item><item><title>Parentheses programming language devlog #1: getting to LLVM IR emission</title><link>https://www.ftvkyo.me/post/devlog-parentheses-01/</link><pubDate>Sun, 27 Jun 2021 21:00:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/devlog-parentheses-01/</guid><description>&lt;h2 id="pre-intro">Pre-intro&lt;/h2>
+&lt;p>I start these series hoping to continue them along with the development of
+the project this devlog is related to.
+Not only the project is an excercise for me, but the devlog itself is as well.
+I think about making some games in the future, and how could I make a good
+game without having a devlog about it?&lt;/p>
+&lt;p>Also, thanks to all the advice from different people who suggested some better
+techniques of dealing with challenges I face in this project.&lt;/p></description></item><item><title>A New Website</title><link>https://www.ftvkyo.me/post/website-01-new/</link><pubDate>Sun, 27 Jun 2021 20:20:00 +0800</pubDate><guid>https://www.ftvkyo.me/post/website-01-new/</guid><description>&lt;p>Anybody here?&lt;/p>
+&lt;p>I got this thought to make my website a very long time ago. A classic
+idea for a developer, right? However, I could never finish its creation.
+For a long time, I had some random pages dangling on my domain.&lt;/p>
+&lt;p>I always wanted to put something interesting there, and as I never truly
+needed a website, I just played with different things abandoning them later.&lt;/p>
+&lt;p>Only two attempts were notable. One where I made it work, with some pages
+and even some interactivity, but it all was weird, as I started trying out
+some unrelated ideas. &amp;laquo;What if I use Python for boring content serving and Rust
+for a quick API?&amp;raquo; (not that I needed this API). I managed to make it work,
+it was running in Docker for quite a while, but it had zero useful
+content and almost no value except the experience I got from it.&lt;/p></description></item></channel></rss>
