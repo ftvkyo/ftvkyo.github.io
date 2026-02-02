@@ -5,6 +5,13 @@ tags: [Reflection, Year in review]
 toc: true
 ---
 
+{{% aside %}}
+
+Этот пост также доступен на русском языке: [Итоги 2025](/ru/post/2025-in-review/).
+
+{{% /aside %}}
+
+
 Last year, I wrote [2024 in review][2024-in-review].
 There are many good things about that post.
 I reviewed it a few times throughout the year, curious about the changes in my mental state since then and about the goals I had set.
