@@ -504,7 +504,7 @@ A few other things that I want to work on are:
 
 **CONTENT WARNING: Emotions, childhood trauma.**
 
-There is a song by Madilyn Mei called "What's Going On?!" that captures my current vibe quite well.
+There is a song by Elio Mei called "What's Going On?!" that captures my current vibe quite well.
 The full lyrics are [available on Genius][genius-whats-going-on], but here is how it starts:
 
 *I am an alien <br>
@@ -517,7 +517,7 @@ Spamming every one of them <br>
 So does being human mean <br>
 Pretending to know what's going on?*
 
-[genius-whats-going-on]: https://genius.com/Madilyn-mei-whats-going-on-lyrics
+[genius-whats-going-on]: https://genius.com/Elio-mei-whats-going-on-lyrics
 
 I have lived in many different environments --- first, nine years in six different schools, two years in a vocational school, two years in and around university, then I left Russia and spent two years between the Philippines and Hong Kong, and finally, four years in Edinburgh.
 Naturally, I have been exposed to many different life situations from different sides.
