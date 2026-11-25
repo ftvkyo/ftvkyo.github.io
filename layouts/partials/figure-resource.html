@@ -1,0 +1,8 @@
+{{- /* The resource behind a figure's src: first under figureSrc and the page's path, then the page's own, then global; false for an absolute URL */ -}}
+{{- $url := urls.Parse .src -}}
+{{- $resource := false -}}
+{{- if not $url.IsAbs -}}
+  {{- $prefixed := printf "%s%s%s" site.Params.figureSrc .page.RelPermalink $url.Path -}}
+  {{- $resource = or (resources.Get $prefixed) (.page.Resources.Get $url.Path) (resources.Get $url.Path) false -}}
+{{- end -}}
+{{- return $resource -}}

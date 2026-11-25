@@ -5,27 +5,25 @@
     <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
   {{- end -}}
 
-  {{- $url := urls.Parse (.Get "src") -}}
-  {{- $src := $url.String -}}
-  {{- if not $url.IsAbs -}}
-    <!-- First, try to find an image that has the same prefix as the current page -->
-    {{- $resourceUrl := printf "%s%s%s" .Site.Params.figureSrc .Page.RelPermalink $url.Path -}}
-    {{- with or
-        (resources.Get $resourceUrl)
-        (.Page.Resources.Get $url.Path)
-        (resources.Get $url.Path)
-    -}}
-      {{- $src = .RelPermalink -}}
+  {{- $src := .Get "src" -}}
+  {{- $width := .Get "width" -}}
+  {{- $height := .Get "height" -}}
+  {{- with partial "figure-resource.html" (dict "page" .Page "src" $src) -}}
+    {{- $image := . -}}
+    {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType -}}
+      {{- /* The column is ~650px wide; 1600px leaves room for 2x screens */ -}}
+      {{- if gt .Width 1600 }}{{ $image = .Resize "1600x webp q80" }}{{ end -}}
+      {{- $width = or $width $image.Width -}}
+      {{- $height = or $height $image.Height -}}
     {{- end -}}
+    {{- $src = $image.RelPermalink -}}
   {{- end -}}
 
   <img src="{{ $src }}"
-    {{- if or (.Get "alt") (.Get "caption") }}
-    alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
-    {{- end -}}
-    {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-    {{- with .Get "height" }} height="{{ . }}"{{ end -}}
-    {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
+    alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
+    {{- with $width }} width="{{ . }}"{{ end -}}
+    {{- with $height }} height="{{ . }}"{{ end }}
+    loading="{{ or (.Get "loading") "lazy" }}"
   ><!-- Closing img tag -->
   {{- if .Get "link" }}</a>{{ end -}}
   {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
