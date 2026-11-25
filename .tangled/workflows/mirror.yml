@@ -1,0 +1,33 @@
+# Mirror main and every tag to GitHub. Other branches stay on the knot, and
+# --prune only reaches tags, so pages.yml's gh-pages is left alone.
+#
+# Runs on the spindle at spindle.rei.gay, picked in the repository's
+# Settings > Pipelines. GITHUB_MIRROR_TOKEN is a repository secret
+# (Settings > Pipelines > Secrets): a fine-grained token for
+# ftvkyo/ftvkyo.github.io with Contents read and write, and Workflows read
+# and write, since the history removes a GitHub workflow.
+when:
+  - event: push
+    branch: main
+    tag: ["**"]
+  - event: manual
+
+engine: microvm
+image: alpine
+
+# The default clone is one commit deep; the mirror needs the full history.
+clone:
+  skip: true
+
+environment:
+  GITHUB_REPO: ftvkyo/ftvkyo.github.io
+
+steps:
+  - name: Push to GitHub
+    command: |
+      set -euo pipefail
+      git clone --bare "$TANGLED_REPO_URL" repo.git
+      cd repo.git
+      git -c credential.helper='!f() { if test "$1" = get; then printf "username=x-access-token\npassword=%s\n" "$GITHUB_MIRROR_TOKEN"; fi; }; f' \
+        push --prune "https://github.com/$GITHUB_REPO.git" \
+        '+refs/heads/main:refs/heads/main' '+refs/tags/*:refs/tags/*'
