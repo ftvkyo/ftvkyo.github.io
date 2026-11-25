@@ -1,0 +1,19 @@
+{{- /* A card's picture: the `thumbnail` param, or else the page's first raster figure; `thumbnail: false` for none */ -}}
+{{- $src := .Params.thumbnail -}}
+{{- if not (isset .Params "thumbnail") -}}
+  {{- range findRESubmatch `\{\{[<%]\s*figure\s+src=["\x60]([^"\x60]+)` .RawContent -}}
+    {{- if and (not $src) (not (strings.HasSuffix (index . 1) ".svg")) }}{{ $src = index . 1 }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $resource := false -}}
+{{- with $src -}}
+  {{- $resource = partial "figure-resource.html" (dict "page" $ "src" .) -}}
+{{- end -}}
+
+{{- with $resource -}}
+  {{- $image := . -}}
+  {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType -}}
+    {{- $image = .Fill "256x256 Smart webp q75" -}}
+  {{- end -}}
+  <img class="thumbnail" src="{{ $image.RelPermalink }}" alt="" width="128" height="128" loading="lazy">
+{{- end -}}

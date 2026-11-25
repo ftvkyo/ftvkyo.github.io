@@ -1,6 +1,9 @@
 <li>
-    <a class="title" href="{{ .RelPermalink }}">
-        {{ .Title }}
-    </a>
-    {{ partial "metadata.html" . }}
+    <div>
+        <a class="title" href="{{ .RelPermalink }}">
+            {{ .Title }}
+        </a>
+        {{ partial "metadata.html" . }}
+    </div>
+    {{ partial "thumbnail.html" . }}
 </li>

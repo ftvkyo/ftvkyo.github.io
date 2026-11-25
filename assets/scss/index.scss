@@ -607,12 +607,41 @@ ul.cards {
         border-radius: 5px;
         box-shadow: 5px 5px 10px black;
 
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        > div {
+            flex: 1;
+            min-width: 0;
+        }
+
         .title {
             display: block;
             margin: 0.5em 0;
 
             font-size: s.$text-title;
             text-decoration: none;
+        }
+
+        .thumbnail {
+            flex: none;
+            width: 6em;
+            height: 6em;
+            margin: 1em 0;
+
+            object-fit: cover;
+            border-radius: 5px;
+
+            @media screen and (max-width: 40em) {
+                display: none;
+            }
+        }
+
+        .thumbnail[src$=".svg"] {
+            object-fit: contain;
+            background-color: c.$grey-10;
+            padding: 0.25em;
         }
     }
 }
