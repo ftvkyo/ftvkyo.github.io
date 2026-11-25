@@ -6,3 +6,6 @@
 
 # Hugo build lockfile
 .hugo_build.lock
+
+# nix-build output
+/result
