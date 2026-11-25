@@ -19,7 +19,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat&family=Neucha&display=swap" rel="stylesheet">
 
-        {{ $scssOptions := (dict "transpiler" "dartsass") }}
+        {{ $scssOptions := (dict "transpiler" "dartsass" "outputStyle" "compressed") }}
         {{ $scss := resources.Get "scss/index.scss" }}
         {{ $style := $scss | css.Sass $scssOptions }}
         <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
