@@ -154,7 +154,7 @@ Here are some links:
 - [Sofle Choc build guide](https://josefadamcik.github.io/SofleKeyboard/build_guide_choc.html) (uses a PCB)
 
 It's also important to mention that there are tools that can make the design process significantly easier:
-- [Keyboard Layout Editor](http://www.keyboard-layout-editor.com)
+- [Keyboard Layout Editor](https://www.keyboard-layout-editor.com/)
 - [Ergogen](https://ergogen.xyz/) and its [unofficial deployment](https://ergogen.cache.works/) which is "better" [^ergogen]
 - [Cosmos](https://ryanis.cool/cosmos/) (no idea about this one but looks **very cool**)
 - Others not mentioned...

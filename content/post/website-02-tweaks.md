@@ -51,7 +51,7 @@ I'll keep the old text of the post here.
 It was an interesting experiment.
 
 
-[0]: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload
-[1]: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
+[0]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload
+[1]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-display
 [2]: /post/devlog-parentheses-01/
 [3]: https://plausible.io

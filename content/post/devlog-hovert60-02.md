@@ -85,7 +85,7 @@ This meant that some cutting movements wouldn't reach the bottom of the <span ti
 
 It was time to learn a new tool: [Autodesk Fusion][fusion].
 
-[fusion]: https://www.autodesk.co.uk/products/fusion-360/overview
+[fusion]: https://www.autodesk.com/uk/products/fusion-360/overview
 
 
 ### Picking up Autodesk Fusion

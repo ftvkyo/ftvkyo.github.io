@@ -345,7 +345,7 @@ To do the upmixing, I used [CamillaDSP][camilladsp], which another lab friend ha
 First, I created a virtual 2-channel PulseAudio Sink using PipeWire, and then made CamillaDSP listen to that sink, process the sound, and output it into the 6-channel ALSA device.
 I uploaded my config as a GitHub [gist][camilladsp-config].
 
-[camilladsp]: https://henquist.github.io/
+[camilladsp]: https://www.camilladsp.com/
 [camilladsp-config]: https://gist.github.com/ftvkyo/547e9780e4e8dcc566586245a947a27d
 
 Unfortunately, as I understand it, outputting through ALSA rather than PulseAudio means that other applications cannot output to that device at the same time.

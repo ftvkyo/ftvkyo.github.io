@@ -2,7 +2,7 @@
 title: "Lazy keymap"
 description: >
     Keymap generator.
-    Takes some configuration in and provides a [ZMK](https://zmk.dev) keymap config, an SVG reference card, and in the future, an [XKB](https://www.x.org/wiki/XKB/) layout description.
+    Takes some configuration in and provides a [ZMK](https://zmk.dev) keymap config, an SVG reference card, and in the future, an [XKB](https://www.x.org/XKB/) layout description.
 ---
 
 - Github repository: [ftvkyo/lazy-keymap](https://github.com/ftvkyo/lazy-keymap)

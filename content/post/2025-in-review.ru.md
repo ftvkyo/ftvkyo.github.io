@@ -341,7 +341,7 @@ fuck it we ball.*
 Сначала я создала виртуальный 2-канальный PulseAudio Sink с помощью PipeWire, затем настроила CamillaDSP так, чтобы он слушал этот sink, обрабатывал звук и выводил его в 6-канальное ALSA-устройство.
 Я выложила свой конфиг в виде GitHub [gist][camilladsp-config].
 
-[camilladsp]: https://henquist.github.io/
+[camilladsp]: https://www.camilladsp.com/
 [camilladsp-config]: https://gist.github.com/ftvkyo/547e9780e4e8dcc566586245a947a27d
 
 К сожалению, насколько я понимаю, вывод через ALSA вместо PulseAudio означает, что другие приложения не могут одновременно выводить звук на это устройство.

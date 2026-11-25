@@ -174,7 +174,7 @@ For instance, if a note has `index: true` in its frontmatter, it will have a dif
 
 #### Plan Callout
 
-Plan callout is a small extension built on top of [Obsidian Callouts](https://help.obsidian.md/Editing+and+formatting/Callouts).
+Plan callout is a small extension built on top of [Obsidian Callouts](https://obsidian.md/help/Editing+and+formatting/Callouts).
 It is the foundation of my daily time scheduling.
 When a callout has the type `plan`, it allows specifying `@ HH:mm` as its title (where `HH` is hours, and `mm` is minutes), which defines the "starting time".
 Then, in the body of the callout, any list items can specify the time they are going to take, and the plugin assumes 5 extra minutes of "buffer time" after each of these items.

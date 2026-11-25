@@ -171,7 +171,7 @@ Like this:
 ```
 
 These are Obsidian-style links, by the way.
-And you can see a cool feature of Obsidian -- [links to blocks](https://help.obsidian.md/How+to/Link+to+blocks).
+And you can see a cool feature of Obsidian -- [links to blocks](https://obsidian.md/help/How+to/Link+to+blocks).
 Rather than creating a heading in the original text, it creates a "block" with a hex code and links to it like this: `[[something#^abcdef]]`.
 
 

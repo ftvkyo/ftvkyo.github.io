@@ -54,7 +54,7 @@ Themes I want to implement are:
 Currently, most of the colors used are [named colors][colors], and the text is `black`, and the background is `white`.
 This is good for contrast, and for accessibility, but this is not something that I personally like to see, so I plan to create a "prettier" default theme and move the current one to "high contrast".
 
-[colors]: https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+[colors]: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/named-color
 
 ## Build changes
 
