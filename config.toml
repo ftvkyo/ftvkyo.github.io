@@ -67,11 +67,9 @@ tag = "tags"
 [[menu.main]]
 name = "Home"
 url = "/"
-params = { img = "logo.svg" }
 weight = 10
 
 [[menu.main]]
-
 name = "Projects"
 url = "/project/"
 weight = 20
