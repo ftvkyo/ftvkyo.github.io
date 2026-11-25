@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 
         {{ $title := print .Site.Title " | " .Title }}
-        {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+        {{ if or .IsHome (eq .Title .Site.Title) }}{{ $title = .Site.Title }}{{ end }}
         <title>{{ $title }}</title>
 
         <!-- Force content rendering before checking for "hasMath" -->
