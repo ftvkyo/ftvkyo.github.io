@@ -43,7 +43,7 @@ The changes are:
 
   (And mention analytics in the footer 👇)
 
-# Update 2022-10-21
+## Update 2022-10-21
 
 I disabled my analytics subscription a while ago as it was unwise to keep it.
 Today, I removed it from the website.
